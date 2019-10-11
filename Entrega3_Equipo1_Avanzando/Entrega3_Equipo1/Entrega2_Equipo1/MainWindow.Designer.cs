@@ -29,7 +29,10 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.importToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.importWithLabelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelImages = new System.Windows.Forms.Panel();
@@ -37,8 +40,6 @@
             this.addToEditingAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.importWithLabelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripImage.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,19 @@
             this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // importToolStripMenuItem1
+            // 
+            this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
+            this.importToolStripMenuItem1.Size = new System.Drawing.Size(55, 20);
+            this.importToolStripMenuItem1.Text = "Import";
+            this.importToolStripMenuItem1.Click += new System.EventHandler(this.ImportOnlyToolStripMenuItem_Click);
+            // 
+            // importWithLabelsToolStripMenuItem
+            // 
+            this.importWithLabelsToolStripMenuItem.Name = "importWithLabelsToolStripMenuItem";
+            this.importWithLabelsToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
+            this.importWithLabelsToolStripMenuItem.Text = "Import with labels";
             // 
             // exportToolStripMenuItem
             // 
@@ -106,30 +120,19 @@
             this.removeFromLibraryToolStripMenuItem.Text = "Remove from Library";
             this.removeFromLibraryToolStripMenuItem.Click += new System.EventHandler(this.RemoveFromLibraryToolStripMenuItem_Click);
             // 
-            // importToolStripMenuItem1
-            // 
-            this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
-            this.importToolStripMenuItem1.Size = new System.Drawing.Size(55, 20);
-            this.importToolStripMenuItem1.Text = "Import";
-            this.importToolStripMenuItem1.Click += new System.EventHandler(this.ImportOnlyToolStripMenuItem_Click);
-            // 
-            // importWithLabelsToolStripMenuItem
-            // 
-            this.importWithLabelsToolStripMenuItem.Name = "importWithLabelsToolStripMenuItem";
-            this.importWithLabelsToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
-            this.importWithLabelsToolStripMenuItem.Text = "Import with labels";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.panelImages);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "MainWindow";
-            this.Text = "MainWindow";
+            this.Text = "iFruit";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

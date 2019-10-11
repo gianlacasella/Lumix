@@ -15,6 +15,7 @@ namespace Entrega2_Equipo1
 	public partial class MainWindow : Form
 	{
 		Library library;
+        Producer producer;
 		ProgramManager PM = new ProgramManager();
 
 
@@ -22,6 +23,7 @@ namespace Entrega2_Equipo1
 		{
 			InitializeComponent();
 			library = PM.LoadingLibraryManager();
+            producer = PM.LoadingProducerManager();
 		}
 
 
@@ -58,14 +60,15 @@ namespace Entrega2_Equipo1
 			}
 		}
 
+
 		private void ImportOnlyToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			OpenFileDialog ofd = new OpenFileDialog();
-			ofd.Title = "Please select multiple images";
+			ofd.Title = "Select the desired images";
 			ofd.Multiselect = true;
 			ofd.Filter = "Supported formats |*.jpg;*.jpeg;*.png;*.bmp";
 			DialogResult dr = ofd.ShowDialog();
-			if (dr == System.Windows.Forms.DialogResult.OK)
+			if (dr == DialogResult.OK)
 			{
 				string[] files = ofd.FileNames;
 				foreach(string path in files)
@@ -76,9 +79,7 @@ namespace Entrega2_Equipo1
 					library.AddImage(returningImage);
 					panelImages.Controls.Clear();
 					PM.SaveLibrary(library);
-
 				}
-
 			}
 		}
 

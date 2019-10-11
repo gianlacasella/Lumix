@@ -15,6 +15,7 @@ namespace Entrega2_Equipo1
         private bool _continue = true;
         private int startingOption;
 
+        /* Metodo Run para la entrega 2. Ahora solo sirve de referencia
         public void Run()
         {
             this.ShowPresentation();
@@ -69,7 +70,7 @@ namespace Entrega2_Equipo1
             this.ShowGoodbye();
             return;
         }
-
+        */
 
 
         private void EditingArea()
@@ -5888,7 +5889,6 @@ namespace Entrega2_Equipo1
             }
             else
             {
-                //this.ShowLibraryDoesntExistError();
                 return new Library();
             }
         }
@@ -5903,9 +5903,9 @@ namespace Entrega2_Equipo1
             }
             else
             {
-                //this.ShowProducerDoesntExistError();
-                return producer = new Producer();
+                producer = new Producer();
                 this.producer.LoadWatsonAnalyzer();
+                return producer;
             }
         }
 
