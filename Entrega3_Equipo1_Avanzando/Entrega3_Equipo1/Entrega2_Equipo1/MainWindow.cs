@@ -63,7 +63,7 @@ namespace Entrega2_Equipo1
 			OpenFileDialog ofd = new OpenFileDialog();
 			ofd.Title = "Please select multiple images";
 			ofd.Multiselect = true;
-			ofd.Filter = ".jpg|*.jpg|.jpeg|*.jpeg|.gif|*.gif|.png|.png";
+			ofd.Filter = "Supported formats |*.jpg;*.jpeg;*.png;*.bmp";
 			DialogResult dr = ofd.ShowDialog();
 			if (dr == System.Windows.Forms.DialogResult.OK)
 			{
