@@ -82,10 +82,7 @@ namespace Entrega2_Equipo1
 			}
 		}
 
-		private void RefreshToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			refreshToolStripMenuItem.Click += PanelImages_Paint;
-		}
+		
 
 		private void RemoveFromLibraryToolStripMenuItem_Click(object sender, EventArgs e)
 		{
