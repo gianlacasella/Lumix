@@ -222,11 +222,9 @@ namespace Entrega2_Equipo1
 		private void NoPictureChosen(object sender, EventArgs e)
 		{
 
-			if (MessageBox.Show("A picture has to be chosen in order to export.", "No picture chosen",
-			   MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.No)
-			{
+			MessageBox.Show("A picture has to be chosen in order to export.", "No picture chosen",
+			   MessageBoxButtons.OK, MessageBoxIcon.Question);
 
-			}
 		}
 
 		private void ReLoadPanelImage(object sender, EventArgs e)
@@ -249,11 +247,9 @@ namespace Entrega2_Equipo1
 			else
 			{
 
-				if (MessageBox.Show("There are no pictures in library", "Clean library error.",
-					   MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
-				{
+				MessageBox.Show("There are no pictures in library", "Clean library error.",
+					   MessageBoxButtons.OK, MessageBoxIcon.Question);
 
-				}
 			}
 
 		}
