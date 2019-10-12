@@ -18,19 +18,20 @@ namespace Entrega2_Equipo1
         Producer producer;
 		ProgramManager PM = new ProgramManager();
 		bool Saved = true;
+		PictureBox chosenImage = null;
 
 
 		public MainWindow()
 		{
 			InitializeComponent();
-			library = PM.LoadingLibraryManager();
-            producer = PM.LoadingProducerManager();
+
 		}
 
 
 		private void MainWindow_Load(object sender, EventArgs e)
 		{
-
+			library = PM.LoadingLibraryManager();
+			producer = PM.LoadingProducerManager();
 		}
 
 
@@ -49,6 +50,7 @@ namespace Entrega2_Equipo1
 				pic.Location = new Point(x, y);
 				pic.SizeMode = PictureBoxSizeMode.StretchImage;
 				pic.Click += ImageDetailClick;
+				pic.Click += ImageBorderClick;
 				pic.ContextMenuStrip = contextMenuStripImage;
 				pic.Tag = image;
 				pic.Name = image.Name;
@@ -149,6 +151,21 @@ namespace Entrega2_Equipo1
 			Image image = (Image)PIC.Tag;
 			SelectedImageName.Text = PIC.Name;
 			ResolutionLabel.Text = Convert.ToString(PIC.Image.Width) + "x" + Convert.ToString(PIC.Image.Height);
+		}
+
+		private void ImageBorderClick(object sender, EventArgs e)
+		{
+			PictureBox PIC = (PictureBox)sender;
+			if (chosenImage != PIC && chosenImage != null)
+			{
+				chosenImage.BorderStyle = BorderStyle.None;
+				chosenImage = PIC;
+			}
+			else
+			{
+				chosenImage = PIC;
+			}
+			PIC.BorderStyle = BorderStyle.Fixed3D;
 		}
 
 
