@@ -131,12 +131,21 @@ namespace Entrega2_Equipo1
 		}
 
 		private void ImageDetailClick(object sender, EventArgs e)
-		{
+        { 
 			PictureBox PIC = (PictureBox)sender;
-			Image image = (Image)PIC.Tag;
-			SelectedImageName.Text = PIC.Name;
-			ResolutionLabel.Text = Convert.ToString(PIC.Image.Width) + "x" + Convert.ToString(PIC.Image.Height);
-		}
+            Image image = (Image)PIC.Tag;
+            titleLabel.Text = image.Name;
+            resolutionLabel.Text = "Res: " + Convert.ToString(image.Resolution[0]) + "x" + Convert.ToString(image.Resolution[1]);
+            aspectRatioLabel.Text = "AspectR: " + Convert.ToString(image.AspectRatio[0]) + ":" + Convert.ToString(image.AspectRatio[1]);
+            if (image.DarkClear == true)
+            {
+                ClearLabel.Text = "Clear";
+            }
+            else
+            {
+                ClearLabel.Text = "Dark";
+            }
+        }
 
 		private void ImageBorderClick(object sender, EventArgs e)
 		{
@@ -257,10 +266,5 @@ namespace Entrega2_Equipo1
 			}
 
 		}
-
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
