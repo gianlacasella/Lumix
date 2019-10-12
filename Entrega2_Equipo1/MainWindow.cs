@@ -33,6 +33,7 @@ namespace Entrega2_Equipo1
 		{
 			library = PM.LoadingLibraryManager();
 			producer = PM.LoadingProducerManager();
+			PanelImages_Paint(sender, e);
 		}
 
 
@@ -262,5 +263,28 @@ namespace Entrega2_Equipo1
         {
 
         }
-    }
+
+		private void AddToEditingAreaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ToolStripItem menuItem = sender as ToolStripItem;
+			if (menuItem != null)
+			{
+				// Retrieve the ContextMenuStrip that owns this ToolStripItem
+				ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+				if (owner != null)
+				{
+					// Get the control that is displaying this context menu
+					Control sourceControl = owner.SourceControl;
+					PictureBox PIC = (PictureBox)sourceControl;
+					pictureChosen.Image = PIC.Image;
+					pictureChosen.Tag = (Image)PIC.Tag;
+				}
+			}
+		}
+
+		private void OldFilmButton_Click(object sender, EventArgs e)
+		{	
+			pictureChosen.Image = producer.ApplyFilter((Image)pictureChosen.Tag, EFilter.OldFilmFilter);
+		}
+	}
 }
