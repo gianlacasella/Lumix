@@ -293,12 +293,16 @@ namespace Entrega2_Equipo1
 
         private void PanelImages_Click(object sender, EventArgs e)
         {
-            titleLabel.Text = "";
-            resolutionLabel.Text = "";
-            aspectRatioLabel.Text = "";
-            ClearLabel.Text = "";
-            chosenImage.BorderStyle = BorderStyle.None;
-            chosenImage = null;
+            if (chosenImage != null)
+            {
+                titleLabel.Text = "";
+                resolutionLabel.Text = "";
+                aspectRatioLabel.Text = "";
+                ClearLabel.Text = "";
+                chosenImage.BorderStyle = BorderStyle.None;
+                chosenImage = null;
+            }
+            
         }
     }
 
