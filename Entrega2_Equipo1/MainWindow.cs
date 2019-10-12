@@ -257,5 +257,10 @@ namespace Entrega2_Equipo1
 			}
 
 		}
-	}
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }
