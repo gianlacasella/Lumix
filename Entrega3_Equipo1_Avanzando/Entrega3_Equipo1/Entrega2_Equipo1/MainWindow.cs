@@ -78,7 +78,6 @@ namespace Entrega2_Equipo1
 					returningImage.Name = name;
 					library.AddImage(returningImage);
 					panelImages.Controls.Clear();
-					PM.SaveLibrary(library);
 				}
 			}
 		}
@@ -101,7 +100,6 @@ namespace Entrega2_Equipo1
 					Image im = (Image)PIC.Tag;
 					library.RemoveImage(im.Name);
 					panelImages.Controls.Clear();
-					PM.SaveLibrary(library);
 
 				}
 			}
@@ -122,5 +120,10 @@ namespace Entrega2_Equipo1
                 }
             }
         }
-    }
+
+		private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			PM.SaveLibrary(library);
+		}
+	}
 }
