@@ -38,7 +38,10 @@ namespace Entrega2_Equipo1
 			int x = 20;
 			int y = 20;
 			int maxHeight = -1;
-			foreach (Image image in library.Images)
+            int count = 1;
+            this.ToolbarProgressBar.Value = 0;
+            this.ToolbarProgressBar.Visible = true;
+            foreach (Image image in library.Images)
 			{
 				PictureBox pic = new PictureBox();
 				pic.Image = image.BitmapImage;
@@ -57,8 +60,12 @@ namespace Entrega2_Equipo1
 					y += maxHeight + 10;
 				}
 				this.panelImages.Controls.Add(pic);
+                this.ToolbarProgressBar.Increment((count * 100)/library.Images.Count);
+                count++;
 			}
-		}
+            this.ToolbarProgressBar.Visible = false;
+            this.ToolbarProgressBar.Value = 0;
+        }
 
 
 		private void ImportOnlyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,9 +75,12 @@ namespace Entrega2_Equipo1
 			ofd.Multiselect = true;
 			ofd.Filter = "Supported formats |*.jpg;*.jpeg;*.png;*.bmp";
 			DialogResult dr = ofd.ShowDialog();
-			if (dr == DialogResult.OK)
+            if (dr == DialogResult.OK)
 			{
-				string[] files = ofd.FileNames;
+                this.ToolbarProgressBar.Value = 0;
+                this.ToolbarProgressBar.Visible = true;
+                int count = 1;
+                string[] files = ofd.FileNames;
 				foreach(string path in files)
 				{
 					string name = Path.GetFileNameWithoutExtension(path);
@@ -78,9 +88,16 @@ namespace Entrega2_Equipo1
 					returningImage.Name = name;
 					library.AddImage(returningImage);
 					panelImages.Controls.Clear();
-				}
-			}
+					PM.SaveLibrary(library);
+                    this.ToolbarProgressBar.Increment((count * 100) / files.Length);
+                }
+                this.ToolbarProgressBar.Visible = false;
+                this.ToolbarProgressBar.Value = 0;
+            }
+
 		}
+            
+    
 
 		
 
