@@ -47,7 +47,7 @@ namespace Entrega2_Equipo1
 				pic.Image = image.BitmapImage;
 				pic.Location = new Point(x, y);
 				pic.SizeMode = PictureBoxSizeMode.StretchImage;
-				//pic.Click += Picture_Clicked;
+				pic.Click += ImageDetailClick;
 				pic.ContextMenuStrip = contextMenuStripImage;
 				pic.Tag = image;
 				pic.Name = image.Name;
@@ -86,14 +86,14 @@ namespace Entrega2_Equipo1
 					string name = Path.GetFileNameWithoutExtension(path);
 					Image returningImage = new Image(path, new List<Label>(), -1);
 					returningImage.Name = name;
-					library.AddImage(returningImage);
 					panelImages.Controls.Clear();
-					PM.SaveLibrary(library);
+					library.AddImage(returningImage);
                     this.ToolbarProgressBar.Increment((count * 100) / files.Length);
                 }
                 this.ToolbarProgressBar.Visible = false;
                 this.ToolbarProgressBar.Value = 0;
-            }
+				PanelImages_Paint(sender, e);
+			}
 
 		}
             
@@ -115,14 +115,14 @@ namespace Entrega2_Equipo1
 					Control sourceControl = owner.SourceControl;
 					PictureBox PIC = (PictureBox)sourceControl;
 					Image im = (Image)PIC.Tag;
-					library.RemoveImage(im.Name);
 					panelImages.Controls.Clear();
-
+					library.RemoveImage(im.Name);
+					PanelImages_Paint(sender, e);
 				}
 			}
 		}
 
-
+		/*
         private void ImageDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToolStripItem menuItem = sender as ToolStripItem;
@@ -138,10 +138,21 @@ namespace Entrega2_Equipo1
                 }
             }
         }
+		*/
+
+		private void ImageDetailClick(object sender, EventArgs e)
+		{
+			PictureBox PIC = (PictureBox)sender;
+			Image image = (Image)PIC.Tag;
+			SelectedImageName.Text = PIC.Name;
+			ResolutionLabel.Text = Convert.ToString(PIC.Image.Width) + "x" + Convert.ToString(PIC.Image.Height);
+		}
+
 
 		private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			PM.SaveLibrary(library);
 		}
+
 	}
 }
