@@ -35,6 +35,7 @@
             this.importWithLabelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelImages = new System.Windows.Forms.Panel();
             this.contextMenuStripImage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToEditingAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +55,8 @@
             this.importToolStripMenuItem1,
             this.importWithLabelsToolStripMenuItem,
             this.exportToolStripMenuItem,
-            this.exportAsToolStripMenuItem});
+            this.exportAsToolStripMenuItem,
+            this.saveToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1008, 34);
@@ -90,6 +92,14 @@
             this.exportAsToolStripMenuItem.Size = new System.Drawing.Size(78, 30);
             this.exportAsToolStripMenuItem.Text = "Export as";
             // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 4);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
+            // 
             // panelImages
             // 
             this.panelImages.AutoScroll = true;
@@ -98,7 +108,7 @@
             this.panelImages.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelImages.Location = new System.Drawing.Point(0, 32);
             this.panelImages.Name = "panelImages";
-            this.panelImages.Size = new System.Drawing.Size(774, 699);
+            this.panelImages.Size = new System.Drawing.Size(774, 700);
             this.panelImages.TabIndex = 3;
             this.panelImages.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelImages_Paint);
             // 
@@ -133,26 +143,27 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel1.Controls.Add(this.SelectedImageName);
-            this.panel1.Location = new System.Drawing.Point(768, 0);
+            this.panel1.Location = new System.Drawing.Point(772, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(240, 731);
+            this.panel1.Size = new System.Drawing.Size(236, 732);
             this.panel1.TabIndex = 4;
             // 
             // SelectedImageName
             // 
             this.SelectedImageName.AutoSize = true;
             this.SelectedImageName.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.SelectedImageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedImageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectedImageName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.SelectedImageName.Location = new System.Drawing.Point(25, 17);
+            this.SelectedImageName.Location = new System.Drawing.Point(18, 25);
             this.SelectedImageName.Name = "SelectedImageName";
-            this.SelectedImageName.Size = new System.Drawing.Size(0, 20);
+            this.SelectedImageName.Size = new System.Drawing.Size(0, 31);
             this.SelectedImageName.TabIndex = 0;
             // 
             // ToolbarProgressBar
             // 
-            this.ToolbarProgressBar.Location = new System.Drawing.Point(614, 3);
+            this.ToolbarProgressBar.Location = new System.Drawing.Point(618, 3);
             this.ToolbarProgressBar.Name = "ToolbarProgressBar";
             this.ToolbarProgressBar.Size = new System.Drawing.Size(148, 23);
             this.ToolbarProgressBar.Step = 1;
@@ -201,5 +212,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label SelectedImageName;
         private System.Windows.Forms.ProgressBar ToolbarProgressBar;
+		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     }
+
 }

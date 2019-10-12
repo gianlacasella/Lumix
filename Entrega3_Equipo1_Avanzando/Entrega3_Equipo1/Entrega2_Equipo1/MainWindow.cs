@@ -75,10 +75,10 @@ namespace Entrega2_Equipo1
 			ofd.Multiselect = true;
 			ofd.Filter = "Supported formats |*.jpg;*.jpeg;*.png;*.bmp";
 			DialogResult dr = ofd.ShowDialog();
-            this.ToolbarProgressBar.Value = 0;
-            this.ToolbarProgressBar.Visible = true;
             if (dr == DialogResult.OK)
 			{
+                this.ToolbarProgressBar.Value = 0;
+                this.ToolbarProgressBar.Visible = true;
                 int count = 1;
                 string[] files = ofd.FileNames;
 				foreach(string path in files)
@@ -91,10 +91,13 @@ namespace Entrega2_Equipo1
 					PM.SaveLibrary(library);
                     this.ToolbarProgressBar.Increment((count * 100) / files.Length);
                 }
-			}
-            this.ToolbarProgressBar.Visible = false;
-            this.ToolbarProgressBar.Value = 0;
-        }
+                this.ToolbarProgressBar.Visible = false;
+                this.ToolbarProgressBar.Value = 0;
+            }
+
+		}
+            
+    
 
 		
 
@@ -114,7 +117,6 @@ namespace Entrega2_Equipo1
 					Image im = (Image)PIC.Tag;
 					library.RemoveImage(im.Name);
 					panelImages.Controls.Clear();
-					PM.SaveLibrary(library);
 
 				}
 			}
@@ -135,5 +137,10 @@ namespace Entrega2_Equipo1
                 }
             }
         }
-    }
+
+		private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			PM.SaveLibrary(library);
+		}
+	}
 }
