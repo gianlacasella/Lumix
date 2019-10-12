@@ -291,10 +291,6 @@ namespace Entrega2_Equipo1
             }
         }
 
-        private void OldFilmButton_Click(object sender, EventArgs e)
-        {
-            pictureChosen.Image = producer.ApplyFilter((Image)pictureChosen.Tag, EFilter.OldFilmFilter);
-        }
 
     }
 
