@@ -107,5 +107,20 @@ namespace Entrega2_Equipo1
 			}
 		}
 
-	}
+
+        private void ImageDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripItem menuItem = sender as ToolStripItem;
+            if (menuItem != null)
+            {
+                ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+                if (owner != null)
+                {
+                    Control sourceControl = owner.SourceControl;
+                    PictureBox PIC = (PictureBox)sourceControl;
+                    SelectedImageName.Text = PIC.Name;
+                }
+            }
+        }
+    }
 }

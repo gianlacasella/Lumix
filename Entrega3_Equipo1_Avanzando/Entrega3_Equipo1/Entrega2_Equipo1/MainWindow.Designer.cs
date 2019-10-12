@@ -40,8 +40,11 @@
             this.addToEditingAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.SelectedImageName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripImage.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -88,7 +91,7 @@
             this.panelImages.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelImages.Location = new System.Drawing.Point(0, 27);
             this.panelImages.Name = "panelImages";
-            this.panelImages.Size = new System.Drawing.Size(601, 690);
+            this.panelImages.Size = new System.Drawing.Size(774, 690);
             this.panelImages.TabIndex = 3;
             this.panelImages.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelImages_Paint);
             // 
@@ -112,6 +115,7 @@
             this.imageDetailsToolStripMenuItem.Name = "imageDetailsToolStripMenuItem";
             this.imageDetailsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.imageDetailsToolStripMenuItem.Text = "Image details";
+            this.imageDetailsToolStripMenuItem.Click += new System.EventHandler(this.ImageDetailsToolStripMenuItem_Click);
             // 
             // removeFromLibraryToolStripMenuItem
             // 
@@ -120,12 +124,31 @@
             this.removeFromLibraryToolStripMenuItem.Text = "Remove from Library";
             this.removeFromLibraryToolStripMenuItem.Click += new System.EventHandler(this.RemoveFromLibraryToolStripMenuItem_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.SelectedImageName);
+            this.panel1.Location = new System.Drawing.Point(780, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(228, 690);
+            this.panel1.TabIndex = 4;
+            // 
+            // SelectedImageName
+            // 
+            this.SelectedImageName.AutoSize = true;
+            this.SelectedImageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedImageName.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SelectedImageName.Location = new System.Drawing.Point(18, 25);
+            this.SelectedImageName.Name = "SelectedImageName";
+            this.SelectedImageName.Size = new System.Drawing.Size(0, 31);
+            this.SelectedImageName.TabIndex = 0;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelImages);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -137,6 +160,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStripImage.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +179,7 @@
         private System.Windows.Forms.ToolStripMenuItem exportAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem importWithLabelsToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label SelectedImageName;
     }
 }
