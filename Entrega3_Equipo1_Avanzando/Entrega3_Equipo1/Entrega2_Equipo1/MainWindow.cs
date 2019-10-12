@@ -134,6 +134,7 @@ namespace Entrega2_Equipo1
                     Control sourceControl = owner.SourceControl;
                     PictureBox PIC = (PictureBox)sourceControl;
                     SelectedImageName.Text = PIC.Name;
+                    ResolutionLabel.Text = Convert.ToString(PIC.Image.Width) + "x" + Convert.ToString(PIC.Image.Height);
                 }
             }
         }

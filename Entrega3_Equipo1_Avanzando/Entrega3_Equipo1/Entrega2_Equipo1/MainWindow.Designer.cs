@@ -42,6 +42,7 @@
             this.imageDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ResolutionLabel = new System.Windows.Forms.Label();
             this.SelectedImageName = new System.Windows.Forms.Label();
             this.ToolbarProgressBar = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
@@ -144,21 +145,33 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel1.Controls.Add(this.ResolutionLabel);
             this.panel1.Controls.Add(this.SelectedImageName);
             this.panel1.Location = new System.Drawing.Point(772, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(236, 732);
             this.panel1.TabIndex = 4;
             // 
+            // ResolutionLabel
+            // 
+            this.ResolutionLabel.AutoSize = true;
+            this.ResolutionLabel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ResolutionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResolutionLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ResolutionLabel.Location = new System.Drawing.Point(18, 59);
+            this.ResolutionLabel.Name = "ResolutionLabel";
+            this.ResolutionLabel.Size = new System.Drawing.Size(0, 24);
+            this.ResolutionLabel.TabIndex = 1;
+            // 
             // SelectedImageName
             // 
             this.SelectedImageName.AutoSize = true;
             this.SelectedImageName.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.SelectedImageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedImageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectedImageName.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.SelectedImageName.Location = new System.Drawing.Point(18, 25);
             this.SelectedImageName.Name = "SelectedImageName";
-            this.SelectedImageName.Size = new System.Drawing.Size(0, 31);
+            this.SelectedImageName.Size = new System.Drawing.Size(0, 24);
             this.SelectedImageName.TabIndex = 0;
             // 
             // ToolbarProgressBar
@@ -213,6 +226,7 @@
         private System.Windows.Forms.Label SelectedImageName;
         private System.Windows.Forms.ProgressBar ToolbarProgressBar;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.Label ResolutionLabel;
     }
 
 }
