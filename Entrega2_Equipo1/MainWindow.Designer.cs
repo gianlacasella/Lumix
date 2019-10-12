@@ -44,9 +44,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.resolutionLabel = new System.Windows.Forms.Label();
-            this.aspectRatioLabel = new System.Windows.Forms.Label();
-            this.ClearLabel = new System.Windows.Forms.Label();
+            this.informationLabel = new System.Windows.Forms.Label();
             this.ToolbarProgressBar = new System.Windows.Forms.ProgressBar();
             this.pictureChosen = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -171,9 +169,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.titleLabel);
-            this.flowLayoutPanel1.Controls.Add(this.resolutionLabel);
-            this.flowLayoutPanel1.Controls.Add(this.aspectRatioLabel);
-            this.flowLayoutPanel1.Controls.Add(this.ClearLabel);
+            this.flowLayoutPanel1.Controls.Add(this.informationLabel);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -193,42 +189,17 @@
             this.titleLabel.TabIndex = 0;
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // resolutionLabel
+            // informationLabel
             // 
-            this.resolutionLabel.AutoSize = true;
-            this.resolutionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resolutionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resolutionLabel.Location = new System.Drawing.Point(3, 31);
-            this.resolutionLabel.Name = "resolutionLabel";
-            this.resolutionLabel.Padding = new System.Windows.Forms.Padding(20, 10, 0, 0);
-            this.resolutionLabel.Size = new System.Drawing.Size(20, 34);
-            this.resolutionLabel.TabIndex = 1;
-            this.resolutionLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // aspectRatioLabel
-            // 
-            this.aspectRatioLabel.AutoSize = true;
-            this.aspectRatioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aspectRatioLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.aspectRatioLabel.Location = new System.Drawing.Point(3, 65);
-            this.aspectRatioLabel.Name = "aspectRatioLabel";
-            this.aspectRatioLabel.Padding = new System.Windows.Forms.Padding(20, 5, 0, 0);
-            this.aspectRatioLabel.Size = new System.Drawing.Size(20, 29);
-            this.aspectRatioLabel.TabIndex = 2;
-            this.aspectRatioLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // ClearLabel
-            // 
-            this.ClearLabel.AutoSize = true;
-            this.flowLayoutPanel1.SetFlowBreak(this.ClearLabel, true);
-            this.ClearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClearLabel.Location = new System.Drawing.Point(3, 94);
-            this.ClearLabel.Name = "ClearLabel";
-            this.ClearLabel.Padding = new System.Windows.Forms.Padding(20, 5, 0, 0);
-            this.ClearLabel.Size = new System.Drawing.Size(20, 29);
-            this.ClearLabel.TabIndex = 3;
-            this.ClearLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.informationLabel.AutoSize = true;
+            this.informationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.informationLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.informationLabel.Location = new System.Drawing.Point(3, 31);
+            this.informationLabel.Name = "informationLabel";
+            this.informationLabel.Padding = new System.Windows.Forms.Padding(20, 5, 0, 0);
+            this.informationLabel.Size = new System.Drawing.Size(20, 29);
+            this.informationLabel.TabIndex = 1;
+            this.informationLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ToolbarProgressBar
             // 
@@ -297,10 +268,8 @@
 		private System.Windows.Forms.ToolStripMenuItem cleanLibraryToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Label resolutionLabel;
-        private System.Windows.Forms.Label aspectRatioLabel;
-        private System.Windows.Forms.Label ClearLabel;
+        private System.Windows.Forms.Label informationLabel;
 		private System.Windows.Forms.PictureBox pictureChosen;
-	}
+    }
 
 }
