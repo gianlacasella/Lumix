@@ -118,7 +118,7 @@
             this.addToEditingAreaToolStripMenuItem,
             this.removeFromLibraryToolStripMenuItem});
 			this.contextMenuStripImage.Name = "contextMenuStripImage";
-			this.contextMenuStripImage.Size = new System.Drawing.Size(186, 70);
+			this.contextMenuStripImage.Size = new System.Drawing.Size(186, 48);
 			// 
 			// addToEditingAreaToolStripMenuItem
 			// 
@@ -190,6 +190,7 @@
 			this.MinimumSize = new System.Drawing.Size(1024, 768);
 			this.Name = "MainWindow";
 			this.Text = "iFruit";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
 			this.Load += new System.EventHandler(this.MainWindow_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();

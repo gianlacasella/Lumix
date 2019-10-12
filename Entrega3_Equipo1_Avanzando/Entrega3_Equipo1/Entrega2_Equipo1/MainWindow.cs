@@ -17,6 +17,7 @@ namespace Entrega2_Equipo1
 		Library library;
         Producer producer;
 		ProgramManager PM = new ProgramManager();
+		bool Saved = true;
 
 
 		public MainWindow()
@@ -93,6 +94,7 @@ namespace Entrega2_Equipo1
                 this.ToolbarProgressBar.Visible = false;
                 this.ToolbarProgressBar.Value = 0;
 				PanelImages_Paint(sender, e);
+				Saved = false;
 			}
 
 		}
@@ -118,6 +120,7 @@ namespace Entrega2_Equipo1
 					panelImages.Controls.Clear();
 					library.RemoveImage(im.Name);
 					PanelImages_Paint(sender, e);
+					Saved = false;
 				}
 			}
 		}
@@ -152,7 +155,21 @@ namespace Entrega2_Equipo1
 		private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			PM.SaveLibrary(library);
+			Saved = true;
 		}
 
+		private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (!Saved)
+			{
+				// Display a MsgBox asking the user to close the form.
+				if (MessageBox.Show("Are you sure you want to close without saving?", "Exit without save",
+				   MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+				{
+					// Cancel the Closing event
+					e.Cancel = true;
+				}
+			}
+		}
 	}
 }
