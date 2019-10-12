@@ -122,6 +122,10 @@ namespace Entrega2_Equipo1
 					library.RemoveImage(im.Name);
 					ReLoadPanelImage(sender, e);
 					Saved = false;
+					if(PIC == chosenImage)
+					{
+						chosenImage = null;
+					}
 				}
 			}
 		}
