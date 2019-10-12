@@ -44,6 +44,7 @@
 			this.ResolutionLabel = new System.Windows.Forms.Label();
 			this.SelectedImageName = new System.Windows.Forms.Label();
 			this.ToolbarProgressBar = new System.Windows.Forms.ProgressBar();
+			this.cleanLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.contextMenuStripImage.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -56,7 +57,8 @@
             this.importWithLabelsToolStripMenuItem,
             this.exportToolStripMenuItem,
             this.exportAsToolStripMenuItem,
-            this.saveToolStripMenuItem});
+            this.saveToolStripMenuItem,
+            this.cleanLibraryToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(1008, 34);
@@ -84,6 +86,7 @@
 			this.exportToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 4);
 			this.exportToolStripMenuItem.Size = new System.Drawing.Size(65, 30);
 			this.exportToolStripMenuItem.Text = "Export";
+			this.exportToolStripMenuItem.Click += new System.EventHandler(this.ExportToolStripMenuItem_Click);
 			// 
 			// exportAsToolStripMenuItem
 			// 
@@ -91,6 +94,7 @@
 			this.exportAsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 4);
 			this.exportAsToolStripMenuItem.Size = new System.Drawing.Size(79, 30);
 			this.exportAsToolStripMenuItem.Text = "Export as";
+			this.exportAsToolStripMenuItem.Click += new System.EventHandler(this.ExportAsToolStripMenuItem_Click);
 			// 
 			// saveToolStripMenuItem
 			// 
@@ -175,6 +179,13 @@
 			this.ToolbarProgressBar.TabIndex = 0;
 			this.ToolbarProgressBar.Visible = false;
 			// 
+			// cleanLibraryToolStripMenuItem
+			// 
+			this.cleanLibraryToolStripMenuItem.Name = "cleanLibraryToolStripMenuItem";
+			this.cleanLibraryToolStripMenuItem.Size = new System.Drawing.Size(88, 30);
+			this.cleanLibraryToolStripMenuItem.Text = "Clean Library";
+			this.cleanLibraryToolStripMenuItem.Click += new System.EventHandler(this.CleanLibraryToolStripMenuItem_Click);
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,6 +229,7 @@
         private System.Windows.Forms.ProgressBar ToolbarProgressBar;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.Label ResolutionLabel;
+		private System.Windows.Forms.ToolStripMenuItem cleanLibraryToolStripMenuItem;
 	}
 
 }

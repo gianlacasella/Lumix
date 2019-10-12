@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -48,11 +49,11 @@ namespace Entrega2_Equipo1
 				PictureBox pic = new PictureBox();
 				pic.Image = image.BitmapImage;
 				pic.Location = new Point(x, y);
+				pic.Tag = image;
 				pic.SizeMode = PictureBoxSizeMode.StretchImage;
 				pic.Click += ImageDetailClick;
 				pic.Click += ImageBorderClick;
 				pic.ContextMenuStrip = contextMenuStripImage;
-				pic.Tag = image;
 				pic.Name = image.Name;
 
 				x += pic.Width + 10;
@@ -63,7 +64,7 @@ namespace Entrega2_Equipo1
 					y += maxHeight + 10;
 				}
 				this.panelImages.Controls.Add(pic);
-                this.ToolbarProgressBar.Increment((count * 100)/library.Images.Count);
+				this.ToolbarProgressBar.Increment((count * 100)/library.Images.Count);
                 count++;
 			}
             this.ToolbarProgressBar.Visible = false;
@@ -89,13 +90,12 @@ namespace Entrega2_Equipo1
 					string name = Path.GetFileNameWithoutExtension(path);
 					Image returningImage = new Image(path, new List<Label>(), -1);
 					returningImage.Name = name;
-					panelImages.Controls.Clear();
 					library.AddImage(returningImage);
-                    this.ToolbarProgressBar.Increment((count * 100) / files.Length);
+					this.ToolbarProgressBar.Increment((count * 100) / files.Length);
                 }
                 this.ToolbarProgressBar.Visible = false;
                 this.ToolbarProgressBar.Value = 0;
-				PanelImages_Paint(sender, e);
+				ReLoadPanelImage(sender, e);
 				Saved = false;
 			}
 
@@ -119,31 +119,12 @@ namespace Entrega2_Equipo1
 					Control sourceControl = owner.SourceControl;
 					PictureBox PIC = (PictureBox)sourceControl;
 					Image im = (Image)PIC.Tag;
-					panelImages.Controls.Clear();
 					library.RemoveImage(im.Name);
-					PanelImages_Paint(sender, e);
+					ReLoadPanelImage(sender, e);
 					Saved = false;
 				}
 			}
 		}
-
-		/*
-        private void ImageDetailsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ToolStripItem menuItem = sender as ToolStripItem;
-            if (menuItem != null)
-            {
-                ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
-                if (owner != null)
-                {
-                    Control sourceControl = owner.SourceControl;
-                    PictureBox PIC = (PictureBox)sourceControl;
-                    SelectedImageName.Text = PIC.Name;
-                    ResolutionLabel.Text = Convert.ToString(PIC.Image.Width) + "x" + Convert.ToString(PIC.Image.Height);
-                }
-            }
-        }
-		*/
 
 		private void ImageDetailClick(object sender, EventArgs e)
 		{
@@ -187,6 +168,94 @@ namespace Entrega2_Equipo1
 					e.Cancel = true;
 				}
 			}
+		}
+
+		private void ExportToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (chosenImage != null)
+			{
+				SaveFileDialog sfd = new SaveFileDialog();
+				sfd.Filter = "Images |*.jpg;*.jpeg;*.png;*.bmp";
+				ImageFormat format = ImageFormat.Jpeg;
+				if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+				{
+					
+					chosenImage.Image.Save(sfd.FileName, format);
+				}
+			}
+			else
+			{
+				NoPictureChosen(sender, e);
+			}
+		}
+
+
+		private void ExportAsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (chosenImage != null)
+			{
+				SaveFileDialog sfd = new SaveFileDialog();
+				sfd.Filter = ".jpg|*.jpg|.bmp|*.bmp|.png|*.png";
+				ImageFormat format = ImageFormat.Jpeg;
+				if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+				{
+					string ext = System.IO.Path.GetExtension(sfd.FileName);
+					switch (ext)
+					{
+						case ".png":
+							format = ImageFormat.Jpeg;
+							break;
+						case ".bmp":
+							format = ImageFormat.Bmp;
+							break;
+					}
+					chosenImage.Image.Save(sfd.FileName, format);
+				}
+			}
+			else
+			{
+				NoPictureChosen(sender, e);
+			}
+
+		}
+
+		private void NoPictureChosen(object sender, EventArgs e)
+		{
+
+			if (MessageBox.Show("A picture has to be chosen in order to export.", "No picture chosen",
+			   MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.No)
+			{
+
+			}
+		}
+
+		private void ReLoadPanelImage(object sender, EventArgs e)
+		{
+			panelImages.Controls.Clear();
+			PanelImages_Paint(sender, e);
+		}
+
+		private void CleanLibraryToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (library.Images.Count != 0)
+			{
+				if (MessageBox.Show("Are you sure you want to clean the library?", "Warning!",
+					   MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					library.ResetImages();
+					ReLoadPanelImage(sender, e);
+				}
+			}
+			else
+			{
+
+				if (MessageBox.Show("There are no pictures in library", "Clean library error.",
+					   MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
+				{
+
+				}
+			}
+
 		}
 	}
 }
