@@ -34,6 +34,8 @@ namespace Entrega2_Equipo1
 			library = PM.LoadingLibraryManager();
 			producer = PM.LoadingProducerManager();
 			PanelImages_Paint(sender, e);
+			comboRotate.DataSource = Enum.GetValues(typeof(RotateFlipType));
+			comboCensor.Items.Add("Black bar"); comboCensor.Items.Add("Pixel blur");
 		}
 
 
@@ -454,7 +456,9 @@ namespace Entrega2_Equipo1
 		private void MainEditingImage(object sender, EventArgs e)
 		{
 			PictureBox image = (PictureBox)sender;
+			pictureChosen.SizeMode = PictureBoxSizeMode.StretchImage;
 			pictureChosen.Image = image.Image;
+			brightnessBar.Value = 0;
 		}
 		private void ImageEditingBorderClick(object sender, EventArgs e)
 		{
@@ -500,6 +504,8 @@ namespace Entrega2_Equipo1
 							Saved = false;
 							if (PIC == chosenEditingImage)
 							{
+								pictureChosen.SizeMode = PictureBoxSizeMode.CenterImage;
+								pictureChosen.Image = pictureChosen.ErrorImage;
 								chosenEditingImage = null;
 							}
 							//PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
@@ -552,6 +558,8 @@ namespace Entrega2_Equipo1
 					Saved = false;
 					if (PIC == chosenEditingImage)
 					{
+						pictureChosen.SizeMode = PictureBoxSizeMode.CenterImage;
+						pictureChosen.Image = pictureChosen.ErrorImage;
 						chosenEditingImage = null;
 					}
 
@@ -592,16 +600,6 @@ namespace Entrega2_Equipo1
 			}
 		}
 
-		private void Button3_Click(object sender, EventArgs e)
-		{
-			if (chosenEditingImage != null)
-			{
-				Image image = (Image)chosenEditingImage.Tag;
-				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.BrightnessFilter, Color.Empty, 100);
-				chosenEditingImage.Image = image.BitmapImage;
-				pictureChosen.Image = chosenEditingImage.Image;
-			}
-		}
 
 		private void Button1_Click(object sender, EventArgs e)
 		{
@@ -624,6 +622,60 @@ namespace Entrega2_Equipo1
 				pictureChosen.Image = chosenEditingImage.Image;
 			}
 		}
+
+		private void Button4_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				if (colorDialogFilter.ShowDialog() == DialogResult.OK)
+				{
+					Image image = (Image)chosenEditingImage.Tag;
+					image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.ColorFilter,colorDialogFilter.Color);
+					chosenEditingImage.Image = image.BitmapImage;
+					pictureChosen.Image = chosenEditingImage.Image;
+				}
+			}
+
+
+		}
+
+		private void ComboRotate_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.RotateFlipFilter,Color.Empty,0,60,(RotateFlipType)comboRotate.SelectedItem);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+
+		private void TrackBar1_Scroll(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.BrightnessFilter, Color.Empty, brightnessBar.Value);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+
+		private void ComboCensor_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				switch (comboCensor.SelectedItem) {
+					case "Black bar":
+						break;
+					case "Pixel blur":
+						break;
+				}
+			}
+		}
+
+
 	}
 
 
