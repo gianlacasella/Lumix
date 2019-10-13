@@ -40,7 +40,20 @@ namespace Entrega2_Equipo1
             return;
         }
 
-        public List<Image> imagesInTheWorkingArea()
+		public bool RemoveImage(string nameImage)
+		{
+			foreach (Image imag in WorkingArea.WorkingAreaImages)
+			{
+				if (imag.Name == nameImage)
+				{
+					WorkingArea.WorkingAreaImages.Remove(imag);
+					return true;
+				}
+			}
+			return false;
+		}
+
+		public List<Image> imagesInTheWorkingArea()
         {
             return this.WorkingArea.WorkingAreaImages;
         }

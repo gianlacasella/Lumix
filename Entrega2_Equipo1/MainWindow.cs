@@ -20,6 +20,7 @@ namespace Entrega2_Equipo1
 		ProgramManager PM = new ProgramManager();
 		bool Saved = true;
 		PictureBox chosenImage = null;
+		PictureBox chosenEditingImage = null;
 
 
 		public MainWindow()
@@ -367,15 +368,18 @@ namespace Entrega2_Equipo1
             {
                 // Retrieve the ContextMenuStrip that owns this ToolStripItem
                 ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
-                if (owner != null)
-                {
-                    // Get the control that is displaying this context menu
-                    Control sourceControl = owner.SourceControl;
-                    PictureBox PIC = (PictureBox)sourceControl;
-                    pictureChosen.Image = PIC.Image;
-                    pictureChosen.Tag = (Image)PIC.Tag;
-                }
-            }
+				if (owner != null)
+				{
+					// Get the control that is displaying this context menu
+					Control sourceControl = owner.SourceControl;
+					PictureBox PIC = (PictureBox)sourceControl;
+					//pictureChosen.Image = PIC.Image;
+					pictureChosen.Tag = (Image)PIC.Tag;
+					producer.LoadImagesToWorkingArea(new List<Image>() { (Image)PIC.Tag});
+					EditingPanel_Paint(sender, e);
+					//PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
+				}
+			}
         }
 
         private void PanelImages_Click(object sender, EventArgs e)
@@ -417,7 +421,210 @@ namespace Entrega2_Equipo1
 
 
         }
-    }
+
+		private void EditingPanel_Paint(object sender, EventArgs e)
+		{
+			int x = 20;
+			int y = 20;
+			int maxHeight = -1;
+			List<Image> editingImages = PM.producer.imagesInTheWorkingArea();
+			foreach (Image image in editingImages)
+			{
+				PictureBox pic = new PictureBox();
+				pic.Image = image.BitmapImage;
+				pic.Location = new Point(x, y);
+				pic.Tag = image;
+				pic.SizeMode = PictureBoxSizeMode.StretchImage;
+				pic.Click += ImageEditingBorderClick;
+				pic.Click += MainEditingImage;
+				pic.ContextMenuStrip = contextMenuStripEditing;
+				pic.Name = image.Name;
+
+				x += pic.Width + 10;
+				maxHeight = Math.Max(pic.Height, maxHeight);
+				if (x > this.EditingPanel.Width - 100)
+				{
+					x = 20;
+					y += maxHeight + 10;
+				}
+				this.EditingPanel.Controls.Add(pic);
+			}
+
+		}
+		private void MainEditingImage(object sender, EventArgs e)
+		{
+			PictureBox image = (PictureBox)sender;
+			pictureChosen.Image = image.Image;
+		}
+		private void ImageEditingBorderClick(object sender, EventArgs e)
+		{
+			PictureBox PIC = (PictureBox)sender;
+			if (chosenEditingImage != PIC && chosenEditingImage != null)
+			{
+				chosenEditingImage.BorderStyle = BorderStyle.None;
+				chosenEditingImage = PIC;
+			}
+			else
+			{
+				chosenEditingImage = PIC;
+			}
+			PIC.BorderStyle = BorderStyle.Fixed3D;
+		}
+
+		private void ReLoadEditingPanelImage(object sender, EventArgs e)
+		{
+			EditingPanel.Controls.Clear();
+			EditingPanel_Paint(sender, e);
+		}
+
+		private void RemoveFromEditingAreaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (library.Images.Count != 0)
+			{
+				if (MessageBox.Show("Are you sure you want to delete this image from the editing area?", "Warning!",
+					   MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					ToolStripItem menuItem = sender as ToolStripItem;
+					if (menuItem != null)
+					{
+						// Retrieve the ContextMenuStrip that owns this ToolStripItem
+						ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+						if (owner != null)
+						{
+							// Get the control that is displaying this context menu
+							Control sourceControl = owner.SourceControl;
+							PictureBox PIC = (PictureBox)sourceControl;
+							Image im = (Image)PIC.Tag;
+							PM.producer.RemoveImage(im.Name);
+							ReLoadEditingPanelImage(sender, e);
+							Saved = false;
+							if (PIC == chosenEditingImage)
+							{
+								chosenEditingImage = null;
+							}
+							//PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
+						}
+					}
+				}
+			}
+			
+		}
+
+		private void Button2_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.BlackNWhiteFilter);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+
+		private void Button9_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.SepiaFilter);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+
+		private void ExportToLibraryToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ToolStripItem menuItem = sender as ToolStripItem;
+			if (menuItem != null)
+			{
+				// Retrieve the ContextMenuStrip that owns this ToolStripItem
+				ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+				if (owner != null)
+				{
+					// Get the control that is displaying this context menu
+					Control sourceControl = owner.SourceControl;
+					PictureBox PIC = (PictureBox)sourceControl;
+					Image im = (Image)PIC.Tag;
+					PM.producer.RemoveImage(im.Name);
+					library.AddImage(im);
+					ReLoadPanelImage(sender, e);
+					ReLoadEditingPanelImage(sender, e);
+					Saved = false;
+					if (PIC == chosenEditingImage)
+					{
+						chosenEditingImage = null;
+					}
+
+				}
+			}
+		}
+
+		private void Button10_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.WindowsFilter);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+
+		private void Button7_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.OldFilmFilter);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+
+		private void Button5_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.InvertFilter);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+
+		private void Button3_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.BrightnessFilter, Color.Empty, 100);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+
+		private void Button1_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.AutomaticAdjustmentFilter);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+
+		private void Button6_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.MirrorFilter);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+	}
 
 
         

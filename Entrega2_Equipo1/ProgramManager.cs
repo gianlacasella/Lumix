@@ -9,13 +9,13 @@ namespace Entrega2_Equipo1
     public class ProgramManager
     {
         private Library library;
-        private Producer producer;
+        public Producer producer;
         private readonly string DEFAULT_LIBRARY_PATH = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\library.bin";
         private readonly string DEFAULT_PRODUCER_PATH = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\producer.bin";
         private bool _continue = true;
         private int startingOption;
-
-        /* Metodo Run para la entrega 2. Ahora solo sirve de referencia
+		/*
+         Metodo Run para la entrega 2. Ahora solo sirve de referencia
         public void Run()
         {
             this.ShowPresentation();
@@ -5904,7 +5904,7 @@ namespace Entrega2_Equipo1
             else
             {
                 producer = new Producer();
-                this.producer.LoadWatsonAnalyzer();
+                producer.LoadWatsonAnalyzer();
                 return producer;
             }
         }
