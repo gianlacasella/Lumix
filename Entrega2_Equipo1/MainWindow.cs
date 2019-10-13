@@ -25,7 +25,6 @@ namespace Entrega2_Equipo1
 		public MainWindow()
 		{
 			InitializeComponent();
-
 		}
 
 
@@ -101,10 +100,6 @@ namespace Entrega2_Equipo1
 			}
 
 		}
-            
-    
-
-		
 
 		private void RemoveFromLibraryToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -185,7 +180,7 @@ namespace Entrega2_Equipo1
             switch (type)
             {
                 case "SimpleLabel":
-                    returningstring += "\nSimpleLabels:";
+                    returningstring += "\n\nSimpleLabels:";
                     if (labels.Count == 0)
                     {
                         returningstring += " Empty";
@@ -198,7 +193,7 @@ namespace Entrega2_Equipo1
                     }
                     break;
                 case "PersonLabel":
-                    returningstring += "\nPersonLabels:";
+                    returningstring += "\n\nPersonLabels:";
                     if (labels.Count == 0)
                     {
                         returningstring += " Empty";
@@ -218,7 +213,7 @@ namespace Entrega2_Equipo1
                     }
                     break;
                 case "SpecialLabel":
-                    returningstring += "\nSpecialLabels:";
+                    returningstring += "\n\nSpecialLabels:";
                     if (labels.Count == 0)
                     {
                         returningstring += " Empty";
@@ -396,6 +391,32 @@ namespace Entrega2_Equipo1
             
         }
 
+        // Metodo que se ejecuta cuando el usuario quiere agregar un label (hace clic en la opcion Add label)
+        private void AddLabelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripItem menuItem = sender as ToolStripItem;
+            if (menuItem != null)
+            {
+                // Retrieve the ContextMenuStrip that owns this ToolStripItem
+                ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+                if (owner != null)
+                {
+                    // Get the control that is displaying this context menu
+                    Control sourceControl = owner.SourceControl;
+                    PictureBox PIC = (PictureBox)sourceControl;
+                    Image imagetoaddlabel = (Image)PIC.Tag;
+                    // Ya reconocimos cual fue el Image seleccionado para agregar el label
+                    AddLabelForm newForm = new AddLabelForm(imagetoaddlabel);
+                    newForm.ShowDialog();
+				}
+            }
+            else
+            {
+                return;
+            }
+
+
+        }
     }
 
 

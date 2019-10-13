@@ -207,6 +207,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddLabelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLabelForm.Designer.cs">
+      <DependentUpon>AddLabelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enums\EColor.cs" />
     <Compile Include="Enums\EColorFilterTypes.cs" />
     <Compile Include="Enums\EFeature.cs" />
@@ -265,6 +271,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddLabelForm.resx">
+      <DependentUpon>AddLabelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

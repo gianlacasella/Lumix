@@ -47,6 +47,7 @@
             this.informationLabel = new System.Windows.Forms.Label();
             this.ToolbarProgressBar = new System.Windows.Forms.ProgressBar();
             this.pictureChosen = new System.Windows.Forms.PictureBox();
+            this.addLabelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripImage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -135,9 +136,10 @@
             // 
             this.contextMenuStripImage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToEditingAreaToolStripMenuItem,
-            this.removeFromLibraryToolStripMenuItem});
+            this.removeFromLibraryToolStripMenuItem,
+            this.addLabelToolStripMenuItem});
             this.contextMenuStripImage.Name = "contextMenuStripImage";
-            this.contextMenuStripImage.Size = new System.Drawing.Size(186, 48);
+            this.contextMenuStripImage.Size = new System.Drawing.Size(186, 92);
             // 
             // addToEditingAreaToolStripMenuItem
             // 
@@ -221,6 +223,13 @@
             this.pictureChosen.TabIndex = 5;
             this.pictureChosen.TabStop = false;
             // 
+            // addLabelToolStripMenuItem
+            // 
+            this.addLabelToolStripMenuItem.Name = "addLabelToolStripMenuItem";
+            this.addLabelToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.addLabelToolStripMenuItem.Text = "Add Label";
+            this.addLabelToolStripMenuItem.Click += new System.EventHandler(this.AddLabelToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +279,7 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label informationLabel;
 		private System.Windows.Forms.PictureBox pictureChosen;
+        private System.Windows.Forms.ToolStripMenuItem addLabelToolStripMenuItem;
     }
 
 }
