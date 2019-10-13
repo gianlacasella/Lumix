@@ -6,8 +6,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Entrega2_Equipo1
 {
-    public class ProgramManager
-    {
+	public class ProgramManager
+	{
         private Library library;
         public Producer producer;
         private readonly string DEFAULT_LIBRARY_PATH = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\library.bin";

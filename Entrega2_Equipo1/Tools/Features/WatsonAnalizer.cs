@@ -9,8 +9,9 @@ namespace Entrega2_Equipo1
     
     public class WatsonAnalizer : Tool
     {
-        // WatsonFilter's attributes
-        private const string APIKEY = "";
+		Watson watson = new Watson();
+		// WatsonFilter's attributes
+		private string APIKEY;
         private const string ENDPOINT = "https://gateway.watsonplatform.net/visual-recognition/api";
         private const string VERSION_DATE = "2018-03-19";
         private IBM.WatsonDeveloperCloud.VisualRecognition.v3.VisualRecognitionService _visualRecognition;
@@ -20,7 +21,8 @@ namespace Entrega2_Equipo1
         // WatsonFilter's builder
         public WatsonAnalizer()
         {
-            IBM.WatsonDeveloperCloud.Util.TokenOptions options = new IBM.WatsonDeveloperCloud.Util.TokenOptions();
+			APIKEY = watson.WKey;
+			IBM.WatsonDeveloperCloud.Util.TokenOptions options = new IBM.WatsonDeveloperCloud.Util.TokenOptions();
             options.IamApiKey = APIKEY;
             _visualRecognition = new IBM.WatsonDeveloperCloud.VisualRecognition.v3.VisualRecognitionService(options, VERSION_DATE);
             _visualRecognition.SetEndpoint(ENDPOINT);

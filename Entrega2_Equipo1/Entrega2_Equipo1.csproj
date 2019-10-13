@@ -243,6 +243,7 @@
     <Compile Include="Tools\Features\AddShape.cs" />
     <Compile Include="Tools\Features\AddText.cs" />
     <Compile Include="Tools\Features\AddCensorship.cs" />
+    <Compile Include="Tools\Features\Watson.cs" />
     <Compile Include="Tools\Features\WatsonVisualRecognitionObjects\Age.cs" />
     <Compile Include="Tools\Features\WatsonVisualRecognitionObjects\FacePosition.cs" />
     <Compile Include="Tools\Features\WatsonVisualRecognitionObjects\Gender.cs" />
