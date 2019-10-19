@@ -453,12 +453,12 @@ namespace Entrega2_Equipo1
 
 				x += pic.Width + 10;
 				maxHeight = Math.Max(pic.Height, maxHeight);
-				if (x > this.EditingPanel.Width - 100)
+				if (x > this.topauxlabel.Width - 100)
 				{
 					x = 20;
 					y += maxHeight + 10;
 				}
-				this.EditingPanel.Controls.Add(pic);
+				this.topauxlabel.Controls.Add(pic);
 			}
 
 		}
@@ -486,7 +486,7 @@ namespace Entrega2_Equipo1
 
 		private void ReLoadEditingPanelImage(object sender, EventArgs e)
 		{
-			EditingPanel.Controls.Clear();
+			topauxlabel.Controls.Clear();
 			EditingPanel_Paint(sender, e);
 		}
 
@@ -686,6 +686,14 @@ namespace Entrega2_Equipo1
 
         private void DoneButton_Click(object sender, EventArgs e)
         {
+            if (createdLabel == null)
+            {
+                if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+            }
             AddLabelPanel.Visible = false;
         }
 
@@ -742,38 +750,35 @@ namespace Entrega2_Equipo1
                     {
                         if (this.SimpleLabelTagBox.Text == "")
                         {
-                            MessageBox.Show("You cant add an empty tag", "Add label error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         }
                         else
                         {
+                            
                             this.createdLabel = new SimpleLabel(this.SimpleLabelTagBox.Text);
                             this.imagetoaddlabel.AddLabel(createdLabel);
                         }
                     }
                     else
                     {
-
+                        if (Convert.ToString(this.WatsonRecommendationsComboBox.SelectedItem) == "")
+                        {
+                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        }
+                        else
+                        {
+                            this.createdLabel = new SimpleLabel(Convert.ToString(this.WatsonRecommendationsComboBox.SelectedItem));
+                            this.imagetoaddlabel.AddLabel(createdLabel);
+                        }
                     }
                     break;
                 case 1:
-                    this.createdLabel = new PersonLabel(this.PersonLabelNameBox.Text, new double[] { this.PersonLabelTOPDomain.SelectedIndex,
-                    this.PersonLabelLEFTDomain.SelectedIndex, this.PersonLabelHEIGHTDomain.SelectedIndex, this.PersonLabelWIDTHDomain.SelectedIndex},
+                    this.createdLabel = new PersonLabel(this.PersonLabelNameBox.Text, new double[] { 1,1,1,1 },
                     this.PersonLabelSurnameBox.Text, (ENationality)this.PersonLabelNationalityComboBox.SelectedItem,
                     (EColor)this.PersonLabelEyesColorComboBox.SelectedItem, (EColor)this.PersonLabelHairColorComboBox.SelectedItem, (ESex)this.PersonLabelSexComboBox.SelectedItem,
-                    this.PersonLabelBirthDateLabel.Text);
+                    this.PersonLabelBirthDatePicker.Value.Date.ToString());
                     this.imagetoaddlabel.AddLabel(createdLabel);
                     break;
-            }
-
-
-            if (createdLabel == null)
-            {
-                if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    this.Close();
-                }
             }
         }
 
@@ -822,10 +827,24 @@ namespace Entrega2_Equipo1
                 this.WatsonRecommendationsComboBox.Items.Add(option);
             }
             this.LoadingWatsonRecommendationsLabel.Text = "Done!";
+            
+        }
+
+        private void AddLabelImageBox_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            int[] position = new int[] { Cursor.Position.X - this.Left - 20, Cursor.Position.Y - (this.Top + 85)};
+            this.toplabelaux.Text = Convert.ToString(position[1]);
+            this.leftlabelaux.Text = Convert.ToString(position[0]);
+        }
+
+        private void AddLabelImageBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            int[] position = new int[] { Cursor.Position.X - this.Left - 20, Cursor.Position.Y - (this.Top + 85) };
+            this.toplabelaux.Text = Convert.ToString(position[1]);
+            this.leftlabelaux.Text = Convert.ToString(position[0]);
         }
     }
-
-
         
 }
 

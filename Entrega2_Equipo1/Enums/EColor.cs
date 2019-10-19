@@ -8,6 +8,7 @@ namespace Entrega2_Equipo1
 {
     public enum EColor
     {
+        None,
         Rojo,
         Azul,
         Verde,
@@ -20,6 +21,5 @@ namespace Entrega2_Equipo1
         Negro,
         Gris,
         Fucsia,
-        None,
     }
 }
