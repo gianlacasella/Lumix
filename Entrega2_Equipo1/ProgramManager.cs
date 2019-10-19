@@ -2973,6 +2973,41 @@ namespace Entrega2_Equipo1
         }
 
 
+        public List<string> LoadWatsonRecommendations(Image image, Producer producer)
+        {
+            string temppath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\Temp\";
+            string[] currentfiles = Directory.GetFiles(temppath);
+            Random randomNumber = new Random();
+            string realpath;
+            while (true)
+            {
+                int newRandom = randomNumber.Next(1, 100000);
+                string number = Convert.ToString(newRandom);
+                realpath = temppath + number + ".jpg";
+                try
+                {
+                    image.BitmapImage.Save(realpath);
+                    break;
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            Dictionary<int, Dictionary<string, double>> watsonResults = producer.ClassifyImage(realpath);
+            List<string> watsonOptions = new List<string>();
+            foreach (Dictionary<string, double> dic in watsonResults.Values)
+            {
+                foreach (KeyValuePair<string, double> pair in dic)
+                {
+                    watsonOptions.Add(pair.Key);
+                }
+            }
+            return watsonOptions;
+        }
+
+
+
         private void AddLabel()
         {
             Console.Clear();

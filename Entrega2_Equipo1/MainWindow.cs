@@ -21,6 +21,8 @@ namespace Entrega2_Equipo1
 		bool Saved = true;
 		PictureBox chosenImage = null;
 		PictureBox chosenEditingImage = null;
+        Label createdLabel;
+        Image imagetoaddlabel;
 
 
 		public MainWindow()
@@ -36,6 +38,9 @@ namespace Entrega2_Equipo1
 			PanelImages_Paint(sender, e);
 			comboRotate.DataSource = Enum.GetValues(typeof(RotateFlipType));
 			comboCensor.Items.Add("Black bar"); comboCensor.Items.Add("Pixel blur");
+            AddLabelPanel.Location = panelImages.Location;
+            AddLabelPanel.Visible = false;
+            panelImages.Visible = true;
 		}
 
 
@@ -412,8 +417,12 @@ namespace Entrega2_Equipo1
                     PictureBox PIC = (PictureBox)sourceControl;
                     Image imagetoaddlabel = (Image)PIC.Tag;
                     // Ya reconocimos cual fue el Image seleccionado para agregar el label
-                    AddLabelForm newForm = new AddLabelForm(imagetoaddlabel);
-                    newForm.ShowDialog();
+                    //AddLabelForm newForm = new AddLabelForm(imagetoaddlabel);
+                    //panelImages.Visible = ;
+                    AddLabelPanel.Visible = true;
+                    this.imagetoaddlabel = imagetoaddlabel;
+                    AddLabelController();
+                    //newForm.ShowDialog();
 				}
             }
             else
@@ -675,8 +684,146 @@ namespace Entrega2_Equipo1
 			}
 		}
 
+        private void DoneButton_Click(object sender, EventArgs e)
+        {
+            AddLabelPanel.Visible = false;
+        }
 
-	}
+        private void AddLabelController()
+        {
+            this.createdLabel = null;
+            this.AddLabelImageBox.Image = this.imagetoaddlabel.BitmapImage;
+            this.AddLabelImageBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.PersonLabelNationalityComboBox.DataSource = Enum.GetValues(typeof(ENationality));
+            this.PersonLabelHairColorComboBox.DataSource = Enum.GetValues(typeof(EColor));
+            this.PersonLabelEyesColorComboBox.DataSource = Enum.GetValues(typeof(EColor));
+            this.PersonLabelSexComboBox.DataSource = Enum.GetValues(typeof(ESex));
+            this.PersonalizedTagCheck.Checked = true;
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox combo = (ComboBox)sender;
+            switch (combo.SelectedIndex)
+            {
+                case 0:
+                    AuxiliarEnablerDisabler("SimpleLabel");
+                    break;
+                case 1:
+                    AuxiliarEnablerDisabler("PersonLabel");
+                    break;
+                case 2:
+                    break;
+            }
+        }
+
+        private void AuxiliarEnablerDisabler(string type)
+        {
+            switch (type)
+            {
+                case "SimpleLabel":
+                    AddSimpleLabelPanel.Visible = true;
+                    AddPersonLabelPanel.Visible = false;
+                    break;
+
+                case "PersonLabel":
+                    AddPersonLabelPanel.Visible = true;
+                    AddSimpleLabelPanel.Visible = false;
+                    break;
+            }
+        }
+
+        private void AddLabelButton_Click(object sender, EventArgs e)
+        {
+            switch (this.SelectedLabelComboBox1.SelectedIndex)
+            {
+                case 0:
+                    if (this.PersonalizedTagCheck.Checked)
+                    {
+                        if (this.SimpleLabelTagBox.Text == "")
+                        {
+                            MessageBox.Show("You cant add an empty tag", "Add label error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        }
+                        else
+                        {
+                            this.createdLabel = new SimpleLabel(this.SimpleLabelTagBox.Text);
+                            this.imagetoaddlabel.AddLabel(createdLabel);
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                    break;
+                case 1:
+                    this.createdLabel = new PersonLabel(this.PersonLabelNameBox.Text, new double[] { this.PersonLabelTOPDomain.SelectedIndex,
+                    this.PersonLabelLEFTDomain.SelectedIndex, this.PersonLabelHEIGHTDomain.SelectedIndex, this.PersonLabelWIDTHDomain.SelectedIndex},
+                    this.PersonLabelSurnameBox.Text, (ENationality)this.PersonLabelNationalityComboBox.SelectedItem,
+                    (EColor)this.PersonLabelEyesColorComboBox.SelectedItem, (EColor)this.PersonLabelHairColorComboBox.SelectedItem, (ESex)this.PersonLabelSexComboBox.SelectedItem,
+                    this.PersonLabelBirthDateLabel.Text);
+                    this.imagetoaddlabel.AddLabel(createdLabel);
+                    break;
+            }
+
+
+            if (createdLabel == null)
+            {
+                if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+            }
+        }
+
+        private void PersonalizedTagCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox box = (CheckBox)sender;
+            if (box.Checked)
+            {
+                SimpleLabelTagBox.Enabled = true;
+                WatsonTagCheck.Checked = false;
+            }
+            else
+            {
+                SimpleLabelTagBox.Enabled = false;
+                WatsonTagCheck.Checked = true;
+            }
+        }
+
+        private void WatsonTagCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox box = (CheckBox)sender;
+            if (box.Checked)
+            {
+                PersonalizedTagCheck.Checked = false;
+                LoadWatsonRecommendationsButton.Enabled = true;
+                WatsonRecommendationsComboBox.Enabled = true;
+            }
+            else
+            {
+                PersonalizedTagCheck.Checked = true;
+                LoadWatsonRecommendationsButton.Enabled = false;
+                WatsonRecommendationsComboBox.Enabled = false;
+                LoadingWatsonRecommendationsLabel.Text = "";
+            }
+            
+        }
+
+        private void LoadWatsonRecommendationsButton_Click(object sender, EventArgs e)
+        {
+            this.WatsonRecommendationsComboBox.Items.Clear();
+            this.LoadingWatsonRecommendationsLabel.Text = "Loading...";
+            this.LoadingWatsonRecommendationsLabel.Visible = true;
+            List<string> options = this.PM.LoadWatsonRecommendations(this.imagetoaddlabel, this.producer);
+            foreach (string option in options)
+            {
+                this.WatsonRecommendationsComboBox.Items.Add(option);
+            }
+            this.LoadingWatsonRecommendationsLabel.Text = "Done!";
+        }
+    }
 
 
         
