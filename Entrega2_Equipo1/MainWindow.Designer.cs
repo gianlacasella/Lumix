@@ -45,6 +45,7 @@
             this.DoneButton = new System.Windows.Forms.Button();
             this.AddLabelButton = new System.Windows.Forms.Button();
             this.AddPersonLabelPanel = new System.Windows.Forms.Panel();
+            this.putZeroButton = new System.Windows.Forms.Button();
             this.FaceLocationHeightTag = new System.Windows.Forms.Label();
             this.FaceLocationWidthTag = new System.Windows.Forms.Label();
             this.FaceLocationLeftTag = new System.Windows.Forms.Label();
@@ -112,7 +113,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
-            this.putZeroButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
@@ -310,6 +310,16 @@
             this.AddPersonLabelPanel.Size = new System.Drawing.Size(579, 188);
             this.AddPersonLabelPanel.TabIndex = 40;
             this.AddPersonLabelPanel.Visible = false;
+            // 
+            // putZeroButton
+            // 
+            this.putZeroButton.Location = new System.Drawing.Point(328, 162);
+            this.putZeroButton.Name = "putZeroButton";
+            this.putZeroButton.Size = new System.Drawing.Size(56, 23);
+            this.putZeroButton.TabIndex = 40;
+            this.putZeroButton.Text = "Reset";
+            this.putZeroButton.UseVisualStyleBackColor = true;
+            this.putZeroButton.Click += new System.EventHandler(this.PutZeroButton_Click);
             // 
             // FaceLocationHeightTag
             // 
@@ -577,8 +587,11 @@
             // 
             // WatsonRecommendationsComboBox
             // 
+            this.WatsonRecommendationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.WatsonRecommendationsComboBox.Enabled = false;
+            this.WatsonRecommendationsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.WatsonRecommendationsComboBox.FormattingEnabled = true;
+            this.WatsonRecommendationsComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.WatsonRecommendationsComboBox.Location = new System.Drawing.Point(193, 104);
             this.WatsonRecommendationsComboBox.Name = "WatsonRecommendationsComboBox";
             this.WatsonRecommendationsComboBox.Size = new System.Drawing.Size(121, 21);
@@ -862,6 +875,7 @@
             // 
             // comboRotate
             // 
+            this.comboRotate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRotate.FormattingEnabled = true;
             this.comboRotate.Location = new System.Drawing.Point(11, 104);
             this.comboRotate.Name = "comboRotate";
@@ -881,6 +895,7 @@
             // 
             // comboCensor
             // 
+            this.comboCensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCensor.FormattingEnabled = true;
             this.comboCensor.Location = new System.Drawing.Point(125, 31);
             this.comboCensor.Name = "comboCensor";
@@ -963,16 +978,6 @@
             this.label2.Size = new System.Drawing.Size(74, 18);
             this.label2.TabIndex = 32;
             this.label2.Text = "Features";
-            // 
-            // putZeroButton
-            // 
-            this.putZeroButton.Location = new System.Drawing.Point(328, 162);
-            this.putZeroButton.Name = "putZeroButton";
-            this.putZeroButton.Size = new System.Drawing.Size(56, 23);
-            this.putZeroButton.TabIndex = 40;
-            this.putZeroButton.Text = "Reset";
-            this.putZeroButton.UseVisualStyleBackColor = true;
-            this.putZeroButton.Click += new System.EventHandler(this.PutZeroButton_Click);
             // 
             // MainWindow
             // 

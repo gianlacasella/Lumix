@@ -53,7 +53,7 @@ namespace Entrega2_Equipo1
         {
             if (down == false)
             {
-                int[] position = new int[] { Cursor.Position.X - this.Left - 9, Cursor.Position.Y - (this.Top + 32) };
+                int[] position = new int[] { Cursor.Position.X - this.Left - 7, Cursor.Position.Y - (this.Top + 29) };
                 int[] realPosition = ToRealImageSize(position[0], position[1]);
                 this.TopData.Text = Convert.ToString(realPosition[1]);
                 this.LeftData.Text = Convert.ToString(realPosition[0]);
@@ -68,6 +68,7 @@ namespace Entrega2_Equipo1
                 this.HeightData.Text = Convert.ToString(Convert.ToInt32(TopData.Text) - Convert.ToInt32(SelectedTopData.Text));
             }
         }
+
 
         private void ImagePictureBox_MouseUp(object sender, MouseEventArgs e)
         {
@@ -94,6 +95,7 @@ namespace Entrega2_Equipo1
             this.ReturningHeight = widthheightcoordinates[1];
         }
 
+
         private void SelectFaceLocationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (ReturningTop == 0 || ReturningLeft == 0 || ReturningWidth == 0 || ReturningHeight == 0)
@@ -106,10 +108,12 @@ namespace Entrega2_Equipo1
             }
         }
 
+
         private void DoneButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
 
         private int[] ToRealImageSize(int x, int y)
         {
