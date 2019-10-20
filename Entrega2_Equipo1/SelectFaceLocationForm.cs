@@ -89,10 +89,11 @@ namespace Entrega2_Equipo1
             int[] coordinates = ToPictureBoxImageSize(Convert.ToInt32(this.SelectedLeftData.Text), Convert.ToInt32(this.SelectedTopData.Text));
             int[] widthheightcoordinates = ToPictureBoxImageSize(Convert.ToInt32(this.WidthData.Text), Convert.ToInt32(this.HeightData.Text));
             gF.DrawRectangle(Pens.Red, coordinates[0], coordinates[1], widthheightcoordinates[0], widthheightcoordinates[1]);
-            this.ReturningLeft = coordinates[0];
-            this.ReturningTop = coordinates[1];
-            this.ReturningWidth = widthheightcoordinates[0];
-            this.ReturningHeight = widthheightcoordinates[1];
+
+            this.ReturningLeft = Convert.ToInt32(this.SelectedLeftData.Text);
+            this.ReturningTop = Convert.ToInt32(this.SelectedTopData.Text);
+            this.ReturningWidth = Convert.ToInt32(this.WidthData.Text);
+            this.ReturningHeight = Convert.ToInt32(this.HeightData.Text);
         }
 
 
