@@ -44,6 +44,29 @@
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
             this.DoneButton = new System.Windows.Forms.Button();
             this.AddLabelButton = new System.Windows.Forms.Button();
+            this.AddSpecialLabelPanel = new System.Windows.Forms.Panel();
+            this.SpecialLabelSelfieComboxBox = new System.Windows.Forms.ComboBox();
+            this.SpecialLabelSelfieLabel = new System.Windows.Forms.Label();
+            this.SpecialLabelPhotoMotiveTextBox = new System.Windows.Forms.TextBox();
+            this.SpecialLabelPhotoMotiveLabel = new System.Windows.Forms.Label();
+            this.SpecialLabelPhotographerTextBox = new System.Windows.Forms.TextBox();
+            this.SpecialLabelPhotographerLabel = new System.Windows.Forms.Label();
+            this.SpecialLabelAddressTextBox = new System.Windows.Forms.TextBox();
+            this.SpecialLabelAddressLabel = new System.Windows.Forms.Label();
+            this.SpecialLabelLongitudeUpDown = new System.Windows.Forms.NumericUpDown();
+            this.SpecialLabelLongitudeLabel = new System.Windows.Forms.Label();
+            this.SpecialLabelLatitudeLabel = new System.Windows.Forms.Label();
+            this.SpecialLabelLatitudeUpDown = new System.Windows.Forms.NumericUpDown();
+            this.SpecialLabelGeoLocationLabel = new System.Windows.Forms.Label();
+            this.SpecialLabelTitle = new System.Windows.Forms.Label();
+            this.AddSimpleLabelPanel = new System.Windows.Forms.Panel();
+            this.LoadingWatsonRecommendationsLabel = new System.Windows.Forms.Label();
+            this.LoadWatsonRecommendationsButton = new System.Windows.Forms.Button();
+            this.WatsonRecommendationsComboBox = new System.Windows.Forms.ComboBox();
+            this.WatsonTagCheck = new System.Windows.Forms.CheckBox();
+            this.PersonalizedTagCheck = new System.Windows.Forms.CheckBox();
+            this.SimpleLabelTagBox = new System.Windows.Forms.TextBox();
+            this.SimpleLabelTitle = new System.Windows.Forms.Label();
             this.AddPersonLabelPanel = new System.Windows.Forms.Panel();
             this.putZeroButton = new System.Windows.Forms.Button();
             this.FaceLocationHeightTag = new System.Windows.Forms.Label();
@@ -71,14 +94,6 @@
             this.PersonLabelSexLabel = new System.Windows.Forms.Label();
             this.PersonLabelBirthDateLabel = new System.Windows.Forms.Label();
             this.PersonLabelSexComboBox = new System.Windows.Forms.ComboBox();
-            this.AddSimpleLabelPanel = new System.Windows.Forms.Panel();
-            this.LoadingWatsonRecommendationsLabel = new System.Windows.Forms.Label();
-            this.LoadWatsonRecommendationsButton = new System.Windows.Forms.Button();
-            this.WatsonRecommendationsComboBox = new System.Windows.Forms.ComboBox();
-            this.WatsonTagCheck = new System.Windows.Forms.CheckBox();
-            this.PersonalizedTagCheck = new System.Windows.Forms.CheckBox();
-            this.SimpleLabelTagBox = new System.Windows.Forms.TextBox();
-            this.SimpleLabelTitle = new System.Windows.Forms.Label();
             this.contextMenuStripImage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToEditingAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,8 +131,11 @@
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
-            this.AddPersonLabelPanel.SuspendLayout();
+            this.AddSpecialLabelPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLongitudeUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLatitudeUpDown)).BeginInit();
             this.AddSimpleLabelPanel.SuspendLayout();
+            this.AddPersonLabelPanel.SuspendLayout();
             this.contextMenuStripImage.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -202,7 +220,7 @@
             this.panelImages.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelImages.Location = new System.Drawing.Point(0, 32);
             this.panelImages.Name = "panelImages";
-            this.panelImages.Size = new System.Drawing.Size(612, 700);
+            this.panelImages.Size = new System.Drawing.Size(612, 729);
             this.panelImages.TabIndex = 3;
             this.panelImages.Click += new System.EventHandler(this.PanelImages_Click);
             this.panelImages.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelImages_Paint);
@@ -210,26 +228,31 @@
             // AddLabelPanel
             // 
             this.AddLabelPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.AddLabelPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddLabelPanel.BackgroundImage")));
             this.AddLabelPanel.Controls.Add(this.SelectLabelTypeTag);
             this.AddLabelPanel.Controls.Add(this.SelectedLabelComboBox1);
             this.AddLabelPanel.Controls.Add(this.AddLabelImageBox);
             this.AddLabelPanel.Controls.Add(this.DoneButton);
             this.AddLabelPanel.Controls.Add(this.AddLabelButton);
-            this.AddLabelPanel.Controls.Add(this.AddPersonLabelPanel);
+            this.AddLabelPanel.Controls.Add(this.AddSpecialLabelPanel);
             this.AddLabelPanel.Controls.Add(this.AddSimpleLabelPanel);
+            this.AddLabelPanel.Controls.Add(this.AddPersonLabelPanel);
             this.AddLabelPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.AddLabelPanel.Location = new System.Drawing.Point(0, 34);
             this.AddLabelPanel.Name = "AddLabelPanel";
-            this.AddLabelPanel.Size = new System.Drawing.Size(612, 695);
+            this.AddLabelPanel.Size = new System.Drawing.Size(612, 724);
             this.AddLabelPanel.TabIndex = 0;
             this.AddLabelPanel.Visible = false;
             // 
             // SelectLabelTypeTag
             // 
             this.SelectLabelTypeTag.AutoSize = true;
-            this.SelectLabelTypeTag.Location = new System.Drawing.Point(13, 431);
+            this.SelectLabelTypeTag.BackColor = System.Drawing.Color.Transparent;
+            this.SelectLabelTypeTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectLabelTypeTag.ForeColor = System.Drawing.Color.White;
+            this.SelectLabelTypeTag.Location = new System.Drawing.Point(158, 429);
             this.SelectLabelTypeTag.Name = "SelectLabelTypeTag";
-            this.SelectLabelTypeTag.Size = new System.Drawing.Size(96, 13);
+            this.SelectLabelTypeTag.Size = new System.Drawing.Size(121, 16);
             this.SelectLabelTypeTag.TabIndex = 41;
             this.SelectLabelTypeTag.Text = "Select Label Type:";
             // 
@@ -241,7 +264,7 @@
             "Simple Label",
             "Person Label",
             "Special Label"});
-            this.SelectedLabelComboBox1.Location = new System.Drawing.Point(115, 428);
+            this.SelectedLabelComboBox1.Location = new System.Drawing.Point(285, 428);
             this.SelectedLabelComboBox1.Name = "SelectedLabelComboBox1";
             this.SelectedLabelComboBox1.Size = new System.Drawing.Size(121, 21);
             this.SelectedLabelComboBox1.TabIndex = 3;
@@ -252,13 +275,13 @@
             this.AddLabelImageBox.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.AddLabelImageBox.Location = new System.Drawing.Point(12, 20);
             this.AddLabelImageBox.Name = "AddLabelImageBox";
-            this.AddLabelImageBox.Size = new System.Drawing.Size(579, 396);
+            this.AddLabelImageBox.Size = new System.Drawing.Size(579, 402);
             this.AddLabelImageBox.TabIndex = 2;
             this.AddLabelImageBox.TabStop = false;
             // 
             // DoneButton
             // 
-            this.DoneButton.Location = new System.Drawing.Point(496, 652);
+            this.DoneButton.Location = new System.Drawing.Point(496, 684);
             this.DoneButton.Name = "DoneButton";
             this.DoneButton.Size = new System.Drawing.Size(95, 33);
             this.DoneButton.TabIndex = 1;
@@ -268,7 +291,7 @@
             // 
             // AddLabelButton
             // 
-            this.AddLabelButton.Location = new System.Drawing.Point(395, 652);
+            this.AddLabelButton.Location = new System.Drawing.Point(386, 684);
             this.AddLabelButton.Name = "AddLabelButton";
             this.AddLabelButton.Size = new System.Drawing.Size(95, 33);
             this.AddLabelButton.TabIndex = 0;
@@ -276,9 +299,284 @@
             this.AddLabelButton.UseVisualStyleBackColor = true;
             this.AddLabelButton.Click += new System.EventHandler(this.AddLabelButton_Click);
             // 
+            // AddSpecialLabelPanel
+            // 
+            this.AddSpecialLabelPanel.BackColor = System.Drawing.Color.Gray;
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelSelfieComboxBox);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelSelfieLabel);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelPhotoMotiveTextBox);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelPhotoMotiveLabel);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelPhotographerTextBox);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelPhotographerLabel);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelAddressTextBox);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelAddressLabel);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelLongitudeUpDown);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelLongitudeLabel);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelLatitudeLabel);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelLatitudeUpDown);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelGeoLocationLabel);
+            this.AddSpecialLabelPanel.Controls.Add(this.SpecialLabelTitle);
+            this.AddSpecialLabelPanel.Location = new System.Drawing.Point(12, 469);
+            this.AddSpecialLabelPanel.Name = "AddSpecialLabelPanel";
+            this.AddSpecialLabelPanel.Size = new System.Drawing.Size(579, 199);
+            this.AddSpecialLabelPanel.TabIndex = 42;
+            this.AddSpecialLabelPanel.Visible = false;
+            // 
+            // SpecialLabelSelfieComboxBox
+            // 
+            this.SpecialLabelSelfieComboxBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SpecialLabelSelfieComboxBox.FormattingEnabled = true;
+            this.SpecialLabelSelfieComboxBox.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.SpecialLabelSelfieComboxBox.Location = new System.Drawing.Point(58, 143);
+            this.SpecialLabelSelfieComboxBox.Name = "SpecialLabelSelfieComboxBox";
+            this.SpecialLabelSelfieComboxBox.Size = new System.Drawing.Size(121, 21);
+            this.SpecialLabelSelfieComboxBox.TabIndex = 22;
+            // 
+            // SpecialLabelSelfieLabel
+            // 
+            this.SpecialLabelSelfieLabel.AutoSize = true;
+            this.SpecialLabelSelfieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialLabelSelfieLabel.ForeColor = System.Drawing.Color.White;
+            this.SpecialLabelSelfieLabel.Location = new System.Drawing.Point(7, 144);
+            this.SpecialLabelSelfieLabel.Name = "SpecialLabelSelfieLabel";
+            this.SpecialLabelSelfieLabel.Size = new System.Drawing.Size(45, 16);
+            this.SpecialLabelSelfieLabel.TabIndex = 21;
+            this.SpecialLabelSelfieLabel.Text = "Selfie:";
+            // 
+            // SpecialLabelPhotoMotiveTextBox
+            // 
+            this.SpecialLabelPhotoMotiveTextBox.Location = new System.Drawing.Point(328, 121);
+            this.SpecialLabelPhotoMotiveTextBox.Name = "SpecialLabelPhotoMotiveTextBox";
+            this.SpecialLabelPhotoMotiveTextBox.Size = new System.Drawing.Size(210, 20);
+            this.SpecialLabelPhotoMotiveTextBox.TabIndex = 20;
+            // 
+            // SpecialLabelPhotoMotiveLabel
+            // 
+            this.SpecialLabelPhotoMotiveLabel.AutoSize = true;
+            this.SpecialLabelPhotoMotiveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialLabelPhotoMotiveLabel.ForeColor = System.Drawing.Color.White;
+            this.SpecialLabelPhotoMotiveLabel.Location = new System.Drawing.Point(214, 121);
+            this.SpecialLabelPhotoMotiveLabel.Name = "SpecialLabelPhotoMotiveLabel";
+            this.SpecialLabelPhotoMotiveLabel.Size = new System.Drawing.Size(89, 16);
+            this.SpecialLabelPhotoMotiveLabel.TabIndex = 19;
+            this.SpecialLabelPhotoMotiveLabel.Text = "Photo Motive:";
+            // 
+            // SpecialLabelPhotographerTextBox
+            // 
+            this.SpecialLabelPhotographerTextBox.Location = new System.Drawing.Point(328, 78);
+            this.SpecialLabelPhotographerTextBox.Name = "SpecialLabelPhotographerTextBox";
+            this.SpecialLabelPhotographerTextBox.Size = new System.Drawing.Size(210, 20);
+            this.SpecialLabelPhotographerTextBox.TabIndex = 18;
+            // 
+            // SpecialLabelPhotographerLabel
+            // 
+            this.SpecialLabelPhotographerLabel.AutoSize = true;
+            this.SpecialLabelPhotographerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialLabelPhotographerLabel.ForeColor = System.Drawing.Color.White;
+            this.SpecialLabelPhotographerLabel.Location = new System.Drawing.Point(214, 78);
+            this.SpecialLabelPhotographerLabel.Name = "SpecialLabelPhotographerLabel";
+            this.SpecialLabelPhotographerLabel.Size = new System.Drawing.Size(93, 16);
+            this.SpecialLabelPhotographerLabel.TabIndex = 17;
+            this.SpecialLabelPhotographerLabel.Text = "Photographer:";
+            // 
+            // SpecialLabelAddressTextBox
+            // 
+            this.SpecialLabelAddressTextBox.Location = new System.Drawing.Point(328, 33);
+            this.SpecialLabelAddressTextBox.Name = "SpecialLabelAddressTextBox";
+            this.SpecialLabelAddressTextBox.Size = new System.Drawing.Size(210, 20);
+            this.SpecialLabelAddressTextBox.TabIndex = 16;
+            // 
+            // SpecialLabelAddressLabel
+            // 
+            this.SpecialLabelAddressLabel.AutoSize = true;
+            this.SpecialLabelAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialLabelAddressLabel.ForeColor = System.Drawing.Color.White;
+            this.SpecialLabelAddressLabel.Location = new System.Drawing.Point(214, 34);
+            this.SpecialLabelAddressLabel.Name = "SpecialLabelAddressLabel";
+            this.SpecialLabelAddressLabel.Size = new System.Drawing.Size(62, 16);
+            this.SpecialLabelAddressLabel.TabIndex = 15;
+            this.SpecialLabelAddressLabel.Text = "Address:";
+            // 
+            // SpecialLabelLongitudeUpDown
+            // 
+            this.SpecialLabelLongitudeUpDown.Location = new System.Drawing.Point(144, 95);
+            this.SpecialLabelLongitudeUpDown.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.SpecialLabelLongitudeUpDown.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.SpecialLabelLongitudeUpDown.Name = "SpecialLabelLongitudeUpDown";
+            this.SpecialLabelLongitudeUpDown.ReadOnly = true;
+            this.SpecialLabelLongitudeUpDown.Size = new System.Drawing.Size(37, 20);
+            this.SpecialLabelLongitudeUpDown.TabIndex = 14;
+            // 
+            // SpecialLabelLongitudeLabel
+            // 
+            this.SpecialLabelLongitudeLabel.AutoSize = true;
+            this.SpecialLabelLongitudeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialLabelLongitudeLabel.ForeColor = System.Drawing.Color.White;
+            this.SpecialLabelLongitudeLabel.Location = new System.Drawing.Point(16, 96);
+            this.SpecialLabelLongitudeLabel.Name = "SpecialLabelLongitudeLabel";
+            this.SpecialLabelLongitudeLabel.Size = new System.Drawing.Size(130, 16);
+            this.SpecialLabelLongitudeLabel.TabIndex = 13;
+            this.SpecialLabelLongitudeLabel.Text = "Longitude (-180,180):";
+            // 
+            // SpecialLabelLatitudeLabel
+            // 
+            this.SpecialLabelLatitudeLabel.AutoSize = true;
+            this.SpecialLabelLatitudeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialLabelLatitudeLabel.ForeColor = System.Drawing.Color.White;
+            this.SpecialLabelLatitudeLabel.Location = new System.Drawing.Point(16, 65);
+            this.SpecialLabelLatitudeLabel.Name = "SpecialLabelLatitudeLabel";
+            this.SpecialLabelLatitudeLabel.Size = new System.Drawing.Size(107, 16);
+            this.SpecialLabelLatitudeLabel.TabIndex = 12;
+            this.SpecialLabelLatitudeLabel.Text = "Latitude (-90, 90):";
+            // 
+            // SpecialLabelLatitudeUpDown
+            // 
+            this.SpecialLabelLatitudeUpDown.Location = new System.Drawing.Point(144, 65);
+            this.SpecialLabelLatitudeUpDown.Maximum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            this.SpecialLabelLatitudeUpDown.Minimum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            -2147483648});
+            this.SpecialLabelLatitudeUpDown.Name = "SpecialLabelLatitudeUpDown";
+            this.SpecialLabelLatitudeUpDown.ReadOnly = true;
+            this.SpecialLabelLatitudeUpDown.Size = new System.Drawing.Size(37, 20);
+            this.SpecialLabelLatitudeUpDown.TabIndex = 11;
+            // 
+            // SpecialLabelGeoLocationLabel
+            // 
+            this.SpecialLabelGeoLocationLabel.AutoSize = true;
+            this.SpecialLabelGeoLocationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialLabelGeoLocationLabel.ForeColor = System.Drawing.Color.White;
+            this.SpecialLabelGeoLocationLabel.Location = new System.Drawing.Point(7, 35);
+            this.SpecialLabelGeoLocationLabel.Name = "SpecialLabelGeoLocationLabel";
+            this.SpecialLabelGeoLocationLabel.Size = new System.Drawing.Size(139, 16);
+            this.SpecialLabelGeoLocationLabel.TabIndex = 10;
+            this.SpecialLabelGeoLocationLabel.Text = "Geographic Location: ";
+            // 
+            // SpecialLabelTitle
+            // 
+            this.SpecialLabelTitle.AutoSize = true;
+            this.SpecialLabelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialLabelTitle.ForeColor = System.Drawing.Color.White;
+            this.SpecialLabelTitle.Location = new System.Drawing.Point(0, 0);
+            this.SpecialLabelTitle.Name = "SpecialLabelTitle";
+            this.SpecialLabelTitle.Size = new System.Drawing.Size(117, 20);
+            this.SpecialLabelTitle.TabIndex = 9;
+            this.SpecialLabelTitle.Text = "Special Label";
+            this.SpecialLabelTitle.Click += new System.EventHandler(this.Label8_Click);
+            // 
+            // AddSimpleLabelPanel
+            // 
+            this.AddSimpleLabelPanel.BackColor = System.Drawing.Color.Gray;
+            this.AddSimpleLabelPanel.Controls.Add(this.LoadingWatsonRecommendationsLabel);
+            this.AddSimpleLabelPanel.Controls.Add(this.LoadWatsonRecommendationsButton);
+            this.AddSimpleLabelPanel.Controls.Add(this.WatsonRecommendationsComboBox);
+            this.AddSimpleLabelPanel.Controls.Add(this.WatsonTagCheck);
+            this.AddSimpleLabelPanel.Controls.Add(this.PersonalizedTagCheck);
+            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTagBox);
+            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTitle);
+            this.AddSimpleLabelPanel.Location = new System.Drawing.Point(12, 469);
+            this.AddSimpleLabelPanel.Name = "AddSimpleLabelPanel";
+            this.AddSimpleLabelPanel.Size = new System.Drawing.Size(579, 199);
+            this.AddSimpleLabelPanel.TabIndex = 36;
+            this.AddSimpleLabelPanel.Visible = false;
+            // 
+            // LoadingWatsonRecommendationsLabel
+            // 
+            this.LoadingWatsonRecommendationsLabel.AutoSize = true;
+            this.LoadingWatsonRecommendationsLabel.ForeColor = System.Drawing.Color.White;
+            this.LoadingWatsonRecommendationsLabel.Location = new System.Drawing.Point(505, 107);
+            this.LoadingWatsonRecommendationsLabel.Name = "LoadingWatsonRecommendationsLabel";
+            this.LoadingWatsonRecommendationsLabel.Size = new System.Drawing.Size(0, 13);
+            this.LoadingWatsonRecommendationsLabel.TabIndex = 13;
+            this.LoadingWatsonRecommendationsLabel.Visible = false;
+            // 
+            // LoadWatsonRecommendationsButton
+            // 
+            this.LoadWatsonRecommendationsButton.Enabled = false;
+            this.LoadWatsonRecommendationsButton.Location = new System.Drawing.Point(374, 103);
+            this.LoadWatsonRecommendationsButton.Name = "LoadWatsonRecommendationsButton";
+            this.LoadWatsonRecommendationsButton.Size = new System.Drawing.Size(131, 23);
+            this.LoadWatsonRecommendationsButton.TabIndex = 12;
+            this.LoadWatsonRecommendationsButton.Text = "Load Recommendations";
+            this.LoadWatsonRecommendationsButton.UseVisualStyleBackColor = true;
+            this.LoadWatsonRecommendationsButton.Click += new System.EventHandler(this.LoadWatsonRecommendationsButton_Click);
+            // 
+            // WatsonRecommendationsComboBox
+            // 
+            this.WatsonRecommendationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WatsonRecommendationsComboBox.Enabled = false;
+            this.WatsonRecommendationsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.WatsonRecommendationsComboBox.FormattingEnabled = true;
+            this.WatsonRecommendationsComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.WatsonRecommendationsComboBox.Location = new System.Drawing.Point(226, 104);
+            this.WatsonRecommendationsComboBox.Name = "WatsonRecommendationsComboBox";
+            this.WatsonRecommendationsComboBox.Size = new System.Drawing.Size(121, 21);
+            this.WatsonRecommendationsComboBox.TabIndex = 11;
+            // 
+            // WatsonTagCheck
+            // 
+            this.WatsonTagCheck.AutoSize = true;
+            this.WatsonTagCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WatsonTagCheck.ForeColor = System.Drawing.Color.White;
+            this.WatsonTagCheck.Location = new System.Drawing.Point(31, 104);
+            this.WatsonTagCheck.Name = "WatsonTagCheck";
+            this.WatsonTagCheck.Size = new System.Drawing.Size(189, 20);
+            this.WatsonTagCheck.TabIndex = 10;
+            this.WatsonTagCheck.Text = "Watson Recommendation: ";
+            this.WatsonTagCheck.UseVisualStyleBackColor = true;
+            this.WatsonTagCheck.CheckedChanged += new System.EventHandler(this.WatsonTagCheck_CheckedChanged);
+            // 
+            // PersonalizedTagCheck
+            // 
+            this.PersonalizedTagCheck.AutoSize = true;
+            this.PersonalizedTagCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonalizedTagCheck.ForeColor = System.Drawing.Color.White;
+            this.PersonalizedTagCheck.Location = new System.Drawing.Point(31, 55);
+            this.PersonalizedTagCheck.Name = "PersonalizedTagCheck";
+            this.PersonalizedTagCheck.Size = new System.Drawing.Size(137, 20);
+            this.PersonalizedTagCheck.TabIndex = 9;
+            this.PersonalizedTagCheck.Text = "Personalized Tag:";
+            this.PersonalizedTagCheck.UseVisualStyleBackColor = true;
+            this.PersonalizedTagCheck.CheckedChanged += new System.EventHandler(this.PersonalizedTagCheck_CheckedChanged);
+            // 
+            // SimpleLabelTagBox
+            // 
+            this.SimpleLabelTagBox.Enabled = false;
+            this.SimpleLabelTagBox.Location = new System.Drawing.Point(174, 55);
+            this.SimpleLabelTagBox.Name = "SimpleLabelTagBox";
+            this.SimpleLabelTagBox.Size = new System.Drawing.Size(243, 20);
+            this.SimpleLabelTagBox.TabIndex = 8;
+            // 
+            // SimpleLabelTitle
+            // 
+            this.SimpleLabelTitle.AutoSize = true;
+            this.SimpleLabelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SimpleLabelTitle.ForeColor = System.Drawing.Color.White;
+            this.SimpleLabelTitle.Location = new System.Drawing.Point(0, 0);
+            this.SimpleLabelTitle.Name = "SimpleLabelTitle";
+            this.SimpleLabelTitle.Size = new System.Drawing.Size(112, 20);
+            this.SimpleLabelTitle.TabIndex = 6;
+            this.SimpleLabelTitle.Text = "Simple Label";
+            // 
             // AddPersonLabelPanel
             // 
-            this.AddPersonLabelPanel.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.AddPersonLabelPanel.BackColor = System.Drawing.Color.Gray;
             this.AddPersonLabelPanel.Controls.Add(this.putZeroButton);
             this.AddPersonLabelPanel.Controls.Add(this.FaceLocationHeightTag);
             this.AddPersonLabelPanel.Controls.Add(this.FaceLocationWidthTag);
@@ -305,9 +603,9 @@
             this.AddPersonLabelPanel.Controls.Add(this.PersonLabelSexLabel);
             this.AddPersonLabelPanel.Controls.Add(this.PersonLabelBirthDateLabel);
             this.AddPersonLabelPanel.Controls.Add(this.PersonLabelSexComboBox);
-            this.AddPersonLabelPanel.Location = new System.Drawing.Point(12, 458);
+            this.AddPersonLabelPanel.Location = new System.Drawing.Point(12, 469);
             this.AddPersonLabelPanel.Name = "AddPersonLabelPanel";
-            this.AddPersonLabelPanel.Size = new System.Drawing.Size(579, 188);
+            this.AddPersonLabelPanel.Size = new System.Drawing.Size(579, 199);
             this.AddPersonLabelPanel.TabIndex = 40;
             this.AddPersonLabelPanel.Visible = false;
             // 
@@ -324,36 +622,44 @@
             // FaceLocationHeightTag
             // 
             this.FaceLocationHeightTag.AutoSize = true;
+            this.FaceLocationHeightTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FaceLocationHeightTag.ForeColor = System.Drawing.Color.White;
             this.FaceLocationHeightTag.Location = new System.Drawing.Point(529, 147);
             this.FaceLocationHeightTag.Name = "FaceLocationHeightTag";
-            this.FaceLocationHeightTag.Size = new System.Drawing.Size(13, 13);
+            this.FaceLocationHeightTag.Size = new System.Drawing.Size(15, 16);
             this.FaceLocationHeightTag.TabIndex = 39;
             this.FaceLocationHeightTag.Text = "0";
             // 
             // FaceLocationWidthTag
             // 
             this.FaceLocationWidthTag.AutoSize = true;
+            this.FaceLocationWidthTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FaceLocationWidthTag.ForeColor = System.Drawing.Color.White;
             this.FaceLocationWidthTag.Location = new System.Drawing.Point(525, 124);
             this.FaceLocationWidthTag.Name = "FaceLocationWidthTag";
-            this.FaceLocationWidthTag.Size = new System.Drawing.Size(13, 13);
+            this.FaceLocationWidthTag.Size = new System.Drawing.Size(15, 16);
             this.FaceLocationWidthTag.TabIndex = 38;
             this.FaceLocationWidthTag.Text = "0";
             // 
             // FaceLocationLeftTag
             // 
             this.FaceLocationLeftTag.AutoSize = true;
+            this.FaceLocationLeftTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FaceLocationLeftTag.ForeColor = System.Drawing.Color.White;
             this.FaceLocationLeftTag.Location = new System.Drawing.Point(427, 149);
             this.FaceLocationLeftTag.Name = "FaceLocationLeftTag";
-            this.FaceLocationLeftTag.Size = new System.Drawing.Size(13, 13);
+            this.FaceLocationLeftTag.Size = new System.Drawing.Size(15, 16);
             this.FaceLocationLeftTag.TabIndex = 37;
             this.FaceLocationLeftTag.Text = "0";
             // 
             // FaceLocationTopTag
             // 
             this.FaceLocationTopTag.AutoSize = true;
+            this.FaceLocationTopTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FaceLocationTopTag.ForeColor = System.Drawing.Color.White;
             this.FaceLocationTopTag.Location = new System.Drawing.Point(427, 124);
             this.FaceLocationTopTag.Name = "FaceLocationTopTag";
-            this.FaceLocationTopTag.Size = new System.Drawing.Size(13, 13);
+            this.FaceLocationTopTag.Size = new System.Drawing.Size(15, 16);
             this.FaceLocationTopTag.TabIndex = 36;
             this.FaceLocationTopTag.Text = "0";
             // 
@@ -380,59 +686,69 @@
             // PersonLabelTitle
             // 
             this.PersonLabelTitle.AutoSize = true;
-            this.PersonLabelTitle.Location = new System.Drawing.Point(245, 13);
+            this.PersonLabelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonLabelTitle.ForeColor = System.Drawing.Color.White;
+            this.PersonLabelTitle.Location = new System.Drawing.Point(0, 0);
             this.PersonLabelTitle.Name = "PersonLabelTitle";
-            this.PersonLabelTitle.Size = new System.Drawing.Size(69, 13);
+            this.PersonLabelTitle.Size = new System.Drawing.Size(114, 20);
             this.PersonLabelTitle.TabIndex = 9;
             this.PersonLabelTitle.Text = "Person Label";
             // 
             // PersonLabelNameLabel
             // 
             this.PersonLabelNameLabel.AutoSize = true;
-            this.PersonLabelNameLabel.Location = new System.Drawing.Point(17, 35);
+            this.PersonLabelNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonLabelNameLabel.ForeColor = System.Drawing.Color.White;
+            this.PersonLabelNameLabel.Location = new System.Drawing.Point(3, 36);
             this.PersonLabelNameLabel.Name = "PersonLabelNameLabel";
-            this.PersonLabelNameLabel.Size = new System.Drawing.Size(38, 13);
+            this.PersonLabelNameLabel.Size = new System.Drawing.Size(48, 16);
             this.PersonLabelNameLabel.TabIndex = 10;
             this.PersonLabelNameLabel.Text = "Name:";
             // 
             // PersonLabelNameBox
             // 
-            this.PersonLabelNameBox.Location = new System.Drawing.Point(61, 35);
+            this.PersonLabelNameBox.Location = new System.Drawing.Point(77, 35);
             this.PersonLabelNameBox.Name = "PersonLabelNameBox";
-            this.PersonLabelNameBox.Size = new System.Drawing.Size(111, 20);
+            this.PersonLabelNameBox.Size = new System.Drawing.Size(104, 20);
             this.PersonLabelNameBox.TabIndex = 11;
             // 
             // PersonLabelSurnameLabel
             // 
             this.PersonLabelSurnameLabel.AutoSize = true;
-            this.PersonLabelSurnameLabel.Location = new System.Drawing.Point(200, 41);
+            this.PersonLabelSurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonLabelSurnameLabel.ForeColor = System.Drawing.Color.White;
+            this.PersonLabelSurnameLabel.Location = new System.Drawing.Point(190, 38);
             this.PersonLabelSurnameLabel.Name = "PersonLabelSurnameLabel";
-            this.PersonLabelSurnameLabel.Size = new System.Drawing.Size(52, 13);
+            this.PersonLabelSurnameLabel.Size = new System.Drawing.Size(65, 16);
             this.PersonLabelSurnameLabel.TabIndex = 12;
             this.PersonLabelSurnameLabel.Text = "Surname:";
             // 
             // PersonLabelSurnameBox
             // 
-            this.PersonLabelSurnameBox.Location = new System.Drawing.Point(258, 38);
+            this.PersonLabelSurnameBox.Location = new System.Drawing.Point(267, 37);
             this.PersonLabelSurnameBox.Name = "PersonLabelSurnameBox";
-            this.PersonLabelSurnameBox.Size = new System.Drawing.Size(116, 20);
+            this.PersonLabelSurnameBox.Size = new System.Drawing.Size(107, 20);
             this.PersonLabelSurnameBox.TabIndex = 13;
             // 
             // PesonLabelNationalityLabel
             // 
             this.PesonLabelNationalityLabel.AutoSize = true;
-            this.PesonLabelNationalityLabel.Location = new System.Drawing.Point(389, 42);
+            this.PesonLabelNationalityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PesonLabelNationalityLabel.ForeColor = System.Drawing.Color.White;
+            this.PesonLabelNationalityLabel.Location = new System.Drawing.Point(380, 39);
             this.PesonLabelNationalityLabel.Name = "PesonLabelNationalityLabel";
-            this.PesonLabelNationalityLabel.Size = new System.Drawing.Size(59, 13);
+            this.PesonLabelNationalityLabel.Size = new System.Drawing.Size(74, 16);
             this.PesonLabelNationalityLabel.TabIndex = 14;
             this.PesonLabelNationalityLabel.Text = "Nationality:";
             // 
             // HEIGHT
             // 
             this.HEIGHT.AutoSize = true;
+            this.HEIGHT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HEIGHT.ForeColor = System.Drawing.Color.White;
             this.HEIGHT.Location = new System.Drawing.Point(472, 147);
             this.HEIGHT.Name = "HEIGHT";
-            this.HEIGHT.Size = new System.Drawing.Size(51, 13);
+            this.HEIGHT.Size = new System.Drawing.Size(62, 16);
             this.HEIGHT.TabIndex = 29;
             this.HEIGHT.Text = "HEIGHT:";
             // 
@@ -441,7 +757,7 @@
             this.PersonLabelNationalityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PersonLabelNationalityComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.PersonLabelNationalityComboBox.FormattingEnabled = true;
-            this.PersonLabelNationalityComboBox.Location = new System.Drawing.Point(454, 39);
+            this.PersonLabelNationalityComboBox.Location = new System.Drawing.Point(460, 38);
             this.PersonLabelNationalityComboBox.Name = "PersonLabelNationalityComboBox";
             this.PersonLabelNationalityComboBox.Size = new System.Drawing.Size(107, 21);
             this.PersonLabelNationalityComboBox.TabIndex = 15;
@@ -449,27 +765,33 @@
             // WIDTH
             // 
             this.WIDTH.AutoSize = true;
+            this.WIDTH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WIDTH.ForeColor = System.Drawing.Color.White;
             this.WIDTH.Location = new System.Drawing.Point(472, 124);
             this.WIDTH.Name = "WIDTH";
-            this.WIDTH.Size = new System.Drawing.Size(47, 13);
+            this.WIDTH.Size = new System.Drawing.Size(56, 16);
             this.WIDTH.TabIndex = 28;
             this.WIDTH.Text = "WIDTH:";
             // 
             // PersonLabelHairColorLabel
             // 
             this.PersonLabelHairColorLabel.AutoSize = true;
-            this.PersonLabelHairColorLabel.Location = new System.Drawing.Point(17, 75);
+            this.PersonLabelHairColorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonLabelHairColorLabel.ForeColor = System.Drawing.Color.White;
+            this.PersonLabelHairColorLabel.Location = new System.Drawing.Point(3, 75);
             this.PersonLabelHairColorLabel.Name = "PersonLabelHairColorLabel";
-            this.PersonLabelHairColorLabel.Size = new System.Drawing.Size(56, 13);
+            this.PersonLabelHairColorLabel.Size = new System.Drawing.Size(71, 16);
             this.PersonLabelHairColorLabel.TabIndex = 16;
             this.PersonLabelHairColorLabel.Text = "Hair Color:";
             // 
             // LEFT
             // 
             this.LEFT.AutoSize = true;
+            this.LEFT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LEFT.ForeColor = System.Drawing.Color.White;
             this.LEFT.Location = new System.Drawing.Point(390, 149);
             this.LEFT.Name = "LEFT";
-            this.LEFT.Size = new System.Drawing.Size(36, 13);
+            this.LEFT.Size = new System.Drawing.Size(44, 16);
             this.LEFT.TabIndex = 27;
             this.LEFT.Text = "LEFT:";
             // 
@@ -481,33 +803,39 @@
             this.PersonLabelHairColorComboBox.IntegralHeight = false;
             this.PersonLabelHairColorComboBox.Location = new System.Drawing.Point(79, 72);
             this.PersonLabelHairColorComboBox.Name = "PersonLabelHairColorComboBox";
-            this.PersonLabelHairColorComboBox.Size = new System.Drawing.Size(107, 21);
+            this.PersonLabelHairColorComboBox.Size = new System.Drawing.Size(102, 21);
             this.PersonLabelHairColorComboBox.TabIndex = 17;
             // 
             // TOP
             // 
             this.TOP.AutoSize = true;
+            this.TOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TOP.ForeColor = System.Drawing.Color.White;
             this.TOP.Location = new System.Drawing.Point(389, 124);
             this.TOP.Name = "TOP";
-            this.TOP.Size = new System.Drawing.Size(32, 13);
+            this.TOP.Size = new System.Drawing.Size(39, 16);
             this.TOP.TabIndex = 26;
             this.TOP.Text = "TOP:";
             // 
             // PersonLabelEyesColorLabel
             // 
             this.PersonLabelEyesColorLabel.AutoSize = true;
-            this.PersonLabelEyesColorLabel.Location = new System.Drawing.Point(201, 75);
+            this.PersonLabelEyesColorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonLabelEyesColorLabel.ForeColor = System.Drawing.Color.White;
+            this.PersonLabelEyesColorLabel.Location = new System.Drawing.Point(190, 75);
             this.PersonLabelEyesColorLabel.Name = "PersonLabelEyesColorLabel";
-            this.PersonLabelEyesColorLabel.Size = new System.Drawing.Size(60, 13);
+            this.PersonLabelEyesColorLabel.Size = new System.Drawing.Size(77, 16);
             this.PersonLabelEyesColorLabel.TabIndex = 18;
             this.PersonLabelEyesColorLabel.Text = "Eyes Color:";
             // 
             // PersonLabelFaceLocationLabel
             // 
             this.PersonLabelFaceLocationLabel.AutoSize = true;
-            this.PersonLabelFaceLocationLabel.Location = new System.Drawing.Point(296, 121);
+            this.PersonLabelFaceLocationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonLabelFaceLocationLabel.ForeColor = System.Drawing.Color.White;
+            this.PersonLabelFaceLocationLabel.Location = new System.Drawing.Point(288, 118);
             this.PersonLabelFaceLocationLabel.Name = "PersonLabelFaceLocationLabel";
-            this.PersonLabelFaceLocationLabel.Size = new System.Drawing.Size(78, 13);
+            this.PersonLabelFaceLocationLabel.Size = new System.Drawing.Size(96, 16);
             this.PersonLabelFaceLocationLabel.TabIndex = 24;
             this.PersonLabelFaceLocationLabel.Text = "Face Location:";
             // 
@@ -525,18 +853,22 @@
             // PersonLabelSexLabel
             // 
             this.PersonLabelSexLabel.AutoSize = true;
-            this.PersonLabelSexLabel.Location = new System.Drawing.Point(398, 75);
+            this.PersonLabelSexLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonLabelSexLabel.ForeColor = System.Drawing.Color.White;
+            this.PersonLabelSexLabel.Location = new System.Drawing.Point(383, 73);
             this.PersonLabelSexLabel.Name = "PersonLabelSexLabel";
-            this.PersonLabelSexLabel.Size = new System.Drawing.Size(28, 13);
+            this.PersonLabelSexLabel.Size = new System.Drawing.Size(34, 16);
             this.PersonLabelSexLabel.TabIndex = 20;
             this.PersonLabelSexLabel.Text = "Sex:";
             // 
             // PersonLabelBirthDateLabel
             // 
             this.PersonLabelBirthDateLabel.AutoSize = true;
-            this.PersonLabelBirthDateLabel.Location = new System.Drawing.Point(17, 124);
+            this.PersonLabelBirthDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonLabelBirthDateLabel.ForeColor = System.Drawing.Color.White;
+            this.PersonLabelBirthDateLabel.Location = new System.Drawing.Point(5, 121);
             this.PersonLabelBirthDateLabel.Name = "PersonLabelBirthDateLabel";
-            this.PersonLabelBirthDateLabel.Size = new System.Drawing.Size(54, 13);
+            this.PersonLabelBirthDateLabel.Size = new System.Drawing.Size(66, 16);
             this.PersonLabelBirthDateLabel.TabIndex = 22;
             this.PersonLabelBirthDateLabel.Text = "BirthDate:";
             // 
@@ -545,96 +877,10 @@
             this.PersonLabelSexComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PersonLabelSexComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.PersonLabelSexComboBox.FormattingEnabled = true;
-            this.PersonLabelSexComboBox.Location = new System.Drawing.Point(432, 72);
+            this.PersonLabelSexComboBox.Location = new System.Drawing.Point(459, 70);
             this.PersonLabelSexComboBox.Name = "PersonLabelSexComboBox";
-            this.PersonLabelSexComboBox.Size = new System.Drawing.Size(85, 21);
+            this.PersonLabelSexComboBox.Size = new System.Drawing.Size(108, 21);
             this.PersonLabelSexComboBox.TabIndex = 21;
-            // 
-            // AddSimpleLabelPanel
-            // 
-            this.AddSimpleLabelPanel.Controls.Add(this.LoadingWatsonRecommendationsLabel);
-            this.AddSimpleLabelPanel.Controls.Add(this.LoadWatsonRecommendationsButton);
-            this.AddSimpleLabelPanel.Controls.Add(this.WatsonRecommendationsComboBox);
-            this.AddSimpleLabelPanel.Controls.Add(this.WatsonTagCheck);
-            this.AddSimpleLabelPanel.Controls.Add(this.PersonalizedTagCheck);
-            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTagBox);
-            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTitle);
-            this.AddSimpleLabelPanel.Location = new System.Drawing.Point(12, 458);
-            this.AddSimpleLabelPanel.Name = "AddSimpleLabelPanel";
-            this.AddSimpleLabelPanel.Size = new System.Drawing.Size(579, 175);
-            this.AddSimpleLabelPanel.TabIndex = 36;
-            this.AddSimpleLabelPanel.Visible = false;
-            // 
-            // LoadingWatsonRecommendationsLabel
-            // 
-            this.LoadingWatsonRecommendationsLabel.AutoSize = true;
-            this.LoadingWatsonRecommendationsLabel.Location = new System.Drawing.Point(482, 108);
-            this.LoadingWatsonRecommendationsLabel.Name = "LoadingWatsonRecommendationsLabel";
-            this.LoadingWatsonRecommendationsLabel.Size = new System.Drawing.Size(0, 13);
-            this.LoadingWatsonRecommendationsLabel.TabIndex = 13;
-            this.LoadingWatsonRecommendationsLabel.Visible = false;
-            // 
-            // LoadWatsonRecommendationsButton
-            // 
-            this.LoadWatsonRecommendationsButton.Enabled = false;
-            this.LoadWatsonRecommendationsButton.Location = new System.Drawing.Point(334, 104);
-            this.LoadWatsonRecommendationsButton.Name = "LoadWatsonRecommendationsButton";
-            this.LoadWatsonRecommendationsButton.Size = new System.Drawing.Size(131, 23);
-            this.LoadWatsonRecommendationsButton.TabIndex = 12;
-            this.LoadWatsonRecommendationsButton.Text = "Load Recommendations";
-            this.LoadWatsonRecommendationsButton.UseVisualStyleBackColor = true;
-            this.LoadWatsonRecommendationsButton.Click += new System.EventHandler(this.LoadWatsonRecommendationsButton_Click);
-            // 
-            // WatsonRecommendationsComboBox
-            // 
-            this.WatsonRecommendationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.WatsonRecommendationsComboBox.Enabled = false;
-            this.WatsonRecommendationsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.WatsonRecommendationsComboBox.FormattingEnabled = true;
-            this.WatsonRecommendationsComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.WatsonRecommendationsComboBox.Location = new System.Drawing.Point(193, 104);
-            this.WatsonRecommendationsComboBox.Name = "WatsonRecommendationsComboBox";
-            this.WatsonRecommendationsComboBox.Size = new System.Drawing.Size(121, 21);
-            this.WatsonRecommendationsComboBox.TabIndex = 11;
-            // 
-            // WatsonTagCheck
-            // 
-            this.WatsonTagCheck.AutoSize = true;
-            this.WatsonTagCheck.Location = new System.Drawing.Point(31, 104);
-            this.WatsonTagCheck.Name = "WatsonTagCheck";
-            this.WatsonTagCheck.Size = new System.Drawing.Size(155, 17);
-            this.WatsonTagCheck.TabIndex = 10;
-            this.WatsonTagCheck.Text = "Watson Recommendation: ";
-            this.WatsonTagCheck.UseVisualStyleBackColor = true;
-            this.WatsonTagCheck.CheckedChanged += new System.EventHandler(this.WatsonTagCheck_CheckedChanged);
-            // 
-            // PersonalizedTagCheck
-            // 
-            this.PersonalizedTagCheck.AutoSize = true;
-            this.PersonalizedTagCheck.Location = new System.Drawing.Point(31, 55);
-            this.PersonalizedTagCheck.Name = "PersonalizedTagCheck";
-            this.PersonalizedTagCheck.Size = new System.Drawing.Size(111, 17);
-            this.PersonalizedTagCheck.TabIndex = 9;
-            this.PersonalizedTagCheck.Text = "Personalized Tag:";
-            this.PersonalizedTagCheck.UseVisualStyleBackColor = true;
-            this.PersonalizedTagCheck.CheckedChanged += new System.EventHandler(this.PersonalizedTagCheck_CheckedChanged);
-            // 
-            // SimpleLabelTagBox
-            // 
-            this.SimpleLabelTagBox.Enabled = false;
-            this.SimpleLabelTagBox.Location = new System.Drawing.Point(148, 52);
-            this.SimpleLabelTagBox.Name = "SimpleLabelTagBox";
-            this.SimpleLabelTagBox.Size = new System.Drawing.Size(243, 20);
-            this.SimpleLabelTagBox.TabIndex = 8;
-            // 
-            // SimpleLabelTitle
-            // 
-            this.SimpleLabelTitle.AutoSize = true;
-            this.SimpleLabelTitle.Location = new System.Drawing.Point(249, 13);
-            this.SimpleLabelTitle.Name = "SimpleLabelTitle";
-            this.SimpleLabelTitle.Size = new System.Drawing.Size(67, 13);
-            this.SimpleLabelTitle.TabIndex = 6;
-            this.SimpleLabelTitle.Text = "Simple Label";
             // 
             // contextMenuStripImage
             // 
@@ -675,7 +921,7 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(610, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 729);
+            this.panel1.Size = new System.Drawing.Size(247, 758);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
@@ -984,15 +1230,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1613, 729);
+            this.ClientSize = new System.Drawing.Size(1613, 758);
             this.Controls.Add(this.AddLabelPanel);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.topauxlabel);
             this.Controls.Add(this.pictureChosen);
             this.Controls.Add(this.ToolbarProgressBar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelImages);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panelImages);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1024, 768);
@@ -1005,10 +1251,14 @@
             this.AddLabelPanel.ResumeLayout(false);
             this.AddLabelPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
-            this.AddPersonLabelPanel.ResumeLayout(false);
-            this.AddPersonLabelPanel.PerformLayout();
+            this.AddSpecialLabelPanel.ResumeLayout(false);
+            this.AddSpecialLabelPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLongitudeUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLatitudeUpDown)).EndInit();
             this.AddSimpleLabelPanel.ResumeLayout(false);
             this.AddSimpleLabelPanel.PerformLayout();
+            this.AddPersonLabelPanel.ResumeLayout(false);
+            this.AddPersonLabelPanel.PerformLayout();
             this.contextMenuStripImage.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -1112,6 +1362,21 @@
         private System.Windows.Forms.Label FaceLocationHeightTag;
         private System.Windows.Forms.Label FaceLocationWidthTag;
         private System.Windows.Forms.Button putZeroButton;
+        private System.Windows.Forms.Panel AddSpecialLabelPanel;
+        private System.Windows.Forms.Label SpecialLabelTitle;
+        private System.Windows.Forms.NumericUpDown SpecialLabelLongitudeUpDown;
+        private System.Windows.Forms.Label SpecialLabelLongitudeLabel;
+        private System.Windows.Forms.Label SpecialLabelLatitudeLabel;
+        private System.Windows.Forms.NumericUpDown SpecialLabelLatitudeUpDown;
+        private System.Windows.Forms.Label SpecialLabelGeoLocationLabel;
+        private System.Windows.Forms.TextBox SpecialLabelAddressTextBox;
+        private System.Windows.Forms.Label SpecialLabelAddressLabel;
+        private System.Windows.Forms.TextBox SpecialLabelPhotographerTextBox;
+        private System.Windows.Forms.Label SpecialLabelPhotographerLabel;
+        private System.Windows.Forms.TextBox SpecialLabelPhotoMotiveTextBox;
+        private System.Windows.Forms.Label SpecialLabelPhotoMotiveLabel;
+        private System.Windows.Forms.ComboBox SpecialLabelSelfieComboxBox;
+        private System.Windows.Forms.Label SpecialLabelSelfieLabel;
     }
 
 }

@@ -79,8 +79,11 @@ namespace Entrega2_Equipo1
         }
 
         public string Address { get => address; set => address = value; }
+
         public string Photographer { get => photographer; set => photographer = value; }
+
         public string PhotoMotive { get => photoMotive; set => photoMotive = value; }
+
         public bool Selfie { get => selfie; set => selfie = value; }
         
     }

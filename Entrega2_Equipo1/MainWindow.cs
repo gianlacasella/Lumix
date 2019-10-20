@@ -681,6 +681,9 @@ namespace Entrega2_Equipo1
 			}
 		}
 
+        // ==============================================================================
+        // =============================== ADD LABEL METHODS ============================
+
         private void DoneButton_Click(object sender, EventArgs e)
         {
             if (createdLabel == null)
@@ -688,14 +691,17 @@ namespace Entrega2_Equipo1
                 if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!",
                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    this.Close();
+                    AddLabelPanel.Visible = false;
                 }
             }
             AddLabelPanel.Visible = false;
+            this.importToolStripMenuItem1.Enabled = true;
+            this.importWithLabelsToolStripMenuItem.Enabled = true;
+            this.exportToolStripMenuItem.Enabled = true;
+            this.exportAsToolStripMenuItem.Enabled = true;
+            this.saveToolStripMenuItem.Enabled = true;
+            this.cleanLibraryToolStripMenuItem.Enabled = true;
         }
-
-        // ==============================================================================
-        // =============================== ADD LABEL METHODS ============================
 
         private void AddLabelController()
         {
@@ -707,6 +713,13 @@ namespace Entrega2_Equipo1
             this.PersonLabelEyesColorComboBox.DataSource = Enum.GetValues(typeof(EColor));
             this.PersonLabelSexComboBox.DataSource = Enum.GetValues(typeof(ESex));
             this.PersonalizedTagCheck.Checked = true;
+            this.SpecialLabelSelfieComboxBox.SelectedIndex = 0;
+            this.importToolStripMenuItem1.Enabled = false;
+            this.importWithLabelsToolStripMenuItem.Enabled = false;
+            this.exportToolStripMenuItem.Enabled = false;
+            this.exportAsToolStripMenuItem.Enabled = false;
+            this.saveToolStripMenuItem.Enabled = false;
+            this.cleanLibraryToolStripMenuItem.Enabled = false;
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -721,6 +734,7 @@ namespace Entrega2_Equipo1
                     AuxiliarEnablerDisabler("PersonLabel");
                     break;
                 case 2:
+                    AuxiliarEnablerDisabler("SpecialLabel");
                     break;
             }
         }
@@ -732,11 +746,18 @@ namespace Entrega2_Equipo1
                 case "SimpleLabel":
                     AddSimpleLabelPanel.Visible = true;
                     AddPersonLabelPanel.Visible = false;
+                    AddSpecialLabelPanel.Visible = false;
                     break;
 
                 case "PersonLabel":
                     AddPersonLabelPanel.Visible = true;
                     AddSimpleLabelPanel.Visible = false;
+                    AddSpecialLabelPanel.Visible = false;
+                    break;
+                case "SpecialLabel":
+                    AddPersonLabelPanel.Visible = false;
+                    AddSimpleLabelPanel.Visible = false;
+                    AddSpecialLabelPanel.Visible = true;
                     break;
             }
         }
@@ -780,7 +801,12 @@ namespace Entrega2_Equipo1
                     this.PersonLabelBirthDatePicker.Value.Date.ToString() == "01-01-1930 0:00:00" ? "" : this.PersonLabelBirthDatePicker.Value.Date.ToString());
                     this.imagetoaddlabel.AddLabel(createdLabel);
                     break;
-
+                case 2:
+                    this.createdLabel = new SpecialLabel((this.SpecialLabelLatitudeUpDown.Value == 0 && this.SpecialLabelLongitudeUpDown.Value == 0) ? null : new double[] { Convert.ToDouble(this.SpecialLabelLatitudeUpDown.Value), Convert.ToDouble(this.SpecialLabelLatitudeUpDown.Value) },
+                        (this.SpecialLabelAddressTextBox.Text == "") ? null : this.SpecialLabelAddressTextBox.Text, (this.SpecialLabelPhotographerTextBox.Text == "") ? null : this.SpecialLabelPhotographerTextBox.Text,
+                        (this.SpecialLabelPhotoMotiveTextBox.Text == "") ? null : this.SpecialLabelPhotoMotiveTextBox.Text, (this.SpecialLabelSelfieComboxBox.SelectedItem.ToString() == "Si") ? true : false) ;
+                    this.imagetoaddlabel.AddLabel(createdLabel);
+                    break;
             }
         }
 
@@ -857,6 +883,10 @@ namespace Entrega2_Equipo1
             this.FaceLocationHeightTag.Text = "0";
         }
 
+        private void Label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
