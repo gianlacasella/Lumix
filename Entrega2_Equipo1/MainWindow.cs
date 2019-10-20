@@ -280,6 +280,12 @@ namespace Entrega2_Equipo1
             this.LabelsPropertyGrid.SelectedObject = imagets;
             this.calificationUpDown.Enabled = true;
             this.SetCalificationButton.Enabled = true;
+            this.setNewNameButton.Enabled = true;
+            this.nameTextBox.Enabled = true;
+            this.addnewlabelbutton.Enabled = true;
+            this.EditLabelButton.Enabled = true;
+            this.DeleteLabelButton.Enabled = true;
+            this.imagetoaddlabel = image;
         }
 
 		private void ImageBorderClick(object sender, EventArgs e)
@@ -295,7 +301,6 @@ namespace Entrega2_Equipo1
 				chosenImage = PIC;
 			}
 			PIC.BorderStyle = BorderStyle.Fixed3D;
-            this.imagetoaddlabel = (Image)PIC.Tag;
 		}
 
 		private void NoPictureChosen(object sender, EventArgs e)
@@ -327,6 +332,11 @@ namespace Entrega2_Equipo1
                 chosenImage = null;
                 this.calificationUpDown.Enabled = false;
                 this.SetCalificationButton.Enabled = false;
+                this.setNewNameButton.Enabled = false;
+                this.addnewlabelbutton.Enabled = false;
+                this.EditLabelButton.Enabled = false;
+                this.DeleteLabelButton.Enabled = false;
+                this.nameTextBox.Enabled = false;
             }
             
         }
@@ -335,7 +345,20 @@ namespace Entrega2_Equipo1
         {
             try
             {
-                this.imagetoaddlabel.Calification = Convert.ToInt32(calificationUpDown.Value);
+                this.imagetoaddlabel.Calification = (calificationUpDown.Value == 0) ? -1 : Convert.ToInt32(calificationUpDown.Value);
+                Refresh_LabelsPropertyGrid();
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void SetNewNameButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.imagetoaddlabel.Name = nameTextBox.Text;
                 Refresh_LabelsPropertyGrid();
             }
             catch
@@ -821,6 +844,12 @@ namespace Entrega2_Equipo1
 
         }
 
+        private void Asdfbutton_Click(object sender, EventArgs e)
+        {
+            // Ya reconocimos cual fue el Image seleccionado para agregar el label
+            AddLabelPanel.Visible = true;
+            AddLabelController();
+        }
     }
 }
 

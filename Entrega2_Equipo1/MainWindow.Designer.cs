@@ -126,12 +126,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LabelsPropertyGrid = new System.Windows.Forms.PropertyGrid();
             this.ImageDataPanel = new System.Windows.Forms.Panel();
+            this.DeleteLabelButton = new System.Windows.Forms.Button();
+            this.EditLabelButton = new System.Windows.Forms.Button();
+            this.addnewlabelbutton = new System.Windows.Forms.Button();
+            this.setNewNameButton = new System.Windows.Forms.Button();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.calificationUpDown = new System.Windows.Forms.NumericUpDown();
             this.CalificationLabel = new System.Windows.Forms.Label();
             this.SetCalificationButton = new System.Windows.Forms.Button();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.setNewNameButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
@@ -161,9 +164,9 @@
             this.exportAsToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.cleanLibraryToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(612, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1613, 34);
+            this.menuStrip1.Size = new System.Drawing.Size(1001, 34);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -242,9 +245,9 @@
             this.AddLabelPanel.Controls.Add(this.AddSimpleLabelPanel);
             this.AddLabelPanel.Controls.Add(this.AddPersonLabelPanel);
             this.AddLabelPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.AddLabelPanel.Location = new System.Drawing.Point(0, 34);
+            this.AddLabelPanel.Location = new System.Drawing.Point(0, 0);
             this.AddLabelPanel.Name = "AddLabelPanel";
-            this.AddLabelPanel.Size = new System.Drawing.Size(612, 724);
+            this.AddLabelPanel.Size = new System.Drawing.Size(612, 758);
             this.AddLabelPanel.TabIndex = 0;
             this.AddLabelPanel.Visible = false;
             // 
@@ -1189,13 +1192,16 @@
             this.LabelsPropertyGrid.Location = new System.Drawing.Point(0, 0);
             this.LabelsPropertyGrid.Name = "LabelsPropertyGrid";
             this.LabelsPropertyGrid.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.LabelsPropertyGrid.Size = new System.Drawing.Size(253, 292);
+            this.LabelsPropertyGrid.Size = new System.Drawing.Size(253, 269);
             this.LabelsPropertyGrid.TabIndex = 33;
             this.LabelsPropertyGrid.ToolbarVisible = false;
             // 
             // ImageDataPanel
             // 
-            this.ImageDataPanel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ImageDataPanel.BackColor = System.Drawing.Color.DarkCyan;
+            this.ImageDataPanel.Controls.Add(this.DeleteLabelButton);
+            this.ImageDataPanel.Controls.Add(this.EditLabelButton);
+            this.ImageDataPanel.Controls.Add(this.addnewlabelbutton);
             this.ImageDataPanel.Controls.Add(this.setNewNameButton);
             this.ImageDataPanel.Controls.Add(this.nameTextBox);
             this.ImageDataPanel.Controls.Add(this.NameLabel);
@@ -1205,20 +1211,76 @@
             this.ImageDataPanel.Controls.Add(this.LabelsPropertyGrid);
             this.ImageDataPanel.Location = new System.Drawing.Point(610, 34);
             this.ImageDataPanel.Name = "ImageDataPanel";
-            this.ImageDataPanel.Size = new System.Drawing.Size(253, 724);
+            this.ImageDataPanel.Size = new System.Drawing.Size(253, 411);
             this.ImageDataPanel.TabIndex = 33;
+            // 
+            // DeleteLabelButton
+            // 
+            this.DeleteLabelButton.Enabled = false;
+            this.DeleteLabelButton.Location = new System.Drawing.Point(136, 379);
+            this.DeleteLabelButton.Name = "DeleteLabelButton";
+            this.DeleteLabelButton.Size = new System.Drawing.Size(92, 23);
+            this.DeleteLabelButton.TabIndex = 41;
+            this.DeleteLabelButton.Text = "Delete Label";
+            this.DeleteLabelButton.UseVisualStyleBackColor = true;
+            // 
+            // EditLabelButton
+            // 
+            this.EditLabelButton.Enabled = false;
+            this.EditLabelButton.Location = new System.Drawing.Point(21, 379);
+            this.EditLabelButton.Name = "EditLabelButton";
+            this.EditLabelButton.Size = new System.Drawing.Size(92, 23);
+            this.EditLabelButton.TabIndex = 40;
+            this.EditLabelButton.Text = "Edit Label";
+            this.EditLabelButton.UseVisualStyleBackColor = true;
+            // 
+            // addnewlabelbutton
+            // 
+            this.addnewlabelbutton.Enabled = false;
+            this.addnewlabelbutton.Location = new System.Drawing.Point(21, 350);
+            this.addnewlabelbutton.Name = "addnewlabelbutton";
+            this.addnewlabelbutton.Size = new System.Drawing.Size(92, 23);
+            this.addnewlabelbutton.TabIndex = 39;
+            this.addnewlabelbutton.Text = "Add new Label";
+            this.addnewlabelbutton.UseVisualStyleBackColor = true;
+            this.addnewlabelbutton.Click += new System.EventHandler(this.Asdfbutton_Click);
+            // 
+            // setNewNameButton
+            // 
+            this.setNewNameButton.Enabled = false;
+            this.setNewNameButton.Location = new System.Drawing.Point(158, 350);
+            this.setNewNameButton.Name = "setNewNameButton";
+            this.setNewNameButton.Size = new System.Drawing.Size(70, 23);
+            this.setNewNameButton.TabIndex = 38;
+            this.setNewNameButton.Text = "Set Name";
+            this.setNewNameButton.UseVisualStyleBackColor = true;
+            this.setNewNameButton.Click += new System.EventHandler(this.SetNewNameButton_Click);
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Enabled = false;
+            this.nameTextBox.Location = new System.Drawing.Point(73, 324);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(155, 20);
+            this.nameTextBox.TabIndex = 37;
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.ForeColor = System.Drawing.Color.White;
+            this.NameLabel.Location = new System.Drawing.Point(18, 325);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(48, 16);
+            this.NameLabel.TabIndex = 36;
+            this.NameLabel.Text = "Name:";
             // 
             // calificationUpDown
             // 
             this.calificationUpDown.Enabled = false;
-            this.calificationUpDown.Location = new System.Drawing.Point(100, 319);
+            this.calificationUpDown.Location = new System.Drawing.Point(100, 289);
             this.calificationUpDown.Maximum = new decimal(new int[] {
             5,
-            0,
-            0,
-            0});
-            this.calificationUpDown.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -1237,7 +1299,7 @@
             this.CalificationLabel.AutoSize = true;
             this.CalificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalificationLabel.ForeColor = System.Drawing.Color.White;
-            this.CalificationLabel.Location = new System.Drawing.Point(18, 323);
+            this.CalificationLabel.Location = new System.Drawing.Point(18, 289);
             this.CalificationLabel.Name = "CalificationLabel";
             this.CalificationLabel.Size = new System.Drawing.Size(76, 16);
             this.CalificationLabel.TabIndex = 35;
@@ -1246,41 +1308,13 @@
             // SetCalificationButton
             // 
             this.SetCalificationButton.Enabled = false;
-            this.SetCalificationButton.Location = new System.Drawing.Point(143, 316);
+            this.SetCalificationButton.Location = new System.Drawing.Point(143, 286);
             this.SetCalificationButton.Name = "SetCalificationButton";
             this.SetCalificationButton.Size = new System.Drawing.Size(85, 23);
             this.SetCalificationButton.TabIndex = 34;
             this.SetCalificationButton.Text = "Set Calification";
             this.SetCalificationButton.UseVisualStyleBackColor = true;
             this.SetCalificationButton.Click += new System.EventHandler(this.SetCalificationButton_Click);
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.ForeColor = System.Drawing.Color.White;
-            this.NameLabel.Location = new System.Drawing.Point(18, 359);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(48, 16);
-            this.NameLabel.TabIndex = 36;
-            this.NameLabel.Text = "Name:";
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.Location = new System.Drawing.Point(73, 359);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(155, 20);
-            this.nameTextBox.TabIndex = 37;
-            // 
-            // setNewNameButton
-            // 
-            this.setNewNameButton.Enabled = false;
-            this.setNewNameButton.Location = new System.Drawing.Point(158, 385);
-            this.setNewNameButton.Name = "setNewNameButton";
-            this.setNewNameButton.Size = new System.Drawing.Size(70, 23);
-            this.setNewNameButton.TabIndex = 38;
-            this.setNewNameButton.Text = "Set Name";
-            this.setNewNameButton.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
@@ -1289,12 +1323,12 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1613, 758);
             this.Controls.Add(this.ImageDataPanel);
-            this.Controls.Add(this.AddLabelPanel);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.topauxlabel);
             this.Controls.Add(this.pictureChosen);
             this.Controls.Add(this.ToolbarProgressBar);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.AddLabelPanel);
             this.Controls.Add(this.panelImages);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -1438,6 +1472,9 @@
         private System.Windows.Forms.Button setNewNameButton;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Button DeleteLabelButton;
+        private System.Windows.Forms.Button EditLabelButton;
+        private System.Windows.Forms.Button addnewlabelbutton;
     }
 
 }
