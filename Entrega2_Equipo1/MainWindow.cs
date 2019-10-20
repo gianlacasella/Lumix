@@ -700,7 +700,7 @@ namespace Entrega2_Equipo1
         private void AddLabelController()
         {
             this.createdLabel = null;
-            this.AddLabelImageBox.Image = this.imagetoaddlabel.BitmapImage;
+            this.AddLabelImageBox.Image = (Bitmap)this.imagetoaddlabel.BitmapImage.Clone();
             this.AddLabelImageBox.SizeMode = PictureBoxSizeMode.StretchImage;
             this.PersonLabelNationalityComboBox.DataSource = Enum.GetValues(typeof(ENationality));
             this.PersonLabelHairColorComboBox.DataSource = Enum.GetValues(typeof(EColor));
@@ -773,12 +773,26 @@ namespace Entrega2_Equipo1
                     }
                     break;
                 case 1:
-                    this.createdLabel = new PersonLabel(this.PersonLabelNameBox.Text, new double[] { 1,1,1,1 },
-                    this.PersonLabelSurnameBox.Text, (ENationality)this.PersonLabelNationalityComboBox.SelectedItem,
-                    (EColor)this.PersonLabelEyesColorComboBox.SelectedItem, (EColor)this.PersonLabelHairColorComboBox.SelectedItem, (ESex)this.PersonLabelSexComboBox.SelectedItem,
-                    this.PersonLabelBirthDatePicker.Value.Date.ToString());
-                    this.imagetoaddlabel.AddLabel(createdLabel);
-                    break;
+                    if (FaceLocationLeftTag.Text != "0" && FaceLocationTopTag.Text != "0" && FaceLocationWidthTag.Text != "0" && FaceLocationHeightTag.Text != "0")
+                    {
+                        this.createdLabel = new PersonLabel(this.PersonLabelNameBox.Text, new double[] { Convert.ToInt32(FaceLocationLeftTag.Text),
+                        Convert.ToInt32(FaceLocationTopTag.Text),Convert.ToInt32(FaceLocationWidthTag.Text), Convert.ToInt32(FaceLocationHeightTag.Text)},
+                        this.PersonLabelSurnameBox.Text, (ENationality)this.PersonLabelNationalityComboBox.SelectedItem,
+                        (EColor)this.PersonLabelEyesColorComboBox.SelectedItem, (EColor)this.PersonLabelHairColorComboBox.SelectedItem, (ESex)this.PersonLabelSexComboBox.SelectedItem,
+                        this.PersonLabelBirthDatePicker.Value.Date.ToString());
+                        this.imagetoaddlabel.AddLabel(createdLabel);
+                        break;
+                    }
+                    else
+                    {
+                        this.createdLabel = new PersonLabel(this.PersonLabelNameBox.Text, null,
+                        this.PersonLabelSurnameBox.Text, (ENationality)this.PersonLabelNationalityComboBox.SelectedItem,
+                        (EColor)this.PersonLabelEyesColorComboBox.SelectedItem, (EColor)this.PersonLabelHairColorComboBox.SelectedItem, (ESex)this.PersonLabelSexComboBox.SelectedItem,
+                        this.PersonLabelBirthDatePicker.Value.Date.ToString());
+                        this.imagetoaddlabel.AddLabel(createdLabel);
+                        break;
+                    }
+                    
             }
         }
 
@@ -827,22 +841,32 @@ namespace Entrega2_Equipo1
                 this.WatsonRecommendationsComboBox.Items.Add(option);
             }
             this.LoadingWatsonRecommendationsLabel.Text = "Done!";
-            
         }
 
-        private void AddLabelImageBox_MouseDown(object sender, MouseEventArgs e)
+        private void SelectFaceLocationButton_Click(object sender, EventArgs e)
         {
-
-            int[] position = new int[] { Cursor.Position.X - this.Left - 20, Cursor.Position.Y - (this.Top + 85)};
-            this.toplabelaux.Text = Convert.ToString(position[1]);
-            this.leftlabelaux.Text = Convert.ToString(position[0]);
+            SelectFaceLocationForm newForm = new SelectFaceLocationForm();
+            newForm.ActualImage = (Bitmap)this.AddLabelImageBox.Image;
+            var result = newForm.ShowDialog();
+            int newLeft = newForm.ReturningLeft;
+            int newTop = newForm.ReturningTop;
+            int newHeight = newForm.ReturningHeight;
+            int newWidth = newForm.ReturningWidth;
+            if (newLeft != 0 && newTop != 0 && newHeight != 0 && newWidth != 0)
+            {
+                this.FaceLocationTopTag.Text = Convert.ToString(newTop);
+                this.FaceLocationLeftTag.Text = Convert.ToString(newLeft);
+                this.FaceLocationWidthTag.Text = Convert.ToString(newWidth);
+                this.FaceLocationHeightTag.Text = Convert.ToString(newHeight);
+            }
         }
 
-        private void AddLabelImageBox_MouseUp(object sender, MouseEventArgs e)
+        private void PutZeroButton_Click(object sender, EventArgs e)
         {
-            int[] position = new int[] { Cursor.Position.X - this.Left - 20, Cursor.Position.Y - (this.Top + 85) };
-            this.toplabelaux.Text = Convert.ToString(position[1]);
-            this.leftlabelaux.Text = Convert.ToString(position[0]);
+            this.FaceLocationTopTag.Text = "0";
+            this.FaceLocationLeftTag.Text = "0";
+            this.FaceLocationWidthTag.Text = "0";
+            this.FaceLocationHeightTag.Text = "0";
         }
     }
         

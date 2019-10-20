@@ -45,8 +45,10 @@
             this.DoneButton = new System.Windows.Forms.Button();
             this.AddLabelButton = new System.Windows.Forms.Button();
             this.AddPersonLabelPanel = new System.Windows.Forms.Panel();
-            this.leftlabelaux = new System.Windows.Forms.Label();
-            this.toplabelaux = new System.Windows.Forms.Label();
+            this.FaceLocationHeightTag = new System.Windows.Forms.Label();
+            this.FaceLocationWidthTag = new System.Windows.Forms.Label();
+            this.FaceLocationLeftTag = new System.Windows.Forms.Label();
+            this.FaceLocationTopTag = new System.Windows.Forms.Label();
             this.SelectFaceLocationButton = new System.Windows.Forms.Button();
             this.PersonLabelBirthDatePicker = new System.Windows.Forms.DateTimePicker();
             this.PersonLabelTitle = new System.Windows.Forms.Label();
@@ -110,6 +112,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
+            this.putZeroButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
@@ -252,8 +255,6 @@
             this.AddLabelImageBox.Size = new System.Drawing.Size(579, 396);
             this.AddLabelImageBox.TabIndex = 2;
             this.AddLabelImageBox.TabStop = false;
-            this.AddLabelImageBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddLabelImageBox_MouseDown);
-            this.AddLabelImageBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.AddLabelImageBox_MouseUp);
             // 
             // DoneButton
             // 
@@ -278,8 +279,11 @@
             // AddPersonLabelPanel
             // 
             this.AddPersonLabelPanel.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.AddPersonLabelPanel.Controls.Add(this.leftlabelaux);
-            this.AddPersonLabelPanel.Controls.Add(this.toplabelaux);
+            this.AddPersonLabelPanel.Controls.Add(this.putZeroButton);
+            this.AddPersonLabelPanel.Controls.Add(this.FaceLocationHeightTag);
+            this.AddPersonLabelPanel.Controls.Add(this.FaceLocationWidthTag);
+            this.AddPersonLabelPanel.Controls.Add(this.FaceLocationLeftTag);
+            this.AddPersonLabelPanel.Controls.Add(this.FaceLocationTopTag);
             this.AddPersonLabelPanel.Controls.Add(this.SelectFaceLocationButton);
             this.AddPersonLabelPanel.Controls.Add(this.PersonLabelBirthDatePicker);
             this.AddPersonLabelPanel.Controls.Add(this.PersonLabelTitle);
@@ -303,36 +307,55 @@
             this.AddPersonLabelPanel.Controls.Add(this.PersonLabelSexComboBox);
             this.AddPersonLabelPanel.Location = new System.Drawing.Point(12, 458);
             this.AddPersonLabelPanel.Name = "AddPersonLabelPanel";
-            this.AddPersonLabelPanel.Size = new System.Drawing.Size(579, 175);
+            this.AddPersonLabelPanel.Size = new System.Drawing.Size(579, 188);
             this.AddPersonLabelPanel.TabIndex = 40;
             this.AddPersonLabelPanel.Visible = false;
             // 
-            // leftlabelaux
+            // FaceLocationHeightTag
             // 
-            this.leftlabelaux.AutoSize = true;
-            this.leftlabelaux.Location = new System.Drawing.Point(429, 149);
-            this.leftlabelaux.Name = "leftlabelaux";
-            this.leftlabelaux.Size = new System.Drawing.Size(35, 13);
-            this.leftlabelaux.TabIndex = 37;
-            this.leftlabelaux.Text = "label1";
+            this.FaceLocationHeightTag.AutoSize = true;
+            this.FaceLocationHeightTag.Location = new System.Drawing.Point(529, 147);
+            this.FaceLocationHeightTag.Name = "FaceLocationHeightTag";
+            this.FaceLocationHeightTag.Size = new System.Drawing.Size(13, 13);
+            this.FaceLocationHeightTag.TabIndex = 39;
+            this.FaceLocationHeightTag.Text = "0";
             // 
-            // toplabelaux
+            // FaceLocationWidthTag
             // 
-            this.toplabelaux.AutoSize = true;
-            this.toplabelaux.Location = new System.Drawing.Point(428, 127);
-            this.toplabelaux.Name = "toplabelaux";
-            this.toplabelaux.Size = new System.Drawing.Size(35, 13);
-            this.toplabelaux.TabIndex = 36;
-            this.toplabelaux.Text = "label1";
+            this.FaceLocationWidthTag.AutoSize = true;
+            this.FaceLocationWidthTag.Location = new System.Drawing.Point(525, 124);
+            this.FaceLocationWidthTag.Name = "FaceLocationWidthTag";
+            this.FaceLocationWidthTag.Size = new System.Drawing.Size(13, 13);
+            this.FaceLocationWidthTag.TabIndex = 38;
+            this.FaceLocationWidthTag.Text = "0";
+            // 
+            // FaceLocationLeftTag
+            // 
+            this.FaceLocationLeftTag.AutoSize = true;
+            this.FaceLocationLeftTag.Location = new System.Drawing.Point(427, 149);
+            this.FaceLocationLeftTag.Name = "FaceLocationLeftTag";
+            this.FaceLocationLeftTag.Size = new System.Drawing.Size(13, 13);
+            this.FaceLocationLeftTag.TabIndex = 37;
+            this.FaceLocationLeftTag.Text = "0";
+            // 
+            // FaceLocationTopTag
+            // 
+            this.FaceLocationTopTag.AutoSize = true;
+            this.FaceLocationTopTag.Location = new System.Drawing.Point(427, 124);
+            this.FaceLocationTopTag.Name = "FaceLocationTopTag";
+            this.FaceLocationTopTag.Size = new System.Drawing.Size(13, 13);
+            this.FaceLocationTopTag.TabIndex = 36;
+            this.FaceLocationTopTag.Text = "0";
             // 
             // SelectFaceLocationButton
             // 
-            this.SelectFaceLocationButton.Location = new System.Drawing.Point(298, 149);
+            this.SelectFaceLocationButton.Location = new System.Drawing.Point(291, 137);
             this.SelectFaceLocationButton.Name = "SelectFaceLocationButton";
             this.SelectFaceLocationButton.Size = new System.Drawing.Size(93, 23);
             this.SelectFaceLocationButton.TabIndex = 35;
             this.SelectFaceLocationButton.Text = "Select Location";
             this.SelectFaceLocationButton.UseVisualStyleBackColor = true;
+            this.SelectFaceLocationButton.Click += new System.EventHandler(this.SelectFaceLocationButton_Click);
             // 
             // PersonLabelBirthDatePicker
             // 
@@ -472,7 +495,7 @@
             // PersonLabelFaceLocationLabel
             // 
             this.PersonLabelFaceLocationLabel.AutoSize = true;
-            this.PersonLabelFaceLocationLabel.Location = new System.Drawing.Point(296, 128);
+            this.PersonLabelFaceLocationLabel.Location = new System.Drawing.Point(296, 121);
             this.PersonLabelFaceLocationLabel.Name = "PersonLabelFaceLocationLabel";
             this.PersonLabelFaceLocationLabel.Size = new System.Drawing.Size(78, 13);
             this.PersonLabelFaceLocationLabel.TabIndex = 24;
@@ -941,6 +964,16 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "Features";
             // 
+            // putZeroButton
+            // 
+            this.putZeroButton.Location = new System.Drawing.Point(328, 162);
+            this.putZeroButton.Name = "putZeroButton";
+            this.putZeroButton.Size = new System.Drawing.Size(56, 23);
+            this.putZeroButton.TabIndex = 40;
+            this.putZeroButton.Text = "Reset";
+            this.putZeroButton.UseVisualStyleBackColor = true;
+            this.putZeroButton.Click += new System.EventHandler(this.PutZeroButton_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1069,8 +1102,11 @@
         private System.Windows.Forms.Label LoadingWatsonRecommendationsLabel;
         private System.Windows.Forms.DateTimePicker PersonLabelBirthDatePicker;
         private System.Windows.Forms.Button SelectFaceLocationButton;
-        private System.Windows.Forms.Label leftlabelaux;
-        private System.Windows.Forms.Label toplabelaux;
+        private System.Windows.Forms.Label FaceLocationLeftTag;
+        private System.Windows.Forms.Label FaceLocationTopTag;
+        private System.Windows.Forms.Label FaceLocationHeightTag;
+        private System.Windows.Forms.Label FaceLocationWidthTag;
+        private System.Windows.Forms.Button putZeroButton;
     }
 
 }

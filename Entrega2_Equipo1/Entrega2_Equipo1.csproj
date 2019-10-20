@@ -232,6 +232,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SelectFaceLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectFaceLocationForm.Designer.cs">
+      <DependentUpon>SelectFaceLocationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Features\Brush.cs" />
     <Compile Include="Tools\Features\AddImage.cs" />
     <Compile Include="Tools\Features\AddShape.cs" />
@@ -272,6 +278,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectFaceLocationForm.resx">
+      <DependentUpon>SelectFaceLocationForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
