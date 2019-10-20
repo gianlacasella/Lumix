@@ -271,112 +271,15 @@ namespace Entrega2_Equipo1
             this.ToolbarProgressBar.Value = 0;
         }
 
-        // Este metodo hay que volverlo a hacer
+        // Metodo que se ejecuta cuando el usuario hace clic sobre una imagen del library
         private void ImageDetailClick(object sender, EventArgs e)
-        { 
-			PictureBox PIC = (PictureBox)sender;
-            Image image = (Image)PIC.Tag;
-            titleLabel.Text = image.Name + "\n\n";
-            informationLabel.Text = "Res: " + Convert.ToString(image.Resolution[0]) + "x" + Convert.ToString(image.Resolution[1] + "\n");
-            informationLabel.Text += "AspectR: " + Convert.ToString(image.AspectRatio[0]) + ":" + Convert.ToString(image.AspectRatio[1]+"\n");
-            if (image.DarkClear == true)
-            {
-                informationLabel.Text += "Clear" + "\n";
-            }
-            else
-            {
-                informationLabel.Text += "Dark" + "\n";
-            }
-
-            // Now, we see if the images has some labels
-            List<SpecialLabel> splabels = image.SelectSpecialLabel();
-            List<SimpleLabel> slabels = image.SelectSimpleLabels();
-            List<PersonLabel> plabels = image.SelectPersonLabels();
-
-            List<Label> aux = new List<Label>();
-
-            foreach (SimpleLabel sl in slabels)
-            {
-                aux.Add((Label)sl);
-            }
-            string response = ToString(aux, "SimpleLabel");
-            informationLabel.Text += response;
-
-            aux.Clear();
-            foreach (PersonLabel sl in plabels)
-            {
-                aux.Add((Label)sl);
-            }
-            informationLabel.Text += ToString(aux, "PersonLabel");
-
-            aux.Clear();
-            foreach (SpecialLabel sl in splabels)
-            {
-                aux.Add((Label)sl);
-            }
-            informationLabel.Text += ToString(aux, "SpecialLabel");
-
-        }
-
-        // Este metodo hay que volverlo a hacer
-        private string ToString(List<Label> labels, string type)
         {
-            string returningstring = "";
-            switch (type)
-            {
-                case "SimpleLabel":
-                    returningstring += "\n\nSimpleLabels:";
-                    if (labels.Count == 0)
-                    {
-                        returningstring += " Empty";
-                        break;
-                    }
-                    foreach (Label label in labels)
-                    {
-                        SimpleLabel splabel = (SimpleLabel)label;
-                        if(splabel.Sentence != null) returningstring += "\nTag: " + splabel.Sentence;
-                    }
-                    break;
-                case "PersonLabel":
-                    returningstring += "\n\nPersonLabels:";
-                    if (labels.Count == 0)
-                    {
-                        returningstring += " Empty";
-                        break;
-                    }
-                    foreach (Label label in labels)
-                    {
-                        PersonLabel pslabel = (PersonLabel)label;
-                        if(pslabel.Name != null) returningstring += "\nName: " + pslabel.Name;
-                        if (pslabel.Surname!= null) returningstring += "\nSurname: " + pslabel.Surname;
-                        if (pslabel.Nationality != ENationality.None) returningstring += "\nNationality: " + pslabel.Nationality;
-                        if (pslabel.HairColor != EColor.None) returningstring += "\nHairColor: " + pslabel.HairColor;
-                        if (pslabel.EyesColor != EColor.None) returningstring += "\nEyesColor: " + pslabel.HairColor;
-                        if (pslabel.Sex != ESex.None) returningstring += "\nSex: " + pslabel.Sex;
-                        if (pslabel.BirthDate != "") returningstring += "\nBirthdate: " + pslabel.BirthDate;
-                        if (pslabel.FaceLocation != null) returningstring += "\nFaceLocation: " + pslabel.FaceLocation[0]+","+pslabel.FaceLocation[1]+","+pslabel.FaceLocation[2]+","+pslabel.FaceLocation[3];
-                    }
-                    break;
-                case "SpecialLabel":
-                    returningstring += "\n\nSpecialLabels:";
-                    if (labels.Count == 0)
-                    {
-                        returningstring += " Empty";
-                        break;
-                    }
-                    foreach (Label label in labels)
-                    {
-                        SpecialLabel splabel = (SpecialLabel)label;
-                        if (splabel.GeographicLocation != null) returningstring += "\nGeographicLoc: " + splabel.GeographicLocation[0] + ","+splabel.GeographicLocation[1];
-                        if (splabel.Photographer != null) returningstring += "\nPhotographer: " + splabel.Photographer;
-                        if (splabel.Address != null) returningstring += "\nAddress: " + splabel.Address;
-                        if (splabel.PhotoMotive != null) returningstring += "\nPhotoMotive: " + splabel.PhotoMotive;
-                        if (splabel.Selfie != false) returningstring += "\nSelfie: " + "Yes";
-                        else returningstring += "\nSelfie: " + "No";
-                    }
-                    break;
-            }
-            return returningstring;
+            PictureBox PIC = (PictureBox)sender;
+            Image image = (Image)PIC.Tag;
+            ImageToShow imagets = new ImageToShow(image);
+            this.LabelsPropertyGrid.SelectedObject = imagets;
+            this.calificationUpDown.Enabled = true;
+            this.SetCalificationButton.Enabled = true;
         }
 
 		private void ImageBorderClick(object sender, EventArgs e)
@@ -392,6 +295,7 @@ namespace Entrega2_Equipo1
 				chosenImage = PIC;
 			}
 			PIC.BorderStyle = BorderStyle.Fixed3D;
+            this.imagetoaddlabel = (Image)PIC.Tag;
 		}
 
 		private void NoPictureChosen(object sender, EventArgs e)
@@ -417,13 +321,40 @@ namespace Entrega2_Equipo1
         {
             if (chosenImage != null)
             {
-                titleLabel.Text = "";
-                informationLabel.Text = "";
-                
+                this.LabelsPropertyGrid.SelectedObject = new object();
+                this.LabelsPropertyGrid.Update();
                 chosenImage.BorderStyle = BorderStyle.None;
                 chosenImage = null;
+                this.calificationUpDown.Enabled = false;
+                this.SetCalificationButton.Enabled = false;
             }
             
+        }
+
+        private void SetCalificationButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.imagetoaddlabel.Calification = Convert.ToInt32(calificationUpDown.Value);
+                Refresh_LabelsPropertyGrid();
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void Refresh_LabelsPropertyGrid()
+        {
+            try
+            {
+                this.LabelsPropertyGrid.SelectedObject = new object();
+                this.LabelsPropertyGrid.SelectedObject = new ImageToShow(this.imagetoaddlabel);
+            }
+            catch
+            {
+                return;
+            }
         }
 
         // ==============================================================================
@@ -701,6 +632,8 @@ namespace Entrega2_Equipo1
             this.exportAsToolStripMenuItem.Enabled = true;
             this.saveToolStripMenuItem.Enabled = true;
             this.cleanLibraryToolStripMenuItem.Enabled = true;
+            this.LabelsPropertyGrid.SelectedObject = new object();
+            Refresh_LabelsPropertyGrid();
         }
 
         private void AddLabelController()
@@ -887,6 +820,7 @@ namespace Entrega2_Equipo1
         {
 
         }
+
     }
 }
 

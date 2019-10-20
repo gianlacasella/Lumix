@@ -75,6 +75,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -214,10 +215,14 @@
     <Compile Include="Enums\ENationality.cs" />
     <Compile Include="Enums\ESex.cs" />
     <Compile Include="Image.cs" />
+    <Compile Include="ImageToShow.cs" />
     <Compile Include="Labels\Label.cs" />
     <Compile Include="Labels\PersonLabel.cs" />
+    <Compile Include="Labels\PersonLabelToShow.cs" />
     <Compile Include="Labels\SimpleLabel.cs" />
+    <Compile Include="Labels\SimpleLabelToShow.cs" />
     <Compile Include="Labels\SpecialLabel.cs" />
+    <Compile Include="Labels\SpecialLabelToShow.cs" />
     <Compile Include="Library.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>

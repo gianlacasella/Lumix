@@ -98,10 +98,6 @@
             this.addToEditingAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addLabelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.informationLabel = new System.Windows.Forms.Label();
             this.ToolbarProgressBar = new System.Windows.Forms.ProgressBar();
             this.pictureChosen = new System.Windows.Forms.PictureBox();
             this.topauxlabel = new System.Windows.Forms.Panel();
@@ -128,6 +124,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
+            this.LabelsPropertyGrid = new System.Windows.Forms.PropertyGrid();
+            this.ImageDataPanel = new System.Windows.Forms.Panel();
+            this.calificationUpDown = new System.Windows.Forms.NumericUpDown();
+            this.CalificationLabel = new System.Windows.Forms.Label();
+            this.SetCalificationButton = new System.Windows.Forms.Button();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.setNewNameButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
@@ -137,8 +141,6 @@
             this.AddSimpleLabelPanel.SuspendLayout();
             this.AddPersonLabelPanel.SuspendLayout();
             this.contextMenuStripImage.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
             this.contextMenuStripEditing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
@@ -146,6 +148,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.ImageDataPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calificationUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -912,55 +916,6 @@
             this.addLabelToolStripMenuItem.Text = "Add Label";
             this.addLabelToolStripMenuItem.Click += new System.EventHandler(this.AddLabelToolStripMenuItem_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(610, 32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 758);
-            this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.titleLabel);
-            this.flowLayoutPanel1.Controls.Add(this.informationLabel);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(247, 697);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.titleLabel.Location = new System.Drawing.Point(0, 0);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.titleLabel.Size = new System.Drawing.Size(30, 31);
-            this.titleLabel.TabIndex = 0;
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // informationLabel
-            // 
-            this.informationLabel.AutoSize = true;
-            this.informationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.informationLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.informationLabel.Location = new System.Drawing.Point(3, 31);
-            this.informationLabel.Name = "informationLabel";
-            this.informationLabel.Padding = new System.Windows.Forms.Padding(20, 5, 0, 0);
-            this.informationLabel.Size = new System.Drawing.Size(20, 29);
-            this.informationLabel.TabIndex = 1;
-            this.informationLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // ToolbarProgressBar
             // 
             this.ToolbarProgressBar.Location = new System.Drawing.Point(618, 3);
@@ -1225,18 +1180,120 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "Features";
             // 
+            // LabelsPropertyGrid
+            // 
+            this.LabelsPropertyGrid.CommandsVisibleIfAvailable = false;
+            this.LabelsPropertyGrid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelsPropertyGrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelsPropertyGrid.HelpVisible = false;
+            this.LabelsPropertyGrid.Location = new System.Drawing.Point(0, 0);
+            this.LabelsPropertyGrid.Name = "LabelsPropertyGrid";
+            this.LabelsPropertyGrid.PropertySort = System.Windows.Forms.PropertySort.Categorized;
+            this.LabelsPropertyGrid.Size = new System.Drawing.Size(253, 292);
+            this.LabelsPropertyGrid.TabIndex = 33;
+            this.LabelsPropertyGrid.ToolbarVisible = false;
+            // 
+            // ImageDataPanel
+            // 
+            this.ImageDataPanel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ImageDataPanel.Controls.Add(this.setNewNameButton);
+            this.ImageDataPanel.Controls.Add(this.nameTextBox);
+            this.ImageDataPanel.Controls.Add(this.NameLabel);
+            this.ImageDataPanel.Controls.Add(this.calificationUpDown);
+            this.ImageDataPanel.Controls.Add(this.CalificationLabel);
+            this.ImageDataPanel.Controls.Add(this.SetCalificationButton);
+            this.ImageDataPanel.Controls.Add(this.LabelsPropertyGrid);
+            this.ImageDataPanel.Location = new System.Drawing.Point(610, 34);
+            this.ImageDataPanel.Name = "ImageDataPanel";
+            this.ImageDataPanel.Size = new System.Drawing.Size(253, 724);
+            this.ImageDataPanel.TabIndex = 33;
+            // 
+            // calificationUpDown
+            // 
+            this.calificationUpDown.Enabled = false;
+            this.calificationUpDown.Location = new System.Drawing.Point(100, 319);
+            this.calificationUpDown.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.calificationUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.calificationUpDown.Name = "calificationUpDown";
+            this.calificationUpDown.ReadOnly = true;
+            this.calificationUpDown.Size = new System.Drawing.Size(37, 20);
+            this.calificationUpDown.TabIndex = 23;
+            this.calificationUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // CalificationLabel
+            // 
+            this.CalificationLabel.AutoSize = true;
+            this.CalificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalificationLabel.ForeColor = System.Drawing.Color.White;
+            this.CalificationLabel.Location = new System.Drawing.Point(18, 323);
+            this.CalificationLabel.Name = "CalificationLabel";
+            this.CalificationLabel.Size = new System.Drawing.Size(76, 16);
+            this.CalificationLabel.TabIndex = 35;
+            this.CalificationLabel.Text = "Calification:";
+            // 
+            // SetCalificationButton
+            // 
+            this.SetCalificationButton.Enabled = false;
+            this.SetCalificationButton.Location = new System.Drawing.Point(143, 316);
+            this.SetCalificationButton.Name = "SetCalificationButton";
+            this.SetCalificationButton.Size = new System.Drawing.Size(85, 23);
+            this.SetCalificationButton.TabIndex = 34;
+            this.SetCalificationButton.Text = "Set Calification";
+            this.SetCalificationButton.UseVisualStyleBackColor = true;
+            this.SetCalificationButton.Click += new System.EventHandler(this.SetCalificationButton_Click);
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.ForeColor = System.Drawing.Color.White;
+            this.NameLabel.Location = new System.Drawing.Point(18, 359);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(48, 16);
+            this.NameLabel.TabIndex = 36;
+            this.NameLabel.Text = "Name:";
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Location = new System.Drawing.Point(73, 359);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(155, 20);
+            this.nameTextBox.TabIndex = 37;
+            // 
+            // setNewNameButton
+            // 
+            this.setNewNameButton.Enabled = false;
+            this.setNewNameButton.Location = new System.Drawing.Point(158, 385);
+            this.setNewNameButton.Name = "setNewNameButton";
+            this.setNewNameButton.Size = new System.Drawing.Size(70, 23);
+            this.setNewNameButton.TabIndex = 38;
+            this.setNewNameButton.Text = "Set Name";
+            this.setNewNameButton.UseVisualStyleBackColor = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1613, 758);
+            this.Controls.Add(this.ImageDataPanel);
             this.Controls.Add(this.AddLabelPanel);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.topauxlabel);
             this.Controls.Add(this.pictureChosen);
             this.Controls.Add(this.ToolbarProgressBar);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelImages);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1260,9 +1317,6 @@
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
             this.contextMenuStripImage.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
             this.contextMenuStripEditing.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
@@ -1272,6 +1326,9 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.ImageDataPanel.ResumeLayout(false);
+            this.ImageDataPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calificationUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1288,13 +1345,9 @@
         private System.Windows.Forms.ToolStripMenuItem exportAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem importWithLabelsToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ProgressBar ToolbarProgressBar;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cleanLibraryToolStripMenuItem;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Label informationLabel;
 		private System.Windows.Forms.PictureBox pictureChosen;
         private System.Windows.Forms.ToolStripMenuItem addLabelToolStripMenuItem;
 		private System.Windows.Forms.Panel topauxlabel;
@@ -1377,6 +1430,14 @@
         private System.Windows.Forms.Label SpecialLabelPhotoMotiveLabel;
         private System.Windows.Forms.ComboBox SpecialLabelSelfieComboxBox;
         private System.Windows.Forms.Label SpecialLabelSelfieLabel;
+        private System.Windows.Forms.PropertyGrid LabelsPropertyGrid;
+        private System.Windows.Forms.Panel ImageDataPanel;
+        private System.Windows.Forms.NumericUpDown calificationUpDown;
+        private System.Windows.Forms.Label CalificationLabel;
+        private System.Windows.Forms.Button SetCalificationButton;
+        private System.Windows.Forms.Button setNewNameButton;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Label NameLabel;
     }
 
 }
