@@ -626,10 +626,26 @@ namespace Entrega2_Equipo1
 			if (chosenEditingImage != null)
 			{
 				Image image = (Image)chosenEditingImage.Tag;
+				SelectFaceLocationForm newForm = new SelectFaceLocationForm();
+				newForm.ActualImage = image.BitmapImage;
+				var result = newForm.ShowDialog();
+				int newLeft = newForm.ReturningLeft;
+				int newTop = newForm.ReturningTop;
+				int newHeight = newForm.ReturningHeight;
+				int newWidth = newForm.ReturningWidth;
+				
 				switch (comboCensor.SelectedItem) {
 					case "Black bar":
+						int[] coordinatesBlack = { newLeft, newTop, newWidth, newHeight };
+						image.BitmapImage = producer.BlackCensorship((Image)chosenEditingImage.Tag, coordinatesBlack);
+						chosenEditingImage.Image = image.BitmapImage;
+						pictureChosen.Image = chosenEditingImage.Image;
 						break;
 					case "Pixel blur":
+						int[] coordinatesBlur = { newTop, newLeft, newWidth, newHeight };
+						image.BitmapImage = producer.PixelCensorship((Image)chosenEditingImage.Tag, coordinatesBlur);
+						chosenEditingImage.Image = image.BitmapImage;
+						pictureChosen.Image = chosenEditingImage.Image;
 						break;
 				}
 			}
