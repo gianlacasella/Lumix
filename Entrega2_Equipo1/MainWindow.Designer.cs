@@ -123,6 +123,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.button8 = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.LabelsPropertyGrid = new System.Windows.Forms.PropertyGrid();
 			this.ImageDataPanel = new System.Windows.Forms.Panel();
@@ -135,6 +136,10 @@
 			this.calificationUpDown = new System.Windows.Forms.NumericUpDown();
 			this.CalificationLabel = new System.Windows.Forms.Label();
 			this.SetCalificationButton = new System.Windows.Forms.Button();
+			this.panelResize = new System.Windows.Forms.Panel();
+			this.YText = new System.Windows.Forms.TextBox();
+			this.XText = new System.Windows.Forms.TextBox();
+			this.resizeDone = new System.Windows.Forms.Button();
 			this.menuStrip1.SuspendLayout();
 			this.AddLabelPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
@@ -153,6 +158,7 @@
 			this.splitContainer1.SuspendLayout();
 			this.ImageDataPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.calificationUpDown)).BeginInit();
+			this.panelResize.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -1068,6 +1074,7 @@
 			this.button14.TabIndex = 20;
 			this.button14.Text = "Resize Image";
 			this.button14.UseVisualStyleBackColor = true;
+			this.button14.Click += new System.EventHandler(this.Button14_Click);
 			// 
 			// button15
 			// 
@@ -1155,6 +1162,7 @@
 			// 
 			// splitContainer1.Panel2
 			// 
+			this.splitContainer1.Panel2.Controls.Add(this.button8);
 			this.splitContainer1.Panel2.Controls.Add(this.label2);
 			this.splitContainer1.Panel2.Controls.Add(this.label4);
 			this.splitContainer1.Panel2.Controls.Add(this.button2);
@@ -1172,6 +1180,15 @@
 			this.splitContainer1.Size = new System.Drawing.Size(385, 302);
 			this.splitContainer1.SplitterDistance = 128;
 			this.splitContainer1.TabIndex = 32;
+			// 
+			// button8
+			// 
+			this.button8.Location = new System.Drawing.Point(147, 175);
+			this.button8.Name = "button8";
+			this.button8.Size = new System.Drawing.Size(75, 23);
+			this.button8.TabIndex = 33;
+			this.button8.Text = "Merge";
+			this.button8.UseVisualStyleBackColor = true;
 			// 
 			// label2
 			// 
@@ -1317,12 +1334,49 @@
 			this.SetCalificationButton.UseVisualStyleBackColor = true;
 			this.SetCalificationButton.Click += new System.EventHandler(this.SetCalificationButton_Click);
 			// 
+			// panelResize
+			// 
+			this.panelResize.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.panelResize.Controls.Add(this.YText);
+			this.panelResize.Controls.Add(this.XText);
+			this.panelResize.Controls.Add(this.resizeDone);
+			this.panelResize.Location = new System.Drawing.Point(1146, 184);
+			this.panelResize.Name = "panelResize";
+			this.panelResize.Size = new System.Drawing.Size(219, 277);
+			this.panelResize.TabIndex = 34;
+			this.panelResize.Visible = false;
+			// 
+			// YText
+			// 
+			this.YText.Location = new System.Drawing.Point(122, 141);
+			this.YText.Name = "YText";
+			this.YText.Size = new System.Drawing.Size(52, 20);
+			this.YText.TabIndex = 2;
+			// 
+			// XText
+			// 
+			this.XText.Location = new System.Drawing.Point(48, 141);
+			this.XText.Name = "XText";
+			this.XText.Size = new System.Drawing.Size(52, 20);
+			this.XText.TabIndex = 1;
+			// 
+			// resizeDone
+			// 
+			this.resizeDone.Location = new System.Drawing.Point(75, 174);
+			this.resizeDone.Name = "resizeDone";
+			this.resizeDone.Size = new System.Drawing.Size(75, 23);
+			this.resizeDone.TabIndex = 0;
+			this.resizeDone.Text = "Resize";
+			this.resizeDone.UseVisualStyleBackColor = true;
+			this.resizeDone.Click += new System.EventHandler(this.ResizeDone_Click);
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.ClientSize = new System.Drawing.Size(1613, 758);
+			this.Controls.Add(this.panelResize);
 			this.Controls.Add(this.ImageDataPanel);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.topauxlabel);
@@ -1364,6 +1418,8 @@
 			this.ImageDataPanel.ResumeLayout(false);
 			this.ImageDataPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.calificationUpDown)).EndInit();
+			this.panelResize.ResumeLayout(false);
+			this.panelResize.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1476,6 +1532,11 @@
         private System.Windows.Forms.Button DeleteLabelButton;
         private System.Windows.Forms.Button EditLabelButton;
         private System.Windows.Forms.Button addnewlabelbutton;
-    }
+		private System.Windows.Forms.Button button8;
+		private System.Windows.Forms.Panel panelResize;
+		private System.Windows.Forms.TextBox YText;
+		private System.Windows.Forms.TextBox XText;
+		private System.Windows.Forms.Button resizeDone;
+	}
 
 }

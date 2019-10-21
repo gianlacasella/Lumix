@@ -892,6 +892,30 @@ namespace Entrega2_Equipo1
 				pictureChosen.Image = chosenEditingImage.Image;
 			}
 		}
+
+		private void Button14_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				panelResize.Visible = true;
+				Image image = (Image)chosenEditingImage.Tag;
+				XText.Text = image.Resolution[0].ToString();
+				YText.Text = image.Resolution[1].ToString();
+			}
+
+		}
+
+		private void ResizeDone_Click(object sender, EventArgs e)
+		{
+			panelResize.Visible = false;
+			Resizer res = new Resizer();
+			int x = Convert.ToInt32(XText.Text);
+			int y = Convert.ToInt32(YText.Text);
+			Image image = (Image)chosenEditingImage.Tag;
+			image.BitmapImage = res.ResizeImage(image.BitmapImage, x,y);
+			chosenEditingImage.Image = image.BitmapImage;
+			pictureChosen.Image = chosenEditingImage.Image;
+		}
 	}
 }
 
