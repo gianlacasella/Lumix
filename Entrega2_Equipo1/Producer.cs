@@ -25,9 +25,9 @@ namespace Entrega2_Equipo1
         }
 
 
-        public Bitmap AddText(Bitmap bitmap, string text, int xAxis, int yAxis, float fontSize = 10.0F,
-            string colorName1 = null, string fontStyle = "bold", string fontName = "Times New Roman"
-            , string colorName2 = null)
+        public Bitmap AddText(Bitmap bitmap, string text, int xAxis, int yAxis, float fontSize,
+            Color colorName1, string fontStyle, string fontName
+            , Color colorName2)
         {
             AddText addtext = (AddText)this.tools[7];
             return addtext.InsertText(bitmap, text, xAxis, yAxis, fontSize, colorName1, fontStyle, fontName, colorName2);

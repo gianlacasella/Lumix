@@ -15,9 +15,9 @@ namespace Entrega2_Equipo1
         public AddText() { }
 
 
-        public Bitmap InsertText(Bitmap bitmap, string text, int xAxis, int yAxis, float fontSize = 10.0F, 
-            string colorName1 = null, string fontStyle = "bold", string fontName = "Times New Roman" 
-            , string colorName2 = null)
+        public Bitmap InsertText(Bitmap bitmap, string text, int xAxis, int yAxis, float fontSize, 
+            Color colorName1, string fontStyle, string fontName 
+            , Color colorName2)
         {
             Bitmap temp = (Bitmap)bitmap.Clone();
             Graphics gr = Graphics.FromImage(temp);
@@ -39,19 +39,14 @@ namespace Entrega2_Equipo1
                     break;
             }
             font = new Font(fontName, fontSize, fStyle);
-            if (string.IsNullOrEmpty(colorName1))
-            {
-                colorName1 = "Black";
-            }
-            if (string.IsNullOrEmpty(colorName2))
+
+            if (colorName2 == null)
             {
                 colorName2 = colorName1;
             }
-            Color color1 = Color.FromName(colorName1);
-            Color color2 = Color.FromName(colorName2);
             int gW = (int)(text.Length * fontSize);
             gW = gW == 0 ? 10 : gW;
-            LinearGradientBrush LGBrush = new LinearGradientBrush(new Rectangle(0,0,gW,(int)fontSize),color1,color2,LinearGradientMode.Vertical);
+            LinearGradientBrush LGBrush = new LinearGradientBrush(new Rectangle(0,0,gW,(int)fontSize),colorName1,colorName2,LinearGradientMode.Vertical);
             gr.DrawString(text, font, LGBrush, xAxis, yAxis);
             return temp;
         }

@@ -27,7 +27,8 @@ namespace Entrega2_Equipo1
 
         public Bitmap pixelCensorship(Image image, int[] coordinates)
         {
-            Bitmap bitmap = image.BitmapImage;
+            Bitmap bitmapInit = image.BitmapImage;
+			Bitmap bitmap = (Bitmap)bitmapInit.Clone();
             double[] coordinatesDouble = new double[coordinates.Length];
             for (int i=0; i < coordinates.Length; i++)
             {

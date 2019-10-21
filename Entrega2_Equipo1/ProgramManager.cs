@@ -247,7 +247,7 @@ namespace Entrega2_Equipo1
 
                     // Add text feature => READY
                     case 2:
-                        this.AddText();
+                        //this.AddText();
                         break;
 					case 3:
 						//Merge => READY
@@ -471,7 +471,7 @@ namespace Entrega2_Equipo1
 
 		}
 
-
+		/*
 		private void AddText()
         {
             List<string> AddTextTitle = this.LoadBannerData("addtext.txt");
@@ -512,7 +512,7 @@ namespace Entrega2_Equipo1
                 }
             }
         }
-
+		*/
 
         private Dictionary<string, string> GetDataToAddText(string filename, List<Image> listofimages)
         {

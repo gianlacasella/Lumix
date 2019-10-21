@@ -628,7 +628,7 @@ namespace Entrega2_Equipo1
 				Image image = (Image)chosenEditingImage.Tag;
 				SelectFaceLocationForm newForm = new SelectFaceLocationForm();
 				newForm.ActualImage = image.BitmapImage;
-				var result = newForm.ShowDialog();
+				newForm.ShowDialog();
 				int newLeft = newForm.ReturningLeft;
 				int newTop = newForm.ReturningTop;
 				int newHeight = newForm.ReturningHeight;
@@ -636,14 +636,14 @@ namespace Entrega2_Equipo1
 				
 				switch (comboCensor.SelectedItem) {
 					case "Black bar":
-						int[] coordinatesBlack = { newLeft, newTop, newWidth, newHeight };
-						image.BitmapImage = producer.BlackCensorship((Image)chosenEditingImage.Tag, coordinatesBlack);
+						int[] coordinatesBlack = {  newWidth, newHeight, newTop, newLeft };
+						image.BitmapImage = producer.BlackCensorship(image, coordinatesBlack);
 						chosenEditingImage.Image = image.BitmapImage;
 						pictureChosen.Image = chosenEditingImage.Image;
 						break;
 					case "Pixel blur":
-						int[] coordinatesBlur = { newTop, newLeft, newWidth, newHeight };
-						image.BitmapImage = producer.PixelCensorship((Image)chosenEditingImage.Tag, coordinatesBlur);
+						int[] coordinatesBlur = { newLeft, newTop, newWidth, newHeight };
+						image.BitmapImage = producer.PixelCensorship(image, coordinatesBlur);
 						chosenEditingImage.Image = image.BitmapImage;
 						pictureChosen.Image = chosenEditingImage.Image;
 						break;
@@ -866,6 +866,32 @@ namespace Entrega2_Equipo1
             AddLabelPanel.Visible = true;
             AddLabelController();
         }
-    }
+
+		private void Button13_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				FormAdd form = new FormAdd();
+				form.ActualImage = image.BitmapImage;
+				form.ShowDialog();
+				int x = form.X;
+				int y = form.Y;
+				string Text = form.Text;
+				string FontStyle = form.FontStyle;
+				string FontName = form.FontName;
+				float FontSize = form.FontSize;
+				Color MainColor = form.MainColor;
+				Color SecondColor = form.SecondaryColor;
+				if (SecondColor == Color.Empty)
+				{
+					SecondColor = MainColor;
+				}
+				image.BitmapImage = producer.AddText(image.BitmapImage, Text,x,y,FontSize,MainColor,FontStyle,FontName,SecondColor);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+	}
 }
 
