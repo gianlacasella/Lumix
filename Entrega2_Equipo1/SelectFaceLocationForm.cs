@@ -15,6 +15,7 @@ namespace Entrega2_Equipo1
         Bitmap actualImage;
         Bitmap showedImage;
         bool down = false;
+		public bool Exit = false;
         public int returningTop = 0, returningLeft = 0, returningHeight = 0, returningWidth = 0;
 
         public Bitmap ActualImage { get => this.actualImage; set => this.actualImage = value; }
@@ -112,6 +113,7 @@ namespace Entrega2_Equipo1
 
         private void DoneButton_Click(object sender, EventArgs e)
         {
+			Exit = true;
             this.Close();
         }
 

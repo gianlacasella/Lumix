@@ -36,7 +36,7 @@ namespace Entrega2_Equipo1
 			producer = PM.LoadingProducerManager();
 			PanelImages_Paint(sender, e);
 			comboRotate.DataSource = Enum.GetValues(typeof(RotateFlipType));
-			comboCensor.Items.Add("Black bar"); comboCensor.Items.Add("Pixel blur");
+			comboCensor.Items.Add("Black bar"); comboCensor.Items.Add("Pixel blur");comboCensor.Text = "Black bar";
             AddLabelPanel.Location = panelImages.Location;
             AddLabelPanel.Visible = false;
             panelImages.Visible = true;
@@ -636,16 +636,22 @@ namespace Entrega2_Equipo1
 				
 				switch (comboCensor.SelectedItem) {
 					case "Black bar":
-						int[] coordinatesBlack = {  newWidth, newHeight, newTop, newLeft };
-						image.BitmapImage = producer.BlackCensorship(image, coordinatesBlack);
-						chosenEditingImage.Image = image.BitmapImage;
-						pictureChosen.Image = chosenEditingImage.Image;
+						if (newForm.Exit)
+						{
+							int[] coordinatesBlack = { newWidth, newHeight, newTop, newLeft };
+							image.BitmapImage = producer.BlackCensorship(image, coordinatesBlack);
+							chosenEditingImage.Image = image.BitmapImage;
+							pictureChosen.Image = chosenEditingImage.Image;
+						}
 						break;
 					case "Pixel blur":
-						int[] coordinatesBlur = { newLeft, newTop, newWidth, newHeight };
-						image.BitmapImage = producer.PixelCensorship(image, coordinatesBlur);
-						chosenEditingImage.Image = image.BitmapImage;
-						pictureChosen.Image = chosenEditingImage.Image;
+						if (newForm.Exit)
+						{
+							int[] coordinatesBlur = { newLeft, newTop, newWidth, newHeight };
+							image.BitmapImage = producer.PixelCensorship(image, coordinatesBlur);
+							chosenEditingImage.Image = image.BitmapImage;
+							pictureChosen.Image = chosenEditingImage.Image;
+						}
 						break;
 				}
 			}
@@ -887,9 +893,12 @@ namespace Entrega2_Equipo1
 				{
 					SecondColor = MainColor;
 				}
-				image.BitmapImage = producer.AddText(image.BitmapImage, Text,x,y,FontSize,MainColor,FontStyle,FontName,SecondColor);
-				chosenEditingImage.Image = image.BitmapImage;
-				pictureChosen.Image = chosenEditingImage.Image;
+				if (form.Exit)
+				{
+					image.BitmapImage = producer.AddText(image.BitmapImage, Text, x, y, FontSize, MainColor, FontStyle, FontName, SecondColor);
+					chosenEditingImage.Image = image.BitmapImage;
+					pictureChosen.Image = chosenEditingImage.Image;
+				}
 			}
 		}
 

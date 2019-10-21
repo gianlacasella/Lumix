@@ -24,6 +24,7 @@ namespace Entrega2_Equipo1
 		private float fontSize = 10.0F;
 		private Color mainColor = Color.Black;
 		private Color secondaryColor = Color.Empty;
+		public bool Exit = false;
 
 		public Bitmap ActualImage { get => this.actualImage; set => this.actualImage = value; }
 		public int X { get => x; set => x = value; }
@@ -68,6 +69,7 @@ namespace Entrega2_Equipo1
 
 		private void DoneButton_Click(object sender, EventArgs e)
 		{
+			Exit = true;
 			this.Close();
 		}
 
