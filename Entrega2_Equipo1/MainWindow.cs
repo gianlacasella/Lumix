@@ -434,6 +434,7 @@ namespace Entrega2_Equipo1
 			{
 				chosenEditingImage = PIC;
 			}
+			pictureCollageImage.Image = chosenEditingImage.Image;
 			PIC.BorderStyle = BorderStyle.Fixed3D;
 		}
 
