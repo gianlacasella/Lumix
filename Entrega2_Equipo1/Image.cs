@@ -32,8 +32,20 @@ namespace Entrega2_Equipo1
         public bool DarkClear { get => this.darkClear; set => this.darkClear = value; }
         public Dictionary<int, Dictionary<string, string>> Exif { get => this.exif; set => this.exif = value; }
 
-        
-        public Image(string path, List<Label> labels, int calification)
+
+		public Image(Bitmap bitmap, List<Label> labels, int calification)
+		{
+			this.Name = name;
+			this.Labels = labels;
+			this.Calification = calification;
+			this.bitmapImage = bitmap;
+			this.Resolution = LoadResolution();
+			this.AspectRatio = LoadAspectRatio();
+			this.DarkClear = LoadDarkClear();
+			this.exif = LoadExif();
+		}
+
+		public Image(string path, List<Label> labels, int calification)
         {
             this.Name = name;
             this.Labels = labels;

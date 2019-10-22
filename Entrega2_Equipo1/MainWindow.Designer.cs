@@ -104,6 +104,8 @@
 			this.contextMenuStripEditing = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.removeFromEditingAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exportToLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addToFeaturesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.removeFromFeaturesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
@@ -140,6 +142,17 @@
 			this.YText = new System.Windows.Forms.TextBox();
 			this.XText = new System.Windows.Forms.TextBox();
 			this.resizeDone = new System.Windows.Forms.Button();
+			this.panelCollage = new System.Windows.Forms.Panel();
+			this.InsertLabel = new System.Windows.Forms.Label();
+			this.BaseLabel = new System.Windows.Forms.Label();
+			this.pictureCollageImage = new System.Windows.Forms.PictureBox();
+			this.radioButtonImage = new System.Windows.Forms.RadioButton();
+			this.radioButtonSolid = new System.Windows.Forms.RadioButton();
+			this.textInsertH = new System.Windows.Forms.TextBox();
+			this.textInsertW = new System.Windows.Forms.TextBox();
+			this.textBaseH = new System.Windows.Forms.TextBox();
+			this.textBaseW = new System.Windows.Forms.TextBox();
+			this.buttonCollage = new System.Windows.Forms.Button();
 			this.menuStrip1.SuspendLayout();
 			this.AddLabelPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
@@ -159,6 +172,8 @@
 			this.ImageDataPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.calificationUpDown)).BeginInit();
 			this.panelResize.SuspendLayout();
+			this.panelCollage.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -958,23 +973,39 @@
 			// 
 			this.contextMenuStripEditing.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeFromEditingAreaToolStripMenuItem,
-            this.exportToLibraryToolStripMenuItem});
+            this.exportToLibraryToolStripMenuItem,
+            this.addToFeaturesListToolStripMenuItem,
+            this.removeFromFeaturesListToolStripMenuItem});
 			this.contextMenuStripEditing.Name = "contextMenuStripEditing";
-			this.contextMenuStripEditing.Size = new System.Drawing.Size(214, 48);
+			this.contextMenuStripEditing.Size = new System.Drawing.Size(215, 92);
 			// 
 			// removeFromEditingAreaToolStripMenuItem
 			// 
 			this.removeFromEditingAreaToolStripMenuItem.Name = "removeFromEditingAreaToolStripMenuItem";
-			this.removeFromEditingAreaToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.removeFromEditingAreaToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
 			this.removeFromEditingAreaToolStripMenuItem.Text = "Remove from Editing Area";
 			this.removeFromEditingAreaToolStripMenuItem.Click += new System.EventHandler(this.RemoveFromEditingAreaToolStripMenuItem_Click);
 			// 
 			// exportToLibraryToolStripMenuItem
 			// 
 			this.exportToLibraryToolStripMenuItem.Name = "exportToLibraryToolStripMenuItem";
-			this.exportToLibraryToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.exportToLibraryToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
 			this.exportToLibraryToolStripMenuItem.Text = "Export to Library";
 			this.exportToLibraryToolStripMenuItem.Click += new System.EventHandler(this.ExportToLibraryToolStripMenuItem_Click);
+			// 
+			// addToFeaturesListToolStripMenuItem
+			// 
+			this.addToFeaturesListToolStripMenuItem.Name = "addToFeaturesListToolStripMenuItem";
+			this.addToFeaturesListToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+			this.addToFeaturesListToolStripMenuItem.Text = "Add to Features List";
+			this.addToFeaturesListToolStripMenuItem.Click += new System.EventHandler(this.AddToFeaturesListToolStripMenuItem_Click);
+			// 
+			// removeFromFeaturesListToolStripMenuItem
+			// 
+			this.removeFromFeaturesListToolStripMenuItem.Name = "removeFromFeaturesListToolStripMenuItem";
+			this.removeFromFeaturesListToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+			this.removeFromFeaturesListToolStripMenuItem.Text = "Remove from Features List";
+			this.removeFromFeaturesListToolStripMenuItem.Click += new System.EventHandler(this.RemoveFromFeaturesListToolStripMenuItem_Click);
 			// 
 			// button1
 			// 
@@ -1084,6 +1115,7 @@
 			this.button15.TabIndex = 21;
 			this.button15.Text = "Mosaic";
 			this.button15.UseVisualStyleBackColor = true;
+			this.button15.Click += new System.EventHandler(this.Button15_Click);
 			// 
 			// comboRotate
 			// 
@@ -1123,6 +1155,7 @@
 			this.button3.TabIndex = 29;
 			this.button3.Text = "Collage";
 			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.Button3_Click);
 			// 
 			// label3
 			// 
@@ -1189,6 +1222,7 @@
 			this.button8.TabIndex = 33;
 			this.button8.Text = "Merge";
 			this.button8.UseVisualStyleBackColor = true;
+			this.button8.Click += new System.EventHandler(this.Button8_Click);
 			// 
 			// label2
 			// 
@@ -1370,12 +1404,118 @@
 			this.resizeDone.UseVisualStyleBackColor = true;
 			this.resizeDone.Click += new System.EventHandler(this.ResizeDone_Click);
 			// 
+			// panelCollage
+			// 
+			this.panelCollage.BackColor = System.Drawing.SystemColors.Control;
+			this.panelCollage.Controls.Add(this.InsertLabel);
+			this.panelCollage.Controls.Add(this.BaseLabel);
+			this.panelCollage.Controls.Add(this.pictureCollageImage);
+			this.panelCollage.Controls.Add(this.radioButtonImage);
+			this.panelCollage.Controls.Add(this.radioButtonSolid);
+			this.panelCollage.Controls.Add(this.textInsertH);
+			this.panelCollage.Controls.Add(this.textInsertW);
+			this.panelCollage.Controls.Add(this.textBaseH);
+			this.panelCollage.Controls.Add(this.textBaseW);
+			this.panelCollage.Controls.Add(this.buttonCollage);
+			this.panelCollage.Location = new System.Drawing.Point(1143, 240);
+			this.panelCollage.Name = "panelCollage";
+			this.panelCollage.Size = new System.Drawing.Size(268, 279);
+			this.panelCollage.TabIndex = 35;
+			this.panelCollage.Visible = false;
+			// 
+			// InsertLabel
+			// 
+			this.InsertLabel.AutoSize = true;
+			this.InsertLabel.Location = new System.Drawing.Point(18, 71);
+			this.InsertLabel.Name = "InsertLabel";
+			this.InsertLabel.Size = new System.Drawing.Size(149, 13);
+			this.InsertLabel.TabIndex = 10;
+			this.InsertLabel.Text = "Insert Images Resolution (X,Y)";
+			// 
+			// BaseLabel
+			// 
+			this.BaseLabel.AutoSize = true;
+			this.BaseLabel.Location = new System.Drawing.Point(15, 26);
+			this.BaseLabel.Name = "BaseLabel";
+			this.BaseLabel.Size = new System.Drawing.Size(142, 13);
+			this.BaseLabel.TabIndex = 9;
+			this.BaseLabel.Text = "Base Image Resolution (X,Y)";
+			// 
+			// pictureCollageImage
+			// 
+			this.pictureCollageImage.Location = new System.Drawing.Point(162, 150);
+			this.pictureCollageImage.Name = "pictureCollageImage";
+			this.pictureCollageImage.Size = new System.Drawing.Size(100, 85);
+			this.pictureCollageImage.TabIndex = 8;
+			this.pictureCollageImage.TabStop = false;
+			// 
+			// radioButtonImage
+			// 
+			this.radioButtonImage.AutoSize = true;
+			this.radioButtonImage.Location = new System.Drawing.Point(13, 199);
+			this.radioButtonImage.Name = "radioButtonImage";
+			this.radioButtonImage.Size = new System.Drawing.Size(115, 17);
+			this.radioButtonImage.TabIndex = 6;
+			this.radioButtonImage.Text = "Image Background";
+			this.radioButtonImage.UseVisualStyleBackColor = true;
+			// 
+			// radioButtonSolid
+			// 
+			this.radioButtonSolid.AutoSize = true;
+			this.radioButtonSolid.Checked = true;
+			this.radioButtonSolid.Location = new System.Drawing.Point(13, 150);
+			this.radioButtonSolid.Name = "radioButtonSolid";
+			this.radioButtonSolid.Size = new System.Drawing.Size(110, 17);
+			this.radioButtonSolid.TabIndex = 5;
+			this.radioButtonSolid.TabStop = true;
+			this.radioButtonSolid.Text = "Color Background";
+			this.radioButtonSolid.UseVisualStyleBackColor = true;
+			// 
+			// textInsertH
+			// 
+			this.textInsertH.Location = new System.Drawing.Point(90, 89);
+			this.textInsertH.Name = "textInsertH";
+			this.textInsertH.Size = new System.Drawing.Size(64, 20);
+			this.textInsertH.TabIndex = 4;
+			// 
+			// textInsertW
+			// 
+			this.textInsertW.Location = new System.Drawing.Point(18, 89);
+			this.textInsertW.Name = "textInsertW";
+			this.textInsertW.Size = new System.Drawing.Size(65, 20);
+			this.textInsertW.TabIndex = 3;
+			// 
+			// textBaseH
+			// 
+			this.textBaseH.Location = new System.Drawing.Point(89, 44);
+			this.textBaseH.Name = "textBaseH";
+			this.textBaseH.Size = new System.Drawing.Size(65, 20);
+			this.textBaseH.TabIndex = 2;
+			// 
+			// textBaseW
+			// 
+			this.textBaseW.Location = new System.Drawing.Point(18, 44);
+			this.textBaseW.Name = "textBaseW";
+			this.textBaseW.Size = new System.Drawing.Size(65, 20);
+			this.textBaseW.TabIndex = 1;
+			// 
+			// buttonCollage
+			// 
+			this.buttonCollage.Location = new System.Drawing.Point(79, 252);
+			this.buttonCollage.Name = "buttonCollage";
+			this.buttonCollage.Size = new System.Drawing.Size(75, 23);
+			this.buttonCollage.TabIndex = 0;
+			this.buttonCollage.Text = "Collage";
+			this.buttonCollage.UseVisualStyleBackColor = true;
+			this.buttonCollage.Click += new System.EventHandler(this.ButtonCollage_Click);
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.ClientSize = new System.Drawing.Size(1613, 758);
+			this.Controls.Add(this.panelCollage);
 			this.Controls.Add(this.panelResize);
 			this.Controls.Add(this.ImageDataPanel);
 			this.Controls.Add(this.splitContainer1);
@@ -1420,6 +1560,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.calificationUpDown)).EndInit();
 			this.panelResize.ResumeLayout(false);
 			this.panelResize.PerformLayout();
+			this.panelCollage.ResumeLayout(false);
+			this.panelCollage.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1537,6 +1680,19 @@
 		private System.Windows.Forms.TextBox YText;
 		private System.Windows.Forms.TextBox XText;
 		private System.Windows.Forms.Button resizeDone;
+		private System.Windows.Forms.ToolStripMenuItem addToFeaturesListToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem removeFromFeaturesListToolStripMenuItem;
+		private System.Windows.Forms.Panel panelCollage;
+		private System.Windows.Forms.TextBox textBaseW;
+		private System.Windows.Forms.Button buttonCollage;
+		private System.Windows.Forms.Label InsertLabel;
+		private System.Windows.Forms.Label BaseLabel;
+		private System.Windows.Forms.PictureBox pictureCollageImage;
+		private System.Windows.Forms.RadioButton radioButtonImage;
+		private System.Windows.Forms.RadioButton radioButtonSolid;
+		private System.Windows.Forms.TextBox textInsertH;
+		private System.Windows.Forms.TextBox textInsertW;
+		private System.Windows.Forms.TextBox textBaseH;
 	}
 
 }

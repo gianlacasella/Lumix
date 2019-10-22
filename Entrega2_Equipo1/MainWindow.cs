@@ -21,6 +21,7 @@ namespace Entrega2_Equipo1
 		bool Saved = true;
 		PictureBox chosenImage = null;
 		PictureBox chosenEditingImage = null;
+		List<Image> featuresImage = new List<Image>();
         Label createdLabel;
         Image imagetoaddlabel;
 
@@ -924,6 +925,149 @@ namespace Entrega2_Equipo1
 			image.BitmapImage = res.ResizeImage(image.BitmapImage, x,y);
 			chosenEditingImage.Image = image.BitmapImage;
 			pictureChosen.Image = chosenEditingImage.Image;
+		}
+
+		private void AddToFeaturesListToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ToolStripItem menuItem = sender as ToolStripItem;
+			if (menuItem != null)
+			{
+				// Retrieve the ContextMenuStrip that owns this ToolStripItem
+				ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+				if (owner != null)
+				{
+					// Get the control that is displaying this context menu
+					Control sourceControl = owner.SourceControl;
+					PictureBox PIC = (PictureBox)sourceControl;
+					Image im = (Image)PIC.Tag;
+					featuresImage.Add(im);
+				}
+			}
+		}
+
+		private void Button8_Click(object sender, EventArgs e)
+		{
+			if (featuresImage.Count > 1)
+			{
+				Bitmap merged = producer.Merge(featuresImage);
+				Image MergeImage = new Image(merged, new List<Label>(), -1);
+				producer.LoadImagesToWorkingArea(new List<Image>() { MergeImage});
+				EditingPanel_Paint(sender, e);
+				featuresImage.Clear();
+				pictureChosen.Image = merged;
+			}
+			else
+			{
+				MessageBox.Show("Select at least two images", "Not enough images.",
+					  MessageBoxButtons.OK, MessageBoxIcon.Question);
+			}
+		}
+
+		private void RemoveFromFeaturesListToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ToolStripItem menuItem = sender as ToolStripItem;
+			if (menuItem != null)
+			{
+				// Retrieve the ContextMenuStrip that owns this ToolStripItem
+				ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+				if (owner != null)
+				{
+					// Get the control that is displaying this context menu
+					Control sourceControl = owner.SourceControl;
+					PictureBox PIC = (PictureBox)sourceControl;
+					Image im = (Image)PIC.Tag;
+					featuresImage.Remove(im);
+				}
+			}
+		}
+
+		private void EditingPanel_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void Button15_Click(object sender, EventArgs e)
+		{
+		
+		}
+
+		private void Button3_Click(object sender, EventArgs e)
+		{
+			if(featuresImage.Count > 1)
+			{
+				panelCollage.Visible = true;
+				try
+				{
+					pictureCollageImage.Image = chosenEditingImage.Image;
+					pictureCollageImage.SizeMode = PictureBoxSizeMode.StretchImage;
+				}
+				catch
+				{
+					pictureCollageImage.Image = pictureCollageImage.ErrorImage;
+					pictureCollageImage.SizeMode = PictureBoxSizeMode.StretchImage;
+				}
+			}
+			else
+			{
+				MessageBox.Show("Select at least two images", "Not enough images.",
+					  MessageBoxButtons.OK, MessageBoxIcon.Question);
+			}
+		}
+
+
+		private void ButtonCollage_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				int BaseW = Convert.ToInt32(textBaseW.Text);
+				int BaseH = Convert.ToInt32(textBaseH.Text);
+				int InsertW = Convert.ToInt32(textInsertW.Text);
+				int InsertH = Convert.ToInt32(textInsertH.Text);
+				if (radioButtonSolid.Checked)
+				{
+					if (colorDialogFilter.ShowDialog() == DialogResult.OK)
+					{
+
+						Color color = colorDialogFilter.Color;
+						Bitmap collage = producer.Collage(featuresImage, BaseW, BaseH, InsertW, InsertH, null, color.R, color.G, color.B);
+						Image MergeImage = new Image(collage, new List<Label>(), -1);
+						producer.LoadImagesToWorkingArea(new List<Image>() { MergeImage });
+						EditingPanel_Paint(sender, e);
+						featuresImage.Clear();
+						pictureChosen.Image = collage;
+						panelCollage.Visible = false;
+						textBaseW.Text = "";
+						textBaseH.Text = "";
+						textInsertW.Text = "";
+						textInsertH.Text = "";
+					}
+				}
+				else if (radioButtonImage.Checked && chosenEditingImage != null)
+				{
+					Image im = (Image)chosenEditingImage.Tag;
+					Bitmap collage = producer.Collage(featuresImage, BaseW, BaseH, InsertW, InsertH, im.BitmapImage);
+					Image MergeImage = new Image(collage, new List<Label>(), -1);
+					producer.LoadImagesToWorkingArea(new List<Image>() { MergeImage });
+					EditingPanel_Paint(sender, e);
+					featuresImage.Clear();
+					pictureChosen.Image = collage;
+					panelCollage.Visible = false;
+					textBaseW.Text = "";
+					textBaseH.Text = "";
+					textInsertW.Text = "";
+					textInsertH.Text = "";
+				}
+				else
+				{
+					MessageBox.Show("There is no picture selected", "Error",
+					  MessageBoxButtons.OK, MessageBoxIcon.Question);
+				}
+			}
+			catch
+			{
+				MessageBox.Show("Wrong Parameters", "Error",
+					  MessageBoxButtons.OK, MessageBoxIcon.Question);
+			}
 		}
 	}
 }
