@@ -1032,7 +1032,7 @@
             this.topauxlabel.AutoScroll = true;
             this.topauxlabel.Location = new System.Drawing.Point(863, 469);
             this.topauxlabel.Name = "topauxlabel";
-            this.topauxlabel.Size = new System.Drawing.Size(738, 248);
+            this.topauxlabel.Size = new System.Drawing.Size(738, 277);
             this.topauxlabel.TabIndex = 6;
             this.topauxlabel.Paint += new System.Windows.Forms.PaintEventHandler(this.EditingPanel_Paint);
             // 
@@ -1580,7 +1580,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1613, 758);
             this.Controls.Add(this.panelCollage);
             this.Controls.Add(this.panelResize);
