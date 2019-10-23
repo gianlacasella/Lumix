@@ -1630,6 +1630,7 @@
             this.comboCensor.Name = "comboCensor";
             this.comboCensor.Size = new System.Drawing.Size(68, 21);
             this.comboCensor.TabIndex = 25;
+            this.comboCensor.SelectedIndexChanged += new System.EventHandler(this.ComboCensor_SelectedIndexChanged);
             // 
             // button6
             // 
