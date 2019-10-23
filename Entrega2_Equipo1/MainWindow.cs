@@ -877,6 +877,7 @@ namespace Entrega2_Equipo1
         {
             // Ya reconocimos cual fue el Image seleccionado para agregar el label
             AddLabelPanel.Visible = true;
+            panelImages.Visible = false;
             AddLabelController();
         }
 
