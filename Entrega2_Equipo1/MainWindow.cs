@@ -1162,9 +1162,37 @@ namespace Entrega2_Equipo1
             var selecteditem = (ToolStripMenuItem)sender;
             selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
         }
+
+        private void PanelImages_DragEnter(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            panelImages.BackColor = Color.FromArgb(35, 32, 39);
+            this.Cursor = Cursors.Hand;
+            this.ToolbarProgressBar.Value = 0;
+            this.ToolbarProgressBar.Visible = true;
+            int count = 1;
+            foreach (string path in files)
+            {
+                string name = Path.GetFileNameWithoutExtension(path);
+                Image returningImage = new Image(path, new List<Label>(), -1);
+                returningImage.Name = name;
+                library.AddImage(returningImage);
+                this.ToolbarProgressBar.Increment((count * 100) / files.Length);
+            }
+            this.ToolbarProgressBar.Visible = false;
+            this.ToolbarProgressBar.Value = 0;
+            ReLoadPanelImage(sender, e);
+            Saved = false;
+        }
+
+        private void PanelImages_DragLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+            panelImages.BackColor = Color.FromArgb(11, 7, 17);
+        }
     }
 
-   public class MyRenderer : ToolStripProfessionalRenderer
+    public class MyRenderer : ToolStripProfessionalRenderer
    {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
