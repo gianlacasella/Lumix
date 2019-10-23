@@ -24,6 +24,8 @@ namespace Entrega2_Equipo1
 		List<Image> featuresImage = new List<Image>();
         Label createdLabel;
         Image imagetoaddlabel;
+        Size formsizewithrightpanel = new Size(1662, 822);
+        Size formsizewithoutrightpanel = new Size(665, 745);
 
         // =============================== FRAME METHODS ================================
 		public MainWindow()
@@ -39,8 +41,9 @@ namespace Entrega2_Equipo1
 			PanelImages_Paint(sender, e);
 			comboRotate.DataSource = Enum.GetValues(typeof(RotateFlipType));
 			comboCensor.Items.Add("Black bar"); comboCensor.Items.Add("Pixel blur");comboCensor.Text = "Black bar";
-            AddLabelPanel.Location = panelImages.Location;
-            AddLabelPanel.Visible = false;
+            LeftPanel.Location = panelImages.Location;
+            LeftPanel.Visible = false;
+            this.Size = formsizewithoutrightpanel;
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -223,7 +226,7 @@ namespace Entrega2_Equipo1
                     PictureBox PIC = (PictureBox)sourceControl;
                     Image imagetoaddlabel = (Image)PIC.Tag;
                     // Ya reconocimos cual fue el Image seleccionado para agregar el label
-                    AddLabelPanel.Visible = true;
+                    LeftPanel.Visible = true;
                     this.imagetoaddlabel = imagetoaddlabel;
                     this.panelImages.Visible = false;
                     AddLabelController();
@@ -282,7 +285,8 @@ namespace Entrega2_Equipo1
             PictureBox PIC = (PictureBox)sender;
             Image image = (Image)PIC.Tag;
             ImageToShow imagets = new ImageToShow(image);
-            this.LabelsPropertyGrid.SelectedObject = imagets;
+            // Esto estaba del property grid
+            //this.LabelsPropertyGrid.SelectedObject = imagets;
             this.calificationUpDown.Enabled = true;
             this.SetCalificationButton.Enabled = true;
             this.setNewNameButton.Enabled = true;
@@ -331,8 +335,9 @@ namespace Entrega2_Equipo1
         {
             if (chosenImage != null)
             {
-                this.LabelsPropertyGrid.SelectedObject = new object();
-                this.LabelsPropertyGrid.Update();
+                // Tambien del property grid
+                //this.LabelsPropertyGrid.SelectedObject = new object();
+                //this.LabelsPropertyGrid.Update();
                 chosenImage.BorderStyle = BorderStyle.None;
                 chosenImage = null;
                 this.calificationUpDown.Enabled = false;
@@ -376,8 +381,9 @@ namespace Entrega2_Equipo1
         {
             try
             {
-                this.LabelsPropertyGrid.SelectedObject = new object();
-                this.LabelsPropertyGrid.SelectedObject = new ImageToShow(this.imagetoaddlabel);
+                // Del propertygrid
+                //this.LabelsPropertyGrid.SelectedObject = new object();
+                //this.LabelsPropertyGrid.SelectedObject = new ImageToShow(this.imagetoaddlabel);
             }
             catch
             {
@@ -673,10 +679,10 @@ namespace Entrega2_Equipo1
                 if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!",
                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    AddLabelPanel.Visible = false;
+                    LeftPanel.Visible = false;
                 }
             }
-            AddLabelPanel.Visible = false;
+            LeftPanel.Visible = false;
             panelImages.Visible = true;
             this.importToolStripMenuItem1.Enabled = true;
             this.importWithLabelsToolStripMenuItem.Enabled = true;
@@ -684,7 +690,8 @@ namespace Entrega2_Equipo1
             this.exportAsToolStripMenuItem.Enabled = true;
             this.saveToolStripMenuItem.Enabled = true;
             this.cleanLibraryToolStripMenuItem.Enabled = true;
-            this.LabelsPropertyGrid.SelectedObject = new object();
+            // Del property grid
+            //this.LabelsPropertyGrid.SelectedObject = new object();
             Refresh_LabelsPropertyGrid();
         }
 
@@ -876,7 +883,7 @@ namespace Entrega2_Equipo1
         private void Asdfbutton_Click(object sender, EventArgs e)
         {
             // Ya reconocimos cual fue el Image seleccionado para agregar el label
-            AddLabelPanel.Visible = true;
+            LeftPanel.Visible = true;
             panelImages.Visible = false;
             AddLabelController();
         }
@@ -1193,6 +1200,20 @@ namespace Entrega2_Equipo1
         {
             this.Cursor = Cursors.Arrow;
             panelImages.BackColor = Color.FromArgb(11, 7, 17);
+        }
+
+        private void OpenRightPanelButton_Click(object sender, EventArgs e)
+        {
+            if (RightPanel.Visible == false)
+            {
+                RightPanel.Visible = true;
+                this.Size = formsizewithrightpanel;
+            }
+            else
+            {
+                RightPanel.Visible = false;
+                this.Size = formsizewithoutrightpanel;
+            }
         }
     }
 
