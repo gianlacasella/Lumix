@@ -267,10 +267,12 @@
             this.panelImages.AllowDrop = true;
             this.panelImages.AutoScroll = true;
             this.panelImages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelImages.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelImages.BackgroundImage")));
+            this.panelImages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelImages.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.panelImages.Location = new System.Drawing.Point(0, 32);
+            this.panelImages.Location = new System.Drawing.Point(0, 34);
             this.panelImages.Name = "panelImages";
-            this.panelImages.Size = new System.Drawing.Size(612, 729);
+            this.panelImages.Size = new System.Drawing.Size(612, 727);
             this.panelImages.TabIndex = 3;
             this.panelImages.Click += new System.EventHandler(this.PanelImages_Click);
             this.panelImages.DragEnter += new System.Windows.Forms.DragEventHandler(this.PanelImages_DragEnter);
@@ -1006,6 +1008,7 @@
             // 
             // ToolbarProgressBar
             // 
+            this.ToolbarProgressBar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ToolbarProgressBar.Location = new System.Drawing.Point(618, 3);
             this.ToolbarProgressBar.Name = "ToolbarProgressBar";
             this.ToolbarProgressBar.Size = new System.Drawing.Size(148, 23);
@@ -1757,6 +1760,6 @@
 		private System.Windows.Forms.TextBox textInsertH;
 		private System.Windows.Forms.TextBox textInsertW;
 		private System.Windows.Forms.TextBox textBaseH;
-	}
+    }
 
 }

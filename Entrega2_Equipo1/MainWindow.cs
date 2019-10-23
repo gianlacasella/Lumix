@@ -41,8 +41,6 @@ namespace Entrega2_Equipo1
 			comboCensor.Items.Add("Black bar"); comboCensor.Items.Add("Pixel blur");comboCensor.Text = "Black bar";
             AddLabelPanel.Location = panelImages.Location;
             AddLabelPanel.Visible = false;
-            panelImages.Visible = true;
-            
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -72,6 +70,7 @@ namespace Entrega2_Equipo1
             {
                 this.ToolbarProgressBar.Value = 0;
                 this.ToolbarProgressBar.Visible = true;
+                this.Cursor = Cursors.WaitCursor;
                 int count = 1;
                 string[] files = ofd.FileNames;
                 foreach (string path in files)
@@ -86,6 +85,7 @@ namespace Entrega2_Equipo1
                 this.ToolbarProgressBar.Value = 0;
                 ReLoadPanelImage(sender, e);
                 Saved = false;
+                this.Cursor = Cursors.Arrow;
             }
         }
 
@@ -1167,7 +1167,7 @@ namespace Entrega2_Equipo1
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             panelImages.BackColor = Color.FromArgb(35, 32, 39);
-            this.Cursor = Cursors.Hand;
+            this.Cursor = Cursors.WaitCursor;
             this.ToolbarProgressBar.Value = 0;
             this.ToolbarProgressBar.Visible = true;
             int count = 1;
@@ -1183,6 +1183,7 @@ namespace Entrega2_Equipo1
             this.ToolbarProgressBar.Value = 0;
             ReLoadPanelImage(sender, e);
             Saved = false;
+            this.Cursor = Cursors.Arrow;
         }
 
         private void PanelImages_DragLeave(object sender, EventArgs e)
