@@ -1092,7 +1092,8 @@
             // 
             // OpenRightPanelButton
             // 
-            this.OpenRightPanelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.OpenRightPanelButton.BackColor = System.Drawing.Color.Crimson;
+            this.OpenRightPanelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.OpenRightPanelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenRightPanelButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.OpenRightPanelButton.FlatAppearance.BorderSize = 0;

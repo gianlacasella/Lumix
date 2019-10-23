@@ -25,7 +25,7 @@ namespace Entrega2_Equipo1
         Label createdLabel;
         Image imagetoaddlabel;
         Size formsizewithrightpanel = new Size(1662, 822);
-        Size formsizewithoutrightpanel = new Size(665, 745);
+        Size formsizewithoutrightpanel = new Size(665, 822);
 
         // =============================== FRAME METHODS ================================
 		public MainWindow()
@@ -44,6 +44,10 @@ namespace Entrega2_Equipo1
             LeftPanel.Location = panelImages.Location;
             LeftPanel.Visible = false;
             this.Size = formsizewithoutrightpanel;
+            string arrowiconslocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\";
+            Bitmap rightarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "leftarrow.png");
+            OpenRightPanelButton.BackgroundImage = rightarrow;
+            OpenRightPanelButton.BackgroundImageLayout = ImageLayout.Zoom;
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -1204,16 +1208,23 @@ namespace Entrega2_Equipo1
 
         private void OpenRightPanelButton_Click(object sender, EventArgs e)
         {
+            string arrowiconslocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\";
             if (RightPanel.Visible == false)
             {
                 RightPanel.Visible = true;
                 this.Size = formsizewithrightpanel;
+                Bitmap leftarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "leftarrow.png");
+                OpenRightPanelButton.BackgroundImage = leftarrow;
+                
             }
             else
             {
                 RightPanel.Visible = false;
                 this.Size = formsizewithoutrightpanel;
+                Bitmap rightarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "rightarrow.png");
+                OpenRightPanelButton.BackgroundImage = rightarrow;
             }
+            OpenRightPanelButton.BackgroundImageLayout = ImageLayout.Zoom;
         }
     }
 
