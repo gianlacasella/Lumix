@@ -29,7 +29,8 @@ namespace Entrega2_Equipo1
 		public MainWindow()
 		{
 			InitializeComponent();
-		}
+            this.menuStrip1.Renderer = new MyRenderer();
+        }
 
 		private void MainWindow_Load(object sender, EventArgs e)
 		{
@@ -41,7 +42,8 @@ namespace Entrega2_Equipo1
             AddLabelPanel.Location = panelImages.Location;
             AddLabelPanel.Visible = false;
             panelImages.Visible = true;
-		}
+            
+        }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -256,6 +258,7 @@ namespace Entrega2_Equipo1
 				pic.Click += ImageBorderClick;
 				pic.ContextMenuStrip = contextMenuStripImage;
 				pic.Name = image.Name;
+                pic.Cursor = Cursors.Hand;
 
 				x += pic.Width + 10;
 				maxHeight = Math.Max(pic.Height, maxHeight);
@@ -1070,6 +1073,106 @@ namespace Entrega2_Equipo1
 					  MessageBoxButtons.OK, MessageBoxIcon.Question);
 			}
 		}
-	}
+
+        private void ImportToolStripMenuItem1_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
+        }
+
+        private void ImportToolStripMenuItem1_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor= Cursors.Arrow;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
+        }
+
+        private void ImportWithLabelsToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
+        }
+
+        private void ImportWithLabelsToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
+        }
+
+        private void ExportToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
+        }
+
+        private void ExportToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
+        }
+
+        private void ExportAsToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
+        }
+
+        private void ExportAsToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
+        }
+
+        private void SaveToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
+        }
+
+        private void SaveToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
+        }
+
+        private void CleanLibraryToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
+        }
+
+        private void CleanLibraryToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            this.Cursor = Cursors.Arrow;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
+        }
+    }
+
+   public class MyRenderer : ToolStripProfessionalRenderer
+   {
+        protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+        {
+            Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+            Color c = e.Item.Selected ? Color.Crimson : Color.FromArgb(11, 7, 17);
+            using (SolidBrush brush = new SolidBrush(c))
+                e.Graphics.FillRectangle(brush, rc);
+        }
+   }
 }
 
