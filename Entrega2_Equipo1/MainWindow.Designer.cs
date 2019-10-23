@@ -1515,6 +1515,7 @@
             this.button3.TabIndex = 29;
             this.button3.Text = "Collage";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button8
             // 
@@ -1526,6 +1527,7 @@
             this.button8.TabIndex = 33;
             this.button8.Text = "Merge";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
             // label2
             // 
@@ -1559,6 +1561,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Grayscale";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button14
             // 
@@ -1570,6 +1573,7 @@
             this.button14.TabIndex = 20;
             this.button14.Text = "Resize Image";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.Button14_Click);
             // 
             // button15
             // 
@@ -1581,6 +1585,7 @@
             this.button15.TabIndex = 21;
             this.button15.Text = "Mosaic";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.Button15_Click);
             // 
             // AddText
             // 
@@ -1603,6 +1608,7 @@
             this.button4.TabIndex = 10;
             this.button4.Text = "Color";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button5
             // 
@@ -1614,6 +1620,7 @@
             this.button5.TabIndex = 11;
             this.button5.Text = "Invert";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // comboCensor
             // 
@@ -1634,6 +1641,7 @@
             this.button6.TabIndex = 12;
             this.button6.Text = "Mirror";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // button7
             // 
@@ -1645,6 +1653,7 @@
             this.button7.TabIndex = 13;
             this.button7.Text = "Old Film";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // button9
             // 
@@ -1656,6 +1665,7 @@
             this.button9.TabIndex = 15;
             this.button9.Text = "Sepia";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // button10
             // 
@@ -1667,6 +1677,7 @@
             this.button10.TabIndex = 16;
             this.button10.Text = "Windows";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
             // pictureChosen
             // 
