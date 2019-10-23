@@ -225,6 +225,7 @@ namespace Entrega2_Equipo1
                     // Ya reconocimos cual fue el Image seleccionado para agregar el label
                     AddLabelPanel.Visible = true;
                     this.imagetoaddlabel = imagetoaddlabel;
+                    this.panelImages.Visible = false;
                     AddLabelController();
                 }
             }
@@ -676,6 +677,7 @@ namespace Entrega2_Equipo1
                 }
             }
             AddLabelPanel.Visible = false;
+            panelImages.Visible = true;
             this.importToolStripMenuItem1.Enabled = true;
             this.importWithLabelsToolStripMenuItem.Enabled = true;
             this.exportToolStripMenuItem.Enabled = true;
