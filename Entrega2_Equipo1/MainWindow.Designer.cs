@@ -111,10 +111,12 @@
 			this.RightPanel = new System.Windows.Forms.Panel();
 			this.SmartListsPanel = new System.Windows.Forms.Panel();
 			this.panelResize = new System.Windows.Forms.Panel();
+			this.ExitResizeButton = new System.Windows.Forms.Button();
 			this.YText = new System.Windows.Forms.TextBox();
 			this.XText = new System.Windows.Forms.TextBox();
 			this.resizeDone = new System.Windows.Forms.Button();
 			this.panelCollage = new System.Windows.Forms.Panel();
+			this.ExitCollageButton = new System.Windows.Forms.Button();
 			this.InsertLabel = new System.Windows.Forms.Label();
 			this.BaseLabel = new System.Windows.Forms.Label();
 			this.pictureCollageImage = new System.Windows.Forms.PictureBox();
@@ -1132,14 +1134,25 @@
 			// panelResize
 			// 
 			this.panelResize.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.panelResize.Controls.Add(this.ExitResizeButton);
 			this.panelResize.Controls.Add(this.YText);
 			this.panelResize.Controls.Add(this.XText);
 			this.panelResize.Controls.Add(this.resizeDone);
 			this.panelResize.Location = new System.Drawing.Point(720, 37);
 			this.panelResize.Name = "panelResize";
-			this.panelResize.Size = new System.Drawing.Size(134, 68);
+			this.panelResize.Size = new System.Drawing.Size(164, 68);
 			this.panelResize.TabIndex = 37;
 			this.panelResize.Visible = false;
+			// 
+			// ExitResizeButton
+			// 
+			this.ExitResizeButton.Location = new System.Drawing.Point(105, 34);
+			this.ExitResizeButton.Name = "ExitResizeButton";
+			this.ExitResizeButton.Size = new System.Drawing.Size(56, 23);
+			this.ExitResizeButton.TabIndex = 3;
+			this.ExitResizeButton.Text = "Exit";
+			this.ExitResizeButton.UseVisualStyleBackColor = true;
+			this.ExitResizeButton.Click += new System.EventHandler(this.ExitResizeButton_Click);
 			// 
 			// YText
 			// 
@@ -1163,10 +1176,12 @@
 			this.resizeDone.TabIndex = 0;
 			this.resizeDone.Text = "Resize";
 			this.resizeDone.UseVisualStyleBackColor = true;
+			this.resizeDone.Click += new System.EventHandler(this.ResizeDone_Click);
 			// 
 			// panelCollage
 			// 
 			this.panelCollage.BackColor = System.Drawing.SystemColors.Control;
+			this.panelCollage.Controls.Add(this.ExitCollageButton);
 			this.panelCollage.Controls.Add(this.InsertLabel);
 			this.panelCollage.Controls.Add(this.BaseLabel);
 			this.panelCollage.Controls.Add(this.pictureCollageImage);
@@ -1177,11 +1192,21 @@
 			this.panelCollage.Controls.Add(this.textBaseH);
 			this.panelCollage.Controls.Add(this.textBaseW);
 			this.panelCollage.Controls.Add(this.buttonCollage);
-			this.panelCollage.Location = new System.Drawing.Point(446, 6);
+			this.panelCollage.Location = new System.Drawing.Point(446, 3);
 			this.panelCollage.Name = "panelCollage";
-			this.panelCollage.Size = new System.Drawing.Size(268, 242);
+			this.panelCollage.Size = new System.Drawing.Size(268, 247);
 			this.panelCollage.TabIndex = 36;
 			this.panelCollage.Visible = false;
+			// 
+			// ExitCollageButton
+			// 
+			this.ExitCollageButton.Location = new System.Drawing.Point(186, 4);
+			this.ExitCollageButton.Name = "ExitCollageButton";
+			this.ExitCollageButton.Size = new System.Drawing.Size(75, 23);
+			this.ExitCollageButton.TabIndex = 11;
+			this.ExitCollageButton.Text = "Exit";
+			this.ExitCollageButton.UseVisualStyleBackColor = true;
+			this.ExitCollageButton.Click += new System.EventHandler(this.ExitCollageButton_Click);
 			// 
 			// InsertLabel
 			// 
@@ -1261,12 +1286,13 @@
 			// 
 			// buttonCollage
 			// 
-			this.buttonCollage.Location = new System.Drawing.Point(79, 252);
+			this.buttonCollage.Location = new System.Drawing.Point(174, 87);
 			this.buttonCollage.Name = "buttonCollage";
 			this.buttonCollage.Size = new System.Drawing.Size(75, 23);
 			this.buttonCollage.TabIndex = 0;
 			this.buttonCollage.Text = "Collage";
 			this.buttonCollage.UseVisualStyleBackColor = true;
+			this.buttonCollage.Click += new System.EventHandler(this.ButtonCollage_Click);
 			// 
 			// ImageDataPanel
 			// 
@@ -1895,6 +1921,8 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.PictureBox pictureChosen;
         private System.Windows.Forms.Panel topauxlabel;
-    }
+		private System.Windows.Forms.Button ExitCollageButton;
+		private System.Windows.Forms.Button ExitResizeButton;
+	}
 
 }

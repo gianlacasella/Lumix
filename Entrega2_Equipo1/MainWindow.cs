@@ -1226,9 +1226,19 @@ namespace Entrega2_Equipo1
             }
             OpenRightPanelButton.BackgroundImageLayout = ImageLayout.Zoom;
         }
-    }
 
-    public class MyRenderer : ToolStripProfessionalRenderer
+		private void ExitCollageButton_Click(object sender, EventArgs e)
+		{
+			panelCollage.Visible = false;
+		}
+
+		private void ExitResizeButton_Click(object sender, EventArgs e)
+		{
+			panelResize.Visible = false;
+		}
+	}
+
+	public class MyRenderer : ToolStripProfessionalRenderer
    {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
