@@ -20,7 +20,6 @@ namespace Entrega2_Equipo1
 			Application.SetCompatibleTextRenderingDefault(false);
 			MainWindow mainWindow = new MainWindow();
 			Application.Run(mainWindow);
-
 		}
     }
 }

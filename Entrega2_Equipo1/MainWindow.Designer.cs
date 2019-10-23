@@ -99,14 +99,11 @@
             this.removeFromLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addLabelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolbarProgressBar = new System.Windows.Forms.ProgressBar();
-            this.pictureChosen = new System.Windows.Forms.PictureBox();
-            this.topauxlabel = new System.Windows.Forms.Panel();
             this.contextMenuStripEditing = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeFromEditingAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToFeaturesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromFeaturesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -118,11 +115,8 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.colorDialogFilter = new System.Windows.Forms.ColorDialog();
-            this.comboRotate = new System.Windows.Forms.ComboBox();
-            this.brightnessBar = new System.Windows.Forms.TrackBar();
             this.comboCensor = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button8 = new System.Windows.Forms.Button();
@@ -138,10 +132,13 @@
             this.calificationUpDown = new System.Windows.Forms.NumericUpDown();
             this.CalificationLabel = new System.Windows.Forms.Label();
             this.SetCalificationButton = new System.Windows.Forms.Button();
-            this.panelResize = new System.Windows.Forms.Panel();
-            this.YText = new System.Windows.Forms.TextBox();
-            this.XText = new System.Windows.Forms.TextBox();
-            this.resizeDone = new System.Windows.Forms.Button();
+            this.EditingAreaPanel = new System.Windows.Forms.Panel();
+            this.pictureChosen = new System.Windows.Forms.PictureBox();
+            this.topauxlabel = new System.Windows.Forms.Panel();
+            this.comboRotate = new System.Windows.Forms.ComboBox();
+            this.brightnessBar = new System.Windows.Forms.TrackBar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelCollage = new System.Windows.Forms.Panel();
             this.InsertLabel = new System.Windows.Forms.Label();
             this.BaseLabel = new System.Windows.Forms.Label();
@@ -153,6 +150,11 @@
             this.textBaseH = new System.Windows.Forms.TextBox();
             this.textBaseW = new System.Windows.Forms.TextBox();
             this.buttonCollage = new System.Windows.Forms.Button();
+            this.panelResize = new System.Windows.Forms.Panel();
+            this.YText = new System.Windows.Forms.TextBox();
+            this.XText = new System.Windows.Forms.TextBox();
+            this.resizeDone = new System.Windows.Forms.Button();
+            this.SmartListsPanel = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
@@ -162,18 +164,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLatitudeUpDown)).BeginInit();
             this.AddSimpleLabelPanel.SuspendLayout();
             this.contextMenuStripImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
             this.contextMenuStripEditing.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.ImageDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calificationUpDown)).BeginInit();
-            this.panelResize.SuspendLayout();
+            this.EditingAreaPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             this.panelCollage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).BeginInit();
+            this.panelResize.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1017,25 +1020,6 @@
             this.ToolbarProgressBar.TabIndex = 0;
             this.ToolbarProgressBar.Visible = false;
             // 
-            // pictureChosen
-            // 
-            this.pictureChosen.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureChosen.Location = new System.Drawing.Point(884, 40);
-            this.pictureChosen.Name = "pictureChosen";
-            this.pictureChosen.Size = new System.Drawing.Size(300, 313);
-            this.pictureChosen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureChosen.TabIndex = 5;
-            this.pictureChosen.TabStop = false;
-            // 
-            // topauxlabel
-            // 
-            this.topauxlabel.AutoScroll = true;
-            this.topauxlabel.Location = new System.Drawing.Point(863, 469);
-            this.topauxlabel.Name = "topauxlabel";
-            this.topauxlabel.Size = new System.Drawing.Size(738, 277);
-            this.topauxlabel.TabIndex = 6;
-            this.topauxlabel.Paint += new System.Windows.Forms.PaintEventHandler(this.EditingPanel_Paint);
-            // 
             // contextMenuStripEditing
             // 
             this.contextMenuStripEditing.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1074,19 +1058,9 @@
             this.removeFromFeaturesListToolStripMenuItem.Text = "Remove from Features List";
             this.removeFromFeaturesListToolStripMenuItem.Click += new System.EventHandler(this.RemoveFromFeaturesListToolStripMenuItem_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(25, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Auto Adjust";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(7, 174);
+            this.button2.Location = new System.Drawing.Point(169, 28);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
@@ -1096,7 +1070,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(7, 201);
+            this.button4.Location = new System.Drawing.Point(88, 29);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 10;
@@ -1106,7 +1080,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(7, 58);
+            this.button5.Location = new System.Drawing.Point(88, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 11;
@@ -1116,7 +1090,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(7, 145);
+            this.button6.Location = new System.Drawing.Point(328, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 12;
@@ -1136,7 +1110,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(7, 87);
+            this.button9.Location = new System.Drawing.Point(169, 2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 15;
@@ -1146,7 +1120,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(7, 116);
+            this.button10.Location = new System.Drawing.Point(250, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 16;
@@ -1156,7 +1130,7 @@
             // 
             // AddText
             // 
-            this.AddText.Location = new System.Drawing.Point(147, 116);
+            this.AddText.Location = new System.Drawing.Point(328, 57);
             this.AddText.Name = "AddText";
             this.AddText.Size = new System.Drawing.Size(75, 23);
             this.AddText.TabIndex = 19;
@@ -1166,7 +1140,7 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(147, 145);
+            this.button14.Location = new System.Drawing.Point(88, 86);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(75, 23);
             this.button14.TabIndex = 20;
@@ -1176,7 +1150,7 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(147, 90);
+            this.button15.Location = new System.Drawing.Point(250, 57);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(75, 23);
             this.button15.TabIndex = 21;
@@ -1184,39 +1158,19 @@
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.Button15_Click);
             // 
-            // comboRotate
-            // 
-            this.comboRotate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboRotate.FormattingEnabled = true;
-            this.comboRotate.Location = new System.Drawing.Point(11, 104);
-            this.comboRotate.Name = "comboRotate";
-            this.comboRotate.Size = new System.Drawing.Size(104, 21);
-            this.comboRotate.TabIndex = 23;
-            this.comboRotate.SelectedIndexChanged += new System.EventHandler(this.ComboRotate_SelectedIndexChanged);
-            // 
-            // brightnessBar
-            // 
-            this.brightnessBar.Location = new System.Drawing.Point(11, 53);
-            this.brightnessBar.Maximum = 255;
-            this.brightnessBar.Minimum = -255;
-            this.brightnessBar.Name = "brightnessBar";
-            this.brightnessBar.Size = new System.Drawing.Size(104, 45);
-            this.brightnessBar.TabIndex = 24;
-            this.brightnessBar.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
-            // 
             // comboCensor
             // 
             this.comboCensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCensor.FormattingEnabled = true;
-            this.comboCensor.Location = new System.Drawing.Point(125, 31);
+            this.comboCensor.Location = new System.Drawing.Point(169, 60);
             this.comboCensor.Name = "comboCensor";
-            this.comboCensor.Size = new System.Drawing.Size(121, 21);
+            this.comboCensor.Size = new System.Drawing.Size(75, 21);
             this.comboCensor.TabIndex = 25;
             this.comboCensor.SelectedIndexChanged += new System.EventHandler(this.ComboCensor_SelectedIndexChanged);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(147, 58);
+            this.button3.Location = new System.Drawing.Point(88, 57);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 29;
@@ -1224,32 +1178,22 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label3.Location = new System.Drawing.Point(22, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 18);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Basic tools";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(12, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 18);
+            this.label4.Size = new System.Drawing.Size(66, 26);
             this.label4.TabIndex = 31;
             this.label4.Text = "Filters";
             // 
             // splitContainer1
             // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer1.Location = new System.Drawing.Point(1210, 37);
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer1.ForeColor = System.Drawing.Color.Black;
+            this.splitContainer1.Location = new System.Drawing.Point(14, 359);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -1262,11 +1206,11 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.button8);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.button14);
             this.splitContainer1.Panel2.Controls.Add(this.button15);
             this.splitContainer1.Panel2.Controls.Add(this.AddText);
@@ -1277,13 +1221,13 @@
             this.splitContainer1.Panel2.Controls.Add(this.button7);
             this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.button10);
-            this.splitContainer1.Size = new System.Drawing.Size(385, 302);
-            this.splitContainer1.SplitterDistance = 128;
+            this.splitContainer1.Size = new System.Drawing.Size(704, 116);
+            this.splitContainer1.SplitterDistance = 290;
             this.splitContainer1.TabIndex = 32;
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(147, 175);
+            this.button8.Location = new System.Drawing.Point(7, 86);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 33;
@@ -1294,11 +1238,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label2.Location = new System.Drawing.Point(157, 3);
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(2, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 18);
+            this.label2.Size = new System.Drawing.Size(90, 26);
             this.label2.TabIndex = 32;
             this.label2.Text = "Features";
             // 
@@ -1311,7 +1255,7 @@
             this.LabelsPropertyGrid.Location = new System.Drawing.Point(0, 0);
             this.LabelsPropertyGrid.Name = "LabelsPropertyGrid";
             this.LabelsPropertyGrid.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.LabelsPropertyGrid.Size = new System.Drawing.Size(251, 269);
+            this.LabelsPropertyGrid.Size = new System.Drawing.Size(265, 275);
             this.LabelsPropertyGrid.TabIndex = 33;
             this.LabelsPropertyGrid.ToolbarVisible = false;
             // 
@@ -1330,7 +1274,7 @@
             this.ImageDataPanel.Controls.Add(this.LabelsPropertyGrid);
             this.ImageDataPanel.Location = new System.Drawing.Point(612, 34);
             this.ImageDataPanel.Name = "ImageDataPanel";
-            this.ImageDataPanel.Size = new System.Drawing.Size(251, 411);
+            this.ImageDataPanel.Size = new System.Drawing.Size(265, 479);
             this.ImageDataPanel.TabIndex = 33;
             // 
             // DeleteLabelButton
@@ -1435,45 +1379,82 @@
             this.SetCalificationButton.UseVisualStyleBackColor = true;
             this.SetCalificationButton.Click += new System.EventHandler(this.SetCalificationButton_Click);
             // 
-            // panelResize
+            // EditingAreaPanel
             // 
-            this.panelResize.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panelResize.Controls.Add(this.YText);
-            this.panelResize.Controls.Add(this.XText);
-            this.panelResize.Controls.Add(this.resizeDone);
-            this.panelResize.Location = new System.Drawing.Point(1146, 184);
-            this.panelResize.Name = "panelResize";
-            this.panelResize.Size = new System.Drawing.Size(219, 277);
-            this.panelResize.TabIndex = 34;
-            this.panelResize.Visible = false;
+            this.EditingAreaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.EditingAreaPanel.Controls.Add(this.splitContainer1);
+            this.EditingAreaPanel.Controls.Add(this.panelCollage);
+            this.EditingAreaPanel.Controls.Add(this.pictureChosen);
+            this.EditingAreaPanel.Controls.Add(this.topauxlabel);
+            this.EditingAreaPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.EditingAreaPanel.Location = new System.Drawing.Point(883, 38);
+            this.EditingAreaPanel.Name = "EditingAreaPanel";
+            this.EditingAreaPanel.Size = new System.Drawing.Size(730, 720);
+            this.EditingAreaPanel.TabIndex = 36;
             // 
-            // YText
+            // pictureChosen
             // 
-            this.YText.Location = new System.Drawing.Point(122, 141);
-            this.YText.Name = "YText";
-            this.YText.Size = new System.Drawing.Size(52, 20);
-            this.YText.TabIndex = 2;
+            this.pictureChosen.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pictureChosen.Location = new System.Drawing.Point(14, 7);
+            this.pictureChosen.Name = "pictureChosen";
+            this.pictureChosen.Size = new System.Drawing.Size(444, 343);
+            this.pictureChosen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureChosen.TabIndex = 6;
+            this.pictureChosen.TabStop = false;
             // 
-            // XText
+            // topauxlabel
             // 
-            this.XText.Location = new System.Drawing.Point(48, 141);
-            this.XText.Name = "XText";
-            this.XText.Size = new System.Drawing.Size(52, 20);
-            this.XText.TabIndex = 1;
+            this.topauxlabel.AutoScroll = true;
+            this.topauxlabel.Location = new System.Drawing.Point(465, 0);
+            this.topauxlabel.Name = "topauxlabel";
+            this.topauxlabel.Size = new System.Drawing.Size(253, 350);
+            this.topauxlabel.TabIndex = 7;
             // 
-            // resizeDone
+            // comboRotate
             // 
-            this.resizeDone.Location = new System.Drawing.Point(75, 174);
-            this.resizeDone.Name = "resizeDone";
-            this.resizeDone.Size = new System.Drawing.Size(75, 23);
-            this.resizeDone.TabIndex = 0;
-            this.resizeDone.Text = "Resize";
-            this.resizeDone.UseVisualStyleBackColor = true;
-            this.resizeDone.Click += new System.EventHandler(this.ResizeDone_Click);
+            this.comboRotate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboRotate.FormattingEnabled = true;
+            this.comboRotate.Location = new System.Drawing.Point(3, 28);
+            this.comboRotate.Name = "comboRotate";
+            this.comboRotate.Size = new System.Drawing.Size(104, 21);
+            this.comboRotate.TabIndex = 23;
+            this.comboRotate.SelectedIndexChanged += new System.EventHandler(this.ComboRotate_SelectedIndexChanged);
+            // 
+            // brightnessBar
+            // 
+            this.brightnessBar.Location = new System.Drawing.Point(179, 3);
+            this.brightnessBar.Maximum = 255;
+            this.brightnessBar.Minimum = -255;
+            this.brightnessBar.Name = "brightnessBar";
+            this.brightnessBar.Size = new System.Drawing.Size(104, 45);
+            this.brightnessBar.TabIndex = 24;
+            this.brightnessBar.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(107, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Auto Adjust";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(-2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 26);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Basic tools";
             // 
             // panelCollage
             // 
             this.panelCollage.BackColor = System.Drawing.SystemColors.Control;
+            this.panelCollage.Controls.Add(this.panelResize);
             this.panelCollage.Controls.Add(this.InsertLabel);
             this.panelCollage.Controls.Add(this.BaseLabel);
             this.panelCollage.Controls.Add(this.pictureCollageImage);
@@ -1484,10 +1465,10 @@
             this.panelCollage.Controls.Add(this.textBaseH);
             this.panelCollage.Controls.Add(this.textBaseW);
             this.panelCollage.Controls.Add(this.buttonCollage);
-            this.panelCollage.Location = new System.Drawing.Point(1143, 240);
+            this.panelCollage.Location = new System.Drawing.Point(106, 36);
             this.panelCollage.Name = "panelCollage";
             this.panelCollage.Size = new System.Drawing.Size(268, 279);
-            this.panelCollage.TabIndex = 35;
+            this.panelCollage.TabIndex = 36;
             this.panelCollage.Visible = false;
             // 
             // InsertLabel
@@ -1574,20 +1555,59 @@
             this.buttonCollage.TabIndex = 0;
             this.buttonCollage.Text = "Collage";
             this.buttonCollage.UseVisualStyleBackColor = true;
-            this.buttonCollage.Click += new System.EventHandler(this.ButtonCollage_Click);
+            // 
+            // panelResize
+            // 
+            this.panelResize.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelResize.Controls.Add(this.YText);
+            this.panelResize.Controls.Add(this.XText);
+            this.panelResize.Controls.Add(this.resizeDone);
+            this.panelResize.Location = new System.Drawing.Point(106, 71);
+            this.panelResize.Name = "panelResize";
+            this.panelResize.Size = new System.Drawing.Size(134, 68);
+            this.panelResize.TabIndex = 37;
+            this.panelResize.Visible = false;
+            // 
+            // YText
+            // 
+            this.YText.Location = new System.Drawing.Point(75, 8);
+            this.YText.Name = "YText";
+            this.YText.Size = new System.Drawing.Size(52, 20);
+            this.YText.TabIndex = 2;
+            // 
+            // XText
+            // 
+            this.XText.Location = new System.Drawing.Point(12, 7);
+            this.XText.Name = "XText";
+            this.XText.Size = new System.Drawing.Size(52, 20);
+            this.XText.TabIndex = 1;
+            // 
+            // resizeDone
+            // 
+            this.resizeDone.Location = new System.Drawing.Point(12, 34);
+            this.resizeDone.Name = "resizeDone";
+            this.resizeDone.Size = new System.Drawing.Size(75, 23);
+            this.resizeDone.TabIndex = 0;
+            this.resizeDone.Text = "Resize";
+            this.resizeDone.UseVisualStyleBackColor = true;
+            // 
+            // SmartListsPanel
+            // 
+            this.SmartListsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.SmartListsPanel.Location = new System.Drawing.Point(612, 513);
+            this.SmartListsPanel.Name = "SmartListsPanel";
+            this.SmartListsPanel.Size = new System.Drawing.Size(1001, 242);
+            this.SmartListsPanel.TabIndex = 37;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(1613, 758);
-            this.Controls.Add(this.panelCollage);
-            this.Controls.Add(this.panelResize);
+            this.Controls.Add(this.SmartListsPanel);
+            this.Controls.Add(this.EditingAreaPanel);
             this.Controls.Add(this.ImageDataPanel);
-            this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.topauxlabel);
-            this.Controls.Add(this.pictureChosen);
             this.Controls.Add(this.ToolbarProgressBar);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelImages);
@@ -1613,9 +1633,7 @@
             this.AddSimpleLabelPanel.ResumeLayout(false);
             this.AddSimpleLabelPanel.PerformLayout();
             this.contextMenuStripImage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
             this.contextMenuStripEditing.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -1625,11 +1643,14 @@
             this.ImageDataPanel.ResumeLayout(false);
             this.ImageDataPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calificationUpDown)).EndInit();
-            this.panelResize.ResumeLayout(false);
-            this.panelResize.PerformLayout();
+            this.EditingAreaPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             this.panelCollage.ResumeLayout(false);
             this.panelCollage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).EndInit();
+            this.panelResize.ResumeLayout(false);
+            this.panelResize.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1649,13 +1670,10 @@
         private System.Windows.Forms.ProgressBar ToolbarProgressBar;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cleanLibraryToolStripMenuItem;
-		private System.Windows.Forms.PictureBox pictureChosen;
         private System.Windows.Forms.ToolStripMenuItem addLabelToolStripMenuItem;
-		private System.Windows.Forms.Panel topauxlabel;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStripEditing;
 		private System.Windows.Forms.ToolStripMenuItem removeFromEditingAreaToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exportToLibraryToolStripMenuItem;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button5;
@@ -1667,11 +1685,8 @@
 		private System.Windows.Forms.Button button14;
 		private System.Windows.Forms.Button button15;
 		private System.Windows.Forms.ColorDialog colorDialogFilter;
-		private System.Windows.Forms.ComboBox comboRotate;
-		private System.Windows.Forms.TrackBar brightnessBar;
 		private System.Windows.Forms.ComboBox comboCensor;
 		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.Label label2;
@@ -1743,23 +1758,31 @@
         private System.Windows.Forms.Button EditLabelButton;
         private System.Windows.Forms.Button addnewlabelbutton;
 		private System.Windows.Forms.Button button8;
-		private System.Windows.Forms.Panel panelResize;
-		private System.Windows.Forms.TextBox YText;
-		private System.Windows.Forms.TextBox XText;
-		private System.Windows.Forms.Button resizeDone;
 		private System.Windows.Forms.ToolStripMenuItem addToFeaturesListToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem removeFromFeaturesListToolStripMenuItem;
-		private System.Windows.Forms.Panel panelCollage;
-		private System.Windows.Forms.TextBox textBaseW;
-		private System.Windows.Forms.Button buttonCollage;
-		private System.Windows.Forms.Label InsertLabel;
-		private System.Windows.Forms.Label BaseLabel;
-		private System.Windows.Forms.PictureBox pictureCollageImage;
-		private System.Windows.Forms.RadioButton radioButtonImage;
-		private System.Windows.Forms.RadioButton radioButtonSolid;
-		private System.Windows.Forms.TextBox textInsertH;
-		private System.Windows.Forms.TextBox textInsertW;
-		private System.Windows.Forms.TextBox textBaseH;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TrackBar brightnessBar;
+        private System.Windows.Forms.ComboBox comboRotate;
+        private System.Windows.Forms.Panel EditingAreaPanel;
+        private System.Windows.Forms.Panel panelCollage;
+        private System.Windows.Forms.Panel panelResize;
+        private System.Windows.Forms.TextBox YText;
+        private System.Windows.Forms.TextBox XText;
+        private System.Windows.Forms.Button resizeDone;
+        private System.Windows.Forms.Label InsertLabel;
+        private System.Windows.Forms.Label BaseLabel;
+        private System.Windows.Forms.PictureBox pictureCollageImage;
+        private System.Windows.Forms.RadioButton radioButtonImage;
+        private System.Windows.Forms.RadioButton radioButtonSolid;
+        private System.Windows.Forms.TextBox textInsertH;
+        private System.Windows.Forms.TextBox textInsertW;
+        private System.Windows.Forms.TextBox textBaseH;
+        private System.Windows.Forms.TextBox textBaseW;
+        private System.Windows.Forms.Button buttonCollage;
+        private System.Windows.Forms.Panel topauxlabel;
+        private System.Windows.Forms.PictureBox pictureChosen;
+        private System.Windows.Forms.Panel SmartListsPanel;
     }
 
 }
