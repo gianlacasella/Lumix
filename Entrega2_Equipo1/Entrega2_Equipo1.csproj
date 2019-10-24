@@ -220,6 +220,12 @@
     <Compile Include="FormAdd.Designer.cs">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="iFruitUserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="iFruitUserLogin.Designer.cs">
+      <DependentUpon>iFruitUserLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Image.cs" />
     <Compile Include="ImageToShow.cs" />
     <Compile Include="Labels\Label.cs" />
@@ -230,6 +236,7 @@
     <Compile Include="Labels\SpecialLabel.cs" />
     <Compile Include="Labels\SpecialLabelToShow.cs" />
     <Compile Include="Library.cs" />
+    <Compile Include="LogInEventArgs.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +256,7 @@
     <Compile Include="SelectFaceLocationForm.Designer.cs">
       <DependentUpon>SelectFaceLocationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SignUpEventArgs.cs" />
     <Compile Include="SlideNPresentation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +290,7 @@
     <Compile Include="Tools\Filters\WindowsFilter.cs" />
     <Compile Include="Searcher.cs" />
     <Compile Include="Tools\Tool.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="WorkingArea.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +300,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="iFruitUserLogin.resx">
+      <DependentUpon>iFruitUserLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

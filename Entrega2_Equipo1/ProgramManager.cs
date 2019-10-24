@@ -10,8 +10,8 @@ namespace Entrega2_Equipo1
 	{
         private Library library;
         public Producer producer;
-        private readonly string DEFAULT_LIBRARY_PATH = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\library.bin";
-        private readonly string DEFAULT_PRODUCER_PATH = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\producer.bin";
+        private readonly string DEFAULT_LIBRARY_PATH = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\";
+        private readonly string DEFAULT_PRODUCER_PATH = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\";
         private bool _continue = true;
         private int startingOption;
 		/*
@@ -6011,6 +6011,100 @@ namespace Entrega2_Equipo1
             if (File.Exists(this.DEFAULT_PRODUCER_PATH)) return true;
             else return false;
         }
+
+
+
+
+
+
+
+
+
+        #region iFruitUsedRegion
+
+        public Library LoadingUsersLibraryManager(string usrname)
+        {
+            if (this.ExistsUsersLibrary(usrname))
+            {
+                return LoadUsersLibrary(usrname);
+            }
+            else
+            {
+                return new Library();
+            }
+        }
+
+        public void SavingUsersLibraryManager(string usrname, Library library)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(this.DEFAULT_LIBRARY_PATH + usrname + @"\library.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, library);
+            stream.Close();
+        }
+
+        public Library LoadUsersLibrary(string usrname)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(DEFAULT_LIBRARY_PATH + usrname + @"\library.bin", FileMode.Open, FileAccess.Read, FileShare.None);
+            Library library = (Library)formatter.Deserialize(stream);
+            stream.Close();
+            return library;
+        }
+
+        public bool ExistsUsersLibrary(string usrname)
+        {
+            if (File.Exists(DEFAULT_LIBRARY_PATH + usrname + @"\library.bin"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public Producer LoadingUsersProducerManager(string usrname)
+        {
+            if (this.ExistsUsersProducer(usrname))
+            {
+                return LoadUsersProducer(usrname);
+            }
+            else
+            {
+                producer = new Producer();
+                producer.LoadWatsonAnalyzer();
+                return producer;
+            }
+        }
+
+        public Producer LoadUsersProducer(string usrname)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(DEFAULT_LIBRARY_PATH + usrname + @"\producer.bin", FileMode.Open, FileAccess.Read, FileShare.None);
+            Producer producer = (Producer)formatter.Deserialize(stream);
+            stream.Close();
+            return producer;
+        }
+
+        private bool ExistsUsersProducer(string usrname)
+        {
+            if (File.Exists(DEFAULT_LIBRARY_PATH + usrname + @"\producer.bin"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+
+
+
+
+
 
 
         // Shows an error in case the producer.bin file doesnt exist

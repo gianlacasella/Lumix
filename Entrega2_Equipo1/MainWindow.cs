@@ -26,9 +26,16 @@ namespace Entrega2_Equipo1
         Image imagetoaddlabel;
         Size formsizewithrightpanel = new Size(1662, 822);
         Size formsizewithoutrightpanel = new Size(665, 822);
+        // Usuario que se ha logueado
+        User userLoggedIn = null;
+        // bool que controla si el usuario desea cerrar el programa o cerrar sesion
+        bool exit = true;
+
+        public User UserLoggedIn { get => this.userLoggedIn; set => this.userLoggedIn = value; }
+        public bool Exit { get => this.exit; set => this.exit = value; }
 
         // =============================== FRAME METHODS ================================
-		public MainWindow()
+        public MainWindow()
 		{
 			InitializeComponent();
             this.menuStrip1.Renderer = new MyRenderer();
@@ -36,8 +43,8 @@ namespace Entrega2_Equipo1
 
 		private void MainWindow_Load(object sender, EventArgs e)
 		{
-			library = PM.LoadingLibraryManager();
-			producer = PM.LoadingProducerManager();
+			library = PM.LoadingUsersLibraryManager(UserLoggedIn.Usrname);
+			producer = PM.LoadingUsersProducerManager(UserLoggedIn.Usrname);
 			PanelImages_Paint(sender, e);
 			comboRotate.DataSource = Enum.GetValues(typeof(RotateFlipType));
 			comboCensor.Items.Add("Black bar"); comboCensor.Items.Add("Pixel blur");comboCensor.Text = "Black bar";
@@ -48,6 +55,9 @@ namespace Entrega2_Equipo1
             Bitmap rightarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "rightarrow.png");
             OpenRightPanelButton.BackgroundImage = rightarrow;
             OpenRightPanelButton.BackgroundImageLayout = ImageLayout.Zoom;
+
+            // Codigo auxiliar
+            this.LabelAuxiliar.Text = UserLoggedIn.Usrname;
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -62,6 +72,7 @@ namespace Entrega2_Equipo1
                     e.Cancel = true;
                 }
             }
+
         }
 
         // ==============================================================================
@@ -123,7 +134,7 @@ namespace Entrega2_Equipo1
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PM.SaveLibrary(library);
+            PM.SavingUsersLibraryManager(UserLoggedIn.Usrname, library);
             Saved = true;
         }
 
@@ -425,7 +436,7 @@ namespace Entrega2_Equipo1
 				}
 				this.topauxlabel.Controls.Add(pic);
 			}
-
+            
 		}
 
 		private void MainEditingImage(object sender, EventArgs e)
@@ -689,9 +700,7 @@ namespace Entrega2_Equipo1
             LeftPanel.Visible = false;
             panelImages.Visible = true;
             this.importToolStripMenuItem1.Enabled = true;
-            this.importWithLabelsToolStripMenuItem.Enabled = true;
             this.exportToolStripMenuItem.Enabled = true;
-            this.exportAsToolStripMenuItem.Enabled = true;
             this.saveToolStripMenuItem.Enabled = true;
             this.cleanLibraryToolStripMenuItem.Enabled = true;
             // Del property grid
@@ -711,9 +720,7 @@ namespace Entrega2_Equipo1
             this.PersonalizedTagCheck.Checked = true;
             this.SpecialLabelSelfieComboxBox.SelectedIndex = 0;
             this.importToolStripMenuItem1.Enabled = false;
-            this.importWithLabelsToolStripMenuItem.Enabled = false;
             this.exportToolStripMenuItem.Enabled = false;
-            this.exportAsToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Enabled = false;
             this.cleanLibraryToolStripMenuItem.Enabled = false;
         }
@@ -1264,6 +1271,21 @@ namespace Entrega2_Equipo1
 					  MessageBoxButtons.OK, MessageBoxIcon.Question);
 			}
 		}
+
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LogOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Cambiamos el atributo de exit a false, pues quiere cambiar de usuario
+            this.exit = false;
+            // Ya el  usuario no es el current user, por lo tanto
+            this.UserLoggedIn.CurrentUser = false;
+            // Cerramos el form
+            this.Close();
+        }
     }
 
     public class MyRenderer : ToolStripProfessionalRenderer

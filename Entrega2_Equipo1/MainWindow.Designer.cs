@@ -32,11 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.importToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.importWithLabelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importWithLabelsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cleanLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelImages = new System.Windows.Forms.Panel();
             this.LeftPanel = new System.Windows.Forms.Panel();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
@@ -128,7 +132,7 @@
             this.textBaseW = new System.Windows.Forms.TextBox();
             this.buttonCollage = new System.Windows.Forms.Button();
             this.ImageDataPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LabelAuxiliar = new System.Windows.Forms.Label();
             this.DeleteLabelButton = new System.Windows.Forms.Button();
             this.EditLabelButton = new System.Windows.Forms.Button();
             this.addnewlabelbutton = new System.Windows.Forms.Button();
@@ -200,11 +204,11 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.importToolStripMenuItem1,
-            this.importWithLabelsToolStripMenuItem,
             this.exportToolStripMenuItem,
-            this.exportAsToolStripMenuItem,
             this.saveToolStripMenuItem,
-            this.cleanLibraryToolStripMenuItem});
+            this.cleanLibraryToolStripMenuItem,
+            this.logOutToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1646, 38);
@@ -213,50 +217,70 @@
             // 
             // importToolStripMenuItem1
             // 
+            this.importToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importToolStripMenuItem,
+            this.importWithLabelsToolStripMenuItem1});
             this.importToolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.importToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
             this.importToolStripMenuItem1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 4);
             this.importToolStripMenuItem1.Size = new System.Drawing.Size(78, 34);
             this.importToolStripMenuItem1.Text = "Import";
-            this.importToolStripMenuItem1.Click += new System.EventHandler(this.ImportOnlyToolStripMenuItem_Click);
             this.importToolStripMenuItem1.MouseEnter += new System.EventHandler(this.ImportToolStripMenuItem1_MouseEnter);
             this.importToolStripMenuItem1.MouseLeave += new System.EventHandler(this.ImportToolStripMenuItem1_MouseLeave);
             // 
-            // importWithLabelsToolStripMenuItem
+            // importToolStripMenuItem
             // 
-            this.importWithLabelsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importWithLabelsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.importWithLabelsToolStripMenuItem.Name = "importWithLabelsToolStripMenuItem";
-            this.importWithLabelsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 4);
-            this.importWithLabelsToolStripMenuItem.Size = new System.Drawing.Size(153, 34);
-            this.importWithLabelsToolStripMenuItem.Text = "Import with labels";
-            this.importWithLabelsToolStripMenuItem.MouseEnter += new System.EventHandler(this.ImportWithLabelsToolStripMenuItem_MouseEnter);
-            this.importWithLabelsToolStripMenuItem.MouseLeave += new System.EventHandler(this.ImportWithLabelsToolStripMenuItem_MouseLeave);
+            this.importToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.importToolStripMenuItem.Text = "Import";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.ImportOnlyToolStripMenuItem_Click);
+            this.importToolStripMenuItem.MouseEnter += new System.EventHandler(this.ImportToolStripMenuItem1_MouseEnter);
+            this.importToolStripMenuItem.MouseLeave += new System.EventHandler(this.ImportToolStripMenuItem1_MouseLeave);
+            // 
+            // importWithLabelsToolStripMenuItem1
+            // 
+            this.importWithLabelsToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.importWithLabelsToolStripMenuItem1.Name = "importWithLabelsToolStripMenuItem1";
+            this.importWithLabelsToolStripMenuItem1.Size = new System.Drawing.Size(198, 24);
+            this.importWithLabelsToolStripMenuItem1.Text = "Import with labels";
+            this.importWithLabelsToolStripMenuItem1.MouseEnter += new System.EventHandler(this.ImportWithLabelsToolStripMenuItem_MouseEnter);
+            this.importWithLabelsToolStripMenuItem1.MouseLeave += new System.EventHandler(this.ImportWithLabelsToolStripMenuItem_MouseLeave);
             // 
             // exportToolStripMenuItem
             // 
+            this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportToolStripMenuItem1,
+            this.exportAsToolStripMenuItem1});
             this.exportToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exportToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 4);
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(76, 34);
             this.exportToolStripMenuItem.Text = "Export";
-            this.exportToolStripMenuItem.Click += new System.EventHandler(this.ExportToolStripMenuItem_Click);
             this.exportToolStripMenuItem.MouseEnter += new System.EventHandler(this.ExportToolStripMenuItem_MouseEnter);
             this.exportToolStripMenuItem.MouseLeave += new System.EventHandler(this.ExportToolStripMenuItem_MouseLeave);
             // 
-            // exportAsToolStripMenuItem
+            // exportToolStripMenuItem1
             // 
-            this.exportAsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exportAsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.exportAsToolStripMenuItem.Name = "exportAsToolStripMenuItem";
-            this.exportAsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 4);
-            this.exportAsToolStripMenuItem.Size = new System.Drawing.Size(94, 34);
-            this.exportAsToolStripMenuItem.Text = "Export as";
-            this.exportAsToolStripMenuItem.Click += new System.EventHandler(this.ExportAsToolStripMenuItem_Click);
-            this.exportAsToolStripMenuItem.MouseEnter += new System.EventHandler(this.ExportAsToolStripMenuItem_MouseEnter);
-            this.exportAsToolStripMenuItem.MouseLeave += new System.EventHandler(this.ExportAsToolStripMenuItem_MouseLeave);
+            this.exportToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
+            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.exportToolStripMenuItem1.Text = "Export";
+            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.ExportToolStripMenuItem_Click);
+            this.exportToolStripMenuItem1.MouseEnter += new System.EventHandler(this.ExportToolStripMenuItem_MouseEnter);
+            this.exportToolStripMenuItem1.MouseLeave += new System.EventHandler(this.ExportToolStripMenuItem_MouseLeave);
+            // 
+            // exportAsToolStripMenuItem1
+            // 
+            this.exportAsToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.exportAsToolStripMenuItem1.Name = "exportAsToolStripMenuItem1";
+            this.exportAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.exportAsToolStripMenuItem1.Text = "Export as";
+            this.exportAsToolStripMenuItem1.Click += new System.EventHandler(this.ExportAsToolStripMenuItem_Click);
+            this.exportAsToolStripMenuItem1.MouseEnter += new System.EventHandler(this.ExportAsToolStripMenuItem_MouseEnter);
+            this.exportAsToolStripMenuItem1.MouseLeave += new System.EventHandler(this.ExportAsToolStripMenuItem_MouseLeave);
             // 
             // saveToolStripMenuItem
             // 
@@ -264,8 +288,8 @@
             this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 4);
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(64, 34);
-            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(113, 34);
+            this.saveToolStripMenuItem.Text = "Save Library";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             this.saveToolStripMenuItem.MouseEnter += new System.EventHandler(this.SaveToolStripMenuItem_MouseEnter);
             this.saveToolStripMenuItem.MouseLeave += new System.EventHandler(this.SaveToolStripMenuItem_MouseLeave);
@@ -280,6 +304,24 @@
             this.cleanLibraryToolStripMenuItem.Click += new System.EventHandler(this.CleanLibraryToolStripMenuItem_Click);
             this.cleanLibraryToolStripMenuItem.MouseEnter += new System.EventHandler(this.CleanLibraryToolStripMenuItem_MouseEnter);
             this.cleanLibraryToolStripMenuItem.MouseLeave += new System.EventHandler(this.CleanLibraryToolStripMenuItem_MouseLeave);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(46, 34);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(78, 34);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.LogOutToolStripMenuItem_Click);
             // 
             // panelImages
             // 
@@ -1030,7 +1072,7 @@
             // ToolbarProgressBar
             // 
             this.ToolbarProgressBar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ToolbarProgressBar.Location = new System.Drawing.Point(618, 3);
+            this.ToolbarProgressBar.Location = new System.Drawing.Point(727, 9);
             this.ToolbarProgressBar.Name = "ToolbarProgressBar";
             this.ToolbarProgressBar.Size = new System.Drawing.Size(148, 23);
             this.ToolbarProgressBar.Step = 1;
@@ -1299,7 +1341,7 @@
             // ImageDataPanel
             // 
             this.ImageDataPanel.BackColor = System.Drawing.Color.DarkCyan;
-            this.ImageDataPanel.Controls.Add(this.label1);
+            this.ImageDataPanel.Controls.Add(this.LabelAuxiliar);
             this.ImageDataPanel.Controls.Add(this.DeleteLabelButton);
             this.ImageDataPanel.Controls.Add(this.EditLabelButton);
             this.ImageDataPanel.Controls.Add(this.addnewlabelbutton);
@@ -1314,15 +1356,14 @@
             this.ImageDataPanel.Size = new System.Drawing.Size(246, 486);
             this.ImageDataPanel.TabIndex = 36;
             // 
-            // label1
+            // LabelAuxiliar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 258);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 25);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "PANEL INCOMPLETO";
+            this.LabelAuxiliar.AutoSize = true;
+            this.LabelAuxiliar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelAuxiliar.Location = new System.Drawing.Point(16, 258);
+            this.LabelAuxiliar.Name = "LabelAuxiliar";
+            this.LabelAuxiliar.Size = new System.Drawing.Size(0, 25);
+            this.LabelAuxiliar.TabIndex = 42;
             // 
             // DeleteLabelButton
             // 
@@ -1820,9 +1861,7 @@
 		private System.Windows.Forms.ToolStripMenuItem addToEditingAreaToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem removeFromLibraryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem importWithLabelsToolStripMenuItem;
         private System.Windows.Forms.ProgressBar ToolbarProgressBar;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cleanLibraryToolStripMenuItem;
@@ -1910,7 +1949,7 @@
         private System.Windows.Forms.TextBox textBaseW;
         private System.Windows.Forms.Button buttonCollage;
         private System.Windows.Forms.Panel ImageDataPanel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LabelAuxiliar;
         private System.Windows.Forms.Button DeleteLabelButton;
         private System.Windows.Forms.Button EditLabelButton;
         private System.Windows.Forms.Button addnewlabelbutton;
@@ -1949,6 +1988,12 @@
 		private System.Windows.Forms.Button ExitResizeButton;
 		private System.Windows.Forms.Button SlideShowButton;
 		private System.Windows.Forms.Button PresentationButton;
-	}
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importWithLabelsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exportAsToolStripMenuItem1;
+    }
 
 }
