@@ -33,6 +33,7 @@ namespace Entrega2_Equipo1
         // bool que controla si el usuario desea eliminar su cuenta
         bool deleteaccount = false;
         Bitmap chooseUserPictureBitmap;
+        Searcher mainSearcher;
 
         public User UserLoggedIn { get => this.userLoggedIn; set => this.userLoggedIn = value; }
         public bool Exit { get => this.exit; set => this.exit = value; }
@@ -66,6 +67,8 @@ namespace Entrega2_Equipo1
             int x = 150;
             int y = 150;
             this.chooseUserPictureBitmap = res.ResizeImage(image, x, y);
+
+            this.mainSearcher = new Searcher();
         }
 
 
@@ -304,6 +307,44 @@ namespace Entrega2_Equipo1
             this.ToolbarProgressBar.Value = 0;
         }
 
+        // Metodo que se utiliza para imprimir en pantalla los resultados de una busqueda
+        private void PanelImages_PaintSearchResult(List<Image> result)
+        {
+            int x = 20;
+            int y = 20;
+            int maxHeight = -1;
+            int count = 1;
+            this.ToolbarProgressBar.Value = 0;
+            this.ToolbarProgressBar.Visible = true;
+            foreach (Image image in result)
+            {
+                PictureBox pic = new PictureBox();
+                pic.Image = image.BitmapImage;
+                pic.Location = new Point(x, y);
+                pic.Tag = image;
+                pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                pic.Click += ImageDetailClick;
+                pic.Click += ImageBorderClick;
+                pic.ContextMenuStrip = contextMenuStripImage;
+                pic.Name = image.Name;
+                pic.Cursor = Cursors.Hand;
+                x += pic.Width + 10;
+                maxHeight = Math.Max(pic.Height, maxHeight);
+                if (x > this.panelImages.Width - 100)
+                {
+                    x = 20;
+                    y += maxHeight + 10;
+                }
+                this.panelImages.Controls.Add(pic);
+                this.ToolbarProgressBar.Increment((count * 100) / library.Images.Count);
+                count++;
+            }
+            this.ToolbarProgressBar.Visible = false;
+            this.ToolbarProgressBar.Value = 0;
+        }
+
+
+
         // Metodo que se ejecuta cuando el usuario hace clic sobre una imagen del library
         private void ImageDetailClick(object sender, EventArgs e)
         {
@@ -361,8 +402,6 @@ namespace Entrega2_Equipo1
             if (chosenImage != null)
             {
                 // Tambien del property grid
-                //this.LabelsPropertyGrid.SelectedObject = new object();
-                //this.LabelsPropertyGrid.Update();
                 chosenImage.BorderStyle = BorderStyle.None;
                 chosenImage = null;
                 this.calificationUpDown.Enabled = false;
@@ -381,7 +420,6 @@ namespace Entrega2_Equipo1
             try
             {
                 this.imagetoaddlabel.Calification = (calificationUpDown.Value == 0) ? -1 : Convert.ToInt32(calificationUpDown.Value);
-                Refresh_LabelsPropertyGrid();
             }
             catch
             {
@@ -394,7 +432,6 @@ namespace Entrega2_Equipo1
             try
             {
                 this.imagetoaddlabel.Name = nameTextBox.Text;
-                Refresh_LabelsPropertyGrid();
             }
             catch
             {
@@ -402,20 +439,7 @@ namespace Entrega2_Equipo1
             }
         }
 
-        private void Refresh_LabelsPropertyGrid()
-        {
-            try
-            {
-                // Del propertygrid
-                //this.LabelsPropertyGrid.SelectedObject = new object();
-                //this.LabelsPropertyGrid.SelectedObject = new ImageToShow(this.imagetoaddlabel);
-            }
-            catch
-            {
-                return;
-            }
-        }
-
+        
         // ==============================================================================
         // =============================== EDITING PANEL METHODS ========================
 
@@ -713,9 +737,6 @@ namespace Entrega2_Equipo1
             this.exportToolStripMenuItem.Enabled = true;
             this.saveToolStripMenuItem.Enabled = true;
             this.cleanLibraryToolStripMenuItem.Enabled = true;
-            // Del property grid
-            //this.LabelsPropertyGrid.SelectedObject = new object();
-            Refresh_LabelsPropertyGrid();
         }
 
         private void AddLabelController()
@@ -1527,6 +1548,48 @@ namespace Entrega2_Equipo1
                 this.Deleteaccount = true;
                 // Cerramos el form
                 this.Close();
+            }
+        }
+
+        private void SearchTextBox_Enter(object sender, EventArgs e)
+        {
+            if (SearchTextBox.Text == "SEARCH PATTERN")
+            {
+                SearchTextBox.Text = "";
+                SearchTextBox.ForeColor = Color.White;
+            }
+        }
+
+        private void SearchTextBox_Leave(object sender, EventArgs e)
+        {
+            if (SearchTextBox.Text == "")
+            {
+                SearchTextBox.Text = "SEARCH PATTERN";
+                SearchTextBox.ForeColor = Color.DarkGray;
+            }
+        }
+
+
+        // METODO QUE SE EJECUTA CUANDO CAMBIA EL TEXTO EN EL SEARCHTEXTBOX
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            // No hace el clear nisiquiera, no se porque
+            panelImages.Controls.Clear();
+            try
+            {
+                if (SearchTextBox.Text != "")
+                {
+                    List<Image> result = mainSearcher.Search(library.Images, SearchTextBox.Text);
+
+                    if (result.Count != 0)
+                    {
+                        PanelImages_PaintSearchResult(result);
+                    }
+                }
+            }
+            catch
+            {
+                return;
             }
         }
     }

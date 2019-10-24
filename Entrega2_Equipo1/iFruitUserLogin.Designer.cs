@@ -84,12 +84,12 @@
             // NewPasswordTextBox
             // 
             this.NewPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.NewPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NewPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NewPasswordTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewPasswordTextBox.ForeColor = System.Drawing.Color.DarkGray;
-            this.NewPasswordTextBox.Location = new System.Drawing.Point(20, 96);
+            this.NewPasswordTextBox.Location = new System.Drawing.Point(22, 89);
             this.NewPasswordTextBox.Name = "NewPasswordTextBox";
-            this.NewPasswordTextBox.Size = new System.Drawing.Size(224, 25);
+            this.NewPasswordTextBox.Size = new System.Drawing.Size(224, 32);
             this.NewPasswordTextBox.TabIndex = 16;
             this.NewPasswordTextBox.Text = "PASSWORD";
             this.NewPasswordTextBox.Enter += new System.EventHandler(this.NewPasswordTextBox_Enter);
@@ -98,12 +98,12 @@
             // NewUserNameTextBox
             // 
             this.NewUserNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.NewUserNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NewUserNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NewUserNameTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewUserNameTextBox.ForeColor = System.Drawing.Color.DarkGray;
-            this.NewUserNameTextBox.Location = new System.Drawing.Point(22, 25);
+            this.NewUserNameTextBox.Location = new System.Drawing.Point(22, 18);
             this.NewUserNameTextBox.Name = "NewUserNameTextBox";
-            this.NewUserNameTextBox.Size = new System.Drawing.Size(224, 25);
+            this.NewUserNameTextBox.Size = new System.Drawing.Size(224, 32);
             this.NewUserNameTextBox.TabIndex = 15;
             this.NewUserNameTextBox.Text = "USERNAME";
             this.NewUserNameTextBox.Enter += new System.EventHandler(this.NewUserNameTextBox_Enter);
