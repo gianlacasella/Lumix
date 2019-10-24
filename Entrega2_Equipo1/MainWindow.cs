@@ -45,7 +45,7 @@ namespace Entrega2_Equipo1
             LeftPanel.Visible = false;
             this.Size = formsizewithoutrightpanel;
             string arrowiconslocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\";
-            Bitmap rightarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "leftarrow.png");
+            Bitmap rightarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "rightarrow.png");
             OpenRightPanelButton.BackgroundImage = rightarrow;
             OpenRightPanelButton.BackgroundImageLayout = ImageLayout.Zoom;
         }
@@ -1264,9 +1264,9 @@ namespace Entrega2_Equipo1
 					  MessageBoxButtons.OK, MessageBoxIcon.Question);
 			}
 		}
-	}
+    }
 
-	public class MyRenderer : ToolStripProfessionalRenderer
+    public class MyRenderer : ToolStripProfessionalRenderer
    {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
