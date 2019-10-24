@@ -63,19 +63,8 @@ namespace Entrega2_Equipo1
             }
         }
 
-        /*
-        private void LoadLogInUser()
-        {
-            foreach (User user in Users)
-            {
-                if (user.CurrentUser == true)
-                {
-                    LogInUser = user;
-                    break;
-                }
-            }
-        }
-        */
+        
+        
 
             // metodo que se ejecuta cuando se hace clic en el new user label
         private void NewUserLabel_Click(object sender, EventArgs e)
@@ -175,7 +164,7 @@ namespace Entrega2_Equipo1
                 if (user.Usrname == selecteditem)
                 {
                     this.LogInUser = user;
-                    this.UserPicturePictureBox.Image = user.UsrImage;
+                    this.UserPicturePictureBox.BackgroundImage = user.UsrImage;
                 }
             }
         }

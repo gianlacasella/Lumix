@@ -32,16 +32,16 @@
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CreateUserPanel = new System.Windows.Forms.Panel();
+            this.NewPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.NewUserNameTextBox = new System.Windows.Forms.TextBox();
             this.NewPasswordEmptyErrorLabel = new System.Windows.Forms.Label();
             this.NewUsernameErrorLabel = new System.Windows.Forms.Label();
             this.SignUpButton = new System.Windows.Forms.Button();
-            this.NewUserNameTextBox = new System.Windows.Forms.TextBox();
             this.NewUserLabel = new System.Windows.Forms.Label();
             this.LogInButton = new System.Windows.Forms.Button();
             this.LogInPasswordTextBox = new System.Windows.Forms.TextBox();
             this.UserNamesComboBox = new System.Windows.Forms.ComboBox();
             this.WrongPasswordLabel = new System.Windows.Forms.Label();
-            this.NewPasswordTextBox = new System.Windows.Forms.TextBox();
             this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +80,34 @@
             this.CreateUserPanel.Size = new System.Drawing.Size(262, 230);
             this.CreateUserPanel.TabIndex = 10;
             this.CreateUserPanel.Visible = false;
+            // 
+            // NewPasswordTextBox
+            // 
+            this.NewPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.NewPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NewPasswordTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPasswordTextBox.ForeColor = System.Drawing.Color.DarkGray;
+            this.NewPasswordTextBox.Location = new System.Drawing.Point(20, 96);
+            this.NewPasswordTextBox.Name = "NewPasswordTextBox";
+            this.NewPasswordTextBox.Size = new System.Drawing.Size(224, 25);
+            this.NewPasswordTextBox.TabIndex = 16;
+            this.NewPasswordTextBox.Text = "PASSWORD";
+            this.NewPasswordTextBox.Enter += new System.EventHandler(this.NewPasswordTextBox_Enter);
+            this.NewPasswordTextBox.Leave += new System.EventHandler(this.NewPasswordTextBox_Leave);
+            // 
+            // NewUserNameTextBox
+            // 
+            this.NewUserNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.NewUserNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NewUserNameTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewUserNameTextBox.ForeColor = System.Drawing.Color.DarkGray;
+            this.NewUserNameTextBox.Location = new System.Drawing.Point(22, 25);
+            this.NewUserNameTextBox.Name = "NewUserNameTextBox";
+            this.NewUserNameTextBox.Size = new System.Drawing.Size(224, 25);
+            this.NewUserNameTextBox.TabIndex = 15;
+            this.NewUserNameTextBox.Text = "USERNAME";
+            this.NewUserNameTextBox.Enter += new System.EventHandler(this.NewUserNameTextBox_Enter);
+            this.NewUserNameTextBox.Leave += new System.EventHandler(this.NewUserNameTextBox_Leave);
             // 
             // NewPasswordEmptyErrorLabel
             // 
@@ -121,20 +149,6 @@
             this.SignUpButton.Text = "SignUp";
             this.SignUpButton.UseVisualStyleBackColor = true;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
-            // 
-            // NewUserNameTextBox
-            // 
-            this.NewUserNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.NewUserNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NewUserNameTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewUserNameTextBox.ForeColor = System.Drawing.Color.DarkGray;
-            this.NewUserNameTextBox.Location = new System.Drawing.Point(22, 25);
-            this.NewUserNameTextBox.Name = "NewUserNameTextBox";
-            this.NewUserNameTextBox.Size = new System.Drawing.Size(224, 25);
-            this.NewUserNameTextBox.TabIndex = 15;
-            this.NewUserNameTextBox.Text = "USERNAME";
-            this.NewUserNameTextBox.Enter += new System.EventHandler(this.NewUserNameTextBox_Enter);
-            this.NewUserNameTextBox.Leave += new System.EventHandler(this.NewUserNameTextBox_Leave);
             // 
             // NewUserLabel
             // 
@@ -208,25 +222,11 @@
             this.WrongPasswordLabel.TabIndex = 15;
             this.WrongPasswordLabel.Visible = false;
             // 
-            // NewPasswordTextBox
-            // 
-            this.NewPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.NewPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NewPasswordTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPasswordTextBox.ForeColor = System.Drawing.Color.DarkGray;
-            this.NewPasswordTextBox.Location = new System.Drawing.Point(20, 96);
-            this.NewPasswordTextBox.Name = "NewPasswordTextBox";
-            this.NewPasswordTextBox.Size = new System.Drawing.Size(224, 25);
-            this.NewPasswordTextBox.TabIndex = 16;
-            this.NewPasswordTextBox.Text = "PASSWORD";
-            this.NewPasswordTextBox.Enter += new System.EventHandler(this.NewPasswordTextBox_Enter);
-            this.NewPasswordTextBox.Leave += new System.EventHandler(this.NewPasswordTextBox_Leave);
-            // 
             // UserPicturePictureBox
             // 
             this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UserPicturePictureBox.BackColor = System.Drawing.Color.DarkGray;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.UserPicturePictureBox.Location = new System.Drawing.Point(262, 205);
             this.UserPicturePictureBox.Name = "UserPicturePictureBox";
             this.UserPicturePictureBox.Size = new System.Drawing.Size(209, 210);
@@ -239,12 +239,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(776, 678);
+            this.Controls.Add(this.CreateUserPanel);
             this.Controls.Add(this.WrongPasswordLabel);
             this.Controls.Add(this.NewUserLabel);
             this.Controls.Add(this.LogInButton);
             this.Controls.Add(this.LogInPasswordTextBox);
             this.Controls.Add(this.UserNamesComboBox);
-            this.Controls.Add(this.CreateUserPanel);
             this.Controls.Add(this.UserPicturePictureBox);
             this.Controls.Add(this.LogoPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

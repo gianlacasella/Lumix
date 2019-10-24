@@ -37,7 +37,11 @@ namespace Entrega2_Equipo1
                     bool decision = mainWindow.Exit;
 
                     // Si queria salir, podemos salir del programa
-                    if (decision == true) break;
+                    if (decision == true)
+                    {
+                        loader.SaveUserInformation();
+                        break;
+                    } 
                     // Si no, hacemos otra iteracion
                     else
                     {
@@ -60,7 +64,11 @@ namespace Entrega2_Equipo1
                     bool decision = mainWindow.Exit;
 
                     // Si queria salir, podemos salir del programa
-                    if (decision == true) break;
+                    if (decision == true)
+                    {
+                        loader.SaveUserInformation();
+                        break;
+                    } 
                     // Si no, hacemos otra iteracion
                     else
                     {

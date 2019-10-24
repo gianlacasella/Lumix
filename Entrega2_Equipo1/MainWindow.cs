@@ -30,6 +30,7 @@ namespace Entrega2_Equipo1
         User userLoggedIn = null;
         // bool que controla si el usuario desea cerrar el programa o cerrar sesion
         bool exit = true;
+        Bitmap chooseUserPictureBitmap;
 
         public User UserLoggedIn { get => this.userLoggedIn; set => this.userLoggedIn = value; }
         public bool Exit { get => this.exit; set => this.exit = value; }
@@ -48,16 +49,20 @@ namespace Entrega2_Equipo1
 			PanelImages_Paint(sender, e);
 			comboRotate.DataSource = Enum.GetValues(typeof(RotateFlipType));
 			comboCensor.Items.Add("Black bar"); comboCensor.Items.Add("Pixel blur");comboCensor.Text = "Black bar";
-            LeftPanel.Location = panelImages.Location;
-            LeftPanel.Visible = false;
+            AddLabelPanel.Location = panelImages.Location;
+            AddLabelPanel.Visible = false;
             this.Size = formsizewithoutrightpanel;
             string arrowiconslocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\";
             Bitmap rightarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "rightarrow.png");
             OpenRightPanelButton.BackgroundImage = rightarrow;
             OpenRightPanelButton.BackgroundImageLayout = ImageLayout.Zoom;
-
-            // Codigo auxiliar
-            this.LabelAuxiliar.Text = UserLoggedIn.Usrname;
+            
+            string imageLocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\";
+            Bitmap image = (Bitmap)Bitmap.FromFile(imageLocation + "changeuserpicture.png");
+            Resizer res = new Resizer();
+            int x = 150;
+            int y = 150;
+            this.chooseUserPictureBitmap = res.ResizeImage(image, x, y);
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -241,9 +246,9 @@ namespace Entrega2_Equipo1
                     PictureBox PIC = (PictureBox)sourceControl;
                     Image imagetoaddlabel = (Image)PIC.Tag;
                     // Ya reconocimos cual fue el Image seleccionado para agregar el label
-                    LeftPanel.Visible = true;
+                    AddLabelPanel.Visible = true;
                     this.imagetoaddlabel = imagetoaddlabel;
-                    this.panelImages.Visible = false;
+                    //panelImages.Visible = false;
                     AddLabelController();
                 }
             }
@@ -694,10 +699,10 @@ namespace Entrega2_Equipo1
                 if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!",
                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    LeftPanel.Visible = false;
+                    AddLabelPanel.Visible = false;
                 }
             }
-            LeftPanel.Visible = false;
+            AddLabelPanel.Visible = false;
             panelImages.Visible = true;
             this.importToolStripMenuItem1.Enabled = true;
             this.exportToolStripMenuItem.Enabled = true;
@@ -894,7 +899,7 @@ namespace Entrega2_Equipo1
         private void Asdfbutton_Click(object sender, EventArgs e)
         {
             // Ya reconocimos cual fue el Image seleccionado para agregar el label
-            LeftPanel.Visible = true;
+            AddLabelPanel.Visible = true;
             panelImages.Visible = false;
             AddLabelController();
         }
@@ -1102,6 +1107,7 @@ namespace Entrega2_Equipo1
             selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
         }
 
+
         private void ImportToolStripMenuItem1_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor= Cursors.Arrow;
@@ -1285,6 +1291,95 @@ namespace Entrega2_Equipo1
             this.UserLoggedIn.CurrentUser = false;
             // Cerramos el form
             this.Close();
+        }
+
+        private void LogOutToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
+        }
+
+        private void LogOutToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
+        }
+
+        private void ExitToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
+        }
+
+        private void ExitToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
+        }
+
+        private void MyAccountToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
+        }
+
+        private void MyAccountToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+            var selecteditem = (ToolStripMenuItem)sender;
+            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
+        }
+
+        private void MyAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Hacemos switch entre los paneles
+            if (AccountPanel.Visible == false)
+            {
+                AccountPanel.Visible = true;
+                panelImages.Visible = false;
+                AddLabelPanel.Visible = true;
+                UsernameLabel.Text = userLoggedIn.Usrname;
+                UserPicturePictureBox.BackgroundImage = userLoggedIn.UsrImage;
+            }
+            else
+            {
+                AccountPanel.Visible = false;
+                panelImages.Visible = true;
+                AddLabelPanel.Visible = false;
+            }
+        }
+
+        private void UserPicturePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            UserPicturePictureBox.Image = null;
+            UserPicturePictureBox.BackgroundImage = chooseUserPictureBitmap;
+        }
+
+        private void UserPicturePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+            UserPicturePictureBox.BackgroundImage = UserLoggedIn.UsrImage;
+        }
+
+        private void UserPicturePictureBox_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select your profile picture";
+            ofd.Multiselect = false;
+            ofd.Filter = "Supported formats |*.jpg;*.jpeg;*.png;*.bmp";
+            DialogResult dr = ofd.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Resizer res = new Resizer();
+                UserLoggedIn.UsrImage = res.ResizeImage((Bitmap)Bitmap.FromFile(ofd.FileNames[0]), 100, 100);
+                UserPicturePictureBox.BackgroundImage = UserLoggedIn.UsrImage;
+            }
         }
     }
 

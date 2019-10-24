@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.myAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importWithLabelsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,10 +40,13 @@
             this.exportAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cleanLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelImages = new System.Windows.Forms.Panel();
-            this.LeftPanel = new System.Windows.Forms.Panel();
+            this.AddLabelPanel = new System.Windows.Forms.Panel();
+            this.AccountPanel = new System.Windows.Forms.Panel();
+            this.UsernameLabel = new System.Windows.Forms.Label();
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
@@ -132,7 +136,6 @@
             this.textBaseW = new System.Windows.Forms.TextBox();
             this.buttonCollage = new System.Windows.Forms.Button();
             this.ImageDataPanel = new System.Windows.Forms.Panel();
-            this.LabelAuxiliar = new System.Windows.Forms.Label();
             this.DeleteLabelButton = new System.Windows.Forms.Button();
             this.EditLabelButton = new System.Windows.Forms.Button();
             this.addnewlabelbutton = new System.Windows.Forms.Button();
@@ -169,9 +172,11 @@
             this.button10 = new System.Windows.Forms.Button();
             this.pictureChosen = new System.Windows.Forms.PictureBox();
             this.topauxlabel = new System.Windows.Forms.Panel();
+            this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
-            this.panelImages.SuspendLayout();
-            this.LeftPanel.SuspendLayout();
+            this.AddLabelPanel.SuspendLayout();
+            this.AccountPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddPersonLabelPanel.SuspendLayout();
             this.AddSpecialLabelPanel.SuspendLayout();
@@ -203,6 +208,7 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.myAccountToolStripMenuItem,
             this.importToolStripMenuItem1,
             this.exportToolStripMenuItem,
             this.saveToolStripMenuItem,
@@ -214,6 +220,17 @@
             this.menuStrip1.Size = new System.Drawing.Size(1646, 38);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // myAccountToolStripMenuItem
+            // 
+            this.myAccountToolStripMenuItem.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myAccountToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.myAccountToolStripMenuItem.Name = "myAccountToolStripMenuItem";
+            this.myAccountToolStripMenuItem.Size = new System.Drawing.Size(104, 34);
+            this.myAccountToolStripMenuItem.Text = "My Account";
+            this.myAccountToolStripMenuItem.Click += new System.EventHandler(this.MyAccountToolStripMenuItem_Click);
+            this.myAccountToolStripMenuItem.MouseEnter += new System.EventHandler(this.MyAccountToolStripMenuItem_MouseEnter);
+            this.myAccountToolStripMenuItem.MouseLeave += new System.EventHandler(this.MyAccountToolStripMenuItem_MouseLeave);
             // 
             // importToolStripMenuItem1
             // 
@@ -266,7 +283,7 @@
             // 
             this.exportToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(139, 24);
             this.exportToolStripMenuItem1.Text = "Export";
             this.exportToolStripMenuItem1.Click += new System.EventHandler(this.ExportToolStripMenuItem_Click);
             this.exportToolStripMenuItem1.MouseEnter += new System.EventHandler(this.ExportToolStripMenuItem_MouseEnter);
@@ -276,7 +293,7 @@
             // 
             this.exportAsToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.exportAsToolStripMenuItem1.Name = "exportAsToolStripMenuItem1";
-            this.exportAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.exportAsToolStripMenuItem1.Size = new System.Drawing.Size(139, 24);
             this.exportAsToolStripMenuItem1.Text = "Export as";
             this.exportAsToolStripMenuItem1.Click += new System.EventHandler(this.ExportAsToolStripMenuItem_Click);
             this.exportAsToolStripMenuItem1.MouseEnter += new System.EventHandler(this.ExportAsToolStripMenuItem_MouseEnter);
@@ -305,15 +322,6 @@
             this.cleanLibraryToolStripMenuItem.MouseEnter += new System.EventHandler(this.CleanLibraryToolStripMenuItem_MouseEnter);
             this.cleanLibraryToolStripMenuItem.MouseLeave += new System.EventHandler(this.CleanLibraryToolStripMenuItem_MouseLeave);
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(46, 34);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
-            // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,6 +330,19 @@
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(78, 34);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.LogOutToolStripMenuItem_Click);
+            this.logOutToolStripMenuItem.MouseEnter += new System.EventHandler(this.LogOutToolStripMenuItem_MouseEnter);
+            this.logOutToolStripMenuItem.MouseLeave += new System.EventHandler(this.LogOutToolStripMenuItem_MouseLeave);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(46, 34);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.MouseEnter += new System.EventHandler(this.ExitToolStripMenuItem_MouseEnter);
+            this.exitToolStripMenuItem.MouseLeave += new System.EventHandler(this.ExitToolStripMenuItem_MouseLeave);
             // 
             // panelImages
             // 
@@ -330,7 +351,6 @@
             this.panelImages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panelImages.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelImages.BackgroundImage")));
             this.panelImages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelImages.Controls.Add(this.LeftPanel);
             this.panelImages.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panelImages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelImages.Location = new System.Drawing.Point(0, 0);
@@ -342,23 +362,61 @@
             this.panelImages.DragLeave += new System.EventHandler(this.PanelImages_DragLeave);
             this.panelImages.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelImages_Paint);
             // 
-            // LeftPanel
+            // AddLabelPanel
             // 
-            this.LeftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.LeftPanel.Controls.Add(this.SelectLabelTypeTag);
-            this.LeftPanel.Controls.Add(this.SelectedLabelComboBox1);
-            this.LeftPanel.Controls.Add(this.AddLabelImageBox);
-            this.LeftPanel.Controls.Add(this.DoneButton);
-            this.LeftPanel.Controls.Add(this.AddLabelButton);
-            this.LeftPanel.Controls.Add(this.AddPersonLabelPanel);
-            this.LeftPanel.Controls.Add(this.AddSpecialLabelPanel);
-            this.LeftPanel.Controls.Add(this.AddSimpleLabelPanel);
-            this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LeftPanel.Location = new System.Drawing.Point(0, 0);
-            this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(624, 745);
-            this.LeftPanel.TabIndex = 0;
-            this.LeftPanel.Visible = false;
+            this.AddLabelPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.AddLabelPanel.Controls.Add(this.AccountPanel);
+            this.AddLabelPanel.Controls.Add(this.SelectLabelTypeTag);
+            this.AddLabelPanel.Controls.Add(this.SelectedLabelComboBox1);
+            this.AddLabelPanel.Controls.Add(this.AddLabelImageBox);
+            this.AddLabelPanel.Controls.Add(this.DoneButton);
+            this.AddLabelPanel.Controls.Add(this.AddLabelButton);
+            this.AddLabelPanel.Controls.Add(this.AddPersonLabelPanel);
+            this.AddLabelPanel.Controls.Add(this.AddSpecialLabelPanel);
+            this.AddLabelPanel.Controls.Add(this.AddSimpleLabelPanel);
+            this.AddLabelPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddLabelPanel.Location = new System.Drawing.Point(0, 0);
+            this.AddLabelPanel.Name = "AddLabelPanel";
+            this.AddLabelPanel.Size = new System.Drawing.Size(624, 745);
+            this.AddLabelPanel.TabIndex = 0;
+            this.AddLabelPanel.Visible = false;
+            // 
+            // AccountPanel
+            // 
+            this.AccountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.AccountPanel.Controls.Add(this.UsernameLabel);
+            this.AccountPanel.Controls.Add(this.UserPicturePictureBox);
+            this.AccountPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AccountPanel.Location = new System.Drawing.Point(0, 0);
+            this.AccountPanel.Name = "AccountPanel";
+            this.AccountPanel.Size = new System.Drawing.Size(624, 745);
+            this.AccountPanel.TabIndex = 4;
+            this.AccountPanel.Visible = false;
+            // 
+            // UsernameLabel
+            // 
+            this.UsernameLabel.AutoSize = true;
+            this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameLabel.ForeColor = System.Drawing.Color.White;
+            this.UsernameLabel.Location = new System.Drawing.Point(220, 246);
+            this.UsernameLabel.Name = "UsernameLabel";
+            this.UsernameLabel.Size = new System.Drawing.Size(0, 62);
+            this.UsernameLabel.TabIndex = 5;
+            // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(194, 20);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
             // SelectLabelTypeTag
             // 
@@ -1072,7 +1130,7 @@
             // ToolbarProgressBar
             // 
             this.ToolbarProgressBar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ToolbarProgressBar.Location = new System.Drawing.Point(727, 9);
+            this.ToolbarProgressBar.Location = new System.Drawing.Point(654, 9);
             this.ToolbarProgressBar.Name = "ToolbarProgressBar";
             this.ToolbarProgressBar.Size = new System.Drawing.Size(148, 23);
             this.ToolbarProgressBar.Step = 1;
@@ -1120,6 +1178,7 @@
             // 
             // LeftNewPanel
             // 
+            this.LeftNewPanel.Controls.Add(this.AddLabelPanel);
             this.LeftNewPanel.Controls.Add(this.panelImages);
             this.LeftNewPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftNewPanel.Location = new System.Drawing.Point(0, 38);
@@ -1341,7 +1400,6 @@
             // ImageDataPanel
             // 
             this.ImageDataPanel.BackColor = System.Drawing.Color.DarkCyan;
-            this.ImageDataPanel.Controls.Add(this.LabelAuxiliar);
             this.ImageDataPanel.Controls.Add(this.DeleteLabelButton);
             this.ImageDataPanel.Controls.Add(this.EditLabelButton);
             this.ImageDataPanel.Controls.Add(this.addnewlabelbutton);
@@ -1355,15 +1413,6 @@
             this.ImageDataPanel.Name = "ImageDataPanel";
             this.ImageDataPanel.Size = new System.Drawing.Size(246, 486);
             this.ImageDataPanel.TabIndex = 36;
-            // 
-            // LabelAuxiliar
-            // 
-            this.LabelAuxiliar.AutoSize = true;
-            this.LabelAuxiliar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelAuxiliar.Location = new System.Drawing.Point(16, 258);
-            this.LabelAuxiliar.Name = "LabelAuxiliar";
-            this.LabelAuxiliar.Size = new System.Drawing.Size(0, 25);
-            this.LabelAuxiliar.TabIndex = 42;
             // 
             // DeleteLabelButton
             // 
@@ -1404,6 +1453,7 @@
             this.setNewNameButton.TabIndex = 38;
             this.setNewNameButton.Text = "Set Name";
             this.setNewNameButton.UseVisualStyleBackColor = true;
+            this.setNewNameButton.Click += new System.EventHandler(this.SetNewNameButton_Click);
             // 
             // nameTextBox
             // 
@@ -1463,6 +1513,7 @@
             this.SetCalificationButton.TabIndex = 34;
             this.SetCalificationButton.Text = "Set Calification";
             this.SetCalificationButton.UseVisualStyleBackColor = true;
+            this.SetCalificationButton.Click += new System.EventHandler(this.SetCalificationButton_Click);
             // 
             // DownRightPanel
             // 
@@ -1812,9 +1863,11 @@
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panelImages.ResumeLayout(false);
-            this.LeftPanel.ResumeLayout(false);
-            this.LeftPanel.PerformLayout();
+            this.AddLabelPanel.ResumeLayout(false);
+            this.AddLabelPanel.PerformLayout();
+            this.AccountPanel.ResumeLayout(false);
+            this.AccountPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
@@ -1870,7 +1923,7 @@
 		private System.Windows.Forms.ToolStripMenuItem removeFromEditingAreaToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exportToLibraryToolStripMenuItem;
 		private System.Windows.Forms.ColorDialog colorDialogFilter;
-        private System.Windows.Forms.Panel LeftPanel;
+        private System.Windows.Forms.Panel AddLabelPanel;
         private System.Windows.Forms.Button DoneButton;
         private System.Windows.Forms.Button AddLabelButton;
         private System.Windows.Forms.PictureBox AddLabelImageBox;
@@ -1949,7 +2002,6 @@
         private System.Windows.Forms.TextBox textBaseW;
         private System.Windows.Forms.Button buttonCollage;
         private System.Windows.Forms.Panel ImageDataPanel;
-        private System.Windows.Forms.Label LabelAuxiliar;
         private System.Windows.Forms.Button DeleteLabelButton;
         private System.Windows.Forms.Button EditLabelButton;
         private System.Windows.Forms.Button addnewlabelbutton;
@@ -1994,6 +2046,11 @@
         private System.Windows.Forms.ToolStripMenuItem importWithLabelsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exportAsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem myAccountToolStripMenuItem;
+        private System.Windows.Forms.Panel AccountPanel;
+        private OvalPictureBox UserPicturePictureBox;
+        private System.Windows.Forms.Label UsernameLabel;
+        private System.Windows.Forms.ToolTip ChangeYourPictureToolTip;
     }
 
 }
