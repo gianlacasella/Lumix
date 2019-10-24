@@ -45,6 +45,13 @@ namespace Entrega2_Equipo1
                     // Si no, hacemos otra iteracion
                     else
                     {
+                        // Revisamos si desea eliminar su cuenta
+                        if (mainWindow.Deleteaccount == true)
+                        {
+                            loader.Users.Remove(mainWindow.UserLoggedIn);
+                        }
+
+
                         loader.SaveUserInformation();
                         continue;
                     }
@@ -72,6 +79,11 @@ namespace Entrega2_Equipo1
                     // Si no, hacemos otra iteracion
                     else
                     {
+                        // Revisamos si desea eliminar su cuenta
+                        if (mainWindow.Deleteaccount == true)
+                        {
+                            loader.Users.Remove(mainWindow.UserLoggedIn);
+                        }
                         loader.SaveUserInformation();
                         continue;
                     }

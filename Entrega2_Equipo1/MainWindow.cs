@@ -30,10 +30,13 @@ namespace Entrega2_Equipo1
         User userLoggedIn = null;
         // bool que controla si el usuario desea cerrar el programa o cerrar sesion
         bool exit = true;
+        // bool que controla si el usuario desea eliminar su cuenta
+        bool deleteaccount = false;
         Bitmap chooseUserPictureBitmap;
 
         public User UserLoggedIn { get => this.userLoggedIn; set => this.userLoggedIn = value; }
         public bool Exit { get => this.exit; set => this.exit = value; }
+        public bool Deleteaccount { get => this.deleteaccount; set => this.deleteaccount = value; }
 
         // =============================== FRAME METHODS ================================
         public MainWindow()
@@ -64,6 +67,8 @@ namespace Entrega2_Equipo1
             int y = 150;
             this.chooseUserPictureBitmap = res.ResizeImage(image, x, y);
         }
+
+
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -1345,6 +1350,28 @@ namespace Entrega2_Equipo1
                 AddLabelPanel.Visible = true;
                 UsernameLabel.Text = userLoggedIn.Usrname;
                 UserPicturePictureBox.BackgroundImage = userLoggedIn.UsrImage;
+                this.MemberSinceLabel.Text = "Member since " + userLoggedIn.Membersince.Date.ToString("MM/dd/yyyy");
+                if (UserLoggedIn.Name != null && UserLoggedIn.Name != "")
+                {
+                    this.RealNameTextBox.Text = UserLoggedIn.Name;
+                }
+                if (UserLoggedIn.Surname != null && UserLoggedIn.Surname != "")
+                {
+                    this.RealSurnameTextBox.Text = UserLoggedIn.Surname;
+                }
+                if (UserLoggedIn.Nationality != ENationality.None)
+                {
+                    this.RealNationalityComboBox.SelectedItem = UserLoggedIn.Nationality;
+                }
+                if (UserLoggedIn.Description != null && UserLoggedIn.Description != "")
+                {
+                    this.DescriptionTextBox.Text = UserLoggedIn.Description;
+                }
+                if (UserLoggedIn.BirthDate != new DateTime(1,1,1,0,0,0)) 
+                {
+                    this.UserDateTimePicker.Value = UserLoggedIn.BirthDate;
+                }
+                RealNationalityComboBox.DataSource = Enum.GetValues(typeof(ENationality));
             }
             else
             {
@@ -1381,10 +1408,131 @@ namespace Entrega2_Equipo1
                 UserPicturePictureBox.BackgroundImage = UserLoggedIn.UsrImage;
             }
         }
+
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            // Cambiamos el atributo de exit a false, pues quiere cambiar de usuario
+            this.exit = false;
+            // Ya el  usuario no es el current user, por lo tanto
+            this.UserLoggedIn.CurrentUser = false;
+            // Cerramos el form
+            this.Close();
+        }
+
+        private void RealNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.UserLoggedIn.Name = RealNameTextBox.Text;
+        }
+
+        private void RealSurnameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.UserLoggedIn.Surname = RealSurnameTextBox.Text;
+        }
+
+        private void RealNationalityComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.UserLoggedIn.Nationality = (ENationality)RealNationalityComboBox.SelectedItem;
+        }
+
+        private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.UserLoggedIn.Description = DescriptionTextBox.Text;
+        }
+
+        private void UserDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            this.UserLoggedIn.BirthDate = UserDateTimePicker.Value.Date;
+        }
+
+        private void ChangePassButton_Click(object sender, EventArgs e)
+        {
+            if (ChangePasswordPanel.Visible == false)
+            {
+                ChangePasswordPanel.Visible = true;
+            }
+            else
+            {
+                ChangePasswordPanel.Visible = false;
+            }
+        }
+
+        private void OldPasswordTextBox_MouseEnter(object sender, EventArgs e)
+        {
+            
+            if (OldPasswordTextBox.Text == "OLD PASSWORD")
+            {
+                OldPasswordTextBox.Text = "";
+                OldPasswordTextBox.ForeColor = Color.White;
+            }
+            
+        }
+
+        private void OldPasswordTextBox_MouseLeave(object sender, EventArgs e)
+        {
+            
+            if (OldPasswordTextBox.Text == "")
+            {
+                OldPasswordTextBox.Text = "OLD PASSWORD";
+                OldPasswordTextBox.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void NewPasswordTextBox_MouseEnter(object sender, EventArgs e)
+        {
+            
+            if (NewPasswordTextBox.Text == "NEW PASSWORD")
+            {
+                NewPasswordTextBox.Text = "";
+                NewPasswordTextBox.ForeColor = Color.White;
+            }
+        }
+
+        private void NewPasswordTextBox_MouseLeave(object sender, EventArgs e)
+        {
+            
+            if (NewPasswordTextBox.Text == "")
+            {
+                NewPasswordTextBox.Text = "NEW PASSWORD";
+                NewPasswordTextBox.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void OldPasswordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (OldPasswordTextBox.Text != userLoggedIn.Password && OldPasswordTextBox.Text != "OLD PASSWORD" && OldPasswordTextBox.Text != "")
+                WrongOldPassword.Visible = true;
+            else WrongOldPassword.Visible = false;
+        }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            userLoggedIn.Password = NewPasswordTextBox.Text;
+            OldPasswordTextBox.Text = "OLD PASSWORD";
+            OldPasswordTextBox.ForeColor = Color.DarkGray;
+            NewPasswordTextBox.Text = "NEW PASSWORD";
+            NewPasswordTextBox.ForeColor = Color.DarkGray;
+            ChangePasswordPanel.Visible = false;
+        }
+
+        private void DeleteAccountButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete your account?", "Delete account",
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // Cambiamos el atributo de exit a false, pues no se quiere cerrar la app sino cambiar de usuario
+                this.exit = false;
+                // Ya el  usuario no es el current user, por lo tanto
+                this.UserLoggedIn.CurrentUser = false;
+                // Como quiere eliminar su cuenta
+                this.Deleteaccount = true;
+                // Cerramos el form
+                this.Close();
+            }
+        }
     }
 
     public class MyRenderer : ToolStripProfessionalRenderer
-   {
+    {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
             Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
@@ -1392,6 +1540,6 @@ namespace Entrega2_Equipo1
             using (SolidBrush brush = new SolidBrush(c))
                 e.Graphics.FillRectangle(brush, rc);
         }
-   }
+    }
 }
 

@@ -40,11 +40,32 @@
             this.exportAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cleanLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelImages = new System.Windows.Forms.Panel();
             this.AddLabelPanel = new System.Windows.Forms.Panel();
             this.AccountPanel = new System.Windows.Forms.Panel();
+            this.ChangePassButton = new System.Windows.Forms.Button();
+            this.MemberSinceLabel = new System.Windows.Forms.Label();
+            this.DeleteAccountButton = new System.Windows.Forms.Button();
+            this.LogOutButton = new System.Windows.Forms.Button();
+            this.DataPanel = new System.Windows.Forms.Panel();
+            this.ChangePasswordPanel = new System.Windows.Forms.Panel();
+            this.NotMatchingPasswordsLabel = new System.Windows.Forms.Label();
+            this.WrongOldPassword = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.NewPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.OldPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.UserDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.RealNationalityComboBox = new System.Windows.Forms.ComboBox();
+            this.RealSurnameTextBox = new System.Windows.Forms.TextBox();
+            this.RealNameTextBox = new System.Windows.Forms.TextBox();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.RealBirthDateLabel = new System.Windows.Forms.Label();
+            this.RealDescritionLabel = new System.Windows.Forms.Label();
+            this.RealNationalityLabel = new System.Windows.Forms.Label();
+            this.RealSurnameLabel = new System.Windows.Forms.Label();
+            this.RealNameLabel = new System.Windows.Forms.Label();
+            this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
@@ -176,6 +197,8 @@
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
+            this.DataPanel.SuspendLayout();
+            this.ChangePasswordPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddPersonLabelPanel.SuspendLayout();
@@ -213,7 +236,6 @@
             this.exportToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.cleanLibraryToolStripMenuItem,
-            this.logOutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -322,17 +344,6 @@
             this.cleanLibraryToolStripMenuItem.MouseEnter += new System.EventHandler(this.CleanLibraryToolStripMenuItem_MouseEnter);
             this.cleanLibraryToolStripMenuItem.MouseLeave += new System.EventHandler(this.CleanLibraryToolStripMenuItem_MouseLeave);
             // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(78, 34);
-            this.logOutToolStripMenuItem.Text = "Log Out";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.LogOutToolStripMenuItem_Click);
-            this.logOutToolStripMenuItem.MouseEnter += new System.EventHandler(this.LogOutToolStripMenuItem_MouseEnter);
-            this.logOutToolStripMenuItem.MouseLeave += new System.EventHandler(this.LogOutToolStripMenuItem_MouseLeave);
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,6 +395,12 @@
             // AccountPanel
             // 
             this.AccountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.AccountPanel.Controls.Add(this.ChangePassButton);
+            this.AccountPanel.Controls.Add(this.MemberSinceLabel);
+            this.AccountPanel.Controls.Add(this.DeleteAccountButton);
+            this.AccountPanel.Controls.Add(this.LogOutButton);
+            this.AccountPanel.Controls.Add(this.DataPanel);
+            this.AccountPanel.Controls.Add(this.YourDataLabel);
             this.AccountPanel.Controls.Add(this.UsernameLabel);
             this.AccountPanel.Controls.Add(this.UserPicturePictureBox);
             this.AccountPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -393,12 +410,293 @@
             this.AccountPanel.TabIndex = 4;
             this.AccountPanel.Visible = false;
             // 
+            // ChangePassButton
+            // 
+            this.ChangePassButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChangePassButton.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.ChangePassButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            this.ChangePassButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.ChangePassButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChangePassButton.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangePassButton.ForeColor = System.Drawing.Color.White;
+            this.ChangePassButton.Location = new System.Drawing.Point(97, 672);
+            this.ChangePassButton.Name = "ChangePassButton";
+            this.ChangePassButton.Size = new System.Drawing.Size(188, 40);
+            this.ChangePassButton.TabIndex = 15;
+            this.ChangePassButton.Text = "Change password";
+            this.ChangePassButton.UseVisualStyleBackColor = true;
+            this.ChangePassButton.Click += new System.EventHandler(this.ChangePassButton_Click);
+            // 
+            // MemberSinceLabel
+            // 
+            this.MemberSinceLabel.AutoSize = true;
+            this.MemberSinceLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemberSinceLabel.ForeColor = System.Drawing.Color.White;
+            this.MemberSinceLabel.Location = new System.Drawing.Point(190, 292);
+            this.MemberSinceLabel.Name = "MemberSinceLabel";
+            this.MemberSinceLabel.Size = new System.Drawing.Size(0, 23);
+            this.MemberSinceLabel.TabIndex = 14;
+            // 
+            // DeleteAccountButton
+            // 
+            this.DeleteAccountButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteAccountButton.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.DeleteAccountButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            this.DeleteAccountButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.DeleteAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteAccountButton.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteAccountButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteAccountButton.Location = new System.Drawing.Point(434, 672);
+            this.DeleteAccountButton.Name = "DeleteAccountButton";
+            this.DeleteAccountButton.Size = new System.Drawing.Size(168, 40);
+            this.DeleteAccountButton.TabIndex = 13;
+            this.DeleteAccountButton.Text = "Delete Account";
+            this.DeleteAccountButton.UseVisualStyleBackColor = true;
+            this.DeleteAccountButton.Click += new System.EventHandler(this.DeleteAccountButton_Click);
+            // 
+            // LogOutButton
+            // 
+            this.LogOutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutButton.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.LogOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            this.LogOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.LogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogOutButton.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutButton.ForeColor = System.Drawing.Color.White;
+            this.LogOutButton.Location = new System.Drawing.Point(301, 672);
+            this.LogOutButton.Name = "LogOutButton";
+            this.LogOutButton.Size = new System.Drawing.Size(116, 40);
+            this.LogOutButton.TabIndex = 12;
+            this.LogOutButton.Text = "Log Out";
+            this.LogOutButton.UseVisualStyleBackColor = true;
+            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
+            // 
+            // DataPanel
+            // 
+            this.DataPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DataPanel.Controls.Add(this.ChangePasswordPanel);
+            this.DataPanel.Controls.Add(this.UserDateTimePicker);
+            this.DataPanel.Controls.Add(this.RealNationalityComboBox);
+            this.DataPanel.Controls.Add(this.RealSurnameTextBox);
+            this.DataPanel.Controls.Add(this.RealNameTextBox);
+            this.DataPanel.Controls.Add(this.DescriptionTextBox);
+            this.DataPanel.Controls.Add(this.RealBirthDateLabel);
+            this.DataPanel.Controls.Add(this.RealDescritionLabel);
+            this.DataPanel.Controls.Add(this.RealNationalityLabel);
+            this.DataPanel.Controls.Add(this.RealSurnameLabel);
+            this.DataPanel.Controls.Add(this.RealNameLabel);
+            this.DataPanel.Location = new System.Drawing.Point(0, 382);
+            this.DataPanel.Name = "DataPanel";
+            this.DataPanel.Size = new System.Drawing.Size(624, 262);
+            this.DataPanel.TabIndex = 7;
+            // 
+            // ChangePasswordPanel
+            // 
+            this.ChangePasswordPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ChangePasswordPanel.Controls.Add(this.NotMatchingPasswordsLabel);
+            this.ChangePasswordPanel.Controls.Add(this.WrongOldPassword);
+            this.ChangePasswordPanel.Controls.Add(this.button11);
+            this.ChangePasswordPanel.Controls.Add(this.NewPasswordTextBox);
+            this.ChangePasswordPanel.Controls.Add(this.OldPasswordTextBox);
+            this.ChangePasswordPanel.Location = new System.Drawing.Point(8, 20);
+            this.ChangePasswordPanel.Name = "ChangePasswordPanel";
+            this.ChangePasswordPanel.Size = new System.Drawing.Size(334, 236);
+            this.ChangePasswordPanel.TabIndex = 12;
+            this.ChangePasswordPanel.Visible = false;
+            // 
+            // NotMatchingPasswordsLabel
+            // 
+            this.NotMatchingPasswordsLabel.AutoSize = true;
+            this.NotMatchingPasswordsLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotMatchingPasswordsLabel.ForeColor = System.Drawing.Color.White;
+            this.NotMatchingPasswordsLabel.Location = new System.Drawing.Point(117, 135);
+            this.NotMatchingPasswordsLabel.Name = "NotMatchingPasswordsLabel";
+            this.NotMatchingPasswordsLabel.Size = new System.Drawing.Size(188, 21);
+            this.NotMatchingPasswordsLabel.TabIndex = 19;
+            this.NotMatchingPasswordsLabel.Text = "Not matching passwords!";
+            this.NotMatchingPasswordsLabel.Visible = false;
+            // 
+            // WrongOldPassword
+            // 
+            this.WrongOldPassword.AutoSize = true;
+            this.WrongOldPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WrongOldPassword.ForeColor = System.Drawing.Color.White;
+            this.WrongOldPassword.Location = new System.Drawing.Point(171, 73);
+            this.WrongOldPassword.Name = "WrongOldPassword";
+            this.WrongOldPassword.Size = new System.Drawing.Size(134, 21);
+            this.WrongOldPassword.TabIndex = 18;
+            this.WrongOldPassword.Text = "Wrong password!";
+            this.WrongOldPassword.Visible = false;
+            // 
+            // button11
+            // 
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(64, 170);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(188, 40);
+            this.button11.TabIndex = 16;
+            this.button11.Text = "Change";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.Button11_Click);
+            // 
+            // NewPasswordTextBox
+            // 
+            this.NewPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.NewPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NewPasswordTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPasswordTextBox.ForeColor = System.Drawing.Color.DarkGray;
+            this.NewPasswordTextBox.Location = new System.Drawing.Point(51, 103);
+            this.NewPasswordTextBox.Name = "NewPasswordTextBox";
+            this.NewPasswordTextBox.Size = new System.Drawing.Size(224, 32);
+            this.NewPasswordTextBox.TabIndex = 17;
+            this.NewPasswordTextBox.Text = "NEW PASSWORD";
+            this.NewPasswordTextBox.Enter += new System.EventHandler(this.NewPasswordTextBox_MouseEnter);
+            this.NewPasswordTextBox.Leave += new System.EventHandler(this.NewPasswordTextBox_MouseLeave);
+            // 
+            // OldPasswordTextBox
+            // 
+            this.OldPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.OldPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OldPasswordTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OldPasswordTextBox.ForeColor = System.Drawing.Color.DarkGray;
+            this.OldPasswordTextBox.Location = new System.Drawing.Point(53, 38);
+            this.OldPasswordTextBox.Name = "OldPasswordTextBox";
+            this.OldPasswordTextBox.Size = new System.Drawing.Size(224, 32);
+            this.OldPasswordTextBox.TabIndex = 16;
+            this.OldPasswordTextBox.Text = "OLD PASSWORD";
+            this.OldPasswordTextBox.TextChanged += new System.EventHandler(this.OldPasswordTextBox_TextChanged);
+            this.OldPasswordTextBox.Enter += new System.EventHandler(this.OldPasswordTextBox_MouseEnter);
+            this.OldPasswordTextBox.Leave += new System.EventHandler(this.OldPasswordTextBox_MouseLeave);
+            // 
+            // UserDateTimePicker
+            // 
+            this.UserDateTimePicker.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserDateTimePicker.Location = new System.Drawing.Point(112, 76);
+            this.UserDateTimePicker.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
+            this.UserDateTimePicker.Name = "UserDateTimePicker";
+            this.UserDateTimePicker.Size = new System.Drawing.Size(284, 28);
+            this.UserDateTimePicker.TabIndex = 11;
+            this.UserDateTimePicker.Value = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
+            this.UserDateTimePicker.ValueChanged += new System.EventHandler(this.UserDateTimePicker_ValueChanged);
+            // 
+            // RealNationalityComboBox
+            // 
+            this.RealNationalityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RealNationalityComboBox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RealNationalityComboBox.FormattingEnabled = true;
+            this.RealNationalityComboBox.Location = new System.Drawing.Point(491, 77);
+            this.RealNationalityComboBox.Name = "RealNationalityComboBox";
+            this.RealNationalityComboBox.Size = new System.Drawing.Size(111, 29);
+            this.RealNationalityComboBox.TabIndex = 9;
+            this.RealNationalityComboBox.SelectedIndexChanged += new System.EventHandler(this.RealNationalityComboBox_SelectedIndexChanged);
+            // 
+            // RealSurnameTextBox
+            // 
+            this.RealSurnameTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.RealSurnameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RealSurnameTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RealSurnameTextBox.Location = new System.Drawing.Point(399, 22);
+            this.RealSurnameTextBox.Name = "RealSurnameTextBox";
+            this.RealSurnameTextBox.Size = new System.Drawing.Size(158, 28);
+            this.RealSurnameTextBox.TabIndex = 8;
+            this.RealSurnameTextBox.TextChanged += new System.EventHandler(this.RealSurnameTextBox_TextChanged);
+            // 
+            // RealNameTextBox
+            // 
+            this.RealNameTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.RealNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RealNameTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RealNameTextBox.Location = new System.Drawing.Point(112, 22);
+            this.RealNameTextBox.Name = "RealNameTextBox";
+            this.RealNameTextBox.Size = new System.Drawing.Size(157, 28);
+            this.RealNameTextBox.TabIndex = 7;
+            this.RealNameTextBox.TextChanged += new System.EventHandler(this.RealNameTextBox_TextChanged);
+            // 
+            // DescriptionTextBox
+            // 
+            this.DescriptionTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.DescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DescriptionTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionTextBox.Location = new System.Drawing.Point(8, 153);
+            this.DescriptionTextBox.Multiline = true;
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.Size = new System.Drawing.Size(607, 103);
+            this.DescriptionTextBox.TabIndex = 6;
+            this.DescriptionTextBox.TextChanged += new System.EventHandler(this.DescriptionTextBox_TextChanged);
+            // 
+            // RealBirthDateLabel
+            // 
+            this.RealBirthDateLabel.AutoSize = true;
+            this.RealBirthDateLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RealBirthDateLabel.Location = new System.Drawing.Point(7, 77);
+            this.RealBirthDateLabel.Name = "RealBirthDateLabel";
+            this.RealBirthDateLabel.Size = new System.Drawing.Size(102, 26);
+            this.RealBirthDateLabel.TabIndex = 5;
+            this.RealBirthDateLabel.Text = "Birth date";
+            // 
+            // RealDescritionLabel
+            // 
+            this.RealDescritionLabel.AutoSize = true;
+            this.RealDescritionLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RealDescritionLabel.Location = new System.Drawing.Point(3, 123);
+            this.RealDescritionLabel.Name = "RealDescritionLabel";
+            this.RealDescritionLabel.Size = new System.Drawing.Size(117, 26);
+            this.RealDescritionLabel.TabIndex = 4;
+            this.RealDescritionLabel.Text = "Description";
+            // 
+            // RealNationalityLabel
+            // 
+            this.RealNationalityLabel.AutoSize = true;
+            this.RealNationalityLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RealNationalityLabel.Location = new System.Drawing.Point(407, 78);
+            this.RealNationalityLabel.Name = "RealNationalityLabel";
+            this.RealNationalityLabel.Size = new System.Drawing.Size(85, 26);
+            this.RealNationalityLabel.TabIndex = 3;
+            this.RealNationalityLabel.Text = "Country";
+            // 
+            // RealSurnameLabel
+            // 
+            this.RealSurnameLabel.AutoSize = true;
+            this.RealSurnameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RealSurnameLabel.Location = new System.Drawing.Point(299, 26);
+            this.RealSurnameLabel.Name = "RealSurnameLabel";
+            this.RealSurnameLabel.Size = new System.Drawing.Size(94, 26);
+            this.RealSurnameLabel.TabIndex = 1;
+            this.RealSurnameLabel.Text = "Surname";
+            // 
+            // RealNameLabel
+            // 
+            this.RealNameLabel.AutoSize = true;
+            this.RealNameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RealNameLabel.Location = new System.Drawing.Point(38, 26);
+            this.RealNameLabel.Name = "RealNameLabel";
+            this.RealNameLabel.Size = new System.Drawing.Size(68, 26);
+            this.RealNameLabel.TabIndex = 0;
+            this.RealNameLabel.Text = "Name";
+            // 
+            // YourDataLabel
+            // 
+            this.YourDataLabel.AutoSize = true;
+            this.YourDataLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YourDataLabel.ForeColor = System.Drawing.Color.White;
+            this.YourDataLabel.Location = new System.Drawing.Point(37, 352);
+            this.YourDataLabel.Name = "YourDataLabel";
+            this.YourDataLabel.Size = new System.Drawing.Size(130, 34);
+            this.YourDataLabel.TabIndex = 6;
+            this.YourDataLabel.Text = "Your data";
+            // 
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameLabel.ForeColor = System.Drawing.Color.White;
-            this.UsernameLabel.Location = new System.Drawing.Point(220, 246);
+            this.UsernameLabel.Location = new System.Drawing.Point(220, 230);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(0, 62);
             this.UsernameLabel.TabIndex = 5;
@@ -1202,7 +1500,7 @@
             this.OpenRightPanelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenRightPanelButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.OpenRightPanelButton.FlatAppearance.BorderSize = 0;
-            this.OpenRightPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.OpenRightPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.OpenRightPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenRightPanelButton.Location = new System.Drawing.Point(0, 0);
             this.OpenRightPanelButton.Name = "OpenRightPanelButton";
@@ -1867,6 +2165,10 @@
             this.AddLabelPanel.PerformLayout();
             this.AccountPanel.ResumeLayout(false);
             this.AccountPanel.PerformLayout();
+            this.DataPanel.ResumeLayout(false);
+            this.DataPanel.PerformLayout();
+            this.ChangePasswordPanel.ResumeLayout(false);
+            this.ChangePasswordPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddPersonLabelPanel.ResumeLayout(false);
@@ -2041,7 +2343,6 @@
 		private System.Windows.Forms.Button SlideShowButton;
 		private System.Windows.Forms.Button PresentationButton;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importWithLabelsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
@@ -2051,6 +2352,28 @@
         private OvalPictureBox UserPicturePictureBox;
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.ToolTip ChangeYourPictureToolTip;
+        private System.Windows.Forms.Panel DataPanel;
+        private System.Windows.Forms.Label YourDataLabel;
+        private System.Windows.Forms.Button DeleteAccountButton;
+        private System.Windows.Forms.Button LogOutButton;
+        private System.Windows.Forms.Label MemberSinceLabel;
+        private System.Windows.Forms.Label RealSurnameLabel;
+        private System.Windows.Forms.Label RealNameLabel;
+        private System.Windows.Forms.Label RealNationalityLabel;
+        private System.Windows.Forms.Label RealDescritionLabel;
+        private System.Windows.Forms.Label RealBirthDateLabel;
+        private System.Windows.Forms.Button ChangePassButton;
+        private System.Windows.Forms.DateTimePicker UserDateTimePicker;
+        private System.Windows.Forms.ComboBox RealNationalityComboBox;
+        private System.Windows.Forms.TextBox RealSurnameTextBox;
+        private System.Windows.Forms.TextBox RealNameTextBox;
+        private System.Windows.Forms.TextBox DescriptionTextBox;
+        private System.Windows.Forms.Panel ChangePasswordPanel;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.TextBox NewPasswordTextBox;
+        private System.Windows.Forms.TextBox OldPasswordTextBox;
+        private System.Windows.Forms.Label NotMatchingPasswordsLabel;
+        private System.Windows.Forms.Label WrongOldPassword;
     }
 
 }
