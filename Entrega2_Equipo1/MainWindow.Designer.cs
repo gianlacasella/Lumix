@@ -146,6 +146,7 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.brightnessBar = new System.Windows.Forms.TrackBar();
 			this.comboRotate = new System.Windows.Forms.ComboBox();
+			this.SlideShowButton = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button8 = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
@@ -163,6 +164,7 @@
 			this.button10 = new System.Windows.Forms.Button();
 			this.pictureChosen = new System.Windows.Forms.PictureBox();
 			this.topauxlabel = new System.Windows.Forms.Panel();
+			this.PresentationButton = new System.Windows.Forms.Button();
 			this.menuStrip1.SuspendLayout();
 			this.panelImages.SuspendLayout();
 			this.LeftPanel.SuspendLayout();
@@ -1466,6 +1468,8 @@
 			// 
 			// splitContainer1.Panel2
 			// 
+			this.splitContainer1.Panel2.Controls.Add(this.PresentationButton);
+			this.splitContainer1.Panel2.Controls.Add(this.SlideShowButton);
 			this.splitContainer1.Panel2.Controls.Add(this.button3);
 			this.splitContainer1.Panel2.Controls.Add(this.button8);
 			this.splitContainer1.Panel2.Controls.Add(this.label2);
@@ -1533,6 +1537,16 @@
 			this.comboRotate.Size = new System.Drawing.Size(78, 24);
 			this.comboRotate.TabIndex = 23;
 			this.comboRotate.SelectedIndexChanged += new System.EventHandler(this.ComboRotate_SelectedIndexChanged);
+			// 
+			// SlideShowButton
+			// 
+			this.SlideShowButton.Location = new System.Drawing.Point(176, 86);
+			this.SlideShowButton.Name = "SlideShowButton";
+			this.SlideShowButton.Size = new System.Drawing.Size(75, 23);
+			this.SlideShowButton.TabIndex = 34;
+			this.SlideShowButton.Text = "SlideShow";
+			this.SlideShowButton.UseVisualStyleBackColor = true;
+			this.SlideShowButton.Click += new System.EventHandler(this.SlideShowButton_Click);
 			// 
 			// button3
 			// 
@@ -1727,6 +1741,16 @@
 			this.topauxlabel.Name = "topauxlabel";
 			this.topauxlabel.Size = new System.Drawing.Size(253, 350);
 			this.topauxlabel.TabIndex = 7;
+			// 
+			// PresentationButton
+			// 
+			this.PresentationButton.Location = new System.Drawing.Point(257, 86);
+			this.PresentationButton.Name = "PresentationButton";
+			this.PresentationButton.Size = new System.Drawing.Size(75, 23);
+			this.PresentationButton.TabIndex = 35;
+			this.PresentationButton.Text = "Presentation";
+			this.PresentationButton.UseVisualStyleBackColor = true;
+			this.PresentationButton.Click += new System.EventHandler(this.PresentationButton_Click);
 			// 
 			// MainWindow
 			// 
@@ -1923,6 +1947,8 @@
         private System.Windows.Forms.Panel topauxlabel;
 		private System.Windows.Forms.Button ExitCollageButton;
 		private System.Windows.Forms.Button ExitResizeButton;
+		private System.Windows.Forms.Button SlideShowButton;
+		private System.Windows.Forms.Button PresentationButton;
 	}
 
 }

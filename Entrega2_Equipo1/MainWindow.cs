@@ -1236,6 +1236,34 @@ namespace Entrega2_Equipo1
 		{
 			panelResize.Visible = false;
 		}
+
+		private void SlideShowButton_Click(object sender, EventArgs e)
+		{
+			if (featuresImage.Count > 0)
+			{
+				SlideNPresentation slide = new SlideNPresentation(featuresImage, true);
+				slide.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("There has to be at least one picture selected", "Error",
+					  MessageBoxButtons.OK, MessageBoxIcon.Question);
+			}
+		}
+
+		private void PresentationButton_Click(object sender, EventArgs e)
+		{
+			if (featuresImage.Count > 0)
+			{
+				SlideNPresentation slide = new SlideNPresentation(featuresImage, false);
+				slide.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("There has to be at least one picture selected", "Error",
+					  MessageBoxButtons.OK, MessageBoxIcon.Question);
+			}
+		}
 	}
 
 	public class MyRenderer : ToolStripProfessionalRenderer

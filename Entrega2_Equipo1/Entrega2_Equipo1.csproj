@@ -249,6 +249,12 @@
     <Compile Include="SelectFaceLocationForm.Designer.cs">
       <DependentUpon>SelectFaceLocationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SlideNPresentation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SlideNPresentation.Designer.cs">
+      <DependentUpon>SlideNPresentation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Features\Brush.cs" />
     <Compile Include="Tools\Features\AddImage.cs" />
     <Compile Include="Tools\Features\AddShape.cs" />
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectFaceLocationForm.resx">
       <DependentUpon>SelectFaceLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SlideNPresentation.resx">
+      <DependentUpon>SlideNPresentation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
