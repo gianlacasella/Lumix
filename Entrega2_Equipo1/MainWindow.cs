@@ -1592,6 +1592,29 @@ namespace Entrega2_Equipo1
                 return;
             }
         }
+
+        private void NameTextBox_Enter(object sender, EventArgs e)
+        {
+            if (nameTextBox.Text == "NEW NAME")
+            {
+                nameTextBox.Text = "";
+                nameTextBox.ForeColor = Color.White;
+            }
+        }
+
+        private void NameTextBox_Leave(object sender, EventArgs e)
+        {
+            if (nameTextBox.Text == "")
+            {
+                nameTextBox.Text = "NEW NAME";
+                nameTextBox.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void GoBackButton_Click(object sender, EventArgs e)
+        {
+            MyAccountToolStripMenuItem_Click(this, EventArgs.Empty);
+        }
     }
 
     public class MyRenderer : ToolStripProfessionalRenderer

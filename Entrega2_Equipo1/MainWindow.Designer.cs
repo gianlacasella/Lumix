@@ -67,7 +67,6 @@
             this.RealNameLabel = new System.Windows.Forms.Label();
             this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
@@ -156,11 +155,11 @@
             this.textBaseH = new System.Windows.Forms.TextBox();
             this.textBaseW = new System.Windows.Forms.TextBox();
             this.buttonCollage = new System.Windows.Forms.Button();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.ImageDataPanel = new System.Windows.Forms.Panel();
             this.InformationPanelLabel = new System.Windows.Forms.Label();
             this.ImageInfoPanel = new System.Windows.Forms.Panel();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.SearchLabel = new System.Windows.Forms.Label();
             this.DeleteLabelButton = new System.Windows.Forms.Button();
             this.EditLabelButton = new System.Windows.Forms.Button();
             this.addnewlabelbutton = new System.Windows.Forms.Button();
@@ -198,12 +197,13 @@
             this.pictureChosen = new System.Windows.Forms.PictureBox();
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
+            this.GoBackButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddPersonLabelPanel.SuspendLayout();
             this.AddSpecialLabelPanel.SuspendLayout();
@@ -229,6 +229,7 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -399,6 +400,7 @@
             // AccountPanel
             // 
             this.AccountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.AccountPanel.Controls.Add(this.GoBackButton);
             this.AccountPanel.Controls.Add(this.ChangePassButton);
             this.AccountPanel.Controls.Add(this.MemberSinceLabel);
             this.AccountPanel.Controls.Add(this.DeleteAccountButton);
@@ -704,21 +706,6 @@
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(0, 62);
             this.UsernameLabel.TabIndex = 5;
-            // 
-            // UserPicturePictureBox
-            // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(194, 20);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
-            this.UserPicturePictureBox.TabIndex = 4;
-            this.UserPicturePictureBox.TabStop = false;
-            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
-            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
-            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
-            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
             // SelectLabelTypeTag
             // 
@@ -1531,8 +1518,6 @@
             this.SmartListsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.SmartListsPanel.Controls.Add(this.panelResize);
             this.SmartListsPanel.Controls.Add(this.panelCollage);
-            this.SmartListsPanel.Controls.Add(this.SearchLabel);
-            this.SmartListsPanel.Controls.Add(this.SearchTextBox);
             this.SmartListsPanel.Location = new System.Drawing.Point(0, 483);
             this.SmartListsPanel.Name = "SmartListsPanel";
             this.SmartListsPanel.Size = new System.Drawing.Size(971, 264);
@@ -1701,11 +1686,39 @@
             this.buttonCollage.UseVisualStyleBackColor = true;
             this.buttonCollage.Click += new System.EventHandler(this.ButtonCollage_Click);
             // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchLabel.ForeColor = System.Drawing.Color.White;
+            this.SearchLabel.Location = new System.Drawing.Point(3, 437);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(57, 21);
+            this.SearchLabel.TabIndex = 44;
+            this.SearchLabel.Text = "Search";
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SearchTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTextBox.ForeColor = System.Drawing.Color.DarkGray;
+            this.SearchTextBox.Location = new System.Drawing.Point(5, 456);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(236, 21);
+            this.SearchTextBox.TabIndex = 45;
+            this.SearchTextBox.Text = "SEARCH PATTERN";
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
+            this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
+            // 
             // ImageDataPanel
             // 
             this.ImageDataPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ImageDataPanel.Controls.Add(this.InformationPanelLabel);
             this.ImageDataPanel.Controls.Add(this.ImageInfoPanel);
+            this.ImageDataPanel.Controls.Add(this.SearchTextBox);
+            this.ImageDataPanel.Controls.Add(this.SearchLabel);
             this.ImageDataPanel.Controls.Add(this.DeleteLabelButton);
             this.ImageDataPanel.Controls.Add(this.EditLabelButton);
             this.ImageDataPanel.Controls.Add(this.addnewlabelbutton);
@@ -1739,88 +1752,97 @@
             this.ImageInfoPanel.Size = new System.Drawing.Size(249, 261);
             this.ImageInfoPanel.TabIndex = 43;
             // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SearchTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTextBox.ForeColor = System.Drawing.Color.DarkGray;
-            this.SearchTextBox.Location = new System.Drawing.Point(33, 50);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(236, 21);
-            this.SearchTextBox.TabIndex = 45;
-            this.SearchTextBox.Text = "SEARCH PATTERN";
-            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
-            this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
-            // 
-            // SearchLabel
-            // 
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchLabel.ForeColor = System.Drawing.Color.White;
-            this.SearchLabel.Location = new System.Drawing.Point(40, 20);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(57, 21);
-            this.SearchLabel.TabIndex = 44;
-            this.SearchLabel.Text = "Search";
-            // 
             // DeleteLabelButton
             // 
+            this.DeleteLabelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.DeleteLabelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DeleteLabelButton.Enabled = false;
-            this.DeleteLabelButton.Location = new System.Drawing.Point(111, 448);
+            this.DeleteLabelButton.FlatAppearance.BorderSize = 0;
+            this.DeleteLabelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.DeleteLabelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteLabelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteLabelButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteLabelButton.Location = new System.Drawing.Point(82, 386);
             this.DeleteLabelButton.Name = "DeleteLabelButton";
-            this.DeleteLabelButton.Size = new System.Drawing.Size(92, 23);
+            this.DeleteLabelButton.Size = new System.Drawing.Size(83, 45);
             this.DeleteLabelButton.TabIndex = 41;
             this.DeleteLabelButton.Text = "Delete Label";
-            this.DeleteLabelButton.UseVisualStyleBackColor = true;
+            this.DeleteLabelButton.UseVisualStyleBackColor = false;
             // 
             // EditLabelButton
             // 
+            this.EditLabelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.EditLabelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EditLabelButton.Enabled = false;
-            this.EditLabelButton.Location = new System.Drawing.Point(8, 448);
+            this.EditLabelButton.FlatAppearance.BorderSize = 0;
+            this.EditLabelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.EditLabelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditLabelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditLabelButton.ForeColor = System.Drawing.Color.White;
+            this.EditLabelButton.Location = new System.Drawing.Point(171, 386);
             this.EditLabelButton.Name = "EditLabelButton";
-            this.EditLabelButton.Size = new System.Drawing.Size(92, 23);
+            this.EditLabelButton.Size = new System.Drawing.Size(67, 45);
             this.EditLabelButton.TabIndex = 40;
             this.EditLabelButton.Text = "Edit Label";
-            this.EditLabelButton.UseVisualStyleBackColor = true;
+            this.EditLabelButton.UseVisualStyleBackColor = false;
             // 
             // addnewlabelbutton
             // 
+            this.addnewlabelbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.addnewlabelbutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addnewlabelbutton.Enabled = false;
-            this.addnewlabelbutton.Location = new System.Drawing.Point(8, 422);
+            this.addnewlabelbutton.FlatAppearance.BorderSize = 0;
+            this.addnewlabelbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.addnewlabelbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addnewlabelbutton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addnewlabelbutton.ForeColor = System.Drawing.Color.White;
+            this.addnewlabelbutton.Location = new System.Drawing.Point(7, 386);
             this.addnewlabelbutton.Name = "addnewlabelbutton";
-            this.addnewlabelbutton.Size = new System.Drawing.Size(92, 23);
+            this.addnewlabelbutton.Size = new System.Drawing.Size(69, 43);
             this.addnewlabelbutton.TabIndex = 39;
-            this.addnewlabelbutton.Text = "Add new Label";
-            this.addnewlabelbutton.UseVisualStyleBackColor = true;
+            this.addnewlabelbutton.Text = "Add Label";
+            this.addnewlabelbutton.UseVisualStyleBackColor = false;
             this.addnewlabelbutton.Click += new System.EventHandler(this.AddLabelToolStripMenuItem_Click);
             // 
             // setNewNameButton
             // 
+            this.setNewNameButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.setNewNameButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.setNewNameButton.Enabled = false;
-            this.setNewNameButton.Location = new System.Drawing.Point(163, 323);
+            this.setNewNameButton.FlatAppearance.BorderSize = 0;
+            this.setNewNameButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.setNewNameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.setNewNameButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setNewNameButton.ForeColor = System.Drawing.Color.White;
+            this.setNewNameButton.Location = new System.Drawing.Point(82, 358);
             this.setNewNameButton.Name = "setNewNameButton";
             this.setNewNameButton.Size = new System.Drawing.Size(83, 23);
             this.setNewNameButton.TabIndex = 38;
-            this.setNewNameButton.Text = "Set new name";
-            this.setNewNameButton.UseVisualStyleBackColor = true;
+            this.setNewNameButton.Text = "Set name";
+            this.setNewNameButton.UseVisualStyleBackColor = false;
             this.setNewNameButton.Click += new System.EventHandler(this.SetNewNameButton_Click);
             // 
             // nameTextBox
             // 
+            this.nameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTextBox.Enabled = false;
-            this.nameTextBox.Location = new System.Drawing.Point(54, 325);
+            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameTextBox.ForeColor = System.Drawing.Color.DarkGray;
+            this.nameTextBox.Location = new System.Drawing.Point(7, 335);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(106, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(236, 17);
             this.nameTextBox.TabIndex = 37;
+            this.nameTextBox.Text = "NEW NAME";
+            this.nameTextBox.Enter += new System.EventHandler(this.NameTextBox_Enter);
+            this.nameTextBox.Leave += new System.EventHandler(this.NameTextBox_Leave);
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameLabel.ForeColor = System.Drawing.Color.White;
-            this.NameLabel.Location = new System.Drawing.Point(3, 326);
+            this.NameLabel.Location = new System.Drawing.Point(4, 316);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(45, 16);
             this.NameLabel.TabIndex = 36;
@@ -1828,7 +1850,11 @@
             // 
             // calificationUpDown
             // 
+            this.calificationUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.calificationUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.calificationUpDown.Enabled = false;
+            this.calificationUpDown.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calificationUpDown.ForeColor = System.Drawing.Color.White;
             this.calificationUpDown.Location = new System.Drawing.Point(82, 296);
             this.calificationUpDown.Maximum = new decimal(new int[] {
             5,
@@ -1858,13 +1884,20 @@
             // 
             // SetCalificationButton
             // 
+            this.SetCalificationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.SetCalificationButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SetCalificationButton.Enabled = false;
+            this.SetCalificationButton.FlatAppearance.BorderSize = 0;
+            this.SetCalificationButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.SetCalificationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SetCalificationButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetCalificationButton.ForeColor = System.Drawing.Color.White;
             this.SetCalificationButton.Location = new System.Drawing.Point(125, 293);
             this.SetCalificationButton.Name = "SetCalificationButton";
             this.SetCalificationButton.Size = new System.Drawing.Size(116, 23);
             this.SetCalificationButton.TabIndex = 34;
-            this.SetCalificationButton.Text = "Set new calification";
-            this.SetCalificationButton.UseVisualStyleBackColor = true;
+            this.SetCalificationButton.Text = "Set calification";
+            this.SetCalificationButton.UseVisualStyleBackColor = false;
             this.SetCalificationButton.Click += new System.EventHandler(this.SetCalificationButton_Click);
             // 
             // DownRightPanel
@@ -2196,6 +2229,39 @@
             this.topauxlabel.Size = new System.Drawing.Size(253, 350);
             this.topauxlabel.TabIndex = 7;
             // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(194, 20);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
+            // 
+            // GoBackButton
+            // 
+            this.GoBackButton.BackColor = System.Drawing.Color.Crimson;
+            this.GoBackButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GoBackButton.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.GoBackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            this.GoBackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.GoBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GoBackButton.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoBackButton.ForeColor = System.Drawing.Color.White;
+            this.GoBackButton.Location = new System.Drawing.Point(0, 0);
+            this.GoBackButton.Name = "GoBackButton";
+            this.GoBackButton.Size = new System.Drawing.Size(109, 40);
+            this.GoBackButton.TabIndex = 17;
+            this.GoBackButton.Text = "Go back";
+            this.GoBackButton.UseVisualStyleBackColor = false;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2223,7 +2289,6 @@
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
@@ -2239,7 +2304,6 @@
             this.OpenRightPanelPanel.ResumeLayout(false);
             this.RightPanel.ResumeLayout(false);
             this.SmartListsPanel.ResumeLayout(false);
-            this.SmartListsPanel.PerformLayout();
             this.panelResize.ResumeLayout(false);
             this.panelResize.PerformLayout();
             this.panelCollage.ResumeLayout(false);
@@ -2258,6 +2322,7 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2433,6 +2498,7 @@
         private System.Windows.Forms.Label InformationPanelLabel;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.Button GoBackButton;
     }
 
 }
