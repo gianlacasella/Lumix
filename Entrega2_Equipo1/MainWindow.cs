@@ -361,6 +361,9 @@ namespace Entrega2_Equipo1
             this.EditLabelButton.Enabled = true;
             this.DeleteLabelButton.Enabled = true;
             this.imagetoaddlabel = image;
+
+            // Mostrar los datos en el tree view
+            RefreshInfoTreeView();
         }
 
 		private void ImageBorderClick(object sender, EventArgs e)
@@ -411,6 +414,7 @@ namespace Entrega2_Equipo1
                 this.EditLabelButton.Enabled = false;
                 this.DeleteLabelButton.Enabled = false;
                 this.nameTextBox.Enabled = false;
+                InfoTreeView.Nodes.Clear();
             }
             
         }
@@ -420,6 +424,7 @@ namespace Entrega2_Equipo1
             try
             {
                 this.imagetoaddlabel.Calification = (calificationUpDown.Value == 0) ? -1 : Convert.ToInt32(calificationUpDown.Value);
+                RefreshInfoTreeView();
             }
             catch
             {
@@ -432,6 +437,7 @@ namespace Entrega2_Equipo1
             try
             {
                 this.imagetoaddlabel.Name = nameTextBox.Text;
+                RefreshInfoTreeView();
             }
             catch
             {
@@ -439,6 +445,61 @@ namespace Entrega2_Equipo1
             }
         }
 
+
+        private void RefreshInfoTreeView()
+        {
+            InfoTreeView.Nodes.Clear();
+            InfoTreeView.Nodes.Add("Image information");
+            InfoTreeView.Nodes[0].Nodes.Add("Name: " + imagetoaddlabel.Name);
+            string cal = imagetoaddlabel.Calification == -1 ? "" : Convert.ToString(imagetoaddlabel.Calification);
+            InfoTreeView.Nodes[0].Nodes.Add("Calification: " + cal);
+            InfoTreeView.Nodes[0].Nodes.Add("Resolution: " + Convert.ToString(imagetoaddlabel.Resolution[0]) + "x" + Convert.ToString(imagetoaddlabel.Resolution[1]));
+            InfoTreeView.Nodes[0].Nodes.Add("Aspect ratio: " + Convert.ToString(imagetoaddlabel.AspectRatio[0]) + ":" + Convert.ToString(imagetoaddlabel.AspectRatio[1]));
+            string clear = imagetoaddlabel.DarkClear == true ? "Yes" : "No";
+            InfoTreeView.Nodes[0].Nodes.Add("Clear: " + clear);
+
+            InfoTreeView.Nodes.Add("Labels information");
+            InfoTreeView.Nodes[1].Nodes.Add("Simple Labels");
+            InfoTreeView.Nodes[1].Nodes.Add("Person Labels");
+            InfoTreeView.Nodes[1].Nodes.Add("Special Labels");
+            int simplecounter = 0, specialcounter = 0, personcounter = 0;
+            foreach (Label label in imagetoaddlabel.Labels)
+            {
+                switch (label.labelType)
+                {
+                    case "SimpleLabel":
+                        SimpleLabel label2 = (SimpleLabel)label;
+                        InfoTreeView.Nodes[1].Nodes[0].Nodes.Add("Simple " + Convert.ToInt32(simplecounter+1));
+                        InfoTreeView.Nodes[1].Nodes[0].Nodes[simplecounter].Nodes.Add("Tag: " + label2.Sentence);
+                        simplecounter++;
+                        break;
+                    case "PersonLabel":
+                        PersonLabel label3 = (PersonLabel)label;
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes.Add("Person " + Convert.ToInt32(simplecounter+1));
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Name: " + label3.Name != null ? label3.Name : "");
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Surname: " + label3.Surname != null ? label3.Surname : "");
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Sex: " + label3.Sex);
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Country: " + label3.Nationality);
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Eyes Color: " + label3.EyesColor);
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Hair Color: " + label3.HairColor);
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Birth Date: " + label3.BirthDate );
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Face Location: " + label3.Name != null ? label3.FaceLocation[0].ToString() + "," + label3.FaceLocation[1].ToString() + "," + label3.FaceLocation[2].ToString() + "," + label3.FaceLocation[3].ToString() : "");
+                        personcounter++;
+                        break;
+                    case "SpecialLabel":
+                        SpecialLabel label4 = (SpecialLabel)label;
+                        InfoTreeView.Nodes[1].Nodes[2].Nodes.Add("Special " + Convert.ToInt32(simplecounter+1));
+                        InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Geo Location: " + label4.GeographicLocation != null ? label4.GeographicLocation[0].ToString() + "," + label4.GeographicLocation[1].ToString() : "");
+                        InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Address: " + label4.Address != null ? label4.Address : "");
+                        InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photographer: " + label4.Photographer != null ? label4.Photographer : "");
+                        InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photo Motive: " + label4.PhotoMotive!= null ? label4.PhotoMotive : "");
+                        InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Selfie: " + label4.Selfie);
+                        specialcounter++;
+                        break;
+                }
+            }
+            InfoTreeView.ExpandAll();
+        }
         
         // ==============================================================================
         // =============================== EDITING PANEL METHODS ========================
