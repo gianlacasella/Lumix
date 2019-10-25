@@ -32,9 +32,9 @@ namespace Entrega2_Equipo1
         public int[] AspectRatio { get => this.aspectRatio; set => this.aspectRatio = value; }
         public bool DarkClear { get => this.darkClear; set => this.darkClear = value; }
         public Dictionary<int, Dictionary<string, string>> Exif { get => this.exif; set => this.exif = value; }
+        public Dictionary<EFilter, bool> ApplyedFilters { get => this.applyedFilters; set => this.applyedFilters = value; }
 
-
-		public Image(Bitmap bitmap, List<Label> labels, int calification)
+        public Image(Bitmap bitmap, List<Label> labels, int calification)
 		{
 			this.Name = name;
 			this.Labels = labels;
@@ -44,7 +44,7 @@ namespace Entrega2_Equipo1
 			this.AspectRatio = LoadAspectRatio();
 			this.DarkClear = LoadDarkClear();
 			this.exif = LoadExif();
-            this.applyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
+            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
                 { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
                 { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } };
 		}
@@ -59,7 +59,7 @@ namespace Entrega2_Equipo1
             this.AspectRatio = LoadAspectRatio();
             this.DarkClear = LoadDarkClear();
             this.exif = LoadExif();
-            this.applyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
+            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
                 { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
                 { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } };
         }
@@ -75,7 +75,7 @@ namespace Entrega2_Equipo1
             this.aspectRatio = aspectratio;
             this.darkClear = darkclear;
             this.exif = exif;
-            this.applyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
+            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
                 { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
                 { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } };
         }
@@ -83,7 +83,7 @@ namespace Entrega2_Equipo1
         // Other constructor with DEFAULT_CALIFICATION
         public Image(string name, List<Label> labels) : this(name, labels, DEFAULT_CALIFICATION)
         {
-            this.applyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
+            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
                 { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
                 { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } };
         }

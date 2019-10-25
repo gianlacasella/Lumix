@@ -124,6 +124,7 @@
             this.RealNameLabel = new System.Windows.Forms.Label();
             this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
@@ -267,7 +268,6 @@
             this.pictureChosen = new System.Windows.Forms.PictureBox();
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
@@ -280,6 +280,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddSimpleLabelPanel.SuspendLayout();
             this.AddPersonLabelPanel.SuspendLayout();
@@ -310,7 +311,6 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1505,6 +1505,21 @@
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(0, 62);
             this.UsernameLabel.TabIndex = 5;
+            // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(194, 20);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
             // SelectLabelTypeTag
             // 
@@ -2944,17 +2959,19 @@
             this.button1.Size = new System.Drawing.Size(101, 27);
             this.button1.TabIndex = 7;
             this.button1.Text = "Auto Adjust";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button1, "Automatic adjustment");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // brightnessBar
             // 
-            this.brightnessBar.Location = new System.Drawing.Point(151, 69);
+            this.brightnessBar.Location = new System.Drawing.Point(128, 69);
             this.brightnessBar.Maximum = 255;
             this.brightnessBar.Minimum = -255;
             this.brightnessBar.Name = "brightnessBar";
-            this.brightnessBar.Size = new System.Drawing.Size(78, 45);
+            this.brightnessBar.Size = new System.Drawing.Size(101, 45);
             this.brightnessBar.TabIndex = 24;
+            this.ChangeYourPictureToolTip.SetToolTip(this.brightnessBar, "Adjust brightness");
             this.brightnessBar.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
             // 
             // comboRotate
@@ -2967,6 +2984,7 @@
             this.comboRotate.Name = "comboRotate";
             this.comboRotate.Size = new System.Drawing.Size(104, 24);
             this.comboRotate.TabIndex = 23;
+            this.ChangeYourPictureToolTip.SetToolTip(this.comboRotate, "Flip and rotate");
             this.comboRotate.SelectedIndexChanged += new System.EventHandler(this.ComboRotate_SelectedIndexChanged);
             // 
             // button10
@@ -2983,6 +3001,7 @@
             this.button10.Size = new System.Drawing.Size(87, 30);
             this.button10.TabIndex = 16;
             this.button10.Text = "Windows";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button10, "Apply Windows filter");
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
@@ -3000,6 +3019,7 @@
             this.button7.Size = new System.Drawing.Size(87, 30);
             this.button7.TabIndex = 13;
             this.button7.Text = "Old Film";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button7, "Apply old film filter");
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
@@ -3017,6 +3037,7 @@
             this.button8.Size = new System.Drawing.Size(87, 30);
             this.button8.TabIndex = 33;
             this.button8.Text = "Merge";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button8, "Merge images");
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
@@ -3046,6 +3067,7 @@
             this.button14.Size = new System.Drawing.Size(87, 30);
             this.button14.TabIndex = 20;
             this.button14.Text = "Resize Image";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button14, "Resize an image");
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.Button14_Click);
             // 
@@ -3054,7 +3076,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(27, 77);
+            this.label2.Location = new System.Drawing.Point(40, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 26);
             this.label2.TabIndex = 32;
@@ -3074,6 +3096,7 @@
             this.button15.Size = new System.Drawing.Size(87, 30);
             this.button15.TabIndex = 21;
             this.button15.Text = "Mosaic";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button15, "Make a mosaic");
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.Button15_Click);
             // 
@@ -3090,6 +3113,7 @@
             this.SlideShowButton.Size = new System.Drawing.Size(87, 30);
             this.SlideShowButton.TabIndex = 34;
             this.SlideShowButton.Text = "SlideShow";
+            this.ChangeYourPictureToolTip.SetToolTip(this.SlideShowButton, "Start a slideshow");
             this.SlideShowButton.UseVisualStyleBackColor = false;
             this.SlideShowButton.Click += new System.EventHandler(this.SlideShowButton_Click);
             // 
@@ -3098,7 +3122,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(44, 28);
+            this.label4.Location = new System.Drawing.Point(64, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 26);
             this.label4.TabIndex = 31;
@@ -3117,6 +3141,7 @@
             this.PresentationButton.Size = new System.Drawing.Size(87, 30);
             this.PresentationButton.TabIndex = 35;
             this.PresentationButton.Text = "Presentation";
+            this.ChangeYourPictureToolTip.SetToolTip(this.PresentationButton, "Start a presentation");
             this.PresentationButton.UseVisualStyleBackColor = false;
             this.PresentationButton.Click += new System.EventHandler(this.PresentationButton_Click);
             // 
@@ -3134,6 +3159,7 @@
             this.button3.Size = new System.Drawing.Size(87, 30);
             this.button3.TabIndex = 29;
             this.button3.Text = "Collage";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button3, "Make a collage");
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
@@ -3151,6 +3177,7 @@
             this.button2.Size = new System.Drawing.Size(87, 30);
             this.button2.TabIndex = 8;
             this.button2.Text = "Grayscale";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button2, "Apply grayscale filter");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -3168,6 +3195,7 @@
             this.AddText.Size = new System.Drawing.Size(87, 30);
             this.AddText.TabIndex = 19;
             this.AddText.Text = "Add text";
+            this.ChangeYourPictureToolTip.SetToolTip(this.AddText, "Add text to your image");
             this.AddText.UseVisualStyleBackColor = false;
             this.AddText.Click += new System.EventHandler(this.Button13_Click);
             // 
@@ -3185,6 +3213,7 @@
             this.button4.Size = new System.Drawing.Size(87, 30);
             this.button4.TabIndex = 10;
             this.button4.Text = "Color";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button4, "Apply color filter");
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
@@ -3202,6 +3231,7 @@
             this.button5.Size = new System.Drawing.Size(87, 30);
             this.button5.TabIndex = 11;
             this.button5.Text = "Invert";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button5, "Apply invert filter");
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
@@ -3219,6 +3249,7 @@
             this.button6.Size = new System.Drawing.Size(87, 30);
             this.button6.TabIndex = 12;
             this.button6.Text = "Mirror";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button6, "Apply mirror filter");
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
@@ -3236,6 +3267,7 @@
             this.button9.Size = new System.Drawing.Size(87, 30);
             this.button9.TabIndex = 15;
             this.button9.Text = "Sepia";
+            this.ChangeYourPictureToolTip.SetToolTip(this.button9, "Apply sepia filter");
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
@@ -3257,21 +3289,6 @@
             this.topauxlabel.Name = "topauxlabel";
             this.topauxlabel.Size = new System.Drawing.Size(268, 313);
             this.topauxlabel.TabIndex = 7;
-            // 
-            // UserPicturePictureBox
-            // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(194, 20);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
-            this.UserPicturePictureBox.TabIndex = 4;
-            this.UserPicturePictureBox.TabStop = false;
-            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
-            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
-            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
-            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
             // MainWindow
             // 
@@ -3311,6 +3328,7 @@
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddSimpleLabelPanel.ResumeLayout(false);
             this.AddSimpleLabelPanel.PerformLayout();
@@ -3352,7 +3370,6 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

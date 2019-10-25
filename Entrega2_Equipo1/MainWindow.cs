@@ -1074,6 +1074,7 @@ namespace Entrega2_Equipo1
                 Image image = (Image)chosenEditingImage.Tag;
                 XText.Text = image.Resolution[0].ToString();
                 YText.Text = image.Resolution[1].ToString();
+                // ??
             }
 
         }
@@ -1086,6 +1087,8 @@ namespace Entrega2_Equipo1
             int y = Convert.ToInt32(YText.Text);
             Image image = (Image)chosenEditingImage.Tag;
             image.BitmapImage = res.ResizeImage(image.BitmapImage, x, y);
+            image.Resolution[0] = x;
+            image.Resolution[1] = y;
             chosenEditingImage.Image = image.BitmapImage;
             pictureChosen.Image = chosenEditingImage.Image;
         }
