@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Entrega2_Equipo1
@@ -476,25 +470,34 @@ namespace Entrega2_Equipo1
                         break;
                     case "PersonLabel":
                         PersonLabel label3 = (PersonLabel)label;
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes.Add("Person " + Convert.ToInt32(simplecounter+1));
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Name: " + label3.Name != null ? label3.Name : "");
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Surname: " + label3.Surname != null ? label3.Surname : "");
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Sex: " + label3.Sex);
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Country: " + label3.Nationality);
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Eyes Color: " + label3.EyesColor);
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Hair Color: " + label3.HairColor);
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Birth Date: " + label3.BirthDate );
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[simplecounter].Nodes.Add("Face Location: " + label3.Name != null ? label3.FaceLocation[0].ToString() + "," + label3.FaceLocation[1].ToString() + "," + label3.FaceLocation[2].ToString() + "," + label3.FaceLocation[3].ToString() : "");
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes.Add("Person " + Convert.ToInt32(personcounter+1));
+                        if (label3.Name != null) InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Name: " + label3.Name);
+                        else InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Name: None");
+                        if(label3.Surname !=  null) InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Surname: " + label3.Surname);
+                        else InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Surname: None");
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Sex: " + label3.Sex);
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Country: " + label3.Nationality);
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Eyes Color: " + label3.EyesColor);
+                        InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Hair Color: " + label3.HairColor);
+                        if(label3.BirthDate != "") InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Birth Date: " + label3.BirthDate);
+                        else InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Birth Date: None");
+                        if (label3.FaceLocation != null) InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Face Location: " + label3.FaceLocation[0].ToString() + "," + label3.FaceLocation[1].ToString() + "," + label3.FaceLocation[2].ToString() + "," + label3.FaceLocation[3].ToString());
+                        else InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Face Location: None");
                         personcounter++;
                         break;
                     case "SpecialLabel":
                         SpecialLabel label4 = (SpecialLabel)label;
                         InfoTreeView.Nodes[1].Nodes[2].Nodes.Add("Special " + Convert.ToInt32(simplecounter+1));
-                        InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Geo Location: " + label4.GeographicLocation != null ? label4.GeographicLocation[0].ToString() + "," + label4.GeographicLocation[1].ToString() : "");
-                        InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Address: " + label4.Address != null ? label4.Address : "");
-                        InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photographer: " + label4.Photographer != null ? label4.Photographer : "");
-                        InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photo Motive: " + label4.PhotoMotive!= null ? label4.PhotoMotive : "");
-                        InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Selfie: " + label4.Selfie);
+                        if(label4.GeographicLocation != null) InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Geo Location: " + label4.GeographicLocation[0].ToString() + "," + label4.GeographicLocation[1].ToString());
+                        else InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Geo Location: None");
+                        if(label4.Address != null) InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Address: " + label4.Address);
+                        else InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Address: None");
+                        if (label4.Photographer != null) InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photographer: " + label4.Photographer);
+                        else InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photographer: None");
+                        if (label4.PhotoMotive != null) InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photo Motive: " + label4.PhotoMotive);
+                        else InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photo Motive: None");
+                        if(label4.Selfie != false) InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Selfie: Yes");
+                        else InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Selfie: No");
                         specialcounter++;
                         break;
                 }
