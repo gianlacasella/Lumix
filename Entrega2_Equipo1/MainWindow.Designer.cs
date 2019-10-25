@@ -124,7 +124,6 @@
             this.RealNameLabel = new System.Windows.Forms.Label();
             this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
@@ -266,6 +265,7 @@
             this.pictureChosen = new System.Windows.Forms.PictureBox();
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
@@ -278,7 +278,6 @@
             this.panel3.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddSimpleLabelPanel.SuspendLayout();
             this.AddPersonLabelPanel.SuspendLayout();
@@ -309,6 +308,7 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -505,9 +505,9 @@
             this.MultipleAddLabelPanel.Controls.Add(this.label6);
             this.MultipleAddLabelPanel.Controls.Add(this.MultipleImagesLabelComboBox);
             this.MultipleAddLabelPanel.Controls.Add(this.MultipleImagesPictureBox);
+            this.MultipleAddLabelPanel.Controls.Add(this.panel3);
             this.MultipleAddLabelPanel.Controls.Add(this.panel2);
             this.MultipleAddLabelPanel.Controls.Add(this.panel1);
-            this.MultipleAddLabelPanel.Controls.Add(this.panel3);
             this.MultipleAddLabelPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MultipleAddLabelPanel.Location = new System.Drawing.Point(0, 0);
             this.MultipleAddLabelPanel.Name = "MultipleAddLabelPanel";
@@ -608,11 +608,12 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(417, 161);
+            this.label32.Location = new System.Drawing.Point(398, 164);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(0, 21);
+            this.label32.Size = new System.Drawing.Size(101, 21);
             this.label32.TabIndex = 13;
-            this.label32.Visible = false;
+            this.label32.Tag = "";
+            this.label32.Text = "Not available";
             // 
             // button18
             // 
@@ -639,6 +640,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.White;
             this.checkBox1.Location = new System.Drawing.Point(46, 124);
@@ -889,7 +891,7 @@
             this.panel3.Controls.Add(this.label22);
             this.panel3.Controls.Add(this.label23);
             this.panel3.Controls.Add(this.comboBox5);
-            this.panel3.Location = new System.Drawing.Point(15, 472);
+            this.panel3.Location = new System.Drawing.Point(20, 466);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(579, 199);
             this.panel3.TabIndex = 43;
@@ -898,6 +900,7 @@
             // button12
             // 
             this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button12.Enabled = false;
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
             this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
@@ -958,6 +961,7 @@
             // button13
             // 
             this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button13.Enabled = false;
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
             this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
@@ -975,6 +979,7 @@
             // 
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.White;
             this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(12, 155);
             this.dateTimePicker1.MaxDate = new System.DateTime(2019, 10, 19, 0, 0, 0, 0);
@@ -1138,11 +1143,11 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(456, 117);
+            this.label21.Location = new System.Drawing.Point(346, 119);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(104, 21);
+            this.label21.Size = new System.Drawing.Size(209, 21);
             this.label21.TabIndex = 24;
-            this.label21.Text = "Face Location";
+            this.label21.Text = "Face Location (Not available)";
             // 
             // comboBox4
             // 
@@ -1172,11 +1177,11 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(178, 128);
+            this.label23.Location = new System.Drawing.Point(78, 131);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(77, 21);
+            this.label23.Size = new System.Drawing.Size(182, 21);
             this.label23.TabIndex = 22;
-            this.label23.Text = "Birth date";
+            this.label23.Text = "Birth date (Not available)";
             // 
             // comboBox5
             // 
@@ -1498,21 +1503,6 @@
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(0, 62);
             this.UsernameLabel.TabIndex = 5;
-            // 
-            // UserPicturePictureBox
-            // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(194, 20);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
-            this.UserPicturePictureBox.TabIndex = 4;
-            this.UserPicturePictureBox.TabStop = false;
-            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
-            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
-            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
-            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
             // SelectLabelTypeTag
             // 
@@ -3169,6 +3159,21 @@
             this.topauxlabel.Size = new System.Drawing.Size(253, 350);
             this.topauxlabel.TabIndex = 7;
             // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(194, 20);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3207,7 +3212,6 @@
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddSimpleLabelPanel.ResumeLayout(false);
             this.AddSimpleLabelPanel.PerformLayout();
@@ -3248,6 +3252,7 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

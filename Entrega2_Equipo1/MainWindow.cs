@@ -1986,7 +1986,6 @@ namespace Entrega2_Equipo1
                     }
                     break;
             }
-            //RefreshInfoTreeView();
         }
 
         private void Button16_Click(object sender, EventArgs e)
@@ -2023,24 +2022,11 @@ namespace Entrega2_Equipo1
 
         private void CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked)
-            {
-                checkBox1.Checked = false;
-                comboBox6.Enabled = false;
-                button18.Enabled = false;
-                textBox6.Enabled = true;
-            }
+            checkBox2.Checked = true;
         }
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                checkBox2.Checked = false;
-                textBox6.Enabled = false;
-                comboBox6.Enabled = true;
-                button18.Enabled = true;
-            }
         }
     }
 
