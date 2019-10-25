@@ -251,14 +251,13 @@ namespace Entrega2_Equipo1
                     // Ya reconocimos cual fue el Image seleccionado para agregar el label
                     AddLabelPanel.Visible = true;
                     this.imagetoaddlabel = imagetoaddlabel;
+
                     string arrowiconslocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\";
-                    if (InfoSettingPanel.Visible == false)
-                    {
-                        InfoSettingPanel.Visible = false;
-                        ImageInfoPanel.Dock = DockStyle.Fill;
-                        Bitmap uparrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "uparrow.png");
-                        CollapseInfoPanelButton.BackgroundImage = uparrow;
-                    }
+                    InfoSettingPanel.Visible = false;
+                    ImageInfoPanel.Dock = DockStyle.Fill;
+                    Bitmap uparrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "uparrow.png");
+                    CollapseInfoPanelButton.BackgroundImage = uparrow;
+
                     if (RightPanel.Visible == false)
                     {
                         RightPanel.Visible = true;
@@ -266,6 +265,9 @@ namespace Entrega2_Equipo1
                         Bitmap leftarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "leftarrow.png");
                         OpenRightPanelButton.BackgroundImage = leftarrow;
                     }
+                    this.addnewlabelbutton.Enabled = false;
+                    this.EditLabelButton.Enabled = false;
+                    this.SearchTextBox.Enabled = false;
                     //panelImages.Visible = false;
                     AddLabelController();
                 }
@@ -818,6 +820,11 @@ namespace Entrega2_Equipo1
             this.exportToolStripMenuItem.Enabled = true;
             this.saveToolStripMenuItem.Enabled = true;
             this.cleanLibraryToolStripMenuItem.Enabled = true;
+            this.myAccountToolStripMenuItem.Enabled = true;
+            this.exitToolStripMenuItem.Enabled = true;
+            this.addnewlabelbutton.Enabled = true;
+            this.EditLabelButton.Enabled = true;
+            this.SearchTextBox.Enabled = true;
         }
 
         private void AddLabelController()
