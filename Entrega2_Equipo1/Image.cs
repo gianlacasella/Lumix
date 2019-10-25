@@ -123,6 +123,11 @@ namespace Entrega2_Equipo1
             return returningArray;
         }
 
+		public void ReLoadResolution()
+		{
+			resolution = LoadResolution();
+		}
+		
 
         private int MCD(int a, int b)
         {
@@ -150,6 +155,11 @@ namespace Entrega2_Equipo1
             Simplify(returningAspect);
             return returningAspect;
         }
+
+		public void ReLoadAspectRatio()
+		{
+			aspectRatio = LoadAspectRatio();
+		}
 
 
 
