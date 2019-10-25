@@ -1737,9 +1737,29 @@ namespace Entrega2_Equipo1
 		{
 			MosaicPanel.Visible = false;
 		}
-	}
 
-	public class MyRenderer : ToolStripProfessionalRenderer
+        private void Button12_Click(object sender, EventArgs e)
+        {
+            string arrowiconslocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\";
+            if (InfoSettingPanel.Visible == true)
+            {
+                InfoSettingPanel.Visible = false;
+                ImageInfoPanel.Dock = DockStyle.Fill;
+                Bitmap uparrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "uparrow.png");
+                CollapseInfoPanelButton.BackgroundImage = uparrow;
+            }
+            else
+            {
+                InfoSettingPanel.Visible = true;
+                ImageInfoPanel.Dock = DockStyle.Top;
+                Bitmap downarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "downarrow.png");
+                CollapseInfoPanelButton.BackgroundImage = downarrow;
+            }
+            CollapseInfoPanelButton.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+    }
+
+    public class MyRenderer : ToolStripProfessionalRenderer
     {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
