@@ -50,7 +50,7 @@ namespace Entrega2_Equipo1
 		{
 			library = PM.LoadingUsersLibraryManager(UserLoggedIn.Usrname);
 			producer = PM.LoadingUsersProducerManager(UserLoggedIn.Usrname);
-			PanelImages_Paint(sender, e);
+			PanelImages_AddImages();
 			comboRotate.DataSource = Enum.GetValues(typeof(RotateFlipType));
 			comboCensor.Items.Add("Black bar"); comboCensor.Items.Add("Pixel blur");comboCensor.Text = "Black bar";
             AddLabelPanel.Location = panelImages.Location;
@@ -271,15 +271,21 @@ namespace Entrega2_Equipo1
         // ==============================================================================
         // =============================== PANEL IMAGES METHODS =========================
 
+
         private void PanelImages_Paint(object sender, EventArgs e)
+		{
+		//METODO QUE CARGA IMAGENES AUTOMATICAMENTE
+        }
+
+		private void PanelImages_AddImages()
 		{
 			int x = 20;
 			int y = 20;
 			int maxHeight = -1;
-            int count = 1;
-            this.ToolbarProgressBar.Value = 0;
-            this.ToolbarProgressBar.Visible = true;
-            foreach (Image image in library.Images)
+			int count = 1;
+			this.ToolbarProgressBar.Value = 0;
+			this.ToolbarProgressBar.Visible = true;
+			foreach (Image image in library.Images)
 			{
 				PictureBox pic = new PictureBox();
 				pic.Image = image.BitmapImage;
@@ -290,7 +296,7 @@ namespace Entrega2_Equipo1
 				pic.Click += ImageBorderClick;
 				pic.ContextMenuStrip = contextMenuStripImage;
 				pic.Name = image.Name;
-                pic.Cursor = Cursors.Hand;
+				pic.Cursor = Cursors.Hand;
 
 				x += pic.Width + 10;
 				maxHeight = Math.Max(pic.Height, maxHeight);
@@ -300,12 +306,14 @@ namespace Entrega2_Equipo1
 					y += maxHeight + 10;
 				}
 				this.panelImages.Controls.Add(pic);
-				this.ToolbarProgressBar.Increment((count * 100)/library.Images.Count);
-                count++;
+				this.ToolbarProgressBar.Increment((count * 100) / library.Images.Count);
+				count++;
 			}
-            this.ToolbarProgressBar.Visible = false;
-            this.ToolbarProgressBar.Value = 0;
-        }
+			this.ToolbarProgressBar.Visible = false;
+			this.ToolbarProgressBar.Value = 0;
+		}
+
+
 
         // Metodo que se utiliza para imprimir en pantalla los resultados de una busqueda
         private void PanelImages_PaintSearchResult(List<Image> result)
@@ -313,9 +321,6 @@ namespace Entrega2_Equipo1
             int x = 20;
             int y = 20;
             int maxHeight = -1;
-            int count = 1;
-            this.ToolbarProgressBar.Value = 0;
-            this.ToolbarProgressBar.Visible = true;
             foreach (Image image in result)
             {
                 PictureBox pic = new PictureBox();
@@ -336,11 +341,7 @@ namespace Entrega2_Equipo1
                     y += maxHeight + 10;
                 }
                 this.panelImages.Controls.Add(pic);
-                this.ToolbarProgressBar.Increment((count * 100) / library.Images.Count);
-                count++;
             }
-            this.ToolbarProgressBar.Visible = false;
-            this.ToolbarProgressBar.Value = 0;
         }
 
 
@@ -392,7 +393,7 @@ namespace Entrega2_Equipo1
 		private void ReLoadPanelImage(object sender, EventArgs e)
 		{
 			panelImages.Controls.Clear();
-			PanelImages_Paint(sender, e);
+			PanelImages_AddImages();
 		}
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
@@ -1635,22 +1636,26 @@ namespace Entrega2_Equipo1
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             // No hace el clear nisiquiera, no se porque
-            panelImages.Controls.Clear();
+            this.panelImages.Controls.Clear();
+			//LeftNewPanel.Controls.Clear();
             try
             {
                 if (SearchTextBox.Text != "")
                 {
                     List<Image> result = mainSearcher.Search(library.Images, SearchTextBox.Text);
-
-                    if (result.Count != 0)
+					if (result.Count != 0)
                     {
-                        PanelImages_PaintSearchResult(result);
+						PanelImages_PaintSearchResult(result);
                     }
                 }
+				else
+				{
+					ReLoadPanelImage(sender, e);
+				}
             }
             catch
             {
-                return;
+                return; // hAy QuE uSaR rEtUrN eN uN mEt0dO vOiD pOr CoNvEnCiON
             }
         }
 
@@ -1676,9 +1681,10 @@ namespace Entrega2_Equipo1
         {
             MyAccountToolStripMenuItem_Click(this, EventArgs.Empty);
         }
-    }
 
-    public class MyRenderer : ToolStripProfessionalRenderer
+	}
+
+	public class MyRenderer : ToolStripProfessionalRenderer
     {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
