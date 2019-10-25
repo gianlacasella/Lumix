@@ -524,6 +524,12 @@ namespace Entrega2_Equipo1
         // ==============================================================================
         // =============================== EDITING PANEL METHODS ========================
 
+        // Metodo para guardar en las imagenes que se le aplico un filtro
+        private void SaveFilterApplyed(EFilter filter, Image img)
+        {
+            img.ApplyedFilters[filter] = true;
+        }
+
         private void EditingPanel_Paint(object sender, EventArgs e)
         {
             int x = 20;
@@ -626,6 +632,7 @@ namespace Entrega2_Equipo1
             {
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.BlackNWhiteFilter);
+                SaveFilterApplyed(EFilter.BlackNWhiteFilter, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -637,6 +644,7 @@ namespace Entrega2_Equipo1
             {
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.SepiaFilter);
+                SaveFilterApplyed(EFilter.SepiaFilter, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -677,6 +685,7 @@ namespace Entrega2_Equipo1
             {
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.WindowsFilter);
+                SaveFilterApplyed(EFilter.WindowsFilter, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -688,6 +697,7 @@ namespace Entrega2_Equipo1
             {
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.OldFilmFilter);
+                SaveFilterApplyed(EFilter.OldFilmFilter, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -699,6 +709,7 @@ namespace Entrega2_Equipo1
             {
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.InvertFilter);
+                SaveFilterApplyed(EFilter.InvertFilter, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -710,6 +721,7 @@ namespace Entrega2_Equipo1
             {
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.AutomaticAdjustmentFilter);
+                SaveFilterApplyed(EFilter.AutomaticAdjustmentFilter, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -721,6 +733,7 @@ namespace Entrega2_Equipo1
             {
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.MirrorFilter);
+                SaveFilterApplyed(EFilter.MirrorFilter, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -734,6 +747,7 @@ namespace Entrega2_Equipo1
                 {
                     Image image = (Image)chosenEditingImage.Tag;
                     image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.ColorFilter, colorDialogFilter.Color);
+                    SaveFilterApplyed(EFilter.ColorFilter, image);
                     chosenEditingImage.Image = image.BitmapImage;
                     pictureChosen.Image = chosenEditingImage.Image;
                 }
@@ -748,6 +762,7 @@ namespace Entrega2_Equipo1
             {
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.RotateFlipFilter, Color.Empty, 0, 60, (RotateFlipType)comboRotate.SelectedItem);
+                SaveFilterApplyed(EFilter.RotateFlipFilter, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -759,6 +774,7 @@ namespace Entrega2_Equipo1
             {
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.BrightnessFilter, Color.Empty, brightnessBar.Value);
+                SaveFilterApplyed(EFilter.BrightnessFilter, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -1680,7 +1696,7 @@ namespace Entrega2_Equipo1
         {
             // No hace el clear nisiquiera, no se porque
             this.panelImages.Controls.Clear();
-            //LeftNewPanel.Controls.Clear();
+            this.ValidNotValidPatternLabel.Text = "";
             try
             {
                 if (SearchTextBox.Text != "")
@@ -1689,6 +1705,13 @@ namespace Entrega2_Equipo1
                     if (result.Count != 0)
                     {
                         PanelImages_PaintSearchResult(result);
+                        ValidNotValidPatternLabel.Text = "Results";
+                        ValidNotValidPatternLabel.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        ValidNotValidPatternLabel.Text = "No results";
+                        ValidNotValidPatternLabel.ForeColor = Color.Green;
                     }
                 }
                 else
@@ -1698,7 +1721,9 @@ namespace Entrega2_Equipo1
             }
             catch
             {
-                return; // hAy QuE uSaR rEtUrN eN uN mEt0dO vOiD pOr CoNvEnCiON
+                ValidNotValidPatternLabel.Text = "Not valid pattern";
+                ValidNotValidPatternLabel.ForeColor = Color.Crimson;
+                return; // hAy QuE uSaR rEtUrN eN uN mEt0dO vOiD pOr CoNvEnCiON // pues si
             }
         }
 

@@ -21,6 +21,7 @@ namespace Entrega2_Equipo1
         private bool darkClear;
         private Dictionary<int, Dictionary<string, string>> exif;
         private const int DEFAULT_CALIFICATION = -1;
+        private Dictionary<EFilter,bool> applyedFilters;
         
 
         public List<Label> Labels { get => this.labels; set => this.labels = value; }
@@ -43,6 +44,9 @@ namespace Entrega2_Equipo1
 			this.AspectRatio = LoadAspectRatio();
 			this.DarkClear = LoadDarkClear();
 			this.exif = LoadExif();
+            this.applyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
+                { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
+                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } };
 		}
 
 		public Image(string path, List<Label> labels, int calification)
@@ -55,6 +59,9 @@ namespace Entrega2_Equipo1
             this.AspectRatio = LoadAspectRatio();
             this.DarkClear = LoadDarkClear();
             this.exif = LoadExif();
+            this.applyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
+                { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
+                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } };
         }
 
         // Other constructor, used to make copies of other images
@@ -68,10 +75,18 @@ namespace Entrega2_Equipo1
             this.aspectRatio = aspectratio;
             this.darkClear = darkclear;
             this.exif = exif;
+            this.applyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
+                { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
+                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } };
         }
 
         // Other constructor with DEFAULT_CALIFICATION
-        public Image(string name, List<Label> labels) : this(name, labels, DEFAULT_CALIFICATION) { }
+        public Image(string name, List<Label> labels) : this(name, labels, DEFAULT_CALIFICATION)
+        {
+            this.applyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
+                { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
+                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } };
+        }
 
 
 

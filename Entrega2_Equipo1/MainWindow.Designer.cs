@@ -50,29 +50,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.MultipleImagesLabelComboBox = new System.Windows.Forms.ComboBox();
             this.MultipleImagesPictureBox = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label32 = new System.Windows.Forms.Label();
-            this.button18 = new System.Windows.Forms.Button();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -100,6 +77,29 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.button18 = new System.Windows.Forms.Button();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.ChangePassButton = new System.Windows.Forms.Button();
             this.MemberSinceLabel = new System.Windows.Forms.Label();
@@ -222,6 +222,7 @@
             this.buttonCollage = new System.Windows.Forms.Button();
             this.ImageDataPanel = new System.Windows.Forms.Panel();
             this.InfoSettingPanel = new System.Windows.Forms.Panel();
+            this.ValidNotValidPatternLabel = new System.Windows.Forms.Label();
             this.CalificationLabel = new System.Windows.Forms.Label();
             this.calificationUpDown = new System.Windows.Forms.NumericUpDown();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
@@ -240,43 +241,43 @@
             this.DownRightPanel = new System.Windows.Forms.Panel();
             this.UpperRightPanel = new System.Windows.Forms.Panel();
             this.EditingAreaPanel = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.brightnessBar = new System.Windows.Forms.TrackBar();
             this.comboRotate = new System.Windows.Forms.ComboBox();
-            this.PresentationButton = new System.Windows.Forms.Button();
-            this.SlideShowButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.comboCensor = new System.Windows.Forms.ComboBox();
             this.button14 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.button15 = new System.Windows.Forms.Button();
+            this.SlideShowButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.PresentationButton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.AddText = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.comboCensor = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.pictureChosen = new System.Windows.Forms.PictureBox();
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.label34 = new System.Windows.Forms.Label();
             this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
             this.MultipleAddLabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MultipleImagesPictureBox)).BeginInit();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            this.panel3.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
@@ -587,281 +588,6 @@
             this.MultipleImagesPictureBox.Size = new System.Drawing.Size(579, 402);
             this.MultipleImagesPictureBox.TabIndex = 3;
             this.MultipleImagesPictureBox.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panel2.Controls.Add(this.label32);
-            this.panel2.Controls.Add(this.button18);
-            this.panel2.Controls.Add(this.comboBox6);
-            this.panel2.Controls.Add(this.checkBox1);
-            this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.label33);
-            this.panel2.Location = new System.Drawing.Point(22, 469);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(579, 199);
-            this.panel2.TabIndex = 47;
-            this.panel2.Visible = false;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(398, 164);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(101, 21);
-            this.label32.TabIndex = 13;
-            this.label32.Tag = "";
-            this.label32.Text = "Not available";
-            // 
-            // button18
-            // 
-            this.button18.Enabled = false;
-            this.button18.Location = new System.Drawing.Point(261, 162);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(131, 23);
-            this.button18.TabIndex = 12;
-            this.button18.Text = "Load Recommendations";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.Enabled = false;
-            this.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox6.Location = new System.Drawing.Point(134, 162);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 21);
-            this.comboBox6.TabIndex = 11;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(46, 124);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(209, 25);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Watson Recommendation";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(46, 55);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(146, 25);
-            this.checkBox2.TabIndex = 9;
-            this.checkBox2.Text = "Personalized Tag";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(134, 91);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(261, 20);
-            this.textBox6.TabIndex = 8;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(0, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(137, 27);
-            this.label33.TabIndex = 6;
-            this.label33.Text = "Simple Label";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label24);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.label26);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.label27);
-            this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.label28);
-            this.panel1.Controls.Add(this.label29);
-            this.panel1.Controls.Add(this.numericUpDown2);
-            this.panel1.Controls.Add(this.label30);
-            this.panel1.Controls.Add(this.label31);
-            this.panel1.Location = new System.Drawing.Point(17, 467);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(579, 199);
-            this.panel1.TabIndex = 43;
-            this.panel1.Visible = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "No",
-            "Si"});
-            this.comboBox1.Location = new System.Drawing.Point(60, 145);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 22;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(7, 144);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(48, 21);
-            this.label24.TabIndex = 21;
-            this.label24.Text = "Selfie";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(348, 121);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(210, 20);
-            this.textBox3.TabIndex = 20;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(236, 122);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(103, 21);
-            this.label25.TabIndex = 19;
-            this.label25.Text = "Photo Motive";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(348, 78);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(210, 20);
-            this.textBox4.TabIndex = 18;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(233, 78);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(106, 21);
-            this.label26.TabIndex = 17;
-            this.label26.Text = "Photographer";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(348, 35);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(210, 20);
-            this.textBox5.TabIndex = 16;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(272, 35);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(66, 21);
-            this.label27.TabIndex = 15;
-            this.label27.Text = "Address";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(171, 95);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            180,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            180,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDown1.TabIndex = 14;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(8, 94);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(157, 21);
-            this.label28.TabIndex = 13;
-            this.label28.Text = "Longitude (-180,180)";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(34, 65);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(129, 21);
-            this.label29.TabIndex = 12;
-            this.label29.Text = "Latitude (-90, 90)";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(171, 65);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            90,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            90,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.ReadOnly = true;
-            this.numericUpDown2.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDown2.TabIndex = 11;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(64, 34);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(153, 21);
-            this.label30.TabIndex = 10;
-            this.label30.Text = "Geographic Location";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(0, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(139, 27);
-            this.label31.TabIndex = 9;
-            this.label31.Text = "Special Label";
             // 
             // panel3
             // 
@@ -1195,6 +921,281 @@
             this.comboBox5.Size = new System.Drawing.Size(108, 24);
             this.comboBox5.TabIndex = 21;
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.ComboBox5_SelectedIndexChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.label32);
+            this.panel2.Controls.Add(this.button18);
+            this.panel2.Controls.Add(this.comboBox6);
+            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.checkBox2);
+            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Controls.Add(this.label33);
+            this.panel2.Location = new System.Drawing.Point(22, 469);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(579, 199);
+            this.panel2.TabIndex = 47;
+            this.panel2.Visible = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(398, 164);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(101, 21);
+            this.label32.TabIndex = 13;
+            this.label32.Tag = "";
+            this.label32.Text = "Not available";
+            // 
+            // button18
+            // 
+            this.button18.Enabled = false;
+            this.button18.Location = new System.Drawing.Point(261, 162);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(131, 23);
+            this.button18.TabIndex = 12;
+            this.button18.Text = "Load Recommendations";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.Enabled = false;
+            this.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.comboBox6.Location = new System.Drawing.Point(134, 162);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 21);
+            this.comboBox6.TabIndex = 11;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(46, 124);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(209, 25);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Watson Recommendation";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.ForeColor = System.Drawing.Color.White;
+            this.checkBox2.Location = new System.Drawing.Point(46, 55);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(146, 25);
+            this.checkBox2.TabIndex = 9;
+            this.checkBox2.Text = "Personalized Tag";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(134, 91);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(261, 20);
+            this.textBox6.TabIndex = 8;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.White;
+            this.label33.Location = new System.Drawing.Point(0, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(137, 27);
+            this.label33.TabIndex = 6;
+            this.label33.Text = "Simple Label";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.label24);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.label25);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.label27);
+            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.label28);
+            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.numericUpDown2);
+            this.panel1.Controls.Add(this.label30);
+            this.panel1.Controls.Add(this.label31);
+            this.panel1.Location = new System.Drawing.Point(17, 467);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(579, 199);
+            this.panel1.TabIndex = 43;
+            this.panel1.Visible = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.comboBox1.Location = new System.Drawing.Point(60, 145);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 22;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(7, 144);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 21);
+            this.label24.TabIndex = 21;
+            this.label24.Text = "Selfie";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(348, 121);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(210, 20);
+            this.textBox3.TabIndex = 20;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(236, 122);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(103, 21);
+            this.label25.TabIndex = 19;
+            this.label25.Text = "Photo Motive";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(348, 78);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(210, 20);
+            this.textBox4.TabIndex = 18;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(233, 78);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(106, 21);
+            this.label26.TabIndex = 17;
+            this.label26.Text = "Photographer";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(348, 35);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(210, 20);
+            this.textBox5.TabIndex = 16;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(272, 35);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(66, 21);
+            this.label27.TabIndex = 15;
+            this.label27.Text = "Address";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(171, 95);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.ReadOnly = true;
+            this.numericUpDown1.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDown1.TabIndex = 14;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(8, 94);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(157, 21);
+            this.label28.TabIndex = 13;
+            this.label28.Text = "Longitude (-180,180)";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(34, 65);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(129, 21);
+            this.label29.TabIndex = 12;
+            this.label29.Text = "Latitude (-90, 90)";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(171, 65);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.ReadOnly = true;
+            this.numericUpDown2.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDown2.TabIndex = 11;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(64, 34);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(153, 21);
+            this.label30.TabIndex = 10;
+            this.label30.Text = "Geographic Location";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(0, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(139, 27);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "Special Label";
             // 
             // GoBackButton
             // 
@@ -2585,6 +2586,7 @@
             // 
             // InfoSettingPanel
             // 
+            this.InfoSettingPanel.Controls.Add(this.ValidNotValidPatternLabel);
             this.InfoSettingPanel.Controls.Add(this.CalificationLabel);
             this.InfoSettingPanel.Controls.Add(this.calificationUpDown);
             this.InfoSettingPanel.Controls.Add(this.SearchTextBox);
@@ -2599,6 +2601,16 @@
             this.InfoSettingPanel.Name = "InfoSettingPanel";
             this.InfoSettingPanel.Size = new System.Drawing.Size(246, 208);
             this.InfoSettingPanel.TabIndex = 18;
+            // 
+            // ValidNotValidPatternLabel
+            // 
+            this.ValidNotValidPatternLabel.AutoSize = true;
+            this.ValidNotValidPatternLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValidNotValidPatternLabel.ForeColor = System.Drawing.Color.White;
+            this.ValidNotValidPatternLabel.Location = new System.Drawing.Point(76, 183);
+            this.ValidNotValidPatternLabel.Name = "ValidNotValidPatternLabel";
+            this.ValidNotValidPatternLabel.Size = new System.Drawing.Size(0, 19);
+            this.ValidNotValidPatternLabel.TabIndex = 46;
             // 
             // CalificationLabel
             // 
@@ -2640,12 +2652,12 @@
             this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SearchTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchTextBox.ForeColor = System.Drawing.Color.DarkGray;
-            this.SearchTextBox.Location = new System.Drawing.Point(10, 170);
+            this.SearchTextBox.Location = new System.Drawing.Point(10, 156);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(236, 21);
             this.SearchTextBox.TabIndex = 45;
             this.SearchTextBox.Text = "SEARCH PATTERN";
-            this.ChangeYourPictureToolTip.SetToolTip(this.SearchTextBox, "Search images in your library");
+            this.ChangeYourPictureToolTip.SetToolTip(this.SearchTextBox, "Insert a valid search pattern and filter your library results");
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
             this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
@@ -2674,11 +2686,11 @@
             this.SearchLabel.AutoSize = true;
             this.SearchLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchLabel.ForeColor = System.Drawing.Color.White;
-            this.SearchLabel.Location = new System.Drawing.Point(11, 146);
+            this.SearchLabel.Location = new System.Drawing.Point(6, 136);
             this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(101, 21);
+            this.SearchLabel.Size = new System.Drawing.Size(84, 21);
             this.SearchLabel.TabIndex = 44;
-            this.SearchLabel.Text = "Search (Beta)";
+            this.SearchLabel.Text = "Search bar";
             // 
             // NameLabel
             // 
@@ -2736,7 +2748,7 @@
             this.addnewlabelbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addnewlabelbutton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addnewlabelbutton.ForeColor = System.Drawing.Color.White;
-            this.addnewlabelbutton.Location = new System.Drawing.Point(10, 105);
+            this.addnewlabelbutton.Location = new System.Drawing.Point(10, 100);
             this.addnewlabelbutton.Name = "addnewlabelbutton";
             this.addnewlabelbutton.Size = new System.Drawing.Size(231, 33);
             this.addnewlabelbutton.TabIndex = 39;
@@ -2861,6 +2873,17 @@
             this.EditingAreaPanel.Size = new System.Drawing.Size(754, 486);
             this.EditingAreaPanel.TabIndex = 37;
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(465, 7);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(194, 26);
+            this.label34.TabIndex = 44;
+            this.label34.Text = "Editing area images";
+            // 
             // splitContainer1
             // 
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2946,54 +2969,39 @@
             this.comboRotate.TabIndex = 23;
             this.comboRotate.SelectedIndexChanged += new System.EventHandler(this.ComboRotate_SelectedIndexChanged);
             // 
-            // PresentationButton
+            // button10
             // 
-            this.PresentationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.PresentationButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.PresentationButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.PresentationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PresentationButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PresentationButton.ForeColor = System.Drawing.Color.White;
-            this.PresentationButton.Location = new System.Drawing.Point(218, 64);
-            this.PresentationButton.Name = "PresentationButton";
-            this.PresentationButton.Size = new System.Drawing.Size(87, 30);
-            this.PresentationButton.TabIndex = 35;
-            this.PresentationButton.Text = "Presentation";
-            this.PresentationButton.UseVisualStyleBackColor = false;
-            this.PresentationButton.Click += new System.EventHandler(this.PresentationButton_Click);
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(218, 3);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(87, 30);
+            this.button10.TabIndex = 16;
+            this.button10.Text = "Windows";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
-            // SlideShowButton
+            // button7
             // 
-            this.SlideShowButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.SlideShowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.SlideShowButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.SlideShowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SlideShowButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SlideShowButton.ForeColor = System.Drawing.Color.White;
-            this.SlideShowButton.Location = new System.Drawing.Point(383, 64);
-            this.SlideShowButton.Name = "SlideShowButton";
-            this.SlideShowButton.Size = new System.Drawing.Size(87, 30);
-            this.SlideShowButton.TabIndex = 34;
-            this.SlideShowButton.Text = "SlideShow";
-            this.SlideShowButton.UseVisualStyleBackColor = false;
-            this.SlideShowButton.Click += new System.EventHandler(this.SlideShowButton_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(302, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 30);
-            this.button3.TabIndex = 29;
-            this.button3.Text = "Collage";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(218, 32);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(87, 30);
+            this.button7.TabIndex = 13;
+            this.button7.Text = "Old Film";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // button8
             // 
@@ -3012,44 +3020,17 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
-            // label2
+            // comboCensor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(27, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 26);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Features";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(44, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 26);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Filters";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(383, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 30);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Grayscale";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.comboCensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboCensor.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboCensor.FormattingEnabled = true;
+            this.comboCensor.Location = new System.Drawing.Point(383, 91);
+            this.comboCensor.Name = "comboCensor";
+            this.comboCensor.Size = new System.Drawing.Size(87, 29);
+            this.comboCensor.TabIndex = 25;
+            this.comboCensor.SelectedIndexChanged += new System.EventHandler(this.ComboCensor_SelectedIndexChanged);
             // 
             // button14
             // 
@@ -3068,6 +3049,17 @@
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.Button14_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(27, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 26);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Features";
+            // 
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
@@ -3084,6 +3076,83 @@
             this.button15.Text = "Mosaic";
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.Button15_Click);
+            // 
+            // SlideShowButton
+            // 
+            this.SlideShowButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.SlideShowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.SlideShowButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.SlideShowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SlideShowButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SlideShowButton.ForeColor = System.Drawing.Color.White;
+            this.SlideShowButton.Location = new System.Drawing.Point(383, 64);
+            this.SlideShowButton.Name = "SlideShowButton";
+            this.SlideShowButton.Size = new System.Drawing.Size(87, 30);
+            this.SlideShowButton.TabIndex = 34;
+            this.SlideShowButton.Text = "SlideShow";
+            this.SlideShowButton.UseVisualStyleBackColor = false;
+            this.SlideShowButton.Click += new System.EventHandler(this.SlideShowButton_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(44, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 26);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Filters";
+            // 
+            // PresentationButton
+            // 
+            this.PresentationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.PresentationButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.PresentationButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.PresentationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PresentationButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PresentationButton.ForeColor = System.Drawing.Color.White;
+            this.PresentationButton.Location = new System.Drawing.Point(218, 64);
+            this.PresentationButton.Name = "PresentationButton";
+            this.PresentationButton.Size = new System.Drawing.Size(87, 30);
+            this.PresentationButton.TabIndex = 35;
+            this.PresentationButton.Text = "Presentation";
+            this.PresentationButton.UseVisualStyleBackColor = false;
+            this.PresentationButton.Click += new System.EventHandler(this.PresentationButton_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(302, 64);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(87, 30);
+            this.button3.TabIndex = 29;
+            this.button3.Text = "Collage";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(383, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 30);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Grayscale";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // AddText
             // 
@@ -3136,18 +3205,6 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
-            // comboCensor
-            // 
-            this.comboCensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboCensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboCensor.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboCensor.FormattingEnabled = true;
-            this.comboCensor.Location = new System.Drawing.Point(383, 91);
-            this.comboCensor.Name = "comboCensor";
-            this.comboCensor.Size = new System.Drawing.Size(87, 29);
-            this.comboCensor.TabIndex = 25;
-            this.comboCensor.SelectedIndexChanged += new System.EventHandler(this.ComboCensor_SelectedIndexChanged);
-            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
@@ -3165,23 +3222,6 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(218, 32);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(87, 30);
-            this.button7.TabIndex = 13;
-            this.button7.Text = "Old Film";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.Button7_Click);
-            // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
@@ -3198,23 +3238,6 @@
             this.button9.Text = "Sepia";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.Button9_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(218, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(87, 30);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "Windows";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
             // pictureChosen
             // 
@@ -3234,17 +3257,6 @@
             this.topauxlabel.Name = "topauxlabel";
             this.topauxlabel.Size = new System.Drawing.Size(268, 313);
             this.topauxlabel.TabIndex = 7;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(465, 7);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(194, 26);
-            this.label34.TabIndex = 44;
-            this.label34.Text = "Editing area images";
             // 
             // UserPicturePictureBox
             // 
@@ -3287,14 +3299,14 @@
             this.MultipleAddLabelPanel.ResumeLayout(false);
             this.MultipleAddLabelPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MultipleImagesPictureBox)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.DataPanel.ResumeLayout(false);
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
@@ -3585,6 +3597,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label ValidNotValidPatternLabel;
     }
 
 }
