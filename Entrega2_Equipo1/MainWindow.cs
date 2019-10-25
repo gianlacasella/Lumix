@@ -1716,7 +1716,6 @@ namespace Entrega2_Equipo1
 					EditingPanel_Paint(sender, e);
 					featuresImage.Clear();
 					pictureChosen.Image = mosaic;
-					panelCollage.Visible = false;
 					InsertWidthText.Text = "";
 					InsertHeightText.Text = "";
 					MosaicPanel.Visible = false;
