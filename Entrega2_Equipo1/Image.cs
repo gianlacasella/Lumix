@@ -196,6 +196,22 @@ namespace Entrega2_Equipo1
             return returningDic;
         }
 
+        public void RemoveLabel(string labeltype, int pos)
+        {
+            int count = 0;
+            foreach (Label label in Labels)
+            {
+                if (label.labelType == labeltype)
+                {
+                    if (count == pos)
+                    {
+                        break;
+                    }
+                    count++;
+                }
+            }
+            labels.RemoveAt(count);
+        }
 
         public List<PersonLabel> SelectPersonLabels()
         {

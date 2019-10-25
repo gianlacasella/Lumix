@@ -68,6 +68,7 @@
             this.RealNameLabel = new System.Windows.Forms.Label();
             this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
@@ -210,12 +211,12 @@
             this.pictureChosen = new System.Windows.Forms.PictureBox();
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddPersonLabelPanel.SuspendLayout();
             this.AddSpecialLabelPanel.SuspendLayout();
@@ -246,7 +247,6 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -741,6 +741,21 @@
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(0, 62);
             this.UsernameLabel.TabIndex = 5;
+            // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(194, 20);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
             // SelectLabelTypeTag
             // 
@@ -1829,7 +1844,6 @@
             this.InfoSettingPanel.Controls.Add(this.SearchLabel);
             this.InfoSettingPanel.Controls.Add(this.NameLabel);
             this.InfoSettingPanel.Controls.Add(this.EditLabelButton);
-            this.InfoSettingPanel.Controls.Add(this.DeleteLabelButton);
             this.InfoSettingPanel.Controls.Add(this.nameTextBox);
             this.InfoSettingPanel.Controls.Add(this.setNewNameButton);
             this.InfoSettingPanel.Controls.Add(this.addnewlabelbutton);
@@ -1844,7 +1858,7 @@
             this.CalificationLabel.AutoSize = true;
             this.CalificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalificationLabel.ForeColor = System.Drawing.Color.White;
-            this.CalificationLabel.Location = new System.Drawing.Point(7, 12);
+            this.CalificationLabel.Location = new System.Drawing.Point(3, 10);
             this.CalificationLabel.Name = "CalificationLabel";
             this.CalificationLabel.Size = new System.Drawing.Size(73, 16);
             this.CalificationLabel.TabIndex = 35;
@@ -1922,7 +1936,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameLabel.ForeColor = System.Drawing.Color.White;
-            this.NameLabel.Location = new System.Drawing.Point(7, 29);
+            this.NameLabel.Location = new System.Drawing.Point(3, 29);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(45, 16);
             this.NameLabel.TabIndex = 36;
@@ -1938,11 +1952,12 @@
             this.EditLabelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditLabelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditLabelButton.ForeColor = System.Drawing.Color.White;
-            this.EditLabelButton.Location = new System.Drawing.Point(172, 100);
+            this.EditLabelButton.Location = new System.Drawing.Point(85, 100);
             this.EditLabelButton.Name = "EditLabelButton";
             this.EditLabelButton.Size = new System.Drawing.Size(69, 43);
             this.EditLabelButton.TabIndex = 40;
             this.EditLabelButton.Text = "Edit Label";
+            this.ChangeYourPictureToolTip.SetToolTip(this.EditLabelButton, "Edit an existing Label");
             this.EditLabelButton.UseVisualStyleBackColor = false;
             // 
             // DeleteLabelButton
@@ -1955,12 +1970,14 @@
             this.DeleteLabelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteLabelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteLabelButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteLabelButton.Location = new System.Drawing.Point(92, 100);
+            this.DeleteLabelButton.Location = new System.Drawing.Point(145, 3);
             this.DeleteLabelButton.Name = "DeleteLabelButton";
-            this.DeleteLabelButton.Size = new System.Drawing.Size(69, 43);
+            this.DeleteLabelButton.Size = new System.Drawing.Size(96, 31);
             this.DeleteLabelButton.TabIndex = 41;
             this.DeleteLabelButton.Text = "Delete Label";
+            this.ChangeYourPictureToolTip.SetToolTip(this.DeleteLabelButton, "Select a Label and delete it");
             this.DeleteLabelButton.UseVisualStyleBackColor = false;
+            this.DeleteLabelButton.Click += new System.EventHandler(this.DeleteLabelButton_Click);
             // 
             // nameTextBox
             // 
@@ -1987,11 +2004,12 @@
             this.setNewNameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.setNewNameButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.setNewNameButton.ForeColor = System.Drawing.Color.White;
-            this.setNewNameButton.Location = new System.Drawing.Point(85, 71);
+            this.setNewNameButton.Location = new System.Drawing.Point(165, 71);
             this.setNewNameButton.Name = "setNewNameButton";
             this.setNewNameButton.Size = new System.Drawing.Size(76, 23);
             this.setNewNameButton.TabIndex = 38;
             this.setNewNameButton.Text = "Set name";
+            this.ChangeYourPictureToolTip.SetToolTip(this.setNewNameButton, "Set a new name to your image");
             this.setNewNameButton.UseVisualStyleBackColor = false;
             this.setNewNameButton.Click += new System.EventHandler(this.SetNewNameButton_Click);
             // 
@@ -2010,6 +2028,7 @@
             this.addnewlabelbutton.Size = new System.Drawing.Size(69, 43);
             this.addnewlabelbutton.TabIndex = 39;
             this.addnewlabelbutton.Text = "Add Label";
+            this.ChangeYourPictureToolTip.SetToolTip(this.addnewlabelbutton, "Add a new Label to your image");
             this.addnewlabelbutton.UseVisualStyleBackColor = false;
             this.addnewlabelbutton.Click += new System.EventHandler(this.AddLabelToolStripMenuItem_Click);
             // 
@@ -2042,6 +2061,7 @@
             // 
             this.TtitlePanel.Controls.Add(this.CollapseInfoPanelButton);
             this.TtitlePanel.Controls.Add(this.InformationPanelLabel);
+            this.TtitlePanel.Controls.Add(this.DeleteLabelButton);
             this.TtitlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TtitlePanel.Location = new System.Drawing.Point(0, 0);
             this.TtitlePanel.Name = "TtitlePanel";
@@ -2060,10 +2080,11 @@
             this.CollapseInfoPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CollapseInfoPanelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CollapseInfoPanelButton.ForeColor = System.Drawing.Color.White;
-            this.CollapseInfoPanelButton.Location = new System.Drawing.Point(124, 5);
+            this.CollapseInfoPanelButton.Location = new System.Drawing.Point(115, 5);
             this.CollapseInfoPanelButton.Name = "CollapseInfoPanelButton";
-            this.CollapseInfoPanelButton.Size = new System.Drawing.Size(36, 27);
+            this.CollapseInfoPanelButton.Size = new System.Drawing.Size(24, 27);
             this.CollapseInfoPanelButton.TabIndex = 43;
+            this.ChangeYourPictureToolTip.SetToolTip(this.CollapseInfoPanelButton, "Open or collapse");
             this.CollapseInfoPanelButton.UseVisualStyleBackColor = false;
             this.CollapseInfoPanelButton.Click += new System.EventHandler(this.Button12_Click);
             // 
@@ -2195,9 +2216,9 @@
             // 
             // PresentationButton
             // 
-            this.PresentationButton.Location = new System.Drawing.Point(250, 86);
+            this.PresentationButton.Location = new System.Drawing.Point(232, 83);
             this.PresentationButton.Name = "PresentationButton";
-            this.PresentationButton.Size = new System.Drawing.Size(75, 23);
+            this.PresentationButton.Size = new System.Drawing.Size(78, 23);
             this.PresentationButton.TabIndex = 35;
             this.PresentationButton.Text = "Presentation";
             this.PresentationButton.UseVisualStyleBackColor = true;
@@ -2205,9 +2226,9 @@
             // 
             // SlideShowButton
             // 
-            this.SlideShowButton.Location = new System.Drawing.Point(176, 86);
+            this.SlideShowButton.Location = new System.Drawing.Point(157, 83);
             this.SlideShowButton.Name = "SlideShowButton";
-            this.SlideShowButton.Size = new System.Drawing.Size(68, 23);
+            this.SlideShowButton.Size = new System.Drawing.Size(69, 23);
             this.SlideShowButton.TabIndex = 34;
             this.SlideShowButton.Text = "SlideShow";
             this.SlideShowButton.UseVisualStyleBackColor = true;
@@ -2217,9 +2238,9 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(331, 86);
+            this.button3.Location = new System.Drawing.Point(316, 84);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 23);
+            this.button3.Size = new System.Drawing.Size(68, 23);
             this.button3.TabIndex = 29;
             this.button3.Text = "Collage";
             this.button3.UseVisualStyleBackColor = true;
@@ -2229,9 +2250,9 @@
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(17, 88);
+            this.button8.Location = new System.Drawing.Point(30, 84);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(65, 23);
+            this.button8.Size = new System.Drawing.Size(57, 23);
             this.button8.TabIndex = 33;
             this.button8.Text = "Merge";
             this.button8.UseVisualStyleBackColor = true;
@@ -2263,9 +2284,9 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(173, 28);
+            this.button2.Location = new System.Drawing.Point(99, 31);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 23);
+            this.button2.Size = new System.Drawing.Size(79, 23);
             this.button2.TabIndex = 8;
             this.button2.Text = "Grayscale";
             this.button2.UseVisualStyleBackColor = true;
@@ -2275,9 +2296,9 @@
             // 
             this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button14.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(90, 86);
+            this.button14.Location = new System.Drawing.Point(93, 84);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(73, 23);
+            this.button14.Size = new System.Drawing.Size(58, 23);
             this.button14.TabIndex = 20;
             this.button14.Text = "Resize Image";
             this.button14.UseVisualStyleBackColor = true;
@@ -2289,7 +2310,7 @@
             this.button15.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.Location = new System.Drawing.Point(250, 57);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.Size = new System.Drawing.Size(58, 23);
             this.button15.TabIndex = 21;
             this.button15.Text = "Mosaic";
             this.button15.UseVisualStyleBackColor = true;
@@ -2299,9 +2320,9 @@
             // 
             this.AddText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddText.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddText.Location = new System.Drawing.Point(331, 57);
+            this.AddText.Location = new System.Drawing.Point(314, 57);
             this.AddText.Name = "AddText";
-            this.AddText.Size = new System.Drawing.Size(72, 23);
+            this.AddText.Size = new System.Drawing.Size(68, 23);
             this.AddText.TabIndex = 19;
             this.AddText.Text = "Add text";
             this.AddText.UseVisualStyleBackColor = true;
@@ -2311,9 +2332,9 @@
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(88, 29);
+            this.button4.Location = new System.Drawing.Point(351, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(48, 23);
             this.button4.TabIndex = 10;
             this.button4.Text = "Color";
             this.button4.UseVisualStyleBackColor = true;
@@ -2323,9 +2344,9 @@
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(250, 28);
+            this.button5.Location = new System.Drawing.Point(184, 31);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(49, 23);
             this.button5.TabIndex = 11;
             this.button5.Text = "Invert";
             this.button5.UseVisualStyleBackColor = true;
@@ -2345,9 +2366,9 @@
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(331, 2);
+            this.button6.Location = new System.Drawing.Point(290, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(72, 23);
+            this.button6.Size = new System.Drawing.Size(55, 23);
             this.button6.TabIndex = 12;
             this.button6.Text = "Mirror";
             this.button6.UseVisualStyleBackColor = true;
@@ -2357,7 +2378,7 @@
             // 
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(17, 29);
+            this.button7.Location = new System.Drawing.Point(28, 31);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(65, 23);
             this.button7.TabIndex = 13;
@@ -2369,9 +2390,9 @@
             // 
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(173, 2);
+            this.button9.Location = new System.Drawing.Point(154, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(71, 23);
+            this.button9.Size = new System.Drawing.Size(52, 23);
             this.button9.TabIndex = 15;
             this.button9.Text = "Sepia";
             this.button9.UseVisualStyleBackColor = true;
@@ -2381,9 +2402,9 @@
             // 
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button10.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(250, 2);
+            this.button10.Location = new System.Drawing.Point(212, 2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.Size = new System.Drawing.Size(72, 23);
             this.button10.TabIndex = 16;
             this.button10.Text = "Windows";
             this.button10.UseVisualStyleBackColor = true;
@@ -2406,21 +2427,6 @@
             this.topauxlabel.Name = "topauxlabel";
             this.topauxlabel.Size = new System.Drawing.Size(253, 350);
             this.topauxlabel.TabIndex = 7;
-            // 
-            // UserPicturePictureBox
-            // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(194, 20);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
-            this.UserPicturePictureBox.TabIndex = 4;
-            this.UserPicturePictureBox.TabStop = false;
-            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
-            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
-            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
-            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
             // MainWindow
             // 
@@ -2449,6 +2455,7 @@
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
@@ -2489,7 +2496,6 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
