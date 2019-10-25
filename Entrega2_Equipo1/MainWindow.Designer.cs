@@ -140,6 +140,14 @@
 			this.OpenRightPanelButton = new System.Windows.Forms.Button();
 			this.RightPanel = new System.Windows.Forms.Panel();
 			this.SmartListsPanel = new System.Windows.Forms.Panel();
+			this.MosaicPanel = new System.Windows.Forms.Panel();
+			this.ExitMosaic = new System.Windows.Forms.Button();
+			this.MosaicButton = new System.Windows.Forms.Button();
+			this.InsertHeightText = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.MosaicpictureBox = new System.Windows.Forms.PictureBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.InsertWidthText = new System.Windows.Forms.TextBox();
 			this.panelResize = new System.Windows.Forms.Panel();
 			this.ExitResizeButton = new System.Windows.Forms.Button();
 			this.YText = new System.Windows.Forms.TextBox();
@@ -218,6 +226,8 @@
 			this.OpenRightPanelPanel.SuspendLayout();
 			this.RightPanel.SuspendLayout();
 			this.SmartListsPanel.SuspendLayout();
+			this.MosaicPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.MosaicpictureBox)).BeginInit();
 			this.panelResize.SuspendLayout();
 			this.panelCollage.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).BeginInit();
@@ -1551,12 +1561,94 @@
 			// SmartListsPanel
 			// 
 			this.SmartListsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+			this.SmartListsPanel.Controls.Add(this.MosaicPanel);
 			this.SmartListsPanel.Controls.Add(this.panelResize);
 			this.SmartListsPanel.Controls.Add(this.panelCollage);
 			this.SmartListsPanel.Location = new System.Drawing.Point(0, 483);
 			this.SmartListsPanel.Name = "SmartListsPanel";
 			this.SmartListsPanel.Size = new System.Drawing.Size(971, 264);
 			this.SmartListsPanel.TabIndex = 40;
+			// 
+			// MosaicPanel
+			// 
+			this.MosaicPanel.BackColor = System.Drawing.SystemColors.Control;
+			this.MosaicPanel.Controls.Add(this.ExitMosaic);
+			this.MosaicPanel.Controls.Add(this.MosaicButton);
+			this.MosaicPanel.Controls.Add(this.InsertHeightText);
+			this.MosaicPanel.Controls.Add(this.label5);
+			this.MosaicPanel.Controls.Add(this.MosaicpictureBox);
+			this.MosaicPanel.Controls.Add(this.label1);
+			this.MosaicPanel.Controls.Add(this.InsertWidthText);
+			this.MosaicPanel.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.MosaicPanel.Location = new System.Drawing.Point(199, 35);
+			this.MosaicPanel.Name = "MosaicPanel";
+			this.MosaicPanel.Size = new System.Drawing.Size(163, 199);
+			this.MosaicPanel.TabIndex = 38;
+			this.MosaicPanel.Visible = false;
+			// 
+			// ExitMosaic
+			// 
+			this.ExitMosaic.Location = new System.Drawing.Point(96, 164);
+			this.ExitMosaic.Name = "ExitMosaic";
+			this.ExitMosaic.Size = new System.Drawing.Size(50, 23);
+			this.ExitMosaic.TabIndex = 6;
+			this.ExitMosaic.Text = "Exit";
+			this.ExitMosaic.UseVisualStyleBackColor = true;
+			this.ExitMosaic.Click += new System.EventHandler(this.ExitMosaic_Click);
+			// 
+			// MosaicButton
+			// 
+			this.MosaicButton.Location = new System.Drawing.Point(9, 164);
+			this.MosaicButton.Name = "MosaicButton";
+			this.MosaicButton.Size = new System.Drawing.Size(75, 23);
+			this.MosaicButton.TabIndex = 5;
+			this.MosaicButton.Text = "Mosaic";
+			this.MosaicButton.UseVisualStyleBackColor = true;
+			this.MosaicButton.Click += new System.EventHandler(this.MosaicButton_Click);
+			// 
+			// InsertHeightText
+			// 
+			this.InsertHeightText.Location = new System.Drawing.Point(90, 39);
+			this.InsertHeightText.Name = "InsertHeightText";
+			this.InsertHeightText.Size = new System.Drawing.Size(56, 20);
+			this.InsertHeightText.TabIndex = 4;
+			this.InsertHeightText.Text = "10";
+			this.InsertHeightText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(87, 14);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(75, 13);
+			this.label5.TabIndex = 3;
+			this.label5.Text = "Images Height";
+			// 
+			// MosaicpictureBox
+			// 
+			this.MosaicpictureBox.Location = new System.Drawing.Point(22, 73);
+			this.MosaicpictureBox.Name = "MosaicpictureBox";
+			this.MosaicpictureBox.Size = new System.Drawing.Size(124, 73);
+			this.MosaicpictureBox.TabIndex = 2;
+			this.MosaicpictureBox.TabStop = false;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(6, 15);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(72, 13);
+			this.label1.TabIndex = 1;
+			this.label1.Text = "Images Width";
+			// 
+			// InsertWidthText
+			// 
+			this.InsertWidthText.Location = new System.Drawing.Point(9, 39);
+			this.InsertWidthText.Name = "InsertWidthText";
+			this.InsertWidthText.Size = new System.Drawing.Size(56, 20);
+			this.InsertWidthText.TabIndex = 0;
+			this.InsertWidthText.Text = "10";
+			this.InsertWidthText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
 			// 
 			// panelResize
 			// 
@@ -1587,6 +1679,7 @@
 			this.YText.Name = "YText";
 			this.YText.Size = new System.Drawing.Size(52, 20);
 			this.YText.TabIndex = 2;
+			this.YText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
 			// 
 			// XText
 			// 
@@ -1594,6 +1687,7 @@
 			this.XText.Name = "XText";
 			this.XText.Size = new System.Drawing.Size(52, 20);
 			this.XText.TabIndex = 1;
+			this.XText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
 			// 
 			// resizeDone
 			// 
@@ -1689,6 +1783,7 @@
 			this.textInsertH.Name = "textInsertH";
 			this.textInsertH.Size = new System.Drawing.Size(64, 20);
 			this.textInsertH.TabIndex = 4;
+			this.textInsertH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
 			// 
 			// textInsertW
 			// 
@@ -1696,6 +1791,7 @@
 			this.textInsertW.Name = "textInsertW";
 			this.textInsertW.Size = new System.Drawing.Size(65, 20);
 			this.textInsertW.TabIndex = 3;
+			this.textInsertW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
 			// 
 			// textBaseH
 			// 
@@ -1703,6 +1799,7 @@
 			this.textBaseH.Name = "textBaseH";
 			this.textBaseH.Size = new System.Drawing.Size(65, 20);
 			this.textBaseH.TabIndex = 2;
+			this.textBaseH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
 			// 
 			// textBaseW
 			// 
@@ -1710,6 +1807,7 @@
 			this.textBaseW.Name = "textBaseW";
 			this.textBaseW.Size = new System.Drawing.Size(65, 20);
 			this.textBaseW.TabIndex = 1;
+			this.textBaseW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
 			// 
 			// buttonCollage
 			// 
@@ -2322,6 +2420,9 @@
 			this.OpenRightPanelPanel.ResumeLayout(false);
 			this.RightPanel.ResumeLayout(false);
 			this.SmartListsPanel.ResumeLayout(false);
+			this.MosaicPanel.ResumeLayout(false);
+			this.MosaicPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.MosaicpictureBox)).EndInit();
 			this.panelResize.ResumeLayout(false);
 			this.panelResize.PerformLayout();
 			this.panelCollage.ResumeLayout(false);
@@ -2518,6 +2619,14 @@
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Button GoBackButton;
         private System.Windows.Forms.TreeView InfoTreeView;
+		private System.Windows.Forms.Panel MosaicPanel;
+		private System.Windows.Forms.TextBox InsertHeightText;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.PictureBox MosaicpictureBox;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox InsertWidthText;
+		private System.Windows.Forms.Button MosaicButton;
+		private System.Windows.Forms.Button ExitMosaic;
 	}
 
 }

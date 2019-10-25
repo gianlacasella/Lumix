@@ -555,6 +555,7 @@ namespace Entrega2_Equipo1
 			{
 				chosenEditingImage = PIC;
 			}
+			MosaicpictureBox.Image = chosenEditingImage.Image;
 			pictureCollageImage.Image = chosenEditingImage.Image;
 			PIC.BorderStyle = BorderStyle.Fixed3D;
 		}
@@ -1099,14 +1100,28 @@ namespace Entrega2_Equipo1
 			}
 		}
 
-		private void EditingPanel_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
 
 		private void Button15_Click(object sender, EventArgs e)
 		{
-		
+			if (featuresImage.Count > 0)
+			{
+				MosaicPanel.Visible = true;
+				try
+				{
+					MosaicpictureBox.Image = chosenEditingImage.Image;
+					MosaicpictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+				}
+				catch
+				{
+					MosaicpictureBox.Image = MosaicpictureBox.ErrorImage;
+					MosaicpictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+				}
+			}
+			else
+			{
+				MessageBox.Show("There has to be at least one picture selected", "Error",
+					  MessageBoxButtons.OK, MessageBoxIcon.Question);
+			}
 		}
 
 		private void Button3_Click(object sender, EventArgs e)
@@ -1659,6 +1674,11 @@ namespace Entrega2_Equipo1
             }
         }
 
+		private void TextBoxNumberOnly(object sender, KeyPressEventArgs e)
+		{
+			e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+		}
+
         private void NameTextBox_Enter(object sender, EventArgs e)
         {
             if (nameTextBox.Text == "NEW NAME")
@@ -1682,6 +1702,42 @@ namespace Entrega2_Equipo1
             MyAccountToolStripMenuItem_Click(this, EventArgs.Empty);
         }
 
+		private void MosaicButton_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				int width = Convert.ToInt32(InsertWidthText.Text);
+				int height = Convert.ToInt32(InsertHeightText.Text);
+				if (chosenEditingImage != null)
+				{
+					Bitmap mosaic = PM.producer.Mosaic((Image)chosenEditingImage.Tag,featuresImage,width,height);
+					Image mosaicImage = new Image(mosaic, new List<Label>(), -1);
+					producer.LoadImagesToWorkingArea(new List<Image>() { mosaicImage });
+					EditingPanel_Paint(sender, e);
+					featuresImage.Clear();
+					pictureChosen.Image = mosaic;
+					panelCollage.Visible = false;
+					InsertWidthText.Text = "";
+					InsertHeightText.Text = "";
+					MosaicPanel.Visible = false;
+				}
+				else
+				{
+					MessageBox.Show("Select a base Image", "Error",
+						  MessageBoxButtons.OK, MessageBoxIcon.Question);
+				}
+			}
+			catch
+			{
+				MessageBox.Show("Wrong parameters", "Error",
+						  MessageBoxButtons.OK, MessageBoxIcon.Question);
+			}
+		}
+
+		private void ExitMosaic_Click(object sender, EventArgs e)
+		{
+			MosaicPanel.Visible = false;
+		}
 	}
 
 	public class MyRenderer : ToolStripProfessionalRenderer
