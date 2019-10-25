@@ -173,8 +173,6 @@
             this.SetCalificationButton = new System.Windows.Forms.Button();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.EditLabelButton = new System.Windows.Forms.Button();
-            this.DeleteLabelButton = new System.Windows.Forms.Button();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.setNewNameButton = new System.Windows.Forms.Button();
             this.addnewlabelbutton = new System.Windows.Forms.Button();
@@ -183,6 +181,7 @@
             this.TtitlePanel = new System.Windows.Forms.Panel();
             this.CollapseInfoPanelButton = new System.Windows.Forms.Button();
             this.InformationPanelLabel = new System.Windows.Forms.Label();
+            this.DeleteLabelButton = new System.Windows.Forms.Button();
             this.DownRightPanel = new System.Windows.Forms.Panel();
             this.UpperRightPanel = new System.Windows.Forms.Panel();
             this.EditingAreaPanel = new System.Windows.Forms.Panel();
@@ -383,7 +382,7 @@
             this.panelImages.AutoScroll = true;
             this.panelImages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panelImages.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelImages.BackgroundImage")));
-            this.panelImages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelImages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelImages.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panelImages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelImages.Location = new System.Drawing.Point(0, 0);
@@ -1843,7 +1842,6 @@
             this.InfoSettingPanel.Controls.Add(this.SetCalificationButton);
             this.InfoSettingPanel.Controls.Add(this.SearchLabel);
             this.InfoSettingPanel.Controls.Add(this.NameLabel);
-            this.InfoSettingPanel.Controls.Add(this.EditLabelButton);
             this.InfoSettingPanel.Controls.Add(this.nameTextBox);
             this.InfoSettingPanel.Controls.Add(this.setNewNameButton);
             this.InfoSettingPanel.Controls.Add(this.addnewlabelbutton);
@@ -1898,6 +1896,7 @@
             this.SearchTextBox.Size = new System.Drawing.Size(236, 21);
             this.SearchTextBox.TabIndex = 45;
             this.SearchTextBox.Text = "SEARCH PATTERN";
+            this.ChangeYourPictureToolTip.SetToolTip(this.SearchTextBox, "Search images in your library");
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
             this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
@@ -1917,6 +1916,7 @@
             this.SetCalificationButton.Size = new System.Drawing.Size(116, 23);
             this.SetCalificationButton.TabIndex = 34;
             this.SetCalificationButton.Text = "Set calification";
+            this.ChangeYourPictureToolTip.SetToolTip(this.SetCalificationButton, "Set a new calification to your image");
             this.SetCalificationButton.UseVisualStyleBackColor = false;
             this.SetCalificationButton.Click += new System.EventHandler(this.SetCalificationButton_Click);
             // 
@@ -1942,43 +1942,6 @@
             this.NameLabel.TabIndex = 36;
             this.NameLabel.Text = "Name";
             // 
-            // EditLabelButton
-            // 
-            this.EditLabelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.EditLabelButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EditLabelButton.Enabled = false;
-            this.EditLabelButton.FlatAppearance.BorderSize = 0;
-            this.EditLabelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.EditLabelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditLabelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditLabelButton.ForeColor = System.Drawing.Color.White;
-            this.EditLabelButton.Location = new System.Drawing.Point(85, 100);
-            this.EditLabelButton.Name = "EditLabelButton";
-            this.EditLabelButton.Size = new System.Drawing.Size(69, 43);
-            this.EditLabelButton.TabIndex = 40;
-            this.EditLabelButton.Text = "Edit Label";
-            this.ChangeYourPictureToolTip.SetToolTip(this.EditLabelButton, "Edit an existing Label");
-            this.EditLabelButton.UseVisualStyleBackColor = false;
-            // 
-            // DeleteLabelButton
-            // 
-            this.DeleteLabelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.DeleteLabelButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteLabelButton.Enabled = false;
-            this.DeleteLabelButton.FlatAppearance.BorderSize = 0;
-            this.DeleteLabelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.DeleteLabelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteLabelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteLabelButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteLabelButton.Location = new System.Drawing.Point(145, 3);
-            this.DeleteLabelButton.Name = "DeleteLabelButton";
-            this.DeleteLabelButton.Size = new System.Drawing.Size(96, 31);
-            this.DeleteLabelButton.TabIndex = 41;
-            this.DeleteLabelButton.Text = "Delete Label";
-            this.ChangeYourPictureToolTip.SetToolTip(this.DeleteLabelButton, "Select a Label and delete it");
-            this.DeleteLabelButton.UseVisualStyleBackColor = false;
-            this.DeleteLabelButton.Click += new System.EventHandler(this.DeleteLabelButton_Click);
-            // 
             // nameTextBox
             // 
             this.nameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
@@ -1991,6 +1954,7 @@
             this.nameTextBox.Size = new System.Drawing.Size(236, 17);
             this.nameTextBox.TabIndex = 37;
             this.nameTextBox.Text = "NEW NAME";
+            this.ChangeYourPictureToolTip.SetToolTip(this.nameTextBox, "Set a new name to your image");
             this.nameTextBox.Enter += new System.EventHandler(this.NameTextBox_Enter);
             this.nameTextBox.Leave += new System.EventHandler(this.NameTextBox_Leave);
             // 
@@ -2023,9 +1987,9 @@
             this.addnewlabelbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addnewlabelbutton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addnewlabelbutton.ForeColor = System.Drawing.Color.White;
-            this.addnewlabelbutton.Location = new System.Drawing.Point(10, 100);
+            this.addnewlabelbutton.Location = new System.Drawing.Point(10, 105);
             this.addnewlabelbutton.Name = "addnewlabelbutton";
-            this.addnewlabelbutton.Size = new System.Drawing.Size(69, 43);
+            this.addnewlabelbutton.Size = new System.Drawing.Size(231, 33);
             this.addnewlabelbutton.TabIndex = 39;
             this.addnewlabelbutton.Text = "Add Label";
             this.ChangeYourPictureToolTip.SetToolTip(this.addnewlabelbutton, "Add a new Label to your image");
@@ -2098,6 +2062,25 @@
             this.InformationPanelLabel.Size = new System.Drawing.Size(106, 26);
             this.InformationPanelLabel.TabIndex = 42;
             this.InformationPanelLabel.Text = "Info panel";
+            // 
+            // DeleteLabelButton
+            // 
+            this.DeleteLabelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.DeleteLabelButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteLabelButton.Enabled = false;
+            this.DeleteLabelButton.FlatAppearance.BorderSize = 0;
+            this.DeleteLabelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.DeleteLabelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteLabelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteLabelButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteLabelButton.Location = new System.Drawing.Point(145, 3);
+            this.DeleteLabelButton.Name = "DeleteLabelButton";
+            this.DeleteLabelButton.Size = new System.Drawing.Size(96, 31);
+            this.DeleteLabelButton.TabIndex = 41;
+            this.DeleteLabelButton.Text = "Delete Label";
+            this.ChangeYourPictureToolTip.SetToolTip(this.DeleteLabelButton, "Select a Label and delete it");
+            this.DeleteLabelButton.UseVisualStyleBackColor = false;
+            this.DeleteLabelButton.Click += new System.EventHandler(this.DeleteLabelButton_Click);
             // 
             // DownRightPanel
             // 
@@ -2184,9 +2167,9 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(113, 26);
+            this.button1.Location = new System.Drawing.Point(139, 27);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 25);
+            this.button1.Size = new System.Drawing.Size(85, 25);
             this.button1.TabIndex = 7;
             this.button1.Text = "Auto Adjust";
             this.button1.UseVisualStyleBackColor = true;
@@ -2194,7 +2177,7 @@
             // 
             // brightnessBar
             // 
-            this.brightnessBar.Location = new System.Drawing.Point(30, 58);
+            this.brightnessBar.Location = new System.Drawing.Point(13, 60);
             this.brightnessBar.Maximum = 255;
             this.brightnessBar.Minimum = -255;
             this.brightnessBar.Name = "brightnessBar";
@@ -2208,9 +2191,9 @@
             this.comboRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboRotate.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboRotate.FormattingEnabled = true;
-            this.comboRotate.Location = new System.Drawing.Point(29, 28);
+            this.comboRotate.Location = new System.Drawing.Point(13, 28);
             this.comboRotate.Name = "comboRotate";
-            this.comboRotate.Size = new System.Drawing.Size(78, 24);
+            this.comboRotate.Size = new System.Drawing.Size(104, 24);
             this.comboRotate.TabIndex = 23;
             this.comboRotate.SelectedIndexChanged += new System.EventHandler(this.ComboRotate_SelectedIndexChanged);
             // 
@@ -2598,7 +2581,6 @@
         private System.Windows.Forms.Button buttonCollage;
         private System.Windows.Forms.Panel ImageDataPanel;
         private System.Windows.Forms.Button DeleteLabelButton;
-        private System.Windows.Forms.Button EditLabelButton;
         private System.Windows.Forms.Button addnewlabelbutton;
         private System.Windows.Forms.Button setNewNameButton;
         private System.Windows.Forms.TextBox nameTextBox;

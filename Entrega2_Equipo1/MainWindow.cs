@@ -65,8 +65,6 @@ namespace Entrega2_Equipo1
             this.mainSearcher = new Searcher();
         }
 
-
-
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!Saved)
@@ -266,7 +264,6 @@ namespace Entrega2_Equipo1
                         OpenRightPanelButton.BackgroundImage = leftarrow;
                     }
                     this.addnewlabelbutton.Enabled = false;
-                    this.EditLabelButton.Enabled = false;
                     this.SearchTextBox.Enabled = false;
                     //panelImages.Visible = false;
                     AddLabelController();
@@ -371,7 +368,6 @@ namespace Entrega2_Equipo1
             this.setNewNameButton.Enabled = true;
             this.nameTextBox.Enabled = true;
             this.addnewlabelbutton.Enabled = true;
-            this.EditLabelButton.Enabled = true;
             this.DeleteLabelButton.Enabled = true;
             this.imagetoaddlabel = image;
             // Mostrar los datos en el tree view
@@ -423,7 +419,6 @@ namespace Entrega2_Equipo1
                 this.SetCalificationButton.Enabled = false;
                 this.setNewNameButton.Enabled = false;
                 this.addnewlabelbutton.Enabled = false;
-                this.EditLabelButton.Enabled = false;
                 this.DeleteLabelButton.Enabled = false;
                 this.nameTextBox.Enabled = false;
                 InfoTreeView.Nodes.Clear();
@@ -823,7 +818,6 @@ namespace Entrega2_Equipo1
             this.myAccountToolStripMenuItem.Enabled = true;
             this.exitToolStripMenuItem.Enabled = true;
             this.addnewlabelbutton.Enabled = true;
-            this.EditLabelButton.Enabled = true;
             this.SearchTextBox.Enabled = true;
         }
 
