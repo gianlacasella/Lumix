@@ -28,6 +28,9 @@ namespace Entrega2_Equipo1
         bool deleteaccount = false;
         Bitmap chooseUserPictureBitmap;
         Searcher mainSearcher;
+        // Bool que controla si agregar los labels se hace de forma multiple o no
+        bool multipleImporting = false;
+        List<Image> imagestoaddlabel;
 
         public User UserLoggedIn { get => this.userLoggedIn; set => this.userLoggedIn = value; }
         public bool Exit { get => this.exit; set => this.exit = value; }
@@ -246,6 +249,7 @@ namespace Entrega2_Equipo1
                     PictureBox PIC = (PictureBox)sourceControl;
                     ImageDetailClick((object)PIC, EventArgs.Empty);
                     Image imagetoaddlabel = (Image)PIC.Tag;
+
                     // Ya reconocimos cual fue el Image seleccionado para agregar el label
                     AddLabelPanel.Visible = true;
                     this.imagetoaddlabel = imagetoaddlabel;
@@ -839,6 +843,8 @@ namespace Entrega2_Equipo1
             this.exitToolStripMenuItem.Enabled = false;
             this.cleanLibraryToolStripMenuItem.Enabled = false;
         }
+
+        
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1814,6 +1820,226 @@ namespace Entrega2_Equipo1
                     MessageBox.Show("Didn't select a Label to delete", "Error",
                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+
+        // working here
+        private void ImportWithLabelsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // Lista de imagenes creadas
+            List<Image> importedImages = new List<Image>();
+
+            // Pedimos las imagenes
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select the desired images";
+            ofd.Multiselect = true;
+            ofd.Filter = "Supported formats |*.jpg;*.jpeg;*.png;*.bmp";
+            DialogResult dr = ofd.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                this.ToolbarProgressBar.Value = 0;
+                this.ToolbarProgressBar.Visible = true;
+                this.Cursor = Cursors.WaitCursor;
+                int count = 1;
+                string[] files = ofd.FileNames;
+                foreach (string path in files)
+                {
+                    string name = Path.GetFileNameWithoutExtension(path);
+                    Image returningImage = new Image(path, new List<Label>(), -1);
+                    returningImage.Name = name;
+                    library.AddImage(returningImage);
+                    importedImages.Add(returningImage);
+                    this.ToolbarProgressBar.Increment((count * 100) / files.Length);
+                }
+                this.ToolbarProgressBar.Visible = false;
+                this.ToolbarProgressBar.Value = 0;
+                ReLoadPanelImage(sender, e);
+                Saved = false;
+                this.Cursor = Cursors.Arrow;
+            }
+
+            Bitmap baseimage = new Bitmap(MultipleImagesPictureBox.Width, MultipleImagesPictureBox.Height);
+            if (importedImages.Count == 1)
+            {
+                baseimage = (Bitmap)importedImages[0].BitmapImage.Clone();
+            }
+            else
+            {
+                baseimage = (Bitmap)Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\previewnotavailable2.jpg");
+            }
+            
+            
+
+            // Ya tenemos la lista de images a las que se le debe agregar labels
+            // Switches que hay que hacer para poder mostrar el panel con multiple importado
+            AccountPanel.Visible = true;
+            panelImages.Visible = false;
+            AddLabelPanel.Visible = true;
+            MultipleAddLabelPanel.Visible = true;
+
+            // Cambiamos el menustrip enable a false
+            menuStrip1.Enabled = false;
+
+            // Seteamos el fondo con el mosaico
+            MultipleImagesPictureBox.Image = baseimage;
+            MultipleImagesPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            AddLabelController(importedImages, baseimage);
+            this.imagestoaddlabel = importedImages;
+        }
+
+        private void AddLabelController(List<Image> importedimages, Bitmap baseImage)
+        {
+            this.multipleImporting = true;
+            this.comboBox2.DataSource = Enum.GetValues(typeof(ENationality));
+            this.comboBox3.DataSource = Enum.GetValues(typeof(EColor));
+            this.comboBox4.DataSource = Enum.GetValues(typeof(EColor));
+            this.comboBox5.DataSource = Enum.GetValues(typeof(ESex));
+            this.checkBox2.Checked = true;
+            this.comboBox1.SelectedIndex = 0;
+            this.importToolStripMenuItem1.Enabled = false;
+            this.exportToolStripMenuItem.Enabled = false;
+            this.saveToolStripMenuItem.Enabled = false;
+            this.myAccountToolStripMenuItem.Enabled = false;
+            this.exitToolStripMenuItem.Enabled = false;
+            this.cleanLibraryToolStripMenuItem.Enabled = false;
+        }
+
+        private void MultipleImagesLabelComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox combo = (ComboBox)sender;
+            switch (combo.SelectedIndex)
+            {
+                case 0:
+                    panel2.Visible = true;
+                    panel1.Visible = false;
+                    panel3.Visible = false;
+                    break;
+                case 1:
+                    panel3.Visible = true;
+                    panel1.Visible = false;
+                    panel2.Visible = false;
+                    break;
+                case 2:
+                    panel1.Visible = true;
+                    panel2.Visible = false;
+                    panel3.Visible = false;
+                    break;
+            }
+        }
+
+        private void Button17_Click(object sender, EventArgs e)
+        {
+            switch (this.MultipleImagesLabelComboBox.SelectedIndex)
+            {
+                case 0:
+                    if (this.checkBox2.Checked)
+                    {
+                        if (this.textBox6.Text == "")
+                        {
+                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        }
+                        else
+                        {
+
+                            this.createdLabel = new SimpleLabel(this.textBox6.Text);
+                            foreach (Image image in imagestoaddlabel)
+                            {
+                                image.AddLabel(createdLabel);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (Convert.ToString(this.comboBox6.SelectedItem) == "")
+                        {
+                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        }
+                        else
+                        {
+                            this.createdLabel = new SimpleLabel(Convert.ToString(this.comboBox6.SelectedItem));
+                            foreach (Image image in imagestoaddlabel)
+                            {
+                                image.AddLabel(createdLabel);
+                            }
+                        }
+                    }
+                    break;
+                case 1:
+                    this.createdLabel = new PersonLabel(this.textBox1.Text == "" ? null : this.textBox1.Text,
+                    (label9.Text == "0" && label10.Text == "0" && label8.Text == "0" && label7.Text == "0") ? null : new double[] { Convert.ToInt32(label9.Text), Convert.ToInt32(label10.Text), Convert.ToInt32(label8.Text), Convert.ToInt32(label7.Text) },
+                    this.textBox2.Text == "" ? null : this.textBox2.Text, (ENationality)this.comboBox2.SelectedItem,
+                    (EColor)this.comboBox4.SelectedItem, (EColor)this.comboBox3.SelectedItem, (ESex)this.comboBox5.SelectedItem,
+                    this.dateTimePicker1.Value.Date.ToString() == "01-01-1930 0:00:00" ? "" : this.dateTimePicker1.Value.Date.ToString());
+                    foreach (Image image in imagestoaddlabel)
+                    {
+                        image.AddLabel(createdLabel);
+                    }
+                    break;
+                case 2:
+                    this.createdLabel = new SpecialLabel((this.numericUpDown2.Value == 0 && this.numericUpDown1.Value == 0) ? null : new double[] { Convert.ToDouble(this.numericUpDown2.Value), Convert.ToDouble(this.numericUpDown1.Value) },
+                        (this.textBox5.Text == "") ? null : this.textBox5.Text, (this.textBox4.Text == "") ? null : this.textBox4.Text,
+                        (this.textBox3.Text == "") ? null : this.textBox3.Text, (this.comboBox1.SelectedItem.ToString() == "Si") ? true : false);
+                    foreach (Image image in imagestoaddlabel)
+                    {
+                        image.AddLabel(createdLabel);
+                    }
+                    break;
+            }
+            //RefreshInfoTreeView();
+        }
+
+        private void Button16_Click(object sender, EventArgs e)
+        {
+            if (createdLabel == null)
+            {
+                if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    MultipleAddLabelPanel.Visible = false;
+                }
+            }
+
+            AccountPanel.Visible = false;
+            panelImages.Visible = true;
+            AddLabelPanel.Visible = false;
+            
+
+
+            this.importToolStripMenuItem1.Enabled = true;
+            this.exportToolStripMenuItem.Enabled = true;
+            this.saveToolStripMenuItem.Enabled = true;
+            this.cleanLibraryToolStripMenuItem.Enabled = true;
+            this.myAccountToolStripMenuItem.Enabled = true;
+            this.exitToolStripMenuItem.Enabled = true;
+            this.addnewlabelbutton.Enabled = true;
+            this.SearchTextBox.Enabled = true;
+        }
+
+        private void ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox1.Checked = false;
+                comboBox6.Enabled = false;
+                button18.Enabled = false;
+                textBox6.Enabled = true;
+            }
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox2.Checked = false;
+                textBox6.Enabled = false;
+                comboBox6.Enabled = true;
+                button18.Enabled = true;
             }
         }
     }

@@ -44,6 +44,62 @@
             this.panelImages = new System.Windows.Forms.Panel();
             this.AddLabelPanel = new System.Windows.Forms.Panel();
             this.AccountPanel = new System.Windows.Forms.Panel();
+            this.MultipleAddLabelPanel = new System.Windows.Forms.Panel();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.MultipleImagesLabelComboBox = new System.Windows.Forms.ComboBox();
+            this.MultipleImagesPictureBox = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.button18 = new System.Windows.Forms.Button();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.ChangePassButton = new System.Windows.Forms.Button();
             this.MemberSinceLabel = new System.Windows.Forms.Label();
@@ -74,6 +130,14 @@
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
             this.DoneButton = new System.Windows.Forms.Button();
             this.AddLabelButton = new System.Windows.Forms.Button();
+            this.AddSimpleLabelPanel = new System.Windows.Forms.Panel();
+            this.LoadingWatsonRecommendationsLabel = new System.Windows.Forms.Label();
+            this.LoadWatsonRecommendationsButton = new System.Windows.Forms.Button();
+            this.WatsonRecommendationsComboBox = new System.Windows.Forms.ComboBox();
+            this.WatsonTagCheck = new System.Windows.Forms.CheckBox();
+            this.PersonalizedTagCheck = new System.Windows.Forms.CheckBox();
+            this.SimpleLabelTagBox = new System.Windows.Forms.TextBox();
+            this.SimpleLabelTitle = new System.Windows.Forms.Label();
             this.AddPersonLabelPanel = new System.Windows.Forms.Panel();
             this.putZeroButton = new System.Windows.Forms.Button();
             this.FaceLocationHeightTag = new System.Windows.Forms.Label();
@@ -116,14 +180,6 @@
             this.SpecialLabelLatitudeUpDown = new System.Windows.Forms.NumericUpDown();
             this.SpecialLabelGeoLocationLabel = new System.Windows.Forms.Label();
             this.SpecialLabelTitle = new System.Windows.Forms.Label();
-            this.AddSimpleLabelPanel = new System.Windows.Forms.Panel();
-            this.LoadingWatsonRecommendationsLabel = new System.Windows.Forms.Label();
-            this.LoadWatsonRecommendationsButton = new System.Windows.Forms.Button();
-            this.WatsonRecommendationsComboBox = new System.Windows.Forms.ComboBox();
-            this.WatsonTagCheck = new System.Windows.Forms.CheckBox();
-            this.PersonalizedTagCheck = new System.Windows.Forms.CheckBox();
-            this.SimpleLabelTagBox = new System.Windows.Forms.TextBox();
-            this.SimpleLabelTitle = new System.Windows.Forms.Label();
             this.contextMenuStripImage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToEditingAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -213,15 +269,22 @@
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
+            this.MultipleAddLabelPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MultipleImagesPictureBox)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
+            this.AddSimpleLabelPanel.SuspendLayout();
             this.AddPersonLabelPanel.SuspendLayout();
             this.AddSpecialLabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLongitudeUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLatitudeUpDown)).BeginInit();
-            this.AddSimpleLabelPanel.SuspendLayout();
             this.contextMenuStripImage.SuspendLayout();
             this.contextMenuStripEditing.SuspendLayout();
             this.LeftNewPanel.SuspendLayout();
@@ -305,6 +368,7 @@
             this.importWithLabelsToolStripMenuItem1.Name = "importWithLabelsToolStripMenuItem1";
             this.importWithLabelsToolStripMenuItem1.Size = new System.Drawing.Size(198, 24);
             this.importWithLabelsToolStripMenuItem1.Text = "Import with labels";
+            this.importWithLabelsToolStripMenuItem1.Click += new System.EventHandler(this.ImportWithLabelsToolStripMenuItem1_Click);
             this.importWithLabelsToolStripMenuItem1.MouseEnter += new System.EventHandler(this.ImportWithLabelsToolStripMenuItem_MouseEnter);
             this.importWithLabelsToolStripMenuItem1.MouseLeave += new System.EventHandler(this.ImportWithLabelsToolStripMenuItem_MouseLeave);
             // 
@@ -403,9 +467,9 @@
             this.AddLabelPanel.Controls.Add(this.AddLabelImageBox);
             this.AddLabelPanel.Controls.Add(this.DoneButton);
             this.AddLabelPanel.Controls.Add(this.AddLabelButton);
+            this.AddLabelPanel.Controls.Add(this.AddSimpleLabelPanel);
             this.AddLabelPanel.Controls.Add(this.AddPersonLabelPanel);
             this.AddLabelPanel.Controls.Add(this.AddSpecialLabelPanel);
-            this.AddLabelPanel.Controls.Add(this.AddSimpleLabelPanel);
             this.AddLabelPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddLabelPanel.Location = new System.Drawing.Point(0, 0);
             this.AddLabelPanel.Name = "AddLabelPanel";
@@ -416,6 +480,7 @@
             // AccountPanel
             // 
             this.AccountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.AccountPanel.Controls.Add(this.MultipleAddLabelPanel);
             this.AccountPanel.Controls.Add(this.GoBackButton);
             this.AccountPanel.Controls.Add(this.ChangePassButton);
             this.AccountPanel.Controls.Add(this.MemberSinceLabel);
@@ -431,6 +496,699 @@
             this.AccountPanel.Size = new System.Drawing.Size(624, 745);
             this.AccountPanel.TabIndex = 4;
             this.AccountPanel.Visible = false;
+            // 
+            // MultipleAddLabelPanel
+            // 
+            this.MultipleAddLabelPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.MultipleAddLabelPanel.Controls.Add(this.button16);
+            this.MultipleAddLabelPanel.Controls.Add(this.button17);
+            this.MultipleAddLabelPanel.Controls.Add(this.label6);
+            this.MultipleAddLabelPanel.Controls.Add(this.MultipleImagesLabelComboBox);
+            this.MultipleAddLabelPanel.Controls.Add(this.MultipleImagesPictureBox);
+            this.MultipleAddLabelPanel.Controls.Add(this.panel2);
+            this.MultipleAddLabelPanel.Controls.Add(this.panel1);
+            this.MultipleAddLabelPanel.Controls.Add(this.panel3);
+            this.MultipleAddLabelPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MultipleAddLabelPanel.Location = new System.Drawing.Point(0, 0);
+            this.MultipleAddLabelPanel.Name = "MultipleAddLabelPanel";
+            this.MultipleAddLabelPanel.Size = new System.Drawing.Size(624, 745);
+            this.MultipleAddLabelPanel.TabIndex = 18;
+            this.MultipleAddLabelPanel.Visible = false;
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.Crimson;
+            this.button16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.ForeColor = System.Drawing.Color.White;
+            this.button16.Location = new System.Drawing.Point(506, 684);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(95, 33);
+            this.button16.TabIndex = 46;
+            this.button16.Text = "Done";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.Button16_Click);
+            // 
+            // button17
+            // 
+            this.button17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            this.button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.Color.White;
+            this.button17.Location = new System.Drawing.Point(396, 684);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(95, 33);
+            this.button17.TabIndex = 45;
+            this.button17.Text = "Add Label";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.Button17_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(166, 428);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 26);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Label Type";
+            // 
+            // MultipleImagesLabelComboBox
+            // 
+            this.MultipleImagesLabelComboBox.BackColor = System.Drawing.SystemColors.Window;
+            this.MultipleImagesLabelComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MultipleImagesLabelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MultipleImagesLabelComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MultipleImagesLabelComboBox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MultipleImagesLabelComboBox.FormattingEnabled = true;
+            this.MultipleImagesLabelComboBox.Items.AddRange(new object[] {
+            "Simple Label",
+            "Person Label",
+            "Special Label"});
+            this.MultipleImagesLabelComboBox.Location = new System.Drawing.Point(283, 425);
+            this.MultipleImagesLabelComboBox.Name = "MultipleImagesLabelComboBox";
+            this.MultipleImagesLabelComboBox.Size = new System.Drawing.Size(134, 29);
+            this.MultipleImagesLabelComboBox.TabIndex = 42;
+            this.MultipleImagesLabelComboBox.SelectedIndexChanged += new System.EventHandler(this.MultipleImagesLabelComboBox_SelectedIndexChanged);
+            // 
+            // MultipleImagesPictureBox
+            // 
+            this.MultipleImagesPictureBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.MultipleImagesPictureBox.Location = new System.Drawing.Point(17, 15);
+            this.MultipleImagesPictureBox.Name = "MultipleImagesPictureBox";
+            this.MultipleImagesPictureBox.Size = new System.Drawing.Size(579, 402);
+            this.MultipleImagesPictureBox.TabIndex = 3;
+            this.MultipleImagesPictureBox.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.label32);
+            this.panel2.Controls.Add(this.button18);
+            this.panel2.Controls.Add(this.comboBox6);
+            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.checkBox2);
+            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Controls.Add(this.label33);
+            this.panel2.Location = new System.Drawing.Point(22, 469);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(579, 199);
+            this.panel2.TabIndex = 47;
+            this.panel2.Visible = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(417, 161);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(0, 21);
+            this.label32.TabIndex = 13;
+            this.label32.Visible = false;
+            // 
+            // button18
+            // 
+            this.button18.Enabled = false;
+            this.button18.Location = new System.Drawing.Point(261, 162);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(131, 23);
+            this.button18.TabIndex = 12;
+            this.button18.Text = "Load Recommendations";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.Enabled = false;
+            this.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.comboBox6.Location = new System.Drawing.Point(134, 162);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 21);
+            this.comboBox6.TabIndex = 11;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(46, 124);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(209, 25);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Watson Recommendation";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.ForeColor = System.Drawing.Color.White;
+            this.checkBox2.Location = new System.Drawing.Point(46, 55);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(146, 25);
+            this.checkBox2.TabIndex = 9;
+            this.checkBox2.Text = "Personalized Tag";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(134, 91);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(261, 20);
+            this.textBox6.TabIndex = 8;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.White;
+            this.label33.Location = new System.Drawing.Point(0, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(137, 27);
+            this.label33.TabIndex = 6;
+            this.label33.Text = "Simple Label";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.label24);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.label25);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.label27);
+            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.label28);
+            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.numericUpDown2);
+            this.panel1.Controls.Add(this.label30);
+            this.panel1.Controls.Add(this.label31);
+            this.panel1.Location = new System.Drawing.Point(17, 467);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(579, 199);
+            this.panel1.TabIndex = 43;
+            this.panel1.Visible = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.comboBox1.Location = new System.Drawing.Point(60, 145);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 22;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(7, 144);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 21);
+            this.label24.TabIndex = 21;
+            this.label24.Text = "Selfie";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(348, 121);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(210, 20);
+            this.textBox3.TabIndex = 20;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(236, 122);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(103, 21);
+            this.label25.TabIndex = 19;
+            this.label25.Text = "Photo Motive";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(348, 78);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(210, 20);
+            this.textBox4.TabIndex = 18;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(233, 78);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(106, 21);
+            this.label26.TabIndex = 17;
+            this.label26.Text = "Photographer";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(348, 35);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(210, 20);
+            this.textBox5.TabIndex = 16;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(272, 35);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(66, 21);
+            this.label27.TabIndex = 15;
+            this.label27.Text = "Address";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(171, 95);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.ReadOnly = true;
+            this.numericUpDown1.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDown1.TabIndex = 14;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(8, 94);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(157, 21);
+            this.label28.TabIndex = 13;
+            this.label28.Text = "Longitude (-180,180)";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(34, 65);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(129, 21);
+            this.label29.TabIndex = 12;
+            this.label29.Text = "Latitude (-90, 90)";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(171, 65);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.ReadOnly = true;
+            this.numericUpDown2.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDown2.TabIndex = 11;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(64, 34);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(153, 21);
+            this.label30.TabIndex = 10;
+            this.label30.Text = "Geographic Location";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(0, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(139, 27);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "Special Label";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel3.Controls.Add(this.button12);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.button13);
+            this.panel3.Controls.Add(this.dateTimePicker1);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.comboBox3);
+            this.panel3.Controls.Add(this.label19);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.label21);
+            this.panel3.Controls.Add(this.comboBox4);
+            this.panel3.Controls.Add(this.label22);
+            this.panel3.Controls.Add(this.label23);
+            this.panel3.Controls.Add(this.comboBox5);
+            this.panel3.Location = new System.Drawing.Point(15, 472);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(579, 199);
+            this.panel3.TabIndex = 43;
+            this.panel3.Visible = false;
+            // 
+            // button12
+            // 
+            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(336, 166);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(56, 23);
+            this.button12.TabIndex = 40;
+            this.button12.Text = "Reset";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(539, 164);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(19, 21);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(540, 140);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(19, 21);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(447, 164);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(19, 21);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(447, 137);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(19, 21);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "0";
+            // 
+            // button13
+            // 
+            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.Location = new System.Drawing.Point(289, 140);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(103, 23);
+            this.button13.TabIndex = 35;
+            this.button13.Text = "Select Location";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.White;
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(12, 155);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2019, 10, 19, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(243, 24);
+            this.dateTimePicker1.TabIndex = 34;
+            this.dateTimePicker1.Value = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(137, 27);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Person Label";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(3, 36);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 21);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Name";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(85, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(99, 24);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(198, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 21);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Surname";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(276, 37);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(108, 24);
+            this.textBox2.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(383, 38);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(86, 21);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Nationality";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(472, 164);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 21);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "HEIGHT:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(469, 38);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(107, 24);
+            this.comboBox2.TabIndex = 15;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(472, 138);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(62, 21);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "WIDTH:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(3, 75);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(81, 21);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "Hair Color";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(401, 164);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(45, 21);
+            this.label18.TabIndex = 27;
+            this.label18.Text = "LEFT:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.IntegralHeight = false;
+            this.comboBox3.Location = new System.Drawing.Point(85, 72);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(99, 24);
+            this.comboBox3.TabIndex = 17;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(401, 138);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(42, 21);
+            this.label19.TabIndex = 26;
+            this.label19.Text = "TOP:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(190, 75);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(83, 21);
+            this.label20.TabIndex = 18;
+            this.label20.Text = "Eyes Color";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(456, 117);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(104, 21);
+            this.label21.TabIndex = 24;
+            this.label21.Text = "Face Location";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.IntegralHeight = false;
+            this.comboBox4.Location = new System.Drawing.Point(277, 77);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(107, 24);
+            this.comboBox4.TabIndex = 19;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(428, 78);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(34, 21);
+            this.label22.TabIndex = 20;
+            this.label22.Text = "Sex";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(178, 128);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(77, 21);
+            this.label23.TabIndex = 22;
+            this.label23.Text = "Birth date";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox5.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(468, 78);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(108, 24);
+            this.comboBox5.TabIndex = 21;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.ComboBox5_SelectedIndexChanged);
             // 
             // GoBackButton
             // 
@@ -827,6 +1585,101 @@
             this.AddLabelButton.Text = "Add Label";
             this.AddLabelButton.UseVisualStyleBackColor = true;
             this.AddLabelButton.Click += new System.EventHandler(this.AddLabelButton_Click);
+            // 
+            // AddSimpleLabelPanel
+            // 
+            this.AddSimpleLabelPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.AddSimpleLabelPanel.Controls.Add(this.LoadingWatsonRecommendationsLabel);
+            this.AddSimpleLabelPanel.Controls.Add(this.LoadWatsonRecommendationsButton);
+            this.AddSimpleLabelPanel.Controls.Add(this.WatsonRecommendationsComboBox);
+            this.AddSimpleLabelPanel.Controls.Add(this.WatsonTagCheck);
+            this.AddSimpleLabelPanel.Controls.Add(this.PersonalizedTagCheck);
+            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTagBox);
+            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTitle);
+            this.AddSimpleLabelPanel.Location = new System.Drawing.Point(12, 469);
+            this.AddSimpleLabelPanel.Name = "AddSimpleLabelPanel";
+            this.AddSimpleLabelPanel.Size = new System.Drawing.Size(579, 199);
+            this.AddSimpleLabelPanel.TabIndex = 36;
+            this.AddSimpleLabelPanel.Visible = false;
+            // 
+            // LoadingWatsonRecommendationsLabel
+            // 
+            this.LoadingWatsonRecommendationsLabel.AutoSize = true;
+            this.LoadingWatsonRecommendationsLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadingWatsonRecommendationsLabel.ForeColor = System.Drawing.Color.White;
+            this.LoadingWatsonRecommendationsLabel.Location = new System.Drawing.Point(417, 161);
+            this.LoadingWatsonRecommendationsLabel.Name = "LoadingWatsonRecommendationsLabel";
+            this.LoadingWatsonRecommendationsLabel.Size = new System.Drawing.Size(0, 21);
+            this.LoadingWatsonRecommendationsLabel.TabIndex = 13;
+            this.LoadingWatsonRecommendationsLabel.Visible = false;
+            // 
+            // LoadWatsonRecommendationsButton
+            // 
+            this.LoadWatsonRecommendationsButton.Enabled = false;
+            this.LoadWatsonRecommendationsButton.Location = new System.Drawing.Point(261, 162);
+            this.LoadWatsonRecommendationsButton.Name = "LoadWatsonRecommendationsButton";
+            this.LoadWatsonRecommendationsButton.Size = new System.Drawing.Size(131, 23);
+            this.LoadWatsonRecommendationsButton.TabIndex = 12;
+            this.LoadWatsonRecommendationsButton.Text = "Load Recommendations";
+            this.LoadWatsonRecommendationsButton.UseVisualStyleBackColor = true;
+            this.LoadWatsonRecommendationsButton.Click += new System.EventHandler(this.LoadWatsonRecommendationsButton_Click);
+            // 
+            // WatsonRecommendationsComboBox
+            // 
+            this.WatsonRecommendationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WatsonRecommendationsComboBox.Enabled = false;
+            this.WatsonRecommendationsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.WatsonRecommendationsComboBox.FormattingEnabled = true;
+            this.WatsonRecommendationsComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.WatsonRecommendationsComboBox.Location = new System.Drawing.Point(134, 162);
+            this.WatsonRecommendationsComboBox.Name = "WatsonRecommendationsComboBox";
+            this.WatsonRecommendationsComboBox.Size = new System.Drawing.Size(121, 21);
+            this.WatsonRecommendationsComboBox.TabIndex = 11;
+            // 
+            // WatsonTagCheck
+            // 
+            this.WatsonTagCheck.AutoSize = true;
+            this.WatsonTagCheck.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WatsonTagCheck.ForeColor = System.Drawing.Color.White;
+            this.WatsonTagCheck.Location = new System.Drawing.Point(46, 124);
+            this.WatsonTagCheck.Name = "WatsonTagCheck";
+            this.WatsonTagCheck.Size = new System.Drawing.Size(209, 25);
+            this.WatsonTagCheck.TabIndex = 10;
+            this.WatsonTagCheck.Text = "Watson Recommendation";
+            this.WatsonTagCheck.UseVisualStyleBackColor = true;
+            this.WatsonTagCheck.CheckedChanged += new System.EventHandler(this.WatsonTagCheck_CheckedChanged);
+            // 
+            // PersonalizedTagCheck
+            // 
+            this.PersonalizedTagCheck.AutoSize = true;
+            this.PersonalizedTagCheck.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonalizedTagCheck.ForeColor = System.Drawing.Color.White;
+            this.PersonalizedTagCheck.Location = new System.Drawing.Point(46, 55);
+            this.PersonalizedTagCheck.Name = "PersonalizedTagCheck";
+            this.PersonalizedTagCheck.Size = new System.Drawing.Size(146, 25);
+            this.PersonalizedTagCheck.TabIndex = 9;
+            this.PersonalizedTagCheck.Text = "Personalized Tag";
+            this.PersonalizedTagCheck.UseVisualStyleBackColor = true;
+            this.PersonalizedTagCheck.CheckedChanged += new System.EventHandler(this.PersonalizedTagCheck_CheckedChanged);
+            // 
+            // SimpleLabelTagBox
+            // 
+            this.SimpleLabelTagBox.Enabled = false;
+            this.SimpleLabelTagBox.Location = new System.Drawing.Point(134, 91);
+            this.SimpleLabelTagBox.Name = "SimpleLabelTagBox";
+            this.SimpleLabelTagBox.Size = new System.Drawing.Size(261, 20);
+            this.SimpleLabelTagBox.TabIndex = 8;
+            // 
+            // SimpleLabelTitle
+            // 
+            this.SimpleLabelTitle.AutoSize = true;
+            this.SimpleLabelTitle.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SimpleLabelTitle.ForeColor = System.Drawing.Color.White;
+            this.SimpleLabelTitle.Location = new System.Drawing.Point(0, 0);
+            this.SimpleLabelTitle.Name = "SimpleLabelTitle";
+            this.SimpleLabelTitle.Size = new System.Drawing.Size(137, 27);
+            this.SimpleLabelTitle.TabIndex = 6;
+            this.SimpleLabelTitle.Text = "Simple Label";
             // 
             // AddPersonLabelPanel
             // 
@@ -1339,101 +2192,6 @@
             this.SpecialLabelTitle.TabIndex = 9;
             this.SpecialLabelTitle.Text = "Special Label";
             this.SpecialLabelTitle.Click += new System.EventHandler(this.Label8_Click);
-            // 
-            // AddSimpleLabelPanel
-            // 
-            this.AddSimpleLabelPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.AddSimpleLabelPanel.Controls.Add(this.LoadingWatsonRecommendationsLabel);
-            this.AddSimpleLabelPanel.Controls.Add(this.LoadWatsonRecommendationsButton);
-            this.AddSimpleLabelPanel.Controls.Add(this.WatsonRecommendationsComboBox);
-            this.AddSimpleLabelPanel.Controls.Add(this.WatsonTagCheck);
-            this.AddSimpleLabelPanel.Controls.Add(this.PersonalizedTagCheck);
-            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTagBox);
-            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTitle);
-            this.AddSimpleLabelPanel.Location = new System.Drawing.Point(12, 469);
-            this.AddSimpleLabelPanel.Name = "AddSimpleLabelPanel";
-            this.AddSimpleLabelPanel.Size = new System.Drawing.Size(579, 199);
-            this.AddSimpleLabelPanel.TabIndex = 36;
-            this.AddSimpleLabelPanel.Visible = false;
-            // 
-            // LoadingWatsonRecommendationsLabel
-            // 
-            this.LoadingWatsonRecommendationsLabel.AutoSize = true;
-            this.LoadingWatsonRecommendationsLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadingWatsonRecommendationsLabel.ForeColor = System.Drawing.Color.White;
-            this.LoadingWatsonRecommendationsLabel.Location = new System.Drawing.Point(417, 161);
-            this.LoadingWatsonRecommendationsLabel.Name = "LoadingWatsonRecommendationsLabel";
-            this.LoadingWatsonRecommendationsLabel.Size = new System.Drawing.Size(0, 21);
-            this.LoadingWatsonRecommendationsLabel.TabIndex = 13;
-            this.LoadingWatsonRecommendationsLabel.Visible = false;
-            // 
-            // LoadWatsonRecommendationsButton
-            // 
-            this.LoadWatsonRecommendationsButton.Enabled = false;
-            this.LoadWatsonRecommendationsButton.Location = new System.Drawing.Point(261, 162);
-            this.LoadWatsonRecommendationsButton.Name = "LoadWatsonRecommendationsButton";
-            this.LoadWatsonRecommendationsButton.Size = new System.Drawing.Size(131, 23);
-            this.LoadWatsonRecommendationsButton.TabIndex = 12;
-            this.LoadWatsonRecommendationsButton.Text = "Load Recommendations";
-            this.LoadWatsonRecommendationsButton.UseVisualStyleBackColor = true;
-            this.LoadWatsonRecommendationsButton.Click += new System.EventHandler(this.LoadWatsonRecommendationsButton_Click);
-            // 
-            // WatsonRecommendationsComboBox
-            // 
-            this.WatsonRecommendationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.WatsonRecommendationsComboBox.Enabled = false;
-            this.WatsonRecommendationsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.WatsonRecommendationsComboBox.FormattingEnabled = true;
-            this.WatsonRecommendationsComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.WatsonRecommendationsComboBox.Location = new System.Drawing.Point(134, 162);
-            this.WatsonRecommendationsComboBox.Name = "WatsonRecommendationsComboBox";
-            this.WatsonRecommendationsComboBox.Size = new System.Drawing.Size(121, 21);
-            this.WatsonRecommendationsComboBox.TabIndex = 11;
-            // 
-            // WatsonTagCheck
-            // 
-            this.WatsonTagCheck.AutoSize = true;
-            this.WatsonTagCheck.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WatsonTagCheck.ForeColor = System.Drawing.Color.White;
-            this.WatsonTagCheck.Location = new System.Drawing.Point(46, 124);
-            this.WatsonTagCheck.Name = "WatsonTagCheck";
-            this.WatsonTagCheck.Size = new System.Drawing.Size(209, 25);
-            this.WatsonTagCheck.TabIndex = 10;
-            this.WatsonTagCheck.Text = "Watson Recommendation";
-            this.WatsonTagCheck.UseVisualStyleBackColor = true;
-            this.WatsonTagCheck.CheckedChanged += new System.EventHandler(this.WatsonTagCheck_CheckedChanged);
-            // 
-            // PersonalizedTagCheck
-            // 
-            this.PersonalizedTagCheck.AutoSize = true;
-            this.PersonalizedTagCheck.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PersonalizedTagCheck.ForeColor = System.Drawing.Color.White;
-            this.PersonalizedTagCheck.Location = new System.Drawing.Point(46, 55);
-            this.PersonalizedTagCheck.Name = "PersonalizedTagCheck";
-            this.PersonalizedTagCheck.Size = new System.Drawing.Size(146, 25);
-            this.PersonalizedTagCheck.TabIndex = 9;
-            this.PersonalizedTagCheck.Text = "Personalized Tag";
-            this.PersonalizedTagCheck.UseVisualStyleBackColor = true;
-            this.PersonalizedTagCheck.CheckedChanged += new System.EventHandler(this.PersonalizedTagCheck_CheckedChanged);
-            // 
-            // SimpleLabelTagBox
-            // 
-            this.SimpleLabelTagBox.Enabled = false;
-            this.SimpleLabelTagBox.Location = new System.Drawing.Point(134, 91);
-            this.SimpleLabelTagBox.Name = "SimpleLabelTagBox";
-            this.SimpleLabelTagBox.Size = new System.Drawing.Size(261, 20);
-            this.SimpleLabelTagBox.TabIndex = 8;
-            // 
-            // SimpleLabelTitle
-            // 
-            this.SimpleLabelTitle.AutoSize = true;
-            this.SimpleLabelTitle.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SimpleLabelTitle.ForeColor = System.Drawing.Color.White;
-            this.SimpleLabelTitle.Location = new System.Drawing.Point(0, 0);
-            this.SimpleLabelTitle.Name = "SimpleLabelTitle";
-            this.SimpleLabelTitle.Size = new System.Drawing.Size(137, 27);
-            this.SimpleLabelTitle.TabIndex = 6;
-            this.SimpleLabelTitle.Text = "Simple Label";
             // 
             // contextMenuStripImage
             // 
@@ -2434,20 +3192,31 @@
             this.AddLabelPanel.PerformLayout();
             this.AccountPanel.ResumeLayout(false);
             this.AccountPanel.PerformLayout();
+            this.MultipleAddLabelPanel.ResumeLayout(false);
+            this.MultipleAddLabelPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MultipleImagesPictureBox)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.DataPanel.ResumeLayout(false);
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
+            this.AddSimpleLabelPanel.ResumeLayout(false);
+            this.AddSimpleLabelPanel.PerformLayout();
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
             this.AddSpecialLabelPanel.ResumeLayout(false);
             this.AddSpecialLabelPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLongitudeUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLatitudeUpDown)).EndInit();
-            this.AddSimpleLabelPanel.ResumeLayout(false);
-            this.AddSimpleLabelPanel.PerformLayout();
             this.contextMenuStripImage.ResumeLayout(false);
             this.contextMenuStripEditing.ResumeLayout(false);
             this.LeftNewPanel.ResumeLayout(false);
@@ -2666,6 +3435,62 @@
         private System.Windows.Forms.Panel InfoSettingPanel;
         private System.Windows.Forms.Panel TtitlePanel;
         private System.Windows.Forms.Button CollapseInfoPanelButton;
+        private System.Windows.Forms.Panel MultipleAddLabelPanel;
+        private System.Windows.Forms.PictureBox MultipleImagesPictureBox;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox MultipleImagesLabelComboBox;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox comboBox5;
     }
 
 }
