@@ -2013,6 +2013,7 @@ namespace Entrega2_Equipo1
             this.exitToolStripMenuItem.Enabled = true;
             this.addnewlabelbutton.Enabled = true;
             this.SearchTextBox.Enabled = true;
+            menuStrip1.Enabled = true;
         }
 
         private void ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
