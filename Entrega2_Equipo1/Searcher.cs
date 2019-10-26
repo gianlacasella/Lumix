@@ -191,7 +191,7 @@ namespace Entrega2_Equipo1
 									cont++;
 								}
 								break;
-							case "BlackNWhite":
+							case "Grayscale":
 								if (image.ApplyedFilters[EFilter.BlackNWhiteFilter].ToString() == atributes[1])
 								{
 									cont++;
@@ -241,6 +241,12 @@ namespace Entrega2_Equipo1
 								break;
 							case "Windows":
 								if (image.ApplyedFilters[EFilter.WindowsFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "Contrast":
+								if (image.ApplyedFilters[EFilter.Contrast].ToString() == atributes[1])
 								{
 									cont++;
 								}

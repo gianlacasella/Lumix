@@ -17,6 +17,7 @@ namespace Entrega2_Equipo1
         RotateFlipFilter,
         MirrorFilter,
         OldFilmFilter,
-        WindowsFilter
+        WindowsFilter,
+		Contrast
     }
 }

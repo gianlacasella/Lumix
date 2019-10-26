@@ -20,6 +20,13 @@ namespace Entrega2_Equipo1
             return returningImage;
         }
 
+		public Bitmap ApplyContrast(Bitmap bitmap , double contrast)
+		{
+			Bitmap copy = (Bitmap)bitmap.Clone();
+			SetContrast(contrast, copy);
+			return copy;
+		}
+
         public void SetContrast(double contrast, Bitmap bitmap)
         {
             if (contrast < -100) contrast = -100;

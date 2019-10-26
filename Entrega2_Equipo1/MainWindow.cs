@@ -566,6 +566,7 @@ namespace Entrega2_Equipo1
             pictureChosen.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureChosen.Image = image.Image;
             brightnessBar.Value = 0;
+			ContrastBar.Value = 0;
         }
 
         private void ImageEditingBorderClick(object sender, EventArgs e)
@@ -780,7 +781,19 @@ namespace Entrega2_Equipo1
             }
         }
 
-        private void ComboCensor_SelectedIndexChanged(object sender, EventArgs e)
+		private void Contrast_Bar_Scroll(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				image.BitmapImage = producer.Contrast(image.BitmapImage, Convert.ToDouble(ContrastBar.Value));
+				SaveFilterApplyed(EFilter.Contrast, image);
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+			}
+		}
+
+		private void ComboCensor_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (chosenEditingImage != null)
             {

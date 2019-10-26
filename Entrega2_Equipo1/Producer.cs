@@ -113,6 +113,11 @@ namespace Entrega2_Equipo1
             return resultadoClasificacion;
         }
 
+		public Bitmap Contrast(Bitmap bitmap, double contrast)
+		{
+			AutomaticAdjustmentFilter auto = new AutomaticAdjustmentFilter();
+			return auto.ApplyContrast(bitmap, contrast);
+		}
 
         public bool Presentation(List<Image> images)
         {
