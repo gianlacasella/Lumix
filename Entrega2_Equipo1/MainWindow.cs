@@ -783,14 +783,7 @@ namespace Entrega2_Equipo1
 
 		private void Contrast_Bar_Scroll(object sender, EventArgs e)
 		{
-			if (chosenEditingImage != null)
-			{
-				Image image = (Image)chosenEditingImage.Tag;
-				image.BitmapImage = producer.Contrast(image.BitmapImage, Convert.ToDouble(ContrastBar.Value));
-				SaveFilterApplyed(EFilter.Contrast, image);
-				chosenEditingImage.Image = image.BitmapImage;
-				pictureChosen.Image = chosenEditingImage.Image;
-			}
+			
 		}
 
 		private void ComboCensor_SelectedIndexChanged(object sender, EventArgs e)
@@ -2065,6 +2058,30 @@ namespace Entrega2_Equipo1
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
+        }
+
+        private void ContrastBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (chosenEditingImage != null)
+            {
+                Image image = (Image)chosenEditingImage.Tag;
+                image.BitmapImage = producer.Contrast(image.BitmapImage, Convert.ToDouble(ContrastBar.Value));
+                SaveFilterApplyed(EFilter.Contrast, image);
+                chosenEditingImage.Image = image.BitmapImage;
+                pictureChosen.Image = chosenEditingImage.Image;
+            }
+        }
+
+        private void BrightnessBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (chosenEditingImage != null)
+            {
+                Image image = (Image)chosenEditingImage.Tag;
+                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.BrightnessFilter, Color.Empty, brightnessBar.Value);
+                SaveFilterApplyed(EFilter.BrightnessFilter, image);
+                chosenEditingImage.Image = image.BitmapImage;
+                pictureChosen.Image = chosenEditingImage.Image;
+            }
         }
     }
 

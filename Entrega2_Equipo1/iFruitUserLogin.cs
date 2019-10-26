@@ -231,7 +231,7 @@ namespace Entrega2_Equipo1
 
         private void LogInPasswordTextBox_Enter(object sender, EventArgs e)
         {
-            if (LogInPasswordTextBox.Text == "PASSWORD")
+            if (LogInPasswordTextBox.Text == "password")
             {
                 LogInPasswordTextBox.Text = "";
                 LogInPasswordTextBox.UseSystemPasswordChar = true;
@@ -243,15 +243,15 @@ namespace Entrega2_Equipo1
         {
             if (LogInPasswordTextBox.Text == "")
             {
-                LogInPasswordTextBox.Text = "PASSWORD";
+                LogInPasswordTextBox.Text = "password";
                 LogInPasswordTextBox.UseSystemPasswordChar = false;
-                LogInPasswordTextBox.ForeColor = Color.DimGray;
+                LogInPasswordTextBox.ForeColor = Color.Silver;
             }
         }
 
         private void NewUserNameTextBox_Enter(object sender, EventArgs e)
         {
-            if (NewUserNameTextBox.Text == "USERNAME")
+            if (NewUserNameTextBox.Text == "username")
             {
                 NewUserNameTextBox.Text = "";
                 NewUserNameTextBox.ForeColor = Color.White;
@@ -262,14 +262,14 @@ namespace Entrega2_Equipo1
         {
             if (NewUserNameTextBox.Text == "")
             {
-                NewUserNameTextBox.Text = "USERNAME";
-                NewUserNameTextBox.ForeColor = Color.DarkGray;
+                NewUserNameTextBox.Text = "username";
+                NewUserNameTextBox.ForeColor = Color.Silver;
             }
         }
 
         private void NewPasswordTextBox_Enter(object sender, EventArgs e)
         {
-            if (NewPasswordTextBox.Text == "PASSWORD")
+            if (NewPasswordTextBox.Text == "password")
             {
                 NewPasswordTextBox.Text = "";
                 NewPasswordTextBox.UseSystemPasswordChar = true;
@@ -281,9 +281,9 @@ namespace Entrega2_Equipo1
         {
             if (NewPasswordTextBox.Text == "")
             {
-                NewPasswordTextBox.Text = "PASSWORD";
+                NewPasswordTextBox.Text = "password";
                 NewPasswordTextBox.UseSystemPasswordChar = false;
-                NewPasswordTextBox.ForeColor = Color.DarkGray;
+                NewPasswordTextBox.ForeColor = Color.Silver;
             }
         }
 
@@ -340,6 +340,18 @@ namespace Entrega2_Equipo1
         }
 
         #endregion
+
+        private void LogInPasswordTextBox_MouseEnter(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            txt.BackColor = Color.FromArgb(6, 57, 76);
+        }
+
+        private void LogInPasswordTextBox_MouseLeave(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            txt.BackColor = Color.FromArgb(7, 30, 38);
+        }
     }
 
 
