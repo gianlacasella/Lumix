@@ -32,160 +32,221 @@ namespace Entrega2_Equipo1
 							case "HairColor":
 								if (image.SomePersonLabelContains(atributes[0], null, ENationality.None, (EColor)Enum.Parse(typeof(EColor), atributes[1])))
 								{
-                                    cont++;
+									cont++;
 								}
 								break;
 							case "EyesColor":
 								if (image.SomePersonLabelContains(atributes[0], null, ENationality.None, (EColor)Enum.Parse(typeof(EColor), atributes[1])))
 								{
-                                    cont++;
-                                }
+									cont++;
+								}
 								break;
 							case "Sex":
 								if (image.SomePersonLabelContains(atributes[0], null, ENationality.None, EColor.None, (ESex)Enum.Parse(typeof(ESex), atributes[1])))
 								{
-                                    cont++;
-                                }
+									cont++;
+								}
 								break;
 							case "Name":
 								if (image.SomePersonLabelContains(atributes[0], atributes[1]))
 								{
-                                    cont++;
-                                }
+									cont++;
+								}
 								break;
 							case "Surname":
-                                //Console.WriteLine(atributes[1]);
+								//Console.WriteLine(atributes[1]);
 								if (image.SomePersonLabelContains(atributes[0], atributes[1]))
 								{
-                                    cont++;
-                                }
+									cont++;
+								}
 								break;
 							case "Birthdate":
 								if (image.SomePersonLabelContains(atributes[0], atributes[1]))
 								{
-                                    cont++;
-                                }
+									cont++;
+								}
 								break;
-							
+
 							case "FaceLocation":
-                                string[] subFACEstring = atributes[1].Split(new string[] { "," }, StringSplitOptions.None);
-                                double[] faceCoords = { Convert.ToDouble(subFACEstring[0]), Convert.ToDouble(subFACEstring[1]), Convert.ToDouble(subFACEstring[2]), Convert.ToDouble(subFACEstring[3]) };
-                                if (image.SomePersonLabelContains(atributes[0], null, ENationality.None, EColor.None, ESex.None, faceCoords))
+								string[] subFACEstring = atributes[1].Split(new string[] { "," }, StringSplitOptions.None);
+								double[] faceCoords = { Convert.ToDouble(subFACEstring[0]), Convert.ToDouble(subFACEstring[1]), Convert.ToDouble(subFACEstring[2]), Convert.ToDouble(subFACEstring[3]) };
+								if (image.SomePersonLabelContains(atributes[0], null, ENationality.None, EColor.None, ESex.None, faceCoords))
 								{
-                                    cont++;
-                                }
-                                break;
-							
+									cont++;
+								}
+								break;
+
 							case "Nationality":
 								if (image.SomePersonLabelContains(atributes[0], null, (ENationality)Enum.Parse(typeof(ENationality), atributes[1])))
 								{
-                                    cont++;
-                                }
+									cont++;
+								}
 								break;
 
-                            case "GeographicLocation":
-                                
-                                string[] substring = atributes[1].Split(new string[] { "," }, StringSplitOptions.None);
-                                double[] coords = { Convert.ToDouble(substring[0]), Convert.ToDouble(substring[1]) };
-                                if (image.SomeSpecialLabelContains(atributes[0], coords))
-                                {
-                                    cont++;
-                                }
-                                break;
+							case "GeographicLocation":
 
-                            case "Address":
-                                if (image.SomeSpecialLabelContains(atributes[0], null, atributes[1]))
-                                {
-                                    cont++;
-                                }
-                                break;
-                            case "Photographer":
-                                if (image.SomeSpecialLabelContains(atributes[0], null, atributes[1]))
-                                {
-                                    cont++;
-                                }
-                                break;
-                            case "Photomotive":
-                                if (image.SomeSpecialLabelContains(atributes[0], null, atributes[1]))
-                                {
-                                    cont++;
-                                }
-                                break;
-                            case "Selfie":
-                                if (image.SomeSpecialLabelContains(atributes[0], null, null, Convert.ToBoolean(atributes[1])))
-                                {
-                                    cont++;
-                                }
-                                break;
-                            case "Sentence":
-                                if (image.SomeSimpleLabelContains(atributes[0], atributes[1]))
-                                {
-                                    cont++;
-                                }
-                                break;
-                            case "ImageName": //string
-                                if (image.Name == atributes[1])
-                                {
-                                    cont++;
-                                }
-                                break;
-                            case "Calification": // int 
-                                try
-                                {
-                                    if (image.Calification == Convert.ToInt32(atributes[1]))
-                                    {
-                                        cont++;
-                                    }
-                                }
-                                catch
-                                {
-                                    Console.WriteLine("Calification => Parameter: {0} must be an integer", atributes[1]);
-                                }
-                                break;
-                            case "Resolution": // int[]
-                                try
-                                {
-                                    string[] resString = atributes[1].Split(new string[] { "," }, StringSplitOptions.None);
-                                    int[] resolution = { Convert.ToInt32(resString[0]), Convert.ToInt32(resString[1]) };
-                                    if (image.Resolution[0] == resolution[0] && image.Resolution[1] == resolution[1])
-                                    {
-                                        cont++;
-                                    }
-                                }
-                                catch
-                                {
-                                    Console.WriteLine("Resolution => Parameter: {0} must be an integer array", atributes[1]);
-                                }
-                                break;
-                            case "AspectRatio": // int[]
-                                try
-                                {
-                                    string[] aspectString = atributes[1].Split(new string[] { "," }, StringSplitOptions.None);
-                                    int[] aspectRatio = { Convert.ToInt32(aspectString[0]), Convert.ToInt32(aspectString[1]) };
-                                    if (image.Resolution[0] == aspectRatio[0] && image.Resolution[1] == aspectRatio[1])
-                                    {
-                                        cont++;
-                                    }
-                                }
-                                catch
-                                {
-                                    Console.WriteLine("AspectRatio => Parameter: {0} must be an integer array", atributes[1]);
-                                }
-                                break;
-                            case "DarkClear": // bool
-                                try
-                                {
-                                    if ( image.DarkClear == Convert.ToBoolean(atributes[1]))
-                                    {
-                                        cont++;
-                                    }
-                                }
-                                catch
-                                {
-                                    Console.WriteLine("DarkClear => Parameter: {0} must be a boolean", atributes[1]);
-                                }
-                                break;
-                        }               
+								string[] substring = atributes[1].Split(new string[] { "," }, StringSplitOptions.None);
+								double[] coords = { Convert.ToDouble(substring[0]), Convert.ToDouble(substring[1]) };
+								if (image.SomeSpecialLabelContains(atributes[0], coords))
+								{
+									cont++;
+								}
+								break;
+
+							case "Address":
+								if (image.SomeSpecialLabelContains(atributes[0], null, atributes[1]))
+								{
+									cont++;
+								}
+								break;
+							case "Photographer":
+								if (image.SomeSpecialLabelContains(atributes[0], null, atributes[1]))
+								{
+									cont++;
+								}
+								break;
+							case "Photomotive":
+								if (image.SomeSpecialLabelContains(atributes[0], null, atributes[1]))
+								{
+									cont++;
+								}
+								break;
+							case "Selfie":
+								if (image.SomeSpecialLabelContains(atributes[0], null, null, Convert.ToBoolean(atributes[1])))
+								{
+									cont++;
+								}
+								break;
+							case "Sentence":
+								if (image.SomeSimpleLabelContains(atributes[0], atributes[1]))
+								{
+									cont++;
+								}
+								break;
+							case "ImageName": //string
+								if (image.Name == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "Calification": // int 
+								try
+								{
+									if (image.Calification == Convert.ToInt32(atributes[1]))
+									{
+										cont++;
+									}
+								}
+								catch
+								{
+									Console.WriteLine("Calification => Parameter: {0} must be an integer", atributes[1]);
+								}
+								break;
+							case "Resolution": // int[]
+								try
+								{
+									string[] resString = atributes[1].Split(new string[] { "," }, StringSplitOptions.None);
+									int[] resolution = { Convert.ToInt32(resString[0]), Convert.ToInt32(resString[1]) };
+									if (image.Resolution[0] == resolution[0] && image.Resolution[1] == resolution[1])
+									{
+										cont++;
+									}
+								}
+								catch
+								{
+									Console.WriteLine("Resolution => Parameter: {0} must be an integer array", atributes[1]);
+								}
+								break;
+							case "AspectRatio": // int[]
+								try
+								{
+									string[] aspectString = atributes[1].Split(new string[] { "," }, StringSplitOptions.None);
+									int[] aspectRatio = { Convert.ToInt32(aspectString[0]), Convert.ToInt32(aspectString[1]) };
+									if (image.Resolution[0] == aspectRatio[0] && image.Resolution[1] == aspectRatio[1])
+									{
+										cont++;
+									}
+								}
+								catch
+								{
+									Console.WriteLine("AspectRatio => Parameter: {0} must be an integer array", atributes[1]);
+								}
+								break;
+							case "DarkClear": // bool
+								try
+								{
+									if (image.DarkClear == Convert.ToBoolean(atributes[1]))
+									{
+										cont++;
+									}
+								}
+								catch
+								{
+									Console.WriteLine("DarkClear => Parameter: {0} must be a boolean", atributes[1]);
+								}
+								break;
+							case "AutomaticAdjustment":
+								if (image.ApplyedFilters[EFilter.AutomaticAdjustmentFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "BlackNWhite":
+								if (image.ApplyedFilters[EFilter.BlackNWhiteFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "Brightness":
+								if (image.ApplyedFilters[EFilter.BrightnessFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "Color":
+								if (image.ApplyedFilters[EFilter.ColorFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "Invert":
+								if (image.ApplyedFilters[EFilter.InvertFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "Sepia":
+								if (image.ApplyedFilters[EFilter.SepiaFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "RotateFlip":
+								if (image.ApplyedFilters[EFilter.RotateFlipFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "Mirror":
+								if (image.ApplyedFilters[EFilter.MirrorFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "OldFilm":
+								if (image.ApplyedFilters[EFilter.OldFilmFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+							case "Windows":
+								if (image.ApplyedFilters[EFilter.WindowsFilter].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
+
+						}               
                     }
                 if (cont == subDec.Count) //Contador de parametros que calzan, es igual a la cantidad de parametros en subDec
                     {
