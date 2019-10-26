@@ -1132,7 +1132,6 @@ namespace Entrega2_Equipo1
                 Image MergeImage = new Image(merged, new List<Label>(), -1);
                 producer.LoadImagesToWorkingArea(new List<Image>() { MergeImage });
                 EditingPanel_Paint(sender, e);
-                featuresImage.Clear();
                 pictureChosen.Image = merged;
             }
             else
@@ -1226,7 +1225,6 @@ namespace Entrega2_Equipo1
                         Image MergeImage = new Image(collage, new List<Label>(), -1);
                         producer.LoadImagesToWorkingArea(new List<Image>() { MergeImage });
                         EditingPanel_Paint(sender, e);
-                        featuresImage.Clear();
                         pictureChosen.Image = collage;
                         panelCollage.Visible = false;
                         textBaseW.Text = "";
@@ -1242,7 +1240,6 @@ namespace Entrega2_Equipo1
                     Image MergeImage = new Image(collage, new List<Label>(), -1);
                     producer.LoadImagesToWorkingArea(new List<Image>() { MergeImage });
                     EditingPanel_Paint(sender, e);
-                    featuresImage.Clear();
                     pictureChosen.Image = collage;
                     panelCollage.Visible = false;
                     textBaseW.Text = "";
@@ -1783,7 +1780,6 @@ namespace Entrega2_Equipo1
                     Image mosaicImage = new Image(mosaic, new List<Label>(), -1);
                     producer.LoadImagesToWorkingArea(new List<Image>() { mosaicImage });
                     EditingPanel_Paint(sender, e);
-                    featuresImage.Clear();
                     pictureChosen.Image = mosaic;
                     InsertWidthText.Text = "";
                     InsertHeightText.Text = "";
