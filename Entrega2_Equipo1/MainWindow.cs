@@ -2108,6 +2108,30 @@ namespace Entrega2_Equipo1
             btn.Font = new Font(btn.Font, FontStyle.Regular);
         }
 
+		private void CustomFilter_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				if (colorDialogFilter.ShowDialog() == DialogResult.OK)
+				{
+					Image image = (Image)chosenEditingImage.Tag;
+					AutomaticAdjustmentFilter auto = new AutomaticAdjustmentFilter();
+					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
+					image.BitmapImage = producer.ApplyFilter(image, EFilter.BrightnessFilter, Color.Red, 15);
+					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
+					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
+					image.BitmapImage = producer.ApplyFilter(image, EFilter.BrightnessFilter, Color.Red, 30);
+					image.BitmapImage = producer.ApplyFilter(image, EFilter.SepiaFilter);
+					image.BitmapImage = producer.ApplyFilter(image, EFilter.BlackNWhiteFilter);
+					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
+					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
+					image.BitmapImage = producer.ApplyFilter(image, EFilter.ColorFilter, colorDialogFilter.Color);
+					//SaveFilterApplyed(EFilter.SepiaFilter, image);
+					chosenEditingImage.Image = image.BitmapImage;
+					pictureChosen.Image = chosenEditingImage.Image;
+				}
+			}
+		}
 	}
 
 	public class MyRenderer : ToolStripProfessionalRenderer

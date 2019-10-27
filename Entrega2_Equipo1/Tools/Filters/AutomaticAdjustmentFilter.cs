@@ -76,7 +76,7 @@ namespace Entrega2_Equipo1
 
 			Value = (100.0f + Value) / 100.0f;
 			Value *= Value;
-			Bitmap NewBitmap = bitmap;
+			Bitmap NewBitmap = (Bitmap)bitmap.Clone();
 			BitmapData data = NewBitmap.LockBits(
 				new Rectangle(0, 0, NewBitmap.Width, NewBitmap.Height),
 				ImageLockMode.ReadWrite,
