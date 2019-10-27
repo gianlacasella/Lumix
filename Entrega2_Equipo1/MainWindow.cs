@@ -2106,13 +2106,6 @@ namespace Entrega2_Equipo1
             btn.Font = new Font(btn.Font, FontStyle.Regular);
         }
 
-		private void UnsafeButton_Click(object sender, EventArgs e)
-		{
-			AutomaticAdjustmentFilter Filter = new AutomaticAdjustmentFilter();
-			Image image = (Image)chosenEditingImage.Tag;
-			chosenEditingImage.Image = Filter.SetContrast(50F, image.BitmapImage);
-			pictureChosen.Image = chosenEditingImage.Image;
-		}
 	}
 
 	public class MyRenderer : ToolStripProfessionalRenderer

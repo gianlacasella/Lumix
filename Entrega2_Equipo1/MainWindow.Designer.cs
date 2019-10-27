@@ -247,7 +247,6 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.brightnessBar = new System.Windows.Forms.TrackBar();
 			this.comboRotate = new System.Windows.Forms.ComboBox();
-			this.UnsafeButton = new System.Windows.Forms.Button();
 			this.button10 = new System.Windows.Forms.Button();
 			this.button7 = new System.Windows.Forms.Button();
 			this.button8 = new System.Windows.Forms.Button();
@@ -2897,7 +2896,6 @@
 			// 
 			// splitContainer1.Panel2
 			// 
-			this.splitContainer1.Panel2.Controls.Add(this.UnsafeButton);
 			this.splitContainer1.Panel2.Controls.Add(this.button10);
 			this.splitContainer1.Panel2.Controls.Add(this.button7);
 			this.splitContainer1.Panel2.Controls.Add(this.button8);
@@ -2979,16 +2977,6 @@
 			this.comboRotate.TabIndex = 23;
 			this.ChangeYourPictureToolTip.SetToolTip(this.comboRotate, "Flip and rotate");
 			this.comboRotate.SelectedIndexChanged += new System.EventHandler(this.ComboRotate_SelectedIndexChanged);
-			// 
-			// UnsafeButton
-			// 
-			this.UnsafeButton.Location = new System.Drawing.Point(136, 38);
-			this.UnsafeButton.Name = "UnsafeButton";
-			this.UnsafeButton.Size = new System.Drawing.Size(75, 23);
-			this.UnsafeButton.TabIndex = 36;
-			this.UnsafeButton.Text = "Unsafe";
-			this.UnsafeButton.UseVisualStyleBackColor = true;
-			this.UnsafeButton.Click += new System.EventHandler(this.UnsafeButton_Click);
 			// 
 			// button10
 			// 
@@ -3636,7 +3624,6 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label ValidNotValidPatternLabel;
 		private System.Windows.Forms.TrackBar ContrastBar;
-		private System.Windows.Forms.Button UnsafeButton;
 	}
 
 }
