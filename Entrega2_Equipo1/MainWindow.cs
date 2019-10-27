@@ -254,7 +254,7 @@ namespace Entrega2_Equipo1
                     producer.LoadImagesToWorkingArea(new List<Image>() { (Image)PIC.Tag });
                     EditingPanel_Paint(sender, e);
                     //PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
-                    OpenRightPanelButton_Click(this, EventArgs.Empty);
+                    if (RightPanel.Visible == false) OpenRightPanelButton_Click(this, EventArgs.Empty);
                 }
             }
         }
