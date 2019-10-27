@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -9,7 +10,9 @@ namespace Entrega2_Equipo1
 {
     public partial class MainWindow : Form
     {
-        Library library;
+		private string[] files;
+		private BackgroundWorker worker = new BackgroundWorker();
+		Library library;
         Producer producer;
         ProgramManager PM = new ProgramManager();
         bool Saved = true;
@@ -41,7 +44,12 @@ namespace Entrega2_Equipo1
         {
             InitializeComponent();
             this.menuStrip1.Renderer = new MyRenderer();
-        }
+			worker.DoWork += WorkerImportFiles;
+			worker.ProgressChanged += WorkerImportFilesProgess;
+			worker.WorkerReportsProgress = true;
+			worker.RunWorkerCompleted += WorkerImportFileCompleted;
+
+		}
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -94,26 +102,41 @@ namespace Entrega2_Equipo1
             DialogResult dr = ofd.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                this.ToolbarProgressBar.Value = 0;
-                this.ToolbarProgressBar.Visible = true;
-                this.Cursor = Cursors.WaitCursor;
-                int count = 1;
-                string[] files = ofd.FileNames;
-                foreach (string path in files)
-                {
-                    string name = Path.GetFileNameWithoutExtension(path);
-                    Image returningImage = new Image(path, new List<Label>(), -1);
-                    returningImage.Name = name;
-                    library.AddImage(returningImage);
-                    this.ToolbarProgressBar.Increment((count * 100) / files.Length);
-                }
-                this.ToolbarProgressBar.Visible = false;
-                this.ToolbarProgressBar.Value = 0;
-                ReLoadPanelImage(sender, e);
-                Saved = false;
-                this.Cursor = Cursors.Arrow;
-            }
+                files = ofd.FileNames;
+				this.ToolbarProgressBar.Value = 0;
+				this.ToolbarProgressBar.Visible = true;
+				this.Cursor = Cursors.WaitCursor;
+				worker.RunWorkerAsync();
+				this.Cursor = Cursors.Arrow;
+			}
         }
+
+		private void WorkerImportFiles(object sender, DoWorkEventArgs e)
+		{
+			int cont = 0;
+			foreach (string path in files)
+			{
+				string name = Path.GetFileNameWithoutExtension(path);
+				Image returningImage = new Image(path, new List<Label>(), -1);
+				returningImage.Name = name;
+				library.AddImage(returningImage);
+				int percent = (cont * 100) / files.Length;
+				worker.ReportProgress(percent);
+				cont++;
+			}
+		}
+
+		private void WorkerImportFilesProgess(object sender, ProgressChangedEventArgs e)
+		{
+			this.ToolbarProgressBar.Value = e.ProgressPercentage;
+		}
+
+		private void WorkerImportFileCompleted(object sender, RunWorkerCompletedEventArgs e)
+		{
+			ReLoadPanelImage(sender, e);
+			Saved = false;
+			this.ToolbarProgressBar.Value = 0;
+		}
 
         private void RemoveFromLibraryToolStripMenuItem_Click(object sender, EventArgs e)
         {
