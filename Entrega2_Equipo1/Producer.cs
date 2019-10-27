@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Entrega2_Equipo1
 {
@@ -173,10 +174,10 @@ namespace Entrega2_Equipo1
 
         }
 
-        public System.Drawing.Bitmap Mosaic (Image imagenBase, List<Image> Imagenes, int width, int height, int Bwidth, int Bheight)
+        public System.Drawing.Bitmap Mosaic (Image imagenBase, List<Image> Imagenes, int width, int height, int Bwidth, int Bheight ,ProgressBar progressBar)
         {
 			AddImage AI = new AddImage();
-			return AI.Mosaic(imagenBase, Imagenes, width, height, Bwidth, Bheight);
+			return AI.Mosaic(imagenBase, Imagenes, width, height, Bwidth, Bheight, progressBar);
         }
 
         public System.Drawing.Bitmap Collage(List<Image> images, int baseWidth, int baseHeight, int insertWidth, int insertHeight, System.Drawing.Bitmap backgroundImage = null, int R=0, int G=0, int B=0)

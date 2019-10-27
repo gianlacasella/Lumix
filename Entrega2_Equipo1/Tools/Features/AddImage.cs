@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Entrega2_Equipo1
 {
@@ -62,9 +64,9 @@ namespace Entrega2_Equipo1
         }
 
 
-        public Bitmap Mosaic(Image image, List<Image> images, int width, int height, int BaseWidth, int BaseHeight)
+        public Bitmap Mosaic(Image image, List<Image> images, int width, int height, int BaseWidth, int BaseHeight, ProgressBar progressBar)
         {
-            Console.WriteLine("Loading images, please wait");
+            //Console.WriteLine("Loading images, please wait");
             //Converting loaded image into bitmap
             Resizer resizer = new Resizer();
             Bitmap imageBit = image.BitmapImage;
@@ -74,7 +76,7 @@ namespace Entrega2_Equipo1
 
             int bmpWidth = bmp.Width / (bmp.Width / width);
             int bmpHeight = bmp.Height / (bmp.Height / height);
-            Console.WriteLine("Dividing Image");
+            //Console.WriteLine("Dividing Image");
             List<int[]> coords = new List<int[]>();
             Dictionary<Bitmap, int[]> dict = new Dictionary<Bitmap, int[]>();
             for (int i = 0; i < (bmp.Width / width); i++)
@@ -102,7 +104,7 @@ namespace Entrega2_Equipo1
                 list.Add(keys.Key);
             }
 
-            Console.WriteLine("Getting Avg RGBS");
+            //Console.WriteLine("Getting Avg RGBS");
             List<int[]> rgbAVG = avgRGB(list);
 
 
@@ -116,19 +118,29 @@ namespace Entrega2_Equipo1
             int AvgCont = 0;
             int max = list.Count;
             ColorFilter CF = new ColorFilter();
-            while (true)
+			BackgroundWorker backgroundWorker = new BackgroundWorker();
+			progressBar.Value = 0;
+			progressBar.Visible = true;
+			progressBar.Maximum = max;
+			progressBar.Step = 1;
+			while (true)
             {
-                double porcentage = ((double)AvgCont / (double)max);
-                BarraCarga("Creando Mosaico", porcentage);
+                //double porcentage = ((double)AvgCont / (double)max);
+
                 if (AvgCont < max)
                 {
                     Color color = Color.FromArgb(rgbAVG[AvgCont][0], rgbAVG[AvgCont][1], rgbAVG[AvgCont][2]);
                     baseImage = InsertImage(baseImage, CF.ApplyFilter(Random(images), color)
                     , coords[AvgCont][0], coords[AvgCont][1], coords[AvgCont][2], coords[AvgCont][3]);
-                }
+					//progressBar.Value=((AvgCont * 100) / max);
+					progressBar.PerformStep();
+
+				}
                 else
                 {
-                    return baseImage;
+					progressBar.Visible = false;
+					progressBar.Value = 0;
+					return baseImage;
                 }
                 AvgCont++;
                 GC.Collect();
@@ -136,7 +148,8 @@ namespace Entrega2_Equipo1
 
         }
 
-        private List<int[]> avgRGB(List<Bitmap> list)
+
+		private List<int[]> avgRGB(List<Bitmap> list)
         {
             List<int[]> rgbAVG = new List<int[]>();
             foreach (Bitmap bitmap in list)

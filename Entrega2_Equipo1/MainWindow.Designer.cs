@@ -276,6 +276,7 @@
 			this.pictureChosen = new System.Windows.Forms.PictureBox();
 			this.topauxlabel = new System.Windows.Forms.Panel();
 			this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.feauturesProgressBar = new System.Windows.Forms.ProgressBar();
 			this.menuStrip1.SuspendLayout();
 			this.AddLabelPanel.SuspendLayout();
 			this.AccountPanel.SuspendLayout();
@@ -3411,12 +3412,22 @@
 			this.topauxlabel.TabIndex = 7;
 			this.topauxlabel.Click += new System.EventHandler(this.Topauxlabel_Click);
 			// 
+			// feauturesProgressBar
+			// 
+			this.feauturesProgressBar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.feauturesProgressBar.Location = new System.Drawing.Point(1016, 9);
+			this.feauturesProgressBar.Name = "feauturesProgressBar";
+			this.feauturesProgressBar.Size = new System.Drawing.Size(225, 23);
+			this.feauturesProgressBar.TabIndex = 7;
+			this.feauturesProgressBar.Visible = false;
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
 			this.ClientSize = new System.Drawing.Size(1646, 783);
+			this.Controls.Add(this.feauturesProgressBar);
 			this.Controls.Add(this.RightPanel);
 			this.Controls.Add(this.OpenRightPanelPanel);
 			this.Controls.Add(this.LeftNewPanel);
@@ -3749,6 +3760,7 @@
         private System.Windows.Forms.Panel ShowMorePanel;
         private System.Windows.Forms.Button ShowSlidersButton;
 		private System.Windows.Forms.Button CropButton;
+		private System.Windows.Forms.ProgressBar feauturesProgressBar;
 	}
 
 }

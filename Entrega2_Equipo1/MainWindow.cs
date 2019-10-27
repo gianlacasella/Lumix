@@ -1782,7 +1782,7 @@ namespace Entrega2_Equipo1
 				int BHeight = Convert.ToInt32(BaseHMosaicText.Text);
 				if (chosenEditingImage != null)
                 {
-                    Bitmap mosaic = PM.producer.Mosaic((Image)chosenEditingImage.Tag, featuresImage, width, height, BWidth, BHeight);
+                    Bitmap mosaic = PM.producer.Mosaic((Image)chosenEditingImage.Tag, featuresImage, width, height, BWidth, BHeight, feauturesProgressBar);
                     Image mosaicImage = new Image(mosaic, new List<Label>(), -1);
                     producer.LoadImagesToWorkingArea(new List<Image>() { mosaicImage });
                     EditingPanel_Paint(sender, e);
@@ -1881,20 +1881,23 @@ namespace Entrega2_Equipo1
             DialogResult dr = ofd.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                this.ToolbarProgressBar.Value = 0;
+				this.ToolbarProgressBar.Value = 0;
+				this.ToolbarProgressBar.Visible = true;
+				this.ToolbarProgressBar.Step = 1;
+				this.ToolbarProgressBar.Value = 0;
                 this.ToolbarProgressBar.Visible = true;
                 this.Cursor = Cursors.WaitCursor;
-                int count = 1;
                 string[] files = ofd.FileNames;
-                foreach (string path in files)
+				this.ToolbarProgressBar.Maximum = files.Length;
+				foreach (string path in files)
                 {
                     string name = Path.GetFileNameWithoutExtension(path);
                     Image returningImage = new Image(path, new List<Label>(), -1);
                     returningImage.Name = name;
                     library.AddImage(returningImage);
                     importedImages.Add(returningImage);
-                    this.ToolbarProgressBar.Increment((count * 100) / files.Length);
-                }
+					this.ToolbarProgressBar.PerformStep();
+				}
                 this.ToolbarProgressBar.Visible = false;
                 this.ToolbarProgressBar.Value = 0;
                 ReLoadPanelImage(sender, e);
