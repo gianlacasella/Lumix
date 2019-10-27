@@ -1752,6 +1752,7 @@ namespace Entrega2_Equipo1
                     {
                         ValidNotValidPatternLabel.Text = "No results";
                         ValidNotValidPatternLabel.ForeColor = Color.FromArgb(34,160,182);
+                        
                     }
                 }
                 else
@@ -1762,8 +1763,9 @@ namespace Entrega2_Equipo1
             catch
             {
                 ValidNotValidPatternLabel.Text = "Not valid pattern";
+                ReLoadPanelImage(this, EventArgs.Empty);
                 ValidNotValidPatternLabel.ForeColor = Color.FromArgb(203, 12, 89);
-                return; // hAy QuE uSaR rEtUrN eN uN mEt0dO vOiD pOr CoNvEnCiON // pues si
+                return;
             }
         }
 
