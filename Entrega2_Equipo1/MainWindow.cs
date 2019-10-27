@@ -2195,13 +2195,16 @@ namespace Entrega2_Equipo1
 				int newHeight = newForm.ReturningHeight;
 				int newWidth = newForm.ReturningWidth;
 				//x, y, width, height
-				double[] coordinates = {Convert.ToDouble(newLeft), Convert.ToDouble(newTop), Convert.ToDouble(newWidth), Convert.ToDouble(newHeight) };
-				image.BitmapImage = scissors.Crop(image.BitmapImage, coordinates);
-				image.ReLoadAspectRatio();
-				image.ReLoadResolution();
-				chosenEditingImage.Image = image.BitmapImage;
-				pictureChosen.Image = chosenEditingImage.Image;
-				EditingPanel_Paint(sender, e);
+				if (newForm.Exit)
+				{
+					double[] coordinates = { Convert.ToDouble(newLeft), Convert.ToDouble(newTop), Convert.ToDouble(newWidth), Convert.ToDouble(newHeight) };
+					image.BitmapImage = scissors.Crop(image.BitmapImage, coordinates);
+					image.ReLoadAspectRatio();
+					image.ReLoadResolution();
+					chosenEditingImage.Image = image.BitmapImage;
+					pictureChosen.Image = chosenEditingImage.Image;
+					EditingPanel_Paint(sender, e);
+				}
 			}
 		}
 
@@ -2247,6 +2250,7 @@ namespace Entrega2_Equipo1
 				}
 			}
 		}
+
 	}
 
 	public class MyRenderer : ToolStripProfessionalRenderer

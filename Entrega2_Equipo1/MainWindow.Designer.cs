@@ -213,6 +213,7 @@
 			this.InformationPanelLabel = new System.Windows.Forms.Label();
 			this.DeleteLabelButton = new System.Windows.Forms.Button();
 			this.DownRightPanel = new System.Windows.Forms.Panel();
+			this.PaintButton = new System.Windows.Forms.Button();
 			this.CropButton = new System.Windows.Forms.Button();
 			this.SmartListsPanel = new System.Windows.Forms.Panel();
 			this.MosaicPanel = new System.Windows.Forms.Panel();
@@ -277,7 +278,6 @@
 			this.topauxlabel = new System.Windows.Forms.Panel();
 			this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.feauturesProgressBar = new System.Windows.Forms.ProgressBar();
-			this.PaintButton = new System.Windows.Forms.Button();
 			this.menuStrip1.SuspendLayout();
 			this.AddLabelPanel.SuspendLayout();
 			this.AccountPanel.SuspendLayout();
@@ -2613,6 +2613,24 @@
 			this.DownRightPanel.Size = new System.Drawing.Size(989, 264);
 			this.DownRightPanel.TabIndex = 41;
 			// 
+			// PaintButton
+			// 
+			this.PaintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+			this.PaintButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.PaintButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+			this.PaintButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+			this.PaintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.PaintButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.PaintButton.ForeColor = System.Drawing.Color.White;
+			this.PaintButton.Location = new System.Drawing.Point(732, 3);
+			this.PaintButton.Name = "PaintButton";
+			this.PaintButton.Size = new System.Drawing.Size(87, 30);
+			this.PaintButton.TabIndex = 42;
+			this.PaintButton.Text = "Paint";
+			this.ChangeYourPictureToolTip.SetToolTip(this.PaintButton, "Crop Image");
+			this.PaintButton.UseVisualStyleBackColor = false;
+			this.PaintButton.Click += new System.EventHandler(this.PaintButton_Click);
+			// 
 			// CropButton
 			// 
 			this.CropButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
@@ -3422,24 +3440,6 @@
 			this.feauturesProgressBar.Size = new System.Drawing.Size(225, 23);
 			this.feauturesProgressBar.TabIndex = 7;
 			this.feauturesProgressBar.Visible = false;
-			// 
-			// PaintButton
-			// 
-			this.PaintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-			this.PaintButton.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.PaintButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-			this.PaintButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-			this.PaintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.PaintButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.PaintButton.ForeColor = System.Drawing.Color.White;
-			this.PaintButton.Location = new System.Drawing.Point(732, 3);
-			this.PaintButton.Name = "PaintButton";
-			this.PaintButton.Size = new System.Drawing.Size(87, 30);
-			this.PaintButton.TabIndex = 42;
-			this.PaintButton.Text = "Paint";
-			this.ChangeYourPictureToolTip.SetToolTip(this.PaintButton, "Crop Image");
-			this.PaintButton.UseVisualStyleBackColor = false;
-			this.PaintButton.Click += new System.EventHandler(this.PaintButton_Click);
 			// 
 			// MainWindow
 			// 
