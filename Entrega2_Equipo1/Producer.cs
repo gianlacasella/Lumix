@@ -40,11 +40,11 @@ namespace Entrega2_Equipo1
             return;
         }
 
-		public bool RemoveImage(string nameImage)
+		public bool RemoveImage(Image image)
 		{
 			foreach (Image imag in WorkingArea.WorkingAreaImages)
 			{
-				if (imag.Name == nameImage)
+				if (imag == image)
 				{
 					WorkingArea.WorkingAreaImages.Remove(imag);
 					return true;

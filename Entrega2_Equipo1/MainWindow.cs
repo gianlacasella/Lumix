@@ -129,7 +129,7 @@ namespace Entrega2_Equipo1
                     Control sourceControl = owner.SourceControl;
                     PictureBox PIC = (PictureBox)sourceControl;
                     Image im = (Image)PIC.Tag;
-                    library.RemoveImage(im.Name);
+                    library.RemoveImage(im);
                     ReLoadPanelImage(sender, e);
                     Saved = false;
                     if (PIC == chosenImage)
@@ -287,8 +287,8 @@ namespace Entrega2_Equipo1
 
         private void PanelImages_Paint(object sender, EventArgs e)
         {
-            //METODO QUE CARGA IMAGENES AUTOMATICAMENTE
-        }
+			//METODO QUE CARGA IMAGENES AUTOMATICAMENTE
+		}
 
         private void PanelImages_AddImages()
         {
@@ -310,8 +310,16 @@ namespace Entrega2_Equipo1
                 pic.ContextMenuStrip = contextMenuStripImage;
                 pic.Name = image.Name;
                 pic.Cursor = Cursors.Hand;
-
-                x += pic.Width + 10;
+				if (chosenImage != null)
+				{
+					if (pic.Image == chosenImage.Image && pic.Tag == chosenImage.Tag && pic.Name == chosenImage.Name)
+					{
+						chosenImage.Location = pic.Location;
+						pic = chosenImage;
+						chosenImage.BorderStyle = BorderStyle.Fixed3D;
+					}
+				}
+				x += pic.Width + 10;
                 maxHeight = Math.Max(pic.Height, maxHeight);
                 if (x > this.panelImages.Width - 100)
                 {
@@ -547,8 +555,16 @@ namespace Entrega2_Equipo1
                 pic.Click += MainEditingImage;
                 pic.ContextMenuStrip = contextMenuStripEditing;
                 pic.Name = image.Name;
-
-                x += pic.Width + 10;
+				if (chosenEditingImage != null)
+				{
+					if (pic.Image == chosenEditingImage.Image && pic.Tag == chosenEditingImage.Tag && pic.Name == chosenEditingImage.Name)
+					{
+						chosenEditingImage.Location = pic.Location;
+						pic = chosenEditingImage;
+						chosenEditingImage.BorderStyle = BorderStyle.Fixed3D;
+					}
+				}
+				x += pic.Width + 10;
                 maxHeight = Math.Max(pic.Height, maxHeight);
                 if (x > this.topauxlabel.Width - 100)
                 {
@@ -610,7 +626,7 @@ namespace Entrega2_Equipo1
                             Control sourceControl = owner.SourceControl;
                             PictureBox PIC = (PictureBox)sourceControl;
                             Image im = (Image)PIC.Tag;
-                            PM.producer.RemoveImage(im.Name);
+                            PM.producer.RemoveImage(im);
                             ReLoadEditingPanelImage(sender, e);
                             Saved = false;
                             if (PIC == chosenEditingImage)
@@ -664,7 +680,7 @@ namespace Entrega2_Equipo1
                     Control sourceControl = owner.SourceControl;
                     PictureBox PIC = (PictureBox)sourceControl;
                     Image im = (Image)PIC.Tag;
-                    PM.producer.RemoveImage(im.Name);
+                    PM.producer.RemoveImage(im);
                     library.AddImage(im);
                     ReLoadPanelImage(sender, e);
                     ReLoadEditingPanelImage(sender, e);
@@ -771,15 +787,8 @@ namespace Entrega2_Equipo1
 
         private void TrackBar1_Scroll(object sender, EventArgs e)
         {
-            if (chosenEditingImage != null)
-            {
-                Image image = (Image)chosenEditingImage.Tag;
-                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.BrightnessFilter, Color.Empty, brightnessBar.Value);
-                SaveFilterApplyed(EFilter.BrightnessFilter, image);
-                chosenEditingImage.Image = image.BitmapImage;
-                pictureChosen.Image = chosenEditingImage.Image;
-            }
-        }
+
+		}
 
 		private void Contrast_Bar_Scroll(object sender, EventArgs e)
 		{
@@ -2096,9 +2105,17 @@ namespace Entrega2_Equipo1
             Button btn = (Button)sender;
             btn.Font = new Font(btn.Font, FontStyle.Regular);
         }
-    }
 
-    public class MyRenderer : ToolStripProfessionalRenderer
+		private void UnsafeButton_Click(object sender, EventArgs e)
+		{
+			AutomaticAdjustmentFilter Filter = new AutomaticAdjustmentFilter();
+			Image image = (Image)chosenEditingImage.Tag;
+			chosenEditingImage.Image = Filter.SetContrast(50F, image.BitmapImage);
+			pictureChosen.Image = chosenEditingImage.Image;
+		}
+	}
+
+	public class MyRenderer : ToolStripProfessionalRenderer
     {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {

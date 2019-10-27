@@ -540,9 +540,6 @@
         ghBCCCGEEFIBh8n/DwCWpgiGcr5uAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="ChangeYourPictureToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>667, 18</value>
-  </metadata>
   <metadata name="contextMenuStripImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>162, 17</value>
   </metadata>
@@ -551,6 +548,9 @@
   </metadata>
   <metadata name="colorDialogFilter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>526, 18</value>
+  </metadata>
+  <metadata name="ChangeYourPictureToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>667, 18</value>
   </metadata>
   <data name="CollapseInfoPanelButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1085,6 +1085,9 @@
         voO813v9/wNA7uQ+CCTlAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="ChangeYourPictureToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>667, 18</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>52</value>
   </metadata>
