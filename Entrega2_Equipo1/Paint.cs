@@ -43,6 +43,7 @@ namespace Entrega2_Equipo1
 
 		private void DoneButton_Click(object sender, EventArgs e)
 		{
+			actualImage = showedImage;
 			Exit = true;
 			this.Close();
 		}
@@ -60,7 +61,6 @@ namespace Entrega2_Equipo1
 		}
 		private void MouseClickUp(object sender, MouseEventArgs e)
 		{
-			actualImage = showedImage;
 			down = false;
 		}
 

@@ -2223,6 +2223,29 @@ namespace Entrega2_Equipo1
 					pictureChosen.Image = chosenEditingImage.Image;
 				}
 			}
+			else
+			{
+				Paint form = new Paint();
+				Bitmap bmap = new Bitmap(1920, 1080);
+				using (Graphics graph = Graphics.FromImage(bmap))
+				{
+					Rectangle ImageSize = new Rectangle(0, 0, 1920, 1080);
+					graph.FillRectangle(Brushes.White, ImageSize);
+				}
+				form.ActualImage = bmap;
+				form.ShowDialog();
+				int x = form.X;
+				int y = form.Y;
+				Color MainColor = form.MainColor;
+				if (form.Exit)
+				{
+					bmap = form.ActualImage;
+					//pictureChosen.Image = bmap;
+					Image newImage = new Image(bmap, new List<Label>(), -1);
+					producer.LoadImagesToWorkingArea(new List<Image>() { newImage });
+					EditingPanel_Paint(sender, e);
+				}
+			}
 		}
 	}
 
