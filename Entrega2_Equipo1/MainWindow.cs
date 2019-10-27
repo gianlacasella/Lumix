@@ -82,7 +82,7 @@ namespace Entrega2_Equipo1
             {
                 // Display a MsgBox asking the user to close the form.
                 if (MessageBox.Show("Are you sure you want to close without saving?", "Exit without save",
-                   MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {
                     // Cancel the Closing event
                     e.Cancel = true;
@@ -222,7 +222,7 @@ namespace Entrega2_Equipo1
             if (library.Images.Count != 0)
             {
                 if (MessageBox.Show("Are you sure you want to clean the library?", "Warning!",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     library.ResetImages();
                     ReLoadPanelImage(sender, e);
@@ -232,7 +232,7 @@ namespace Entrega2_Equipo1
             {
 
                 MessageBox.Show("There are no pictures in library", "Clean library error.",
-                       MessageBoxButtons.OK, MessageBoxIcon.Question);
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -430,7 +430,7 @@ namespace Entrega2_Equipo1
         {
 
             MessageBox.Show("A picture has to be chosen in order to export.", "No picture chosen",
-               MessageBoxButtons.OK, MessageBoxIcon.Question);
+               MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -638,7 +638,7 @@ namespace Entrega2_Equipo1
             if (library.Images.Count != 0)
             {
                 if (MessageBox.Show("Are you sure you want to delete this image from the editing area?", "Warning!",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     ToolStripItem menuItem = sender as ToolStripItem;
                     if (menuItem != null)
@@ -864,7 +864,7 @@ namespace Entrega2_Equipo1
             if (createdLabel == null)
             {
                 if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     AddLabelPanel.Visible = false;
                 }
@@ -951,7 +951,7 @@ namespace Entrega2_Equipo1
                     {
                         if (this.SimpleLabelTagBox.Text == "")
                         {
-                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
@@ -964,7 +964,7 @@ namespace Entrega2_Equipo1
                     {
                         if (Convert.ToString(this.WatsonRecommendationsComboBox.SelectedItem) == "")
                         {
-                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
@@ -1164,7 +1164,7 @@ namespace Entrega2_Equipo1
             else
             {
                 MessageBox.Show("Select at least two images", "Not enough images.",
-                      MessageBoxButtons.OK, MessageBoxIcon.Question);
+                      MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1206,7 +1206,7 @@ namespace Entrega2_Equipo1
             else
             {
                 MessageBox.Show("There has to be at least one picture selected", "Error",
-                      MessageBoxButtons.OK, MessageBoxIcon.Question);
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1229,7 +1229,7 @@ namespace Entrega2_Equipo1
             else
             {
                 MessageBox.Show("Select at least two images", "Not enough images.",
-                      MessageBoxButtons.OK, MessageBoxIcon.Question);
+                      MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1277,13 +1277,13 @@ namespace Entrega2_Equipo1
                 else
                 {
                     MessageBox.Show("There is no picture selected", "Error",
-                      MessageBoxButtons.OK, MessageBoxIcon.Question);
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch
             {
                 MessageBox.Show("Wrong Parameters", "Error",
-                      MessageBoxButtons.OK, MessageBoxIcon.Question);
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1447,7 +1447,7 @@ namespace Entrega2_Equipo1
             else
             {
                 MessageBox.Show("There has to be at least one picture selected", "Error",
-                      MessageBoxButtons.OK, MessageBoxIcon.Question);
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1461,7 +1461,7 @@ namespace Entrega2_Equipo1
             else
             {
                 MessageBox.Show("There has to be at least one picture selected", "Error",
-                      MessageBoxButtons.OK, MessageBoxIcon.Question);
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1699,7 +1699,7 @@ namespace Entrega2_Equipo1
         private void DeleteAccountButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to delete your account?", "Delete account",
-                   MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 // Cambiamos el atributo de exit a false, pues no se quiere cerrar la app sino cambiar de usuario
                 this.exit = false;
@@ -2006,7 +2006,7 @@ namespace Entrega2_Equipo1
                     {
                         if (this.textBox6.Text == "")
                         {
-                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            MessageBox.Show("You can't add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -2022,7 +2022,7 @@ namespace Entrega2_Equipo1
                     {
                         if (Convert.ToString(this.comboBox6.SelectedItem) == "")
                         {
-                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            MessageBox.Show("You cant add an empty tag", "Add label error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -2062,7 +2062,7 @@ namespace Entrega2_Equipo1
             if (createdLabel == null)
             {
                 if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     MultipleAddLabelPanel.Visible = false;
                 }

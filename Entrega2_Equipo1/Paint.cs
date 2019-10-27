@@ -77,7 +77,7 @@ namespace Entrega2_Equipo1
 				int[] realPosition = ImagePictureBoxPosition();
 				int x = realPosition[0];
 				int y = realPosition[1];
-				if ((x + size <= showedImage.Width) && (y + size <= showedImage.Height) && (x>0)&&(y>0))
+				if ((x + size <= showedImage.Width) && (y + size <= showedImage.Height) && (x > 0) && (y > 0))
 				{
 					for (int i = y; i < size + y; i++)
 					{
@@ -123,5 +123,6 @@ namespace Entrega2_Equipo1
 				ColorButton2.BackColor = secondColor;
 			}
 		}
+
 	}
 }
