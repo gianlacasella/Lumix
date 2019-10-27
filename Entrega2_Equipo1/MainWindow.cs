@@ -2204,6 +2204,26 @@ namespace Entrega2_Equipo1
 				EditingPanel_Paint(sender, e);
 			}
 		}
+
+		private void PaintButton_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Image image = (Image)chosenEditingImage.Tag;
+				Paint form = new Paint();
+				form.ActualImage = image.BitmapImage;
+				form.ShowDialog();
+				int x = form.X;
+				int y = form.Y;
+				Color MainColor = form.MainColor;
+				if (form.Exit)
+				{
+					image.BitmapImage = form.ActualImage;
+					chosenEditingImage.Image = form.ActualImage;
+					pictureChosen.Image = chosenEditingImage.Image;
+				}
+			}
+		}
 	}
 
 	public class MyRenderer : ToolStripProfessionalRenderer
