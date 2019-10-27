@@ -41,7 +41,6 @@ namespace Entrega2_Equipo1
         // Same as before, but crops only one image
         public Bitmap Crop(Bitmap image, double[] coordinates)
         {
-
             this.Verification(image, coordinates);
             int x, y, width, height;
             x = Convert.ToInt32(coordinates[0]);

@@ -2154,9 +2154,33 @@ namespace Entrega2_Equipo1
                 ShowMorePanel.Visible = false;
             }
         }
-    }
 
-    public class MyRenderer : ToolStripProfessionalRenderer
+		private void CropButton_Click(object sender, EventArgs e)
+		{
+			if (chosenEditingImage != null)
+			{
+				Scissors scissors = new Scissors();
+				Image image = (Image)chosenEditingImage.Tag;
+				SelectFaceLocationForm newForm = new SelectFaceLocationForm();
+				newForm.ActualImage = image.BitmapImage;
+				newForm.ShowDialog();
+				int newLeft = newForm.ReturningLeft;
+				int newTop = newForm.ReturningTop;
+				int newHeight = newForm.ReturningHeight;
+				int newWidth = newForm.ReturningWidth;
+				//x, y, width, height
+				double[] coordinates = {Convert.ToDouble(newLeft), Convert.ToDouble(newTop), Convert.ToDouble(newWidth), Convert.ToDouble(newHeight) };
+				image.BitmapImage = scissors.Crop(image.BitmapImage, coordinates);
+				image.ReLoadAspectRatio();
+				image.ReLoadResolution();
+				chosenEditingImage.Image = image.BitmapImage;
+				pictureChosen.Image = chosenEditingImage.Image;
+				EditingPanel_Paint(sender, e);
+			}
+		}
+	}
+
+	public class MyRenderer : ToolStripProfessionalRenderer
     {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {

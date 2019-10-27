@@ -213,6 +213,7 @@
 			this.InformationPanelLabel = new System.Windows.Forms.Label();
 			this.DeleteLabelButton = new System.Windows.Forms.Button();
 			this.DownRightPanel = new System.Windows.Forms.Panel();
+			this.CropButton = new System.Windows.Forms.Button();
 			this.SmartListsPanel = new System.Windows.Forms.Panel();
 			this.MosaicPanel = new System.Windows.Forms.Panel();
 			this.BaseHMosaicText = new System.Windows.Forms.TextBox();
@@ -2601,12 +2602,31 @@
 			// 
 			// DownRightPanel
 			// 
+			this.DownRightPanel.Controls.Add(this.CropButton);
 			this.DownRightPanel.Controls.Add(this.SmartListsPanel);
 			this.DownRightPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.DownRightPanel.Location = new System.Drawing.Point(0, 481);
 			this.DownRightPanel.Name = "DownRightPanel";
 			this.DownRightPanel.Size = new System.Drawing.Size(989, 264);
 			this.DownRightPanel.TabIndex = 41;
+			// 
+			// CropButton
+			// 
+			this.CropButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+			this.CropButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.CropButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+			this.CropButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+			this.CropButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.CropButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.CropButton.ForeColor = System.Drawing.Color.White;
+			this.CropButton.Location = new System.Drawing.Point(639, 0);
+			this.CropButton.Name = "CropButton";
+			this.CropButton.Size = new System.Drawing.Size(87, 30);
+			this.CropButton.TabIndex = 41;
+			this.CropButton.Text = "Crop";
+			this.ChangeYourPictureToolTip.SetToolTip(this.CropButton, "Crop Image");
+			this.CropButton.UseVisualStyleBackColor = false;
+			this.CropButton.Click += new System.EventHandler(this.CropButton_Click);
 			// 
 			// SmartListsPanel
 			// 
@@ -3728,6 +3748,7 @@
 		private System.Windows.Forms.Button CustomFilter;
         private System.Windows.Forms.Panel ShowMorePanel;
         private System.Windows.Forms.Button ShowSlidersButton;
-    }
+		private System.Windows.Forms.Button CropButton;
+	}
 
 }
