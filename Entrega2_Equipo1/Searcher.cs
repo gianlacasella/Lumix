@@ -251,6 +251,12 @@ namespace Entrega2_Equipo1
 									cont++;
 								}
 								break;
+							case "Burned":
+								if (image.ApplyedFilters[EFilter.Burned].ToString() == atributes[1])
+								{
+									cont++;
+								}
+								break;
 
 						}               
                     }

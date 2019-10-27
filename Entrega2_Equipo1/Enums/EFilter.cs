@@ -18,6 +18,7 @@ namespace Entrega2_Equipo1
         MirrorFilter,
         OldFilmFilter,
         WindowsFilter,
-		Contrast
+		Contrast,
+		Burned
     }
 }

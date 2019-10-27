@@ -2129,7 +2129,7 @@ namespace Entrega2_Equipo1
 					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
 					image.BitmapImage = producer.ApplyFilter(image, EFilter.ColorFilter, colorDialogFilter.Color);
                     GC.Collect();
-					//SaveFilterApplyed(EFilter.SepiaFilter, image); PORQUE ESTA LINEA ESTA COMENTADA?
+					SaveFilterApplyed(EFilter.Burned, image); 
 					chosenEditingImage.Image = image.BitmapImage;
 					pictureChosen.Image = chosenEditingImage.Image;
 				}

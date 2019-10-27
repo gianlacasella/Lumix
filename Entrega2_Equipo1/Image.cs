@@ -46,7 +46,8 @@ namespace Entrega2_Equipo1
 			this.exif = LoadExif();
             this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
                 { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
-                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false },{EFilter.Contrast,false } };
+                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false }
+				,{EFilter.Contrast,false },{EFilter.Burned, false } };
 		}
 
 		public Image(string path, List<Label> labels, int calification)
@@ -61,7 +62,8 @@ namespace Entrega2_Equipo1
             this.exif = LoadExif();
             this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
                 { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
-                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false },{EFilter.Contrast,false } };
+                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false }
+				,{EFilter.Contrast,false } ,{EFilter.Burned, false }};
         }
 
         // Other constructor, used to make copies of other images
@@ -77,7 +79,8 @@ namespace Entrega2_Equipo1
             this.exif = exif;
             this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
                 { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
-                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } ,{EFilter.Contrast,false }};
+                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } 
+				,{EFilter.Contrast,false },{EFilter.Burned, false }};
         }
 
         // Other constructor with DEFAULT_CALIFICATION
@@ -85,7 +88,8 @@ namespace Entrega2_Equipo1
         {
             this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
                 { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
-                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } ,{EFilter.Contrast,false }};
+                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } 
+				,{EFilter.Contrast,false },{EFilter.Burned, false }};
         }
 
 
