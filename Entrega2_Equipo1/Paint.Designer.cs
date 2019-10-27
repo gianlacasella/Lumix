@@ -33,6 +33,7 @@
 			this.DoneButton = new System.Windows.Forms.Button();
 			this.ColorButton = new System.Windows.Forms.Button();
 			this.numericUpDown = new System.Windows.Forms.NumericUpDown();
+			this.ColorButton2 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
 			this.SuspendLayout();
@@ -41,7 +42,7 @@
 			// 
 			this.ImagePictureBox.Location = new System.Drawing.Point(-2, -1);
 			this.ImagePictureBox.Name = "ImagePictureBox";
-			this.ImagePictureBox.Size = new System.Drawing.Size(801, 417);
+			this.ImagePictureBox.Size = new System.Drawing.Size(801, 410);
 			this.ImagePictureBox.TabIndex = 0;
 			this.ImagePictureBox.TabStop = false;
 			this.ImagePictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseClickDown);
@@ -50,7 +51,7 @@
 			// 
 			// DoneButton
 			// 
-			this.DoneButton.Location = new System.Drawing.Point(710, 423);
+			this.DoneButton.Location = new System.Drawing.Point(713, 415);
 			this.DoneButton.Name = "DoneButton";
 			this.DoneButton.Size = new System.Drawing.Size(75, 23);
 			this.DoneButton.TabIndex = 1;
@@ -60,17 +61,16 @@
 			// 
 			// ColorButton
 			// 
-			this.ColorButton.Location = new System.Drawing.Point(611, 422);
+			this.ColorButton.Location = new System.Drawing.Point(624, 415);
 			this.ColorButton.Name = "ColorButton";
-			this.ColorButton.Size = new System.Drawing.Size(75, 23);
+			this.ColorButton.Size = new System.Drawing.Size(26, 23);
 			this.ColorButton.TabIndex = 2;
-			this.ColorButton.Text = "Color";
 			this.ColorButton.UseVisualStyleBackColor = true;
 			this.ColorButton.Click += new System.EventHandler(this.ColorButton_Click);
 			// 
 			// numericUpDown
 			// 
-			this.numericUpDown.Location = new System.Drawing.Point(558, 422);
+			this.numericUpDown.Location = new System.Drawing.Point(559, 415);
 			this.numericUpDown.Maximum = new decimal(new int[] {
             50,
             0,
@@ -91,11 +91,21 @@
             0});
 			this.numericUpDown.ValueChanged += new System.EventHandler(this.NumericUpDown_ValueChanged);
 			// 
+			// ColorButton2
+			// 
+			this.ColorButton2.Location = new System.Drawing.Point(665, 415);
+			this.ColorButton2.Name = "ColorButton2";
+			this.ColorButton2.Size = new System.Drawing.Size(26, 23);
+			this.ColorButton2.TabIndex = 4;
+			this.ColorButton2.UseVisualStyleBackColor = true;
+			this.ColorButton2.Click += new System.EventHandler(this.ColorButton2_Click);
+			// 
 			// Paint
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.ColorButton2);
 			this.Controls.Add(this.numericUpDown);
 			this.Controls.Add(this.ColorButton);
 			this.Controls.Add(this.DoneButton);
@@ -116,5 +126,6 @@
 		private System.Windows.Forms.Button DoneButton;
 		private System.Windows.Forms.Button ColorButton;
 		private System.Windows.Forms.NumericUpDown numericUpDown;
+		private System.Windows.Forms.Button ColorButton2;
 	}
 }

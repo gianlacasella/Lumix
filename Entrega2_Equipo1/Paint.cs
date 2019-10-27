@@ -17,7 +17,9 @@ namespace Entrega2_Equipo1
 		bool down = false;
 		private int y = 0;
 		private int x = 0;
-		private Color mainColor = Color.Black;
+		private Color mainColor = Color.White;
+		private Color secondColor = Color.White;
+		Color color;
 		private int size = 9;
 
 		public bool Exit = false;
@@ -27,6 +29,7 @@ namespace Entrega2_Equipo1
 		public int Y { get => y; set => y = value; }
 
 		public Color MainColor { get => mainColor; set => mainColor = value; }
+		public Color SecondColor { get => secondColor; set => secondColor = value; }
 
 		public Paint()
 		{
@@ -37,7 +40,8 @@ namespace Entrega2_Equipo1
 			this.showedImage = (Bitmap)actualImage.Clone();
 			this.ImagePictureBox.Image = showedImage;
 			this.ImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			
+			ColorButton.BackColor = mainColor;
+			ColorButton2.BackColor = secondColor;
 		}
 
 
@@ -58,6 +62,8 @@ namespace Entrega2_Equipo1
 		private void MouseClickDown(object sender, MouseEventArgs e)
 		{
 			down = true;
+			if (e.Button == MouseButtons.Left) color = mainColor;
+			else color = secondColor;
 		}
 		private void MouseClickUp(object sender, MouseEventArgs e)
 		{
@@ -77,7 +83,7 @@ namespace Entrega2_Equipo1
 					{
 						for (int j = x; j < size + x; j++)
 						{
-							showedImage.SetPixel(j, i, MainColor);
+							showedImage.SetPixel(j, i, color);
 						}
 					}
 					this.ImagePictureBox.Image = showedImage;
@@ -99,13 +105,23 @@ namespace Entrega2_Equipo1
 		{
 			if (colorDialog1.ShowDialog() == DialogResult.OK)
 			{
-				MainColor = colorDialog1.Color;
+				mainColor = colorDialog1.Color;
+				ColorButton.BackColor = mainColor;
 			}
 		}
 
 		private void NumericUpDown_ValueChanged(object sender, EventArgs e)
 		{
 			size = Convert.ToInt32(numericUpDown.Value);
+		}
+
+		private void ColorButton2_Click(object sender, EventArgs e)
+		{
+			if (colorDialog1.ShowDialog() == DialogResult.OK)
+			{
+				secondColor = colorDialog1.Color;
+				ColorButton2.BackColor = secondColor;
+			}
 		}
 	}
 }
