@@ -1776,9 +1776,11 @@ namespace Entrega2_Equipo1
             {
                 int width = Convert.ToInt32(InsertWidthText.Text);
                 int height = Convert.ToInt32(InsertHeightText.Text);
-                if (chosenEditingImage != null)
+				int BWidth = Convert.ToInt32(BaseWMosaicText.Text);
+				int BHeight = Convert.ToInt32(BaseHMosaicText.Text);
+				if (chosenEditingImage != null)
                 {
-                    Bitmap mosaic = PM.producer.Mosaic((Image)chosenEditingImage.Tag, featuresImage, width, height);
+                    Bitmap mosaic = PM.producer.Mosaic((Image)chosenEditingImage.Tag, featuresImage, width, height, BWidth, BHeight);
                     Image mosaicImage = new Image(mosaic, new List<Label>(), -1);
                     producer.LoadImagesToWorkingArea(new List<Image>() { mosaicImage });
                     EditingPanel_Paint(sender, e);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Entrega2_Equipo1
 {
@@ -11,8 +12,8 @@ namespace Entrega2_Equipo1
     public class InvertFilter : Tool
     {
         public InvertFilter() { }
-
-        public Bitmap ApplyFilter(Bitmap image)
+		/*
+        public Bitmap ApplyFilterUS(Bitmap image)
         {
             Bitmap copy = (Bitmap)image.Clone();
             Color color;
@@ -26,5 +27,34 @@ namespace Entrega2_Equipo1
             }
             return copy;
         }
+		*/
+		public Bitmap ApplyFilter(Bitmap bmap)
+		{
+			Bitmap b = (Bitmap)bmap.Clone();
+			// GDI+ still lies to us - the return format is BGR, NOT RGB. 
+			BitmapData bmData = b.LockBits(new Rectangle(0, 0, b.Width, b.Height),
+				ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+			int stride = bmData.Stride;
+			System.IntPtr Scan0 = bmData.Scan0;
+			unsafe
+			{
+				byte* p = (byte*)(void*)Scan0;
+				int nOffset = stride - b.Width * 3;
+				int nWidth = b.Width * 3;
+				for (int y = 0; y < b.Height; ++y)
+				{
+					for (int x = 0; x < nWidth; ++x)
+					{
+						p[0] = (byte)(255 - p[0]);
+						++p;
+					}
+					p += nOffset;
+				}
+			}
+
+			b.UnlockBits(bmData);
+
+			return b;
+		}
     }
 }

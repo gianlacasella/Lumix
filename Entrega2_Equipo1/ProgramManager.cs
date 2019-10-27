@@ -270,9 +270,10 @@ namespace Entrega2_Equipo1
             }
         }
 
-
+		
         private void Mosaic()
         {
+		/*
             Console.Clear();
             List<string> MosaicTitle = this.LoadBannerData("mosaic.txt");
             string completemosaic = "Mosaic Finished!";
@@ -311,11 +312,12 @@ namespace Entrega2_Equipo1
             imageBase.Name = "Mosaic" + imageBase.Name;
             Console.SetCursorPosition((Console.WindowWidth -  completemosaic.Length) / 2, Console.CursorTop);
             Console.WriteLine(completemosaic);
+			*/
+	}
 
-        }
 
 
-        private void Collage()
+	private void Collage()
         {
             Console.Clear();
             List<string> CollageTitle = this.LoadBannerData("collage.txt");

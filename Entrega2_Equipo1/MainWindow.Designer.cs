@@ -214,6 +214,10 @@
 			this.DownRightPanel = new System.Windows.Forms.Panel();
 			this.SmartListsPanel = new System.Windows.Forms.Panel();
 			this.MosaicPanel = new System.Windows.Forms.Panel();
+			this.BaseHMosaicText = new System.Windows.Forms.TextBox();
+			this.BaseWMosaicText = new System.Windows.Forms.TextBox();
+			this.BaseMosaicHeightLabel = new System.Windows.Forms.Label();
+			this.BaseMosaicWidthLabel = new System.Windows.Forms.Label();
 			this.ExitMosaic = new System.Windows.Forms.Button();
 			this.MosaicButton = new System.Windows.Forms.Button();
 			this.InsertHeightText = new System.Windows.Forms.TextBox();
@@ -2599,6 +2603,10 @@
 			// MosaicPanel
 			// 
 			this.MosaicPanel.BackColor = System.Drawing.SystemColors.Control;
+			this.MosaicPanel.Controls.Add(this.BaseHMosaicText);
+			this.MosaicPanel.Controls.Add(this.BaseWMosaicText);
+			this.MosaicPanel.Controls.Add(this.BaseMosaicHeightLabel);
+			this.MosaicPanel.Controls.Add(this.BaseMosaicWidthLabel);
 			this.MosaicPanel.Controls.Add(this.ExitMosaic);
 			this.MosaicPanel.Controls.Add(this.MosaicButton);
 			this.MosaicPanel.Controls.Add(this.InsertHeightText);
@@ -2607,15 +2615,49 @@
 			this.MosaicPanel.Controls.Add(this.label1);
 			this.MosaicPanel.Controls.Add(this.InsertWidthText);
 			this.MosaicPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.MosaicPanel.Location = new System.Drawing.Point(199, 35);
+			this.MosaicPanel.Location = new System.Drawing.Point(199, 11);
 			this.MosaicPanel.Name = "MosaicPanel";
-			this.MosaicPanel.Size = new System.Drawing.Size(163, 199);
+			this.MosaicPanel.Size = new System.Drawing.Size(163, 239);
 			this.MosaicPanel.TabIndex = 38;
 			this.MosaicPanel.Visible = false;
 			// 
+			// BaseHMosaicText
+			// 
+			this.BaseHMosaicText.Location = new System.Drawing.Point(93, 86);
+			this.BaseHMosaicText.Name = "BaseHMosaicText";
+			this.BaseHMosaicText.Size = new System.Drawing.Size(53, 20);
+			this.BaseHMosaicText.TabIndex = 10;
+			this.BaseHMosaicText.Text = "400";
+			// 
+			// BaseWMosaicText
+			// 
+			this.BaseWMosaicText.Location = new System.Drawing.Point(9, 88);
+			this.BaseWMosaicText.Name = "BaseWMosaicText";
+			this.BaseWMosaicText.Size = new System.Drawing.Size(56, 20);
+			this.BaseWMosaicText.TabIndex = 9;
+			this.BaseWMosaicText.Text = "400";
+			// 
+			// BaseMosaicHeightLabel
+			// 
+			this.BaseMosaicHeightLabel.AutoSize = true;
+			this.BaseMosaicHeightLabel.Location = new System.Drawing.Point(90, 64);
+			this.BaseMosaicHeightLabel.Name = "BaseMosaicHeightLabel";
+			this.BaseMosaicHeightLabel.Size = new System.Drawing.Size(65, 13);
+			this.BaseMosaicHeightLabel.TabIndex = 8;
+			this.BaseMosaicHeightLabel.Text = "Base Height";
+			// 
+			// BaseMosaicWidthLabel
+			// 
+			this.BaseMosaicWidthLabel.AutoSize = true;
+			this.BaseMosaicWidthLabel.Location = new System.Drawing.Point(3, 65);
+			this.BaseMosaicWidthLabel.Name = "BaseMosaicWidthLabel";
+			this.BaseMosaicWidthLabel.Size = new System.Drawing.Size(62, 13);
+			this.BaseMosaicWidthLabel.TabIndex = 7;
+			this.BaseMosaicWidthLabel.Text = "Base Width";
+			// 
 			// ExitMosaic
 			// 
-			this.ExitMosaic.Location = new System.Drawing.Point(96, 164);
+			this.ExitMosaic.Location = new System.Drawing.Point(90, 204);
 			this.ExitMosaic.Name = "ExitMosaic";
 			this.ExitMosaic.Size = new System.Drawing.Size(50, 23);
 			this.ExitMosaic.TabIndex = 6;
@@ -2625,7 +2667,7 @@
 			// 
 			// MosaicButton
 			// 
-			this.MosaicButton.Location = new System.Drawing.Point(9, 164);
+			this.MosaicButton.Location = new System.Drawing.Point(3, 204);
 			this.MosaicButton.Name = "MosaicButton";
 			this.MosaicButton.Size = new System.Drawing.Size(75, 23);
 			this.MosaicButton.TabIndex = 5;
@@ -2653,7 +2695,7 @@
 			// 
 			// MosaicpictureBox
 			// 
-			this.MosaicpictureBox.Location = new System.Drawing.Point(22, 73);
+			this.MosaicpictureBox.Location = new System.Drawing.Point(16, 119);
 			this.MosaicpictureBox.Name = "MosaicpictureBox";
 			this.MosaicpictureBox.Size = new System.Drawing.Size(124, 73);
 			this.MosaicpictureBox.TabIndex = 2;
@@ -3624,6 +3666,10 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label ValidNotValidPatternLabel;
 		private System.Windows.Forms.TrackBar ContrastBar;
+		private System.Windows.Forms.TextBox BaseHMosaicText;
+		private System.Windows.Forms.TextBox BaseWMosaicText;
+		private System.Windows.Forms.Label BaseMosaicHeightLabel;
+		private System.Windows.Forms.Label BaseMosaicWidthLabel;
 	}
 
 }

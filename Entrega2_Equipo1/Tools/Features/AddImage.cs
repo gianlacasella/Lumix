@@ -62,7 +62,7 @@ namespace Entrega2_Equipo1
         }
 
 
-        public Bitmap Mosaic(Image image, List<Image> images, int width = 10, int height = 10)
+        public Bitmap Mosaic(Image image, List<Image> images, int width, int height, int BaseWidth, int BaseHeight)
         {
             Console.WriteLine("Loading images, please wait");
             //Converting loaded image into bitmap
@@ -70,7 +70,7 @@ namespace Entrega2_Equipo1
             Bitmap imageBit = image.BitmapImage;
             Bitmap bmp = (Bitmap)imageBit.Clone();
             Scissors scissors = new Scissors();
-            bmp = resizer.ResizeImage(bmp, 80 * width, 80 * height);
+            bmp = resizer.ResizeImage(bmp, BaseWidth, BaseHeight);
 
             int bmpWidth = bmp.Width / (bmp.Width / width);
             int bmpHeight = bmp.Height / (bmp.Height / height);

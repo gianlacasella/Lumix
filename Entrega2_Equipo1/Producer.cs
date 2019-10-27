@@ -173,10 +173,10 @@ namespace Entrega2_Equipo1
 
         }
 
-        public System.Drawing.Bitmap Mosaic (Image imagenBase, List<Image> Imagenes, int width, int height)
+        public System.Drawing.Bitmap Mosaic (Image imagenBase, List<Image> Imagenes, int width, int height, int Bwidth, int Bheight)
         {
 			AddImage AI = new AddImage();
-			return AI.Mosaic(imagenBase, Imagenes, width, height);
+			return AI.Mosaic(imagenBase, Imagenes, width, height, Bwidth, Bheight);
         }
 
         public System.Drawing.Bitmap Collage(List<Image> images, int baseWidth, int baseHeight, int insertWidth, int insertHeight, System.Drawing.Bitmap backgroundImage = null, int R=0, int G=0, int B=0)
