@@ -1607,7 +1607,7 @@ namespace Entrega2_Equipo1
         private void OldPasswordTextBox_MouseEnter(object sender, EventArgs e)
         {
 
-            if (OldPasswordTextBox.Text == "OLD PASSWORD")
+            if (OldPasswordTextBox.Text == "old password")
             {
                 OldPasswordTextBox.Text = "";
                 OldPasswordTextBox.ForeColor = Color.White;
@@ -1620,15 +1620,15 @@ namespace Entrega2_Equipo1
 
             if (OldPasswordTextBox.Text == "")
             {
-                OldPasswordTextBox.Text = "OLD PASSWORD";
-                OldPasswordTextBox.ForeColor = Color.DarkGray;
+                OldPasswordTextBox.Text = "old password";
+                OldPasswordTextBox.ForeColor = Color.Silver;
             }
         }
 
         private void NewPasswordTextBox_MouseEnter(object sender, EventArgs e)
         {
 
-            if (NewPasswordTextBox.Text == "NEW PASSWORD")
+            if (NewPasswordTextBox.Text == "new password")
             {
                 NewPasswordTextBox.Text = "";
                 NewPasswordTextBox.ForeColor = Color.White;
@@ -1640,8 +1640,8 @@ namespace Entrega2_Equipo1
 
             if (NewPasswordTextBox.Text == "")
             {
-                NewPasswordTextBox.Text = "NEW PASSWORD";
-                NewPasswordTextBox.ForeColor = Color.DarkGray;
+                NewPasswordTextBox.Text = "new password";
+                NewPasswordTextBox.ForeColor = Color.Silver;
             }
         }
 
@@ -2083,6 +2083,19 @@ namespace Entrega2_Equipo1
                 pictureChosen.Image = chosenEditingImage.Image;
             }
         }
+
+
+        private void GoBackButton_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.Font = new Font(btn.Font, FontStyle.Bold);
+        }
+
+        private void GoBackButton_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.Font = new Font(btn.Font, FontStyle.Regular);
+        }
     }
 
     public class MyRenderer : ToolStripProfessionalRenderer
@@ -2090,7 +2103,37 @@ namespace Entrega2_Equipo1
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
             Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
-            Color c = e.Item.Selected ? Color.Crimson : Color.FromArgb(11, 7, 17);
+            //Color c = e.Item.Selected ? Color.Crimson : Color.FromArgb(11, 7, 17);
+            Color c = Color.FromArgb(11, 7, 17);
+            if (e.Item.Selected)
+            {
+                if (e.Item.Text == "My Account")
+                {
+                    c = Color.FromArgb(6, 57, 76);
+                }
+                else if (e.Item.Text == "Import" || e.Item.Text == "Import with labels")
+                {
+                    c = Color.FromArgb(12, 67, 131);
+                }
+                else if (e.Item.Text == "Export" || e.Item.Text == "Export as") 
+                {
+                    c = Color.FromArgb(34, 160, 182);
+                }
+                else if (e.Item.Text == "Save Library")
+                {
+                    c = Color.FromArgb(123, 19, 70);
+                }
+                else if (e.Item.Text == "Clean Library")
+                {
+                    c = Color.FromArgb(203, 12, 89);
+                }
+                else if (e.Item.Text == "Exit")
+                {
+                    c = Color.FromArgb(235, 100, 158);
+                }
+            }
+            
+            
             using (SolidBrush brush = new SolidBrush(c))
                 e.Graphics.FillRectangle(brush, rc);
         }

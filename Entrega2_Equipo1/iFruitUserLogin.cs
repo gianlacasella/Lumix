@@ -144,8 +144,8 @@ namespace Entrega2_Equipo1
             // Escondemos el panel de signup
             this.NewUsernameErrorLabel.Visible = false;
             this.NewPasswordEmptyErrorLabel.Visible = false;
-            this.NewUserNameTextBox.Text = "USERNAME";
-            this.NewPasswordTextBox.Text = "PASSWORD";
+            this.NewUserNameTextBox.Text = "username";
+            this.NewPasswordTextBox.Text = "password";
             this.CreateUserPanel.Visible = false;
 
             // Habilitamos el log in
@@ -176,8 +176,8 @@ namespace Entrega2_Equipo1
             LogInButton.Enabled = true;
             UserNamesComboBox.Enabled = true;
             LogInPasswordTextBox.Enabled = true;
-            this.NewUserNameTextBox.Text = "USERNAME";
-            this.NewPasswordTextBox.Text = "PASSWORD";
+            this.NewUserNameTextBox.Text = "username";
+            this.NewPasswordTextBox.Text = "password";
             this.NewPasswordTextBox.UseSystemPasswordChar = false;
         }
 

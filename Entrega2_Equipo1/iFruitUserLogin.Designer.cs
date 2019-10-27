@@ -76,7 +76,7 @@
             this.CreateUserPanel.Controls.Add(this.NewPasswordEmptyErrorLabel);
             this.CreateUserPanel.Controls.Add(this.NewUsernameErrorLabel);
             this.CreateUserPanel.Controls.Add(this.SignUpButton);
-            this.CreateUserPanel.Location = new System.Drawing.Point(240, 205);
+            this.CreateUserPanel.Location = new System.Drawing.Point(253, 205);
             this.CreateUserPanel.Name = "CreateUserPanel";
             this.CreateUserPanel.Size = new System.Drawing.Size(262, 230);
             this.CreateUserPanel.TabIndex = 10;
@@ -144,7 +144,7 @@
             this.SignUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignUpButton.Font = new System.Drawing.Font("Anurati", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpButton.ForeColor = System.Drawing.Color.White;
-            this.SignUpButton.Location = new System.Drawing.Point(71, 163);
+            this.SignUpButton.Location = new System.Drawing.Point(71, 180);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(124, 47);
             this.SignUpButton.TabIndex = 10;
