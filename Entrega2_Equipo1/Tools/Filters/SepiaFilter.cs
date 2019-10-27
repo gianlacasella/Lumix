@@ -12,7 +12,10 @@ namespace Entrega2_Equipo1
     [Serializable]
     public class SepiaFilter : Tool
     {
+        
         public SepiaFilter() { }
+
+        // Viejo metodo applyfilter
 		/*
         public Bitmap ApplyFilter(Bitmap image)
         {
@@ -53,6 +56,8 @@ namespace Entrega2_Equipo1
             return copy;
         }
 		*/
+
+        // Nuevo metodo apply filter
 		public Bitmap ApplyFilter(Bitmap bitmap)
 		{
 			Bitmap bmap = (Bitmap)bitmap.Clone();
@@ -87,7 +92,7 @@ namespace Entrega2_Equipo1
 					}
 				});
 				bmap.UnlockBits(bitmapData);
-
+                GC.Collect();
 
 			}
 			return bmap;

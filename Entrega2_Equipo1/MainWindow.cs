@@ -231,6 +231,7 @@ namespace Entrega2_Equipo1
                     producer.LoadImagesToWorkingArea(new List<Image>() { (Image)PIC.Tag });
                     EditingPanel_Paint(sender, e);
                     //PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
+                    OpenRightPanelButton_Click(this, EventArgs.Empty);
                 }
             }
         }
@@ -384,6 +385,7 @@ namespace Entrega2_Equipo1
             this.imagetoaddlabel = image;
             // Mostrar los datos en el tree view
             RefreshInfoTreeView();
+            
         }
 
         private void ImageBorderClick(object sender, EventArgs e)
@@ -1721,12 +1723,12 @@ namespace Entrega2_Equipo1
                     {
                         PanelImages_PaintSearchResult(result);
                         ValidNotValidPatternLabel.Text = "Results";
-                        ValidNotValidPatternLabel.ForeColor = Color.Green;
+                        ValidNotValidPatternLabel.ForeColor = Color.FromArgb(34, 160, 182);
                     }
                     else
                     {
                         ValidNotValidPatternLabel.Text = "No results";
-                        ValidNotValidPatternLabel.ForeColor = Color.Green;
+                        ValidNotValidPatternLabel.ForeColor = Color.FromArgb(34,160,182);
                     }
                 }
                 else
@@ -1737,7 +1739,7 @@ namespace Entrega2_Equipo1
             catch
             {
                 ValidNotValidPatternLabel.Text = "Not valid pattern";
-                ValidNotValidPatternLabel.ForeColor = Color.Crimson;
+                ValidNotValidPatternLabel.ForeColor = Color.FromArgb(203, 12, 89);
                 return; // hAy QuE uSaR rEtUrN eN uN mEt0dO vOiD pOr CoNvEnCiON // pues si
             }
         }
@@ -2126,15 +2128,35 @@ namespace Entrega2_Equipo1
 					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
 					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
 					image.BitmapImage = producer.ApplyFilter(image, EFilter.ColorFilter, colorDialogFilter.Color);
-					//SaveFilterApplyed(EFilter.SepiaFilter, image);
+                    GC.Collect();
+					//SaveFilterApplyed(EFilter.SepiaFilter, image); PORQUE ESTA LINEA ESTA COMENTADA?
 					chosenEditingImage.Image = image.BitmapImage;
 					pictureChosen.Image = chosenEditingImage.Image;
 				}
 			}
 		}
-	}
 
-	public class MyRenderer : ToolStripProfessionalRenderer
+
+        // Metodo que trabajar
+        private void Topauxlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowSlidersButton_Click(object sender, EventArgs e)
+        {
+            if (ShowMorePanel.Visible == false)
+            {
+                ShowMorePanel.Visible = true;
+            }
+            else
+            {
+                ShowMorePanel.Visible = false;
+            }
+        }
+    }
+
+    public class MyRenderer : ToolStripProfessionalRenderer
     {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
