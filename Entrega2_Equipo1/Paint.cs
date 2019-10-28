@@ -15,7 +15,7 @@ namespace Entrega2_Equipo1
 		Bitmap actualImage;
 		Bitmap showedImage;
 		bool down = false;
-		private int y = 0;
+        private int y = 0;
 		private int x = 0;
 		private Color mainColor = Color.White;
 		private Color secondColor = Color.White;
@@ -64,31 +64,37 @@ namespace Entrega2_Equipo1
 			down = true;
 			if (e.Button == MouseButtons.Left) color = mainColor;
 			else color = secondColor;
-		}
+        }
 		private void MouseClickUp(object sender, MouseEventArgs e)
 		{
-			down = false;
-		}
+            if (down == true)
+            {
+                down = false;
+            }
+        }
 
-		private void Brush(object sender, MouseEventArgs e)
+        
+
+        private void Brush(object sender, MouseEventArgs e)
 		{
-			if (down)
+            
+            if (down)
 			{
-				int[] realPosition = ImagePictureBoxPosition();
-				int x = realPosition[0];
-				int y = realPosition[1];
-				if ((x + size <= showedImage.Width) && (y + size <= showedImage.Height) && (x > 0) && (y > 0))
-				{
-					for (int i = y; i < size + y; i++)
-					{
-						for (int j = x; j < size + x; j++)
-						{
-							showedImage.SetPixel(j, i, color);
-						}
-					}
-					this.ImagePictureBox.Image = showedImage;
-				}
-			}
+                int[] realPosition = ImagePictureBoxPosition();
+                int x = realPosition[0];
+                int y = realPosition[1];
+                if ((x + size <= showedImage.Width) && (y + size <= showedImage.Height) && (x > 0) && (y > 0))
+                {
+                    for (int i = y; i < size + y; i++)
+                    {
+                        for (int j = x; j < size + x; j++)
+                        {
+                            showedImage.SetPixel(j, i, color);
+                        }
+                    }
+                    this.ImagePictureBox.Image = showedImage;
+                }
+            }
 		}
 
 		private int[] ToRealImageSize(int x, int y)
@@ -124,5 +130,9 @@ namespace Entrega2_Equipo1
 			}
 		}
 
-	}
+        private void ImagePictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

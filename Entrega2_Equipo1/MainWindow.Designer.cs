@@ -224,6 +224,13 @@
             this.MosaicpictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.InsertWidthText = new System.Windows.Forms.TextBox();
+            this.panelResize = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.ExitResizeButton = new System.Windows.Forms.Button();
+            this.YText = new System.Windows.Forms.TextBox();
+            this.XText = new System.Windows.Forms.TextBox();
+            this.resizeDone = new System.Windows.Forms.Button();
             this.panelCollage = new System.Windows.Forms.Panel();
             this.ExitCollageButton = new System.Windows.Forms.Button();
             this.InsertLabel = new System.Windows.Forms.Label();
@@ -236,13 +243,6 @@
             this.textBaseH = new System.Windows.Forms.TextBox();
             this.textBaseW = new System.Windows.Forms.TextBox();
             this.buttonCollage = new System.Windows.Forms.Button();
-            this.panelResize = new System.Windows.Forms.Panel();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.ExitResizeButton = new System.Windows.Forms.Button();
-            this.YText = new System.Windows.Forms.TextBox();
-            this.XText = new System.Windows.Forms.TextBox();
-            this.resizeDone = new System.Windows.Forms.Button();
             this.UpperRightPanel = new System.Windows.Forms.Panel();
             this.EditingAreaPanel = new System.Windows.Forms.Panel();
             this.label34 = new System.Windows.Forms.Label();
@@ -309,9 +309,9 @@
             this.SmartListsPanel.SuspendLayout();
             this.MosaicPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MosaicpictureBox)).BeginInit();
+            this.panelResize.SuspendLayout();
             this.panelCollage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).BeginInit();
-            this.panelResize.SuspendLayout();
             this.UpperRightPanel.SuspendLayout();
             this.EditingAreaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -2418,9 +2418,10 @@
             this.SetCalificationButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SetCalificationButton.Enabled = false;
             this.SetCalificationButton.FlatAppearance.BorderSize = 0;
-            this.SetCalificationButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.SetCalificationButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.SetCalificationButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.SetCalificationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SetCalificationButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetCalificationButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetCalificationButton.ForeColor = System.Drawing.Color.Black;
             this.SetCalificationButton.Location = new System.Drawing.Point(248, 6);
             this.SetCalificationButton.Name = "SetCalificationButton";
@@ -2430,6 +2431,8 @@
             this.ChangeYourPictureToolTip.SetToolTip(this.SetCalificationButton, "Set a new calification to your image");
             this.SetCalificationButton.UseVisualStyleBackColor = false;
             this.SetCalificationButton.Click += new System.EventHandler(this.SetCalificationButton_Click);
+            this.SetCalificationButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.SetCalificationButton.MouseLeave += new System.EventHandler(this.Button9_MouseEnter);
             // 
             // SearchLabel
             // 
@@ -2475,9 +2478,10 @@
             this.setNewNameButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.setNewNameButton.Enabled = false;
             this.setNewNameButton.FlatAppearance.BorderSize = 0;
-            this.setNewNameButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.setNewNameButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.setNewNameButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.setNewNameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.setNewNameButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setNewNameButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.setNewNameButton.ForeColor = System.Drawing.Color.Black;
             this.setNewNameButton.Location = new System.Drawing.Point(249, 44);
             this.setNewNameButton.Name = "setNewNameButton";
@@ -2487,6 +2491,8 @@
             this.ChangeYourPictureToolTip.SetToolTip(this.setNewNameButton, "Set a new name to your image");
             this.setNewNameButton.UseVisualStyleBackColor = false;
             this.setNewNameButton.Click += new System.EventHandler(this.SetNewNameButton_Click);
+            this.setNewNameButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.setNewNameButton.MouseLeave += new System.EventHandler(this.Button9_MouseEnter);
             // 
             // ImageInfoPanel
             // 
@@ -2657,6 +2663,9 @@
             // 
             // ExitMosaic
             // 
+            this.ExitMosaic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitMosaic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitMosaic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.ExitMosaic.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitMosaic.Location = new System.Drawing.Point(245, 84);
             this.ExitMosaic.Name = "ExitMosaic";
@@ -2665,9 +2674,14 @@
             this.ExitMosaic.Text = "Exit";
             this.ExitMosaic.UseVisualStyleBackColor = true;
             this.ExitMosaic.Click += new System.EventHandler(this.ExitMosaic_Click);
+            this.ExitMosaic.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.ExitMosaic.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
             // 
             // MosaicButton
             // 
+            this.MosaicButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MosaicButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.MosaicButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.MosaicButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MosaicButton.Location = new System.Drawing.Point(164, 85);
             this.MosaicButton.Name = "MosaicButton";
@@ -2676,6 +2690,8 @@
             this.MosaicButton.Text = "Mosaic";
             this.MosaicButton.UseVisualStyleBackColor = true;
             this.MosaicButton.Click += new System.EventHandler(this.MosaicButton_Click);
+            this.MosaicButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.MosaicButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
             // 
             // InsertHeightText
             // 
@@ -2725,6 +2741,96 @@
             this.InsertWidthText.Text = "10";
             this.InsertWidthText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
             // 
+            // panelResize
+            // 
+            this.panelResize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.panelResize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelResize.Controls.Add(this.label36);
+            this.panelResize.Controls.Add(this.label35);
+            this.panelResize.Controls.Add(this.ExitResizeButton);
+            this.panelResize.Controls.Add(this.YText);
+            this.panelResize.Controls.Add(this.XText);
+            this.panelResize.Controls.Add(this.resizeDone);
+            this.panelResize.Location = new System.Drawing.Point(688, 3);
+            this.panelResize.Name = "panelResize";
+            this.panelResize.Size = new System.Drawing.Size(103, 115);
+            this.panelResize.TabIndex = 37;
+            this.panelResize.Visible = false;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(9, 29);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(18, 19);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Y";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(9, 9);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(18, 19);
+            this.label35.TabIndex = 4;
+            this.label35.Text = "X";
+            // 
+            // ExitResizeButton
+            // 
+            this.ExitResizeButton.BackColor = System.Drawing.Color.LightGray;
+            this.ExitResizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitResizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitResizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitResizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitResizeButton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitResizeButton.Location = new System.Drawing.Point(13, 84);
+            this.ExitResizeButton.Name = "ExitResizeButton";
+            this.ExitResizeButton.Size = new System.Drawing.Size(75, 27);
+            this.ExitResizeButton.TabIndex = 3;
+            this.ExitResizeButton.Text = "Exit";
+            this.ExitResizeButton.UseVisualStyleBackColor = false;
+            this.ExitResizeButton.Click += new System.EventHandler(this.ExitResizeButton_Click);
+            this.ExitResizeButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.ExitResizeButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // YText
+            // 
+            this.YText.Location = new System.Drawing.Point(35, 30);
+            this.YText.Name = "YText";
+            this.YText.Size = new System.Drawing.Size(52, 20);
+            this.YText.TabIndex = 2;
+            this.YText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // XText
+            // 
+            this.XText.Location = new System.Drawing.Point(35, 7);
+            this.XText.Name = "XText";
+            this.XText.Size = new System.Drawing.Size(52, 20);
+            this.XText.TabIndex = 1;
+            this.XText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // resizeDone
+            // 
+            this.resizeDone.BackColor = System.Drawing.Color.LightGray;
+            this.resizeDone.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resizeDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.resizeDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.resizeDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resizeDone.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resizeDone.Location = new System.Drawing.Point(13, 56);
+            this.resizeDone.Name = "resizeDone";
+            this.resizeDone.Size = new System.Drawing.Size(75, 26);
+            this.resizeDone.TabIndex = 0;
+            this.resizeDone.Text = "Resize";
+            this.resizeDone.UseVisualStyleBackColor = false;
+            this.resizeDone.Click += new System.EventHandler(this.ResizeDone_Click);
+            this.resizeDone.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.resizeDone.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
             // panelCollage
             // 
             this.panelCollage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
@@ -2748,6 +2854,9 @@
             // 
             // ExitCollageButton
             // 
+            this.ExitCollageButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitCollageButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitCollageButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.ExitCollageButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitCollageButton.Location = new System.Drawing.Point(346, 115);
             this.ExitCollageButton.Name = "ExitCollageButton";
@@ -2756,6 +2865,8 @@
             this.ExitCollageButton.Text = "Exit";
             this.ExitCollageButton.UseVisualStyleBackColor = true;
             this.ExitCollageButton.Click += new System.EventHandler(this.ExitCollageButton_Click);
+            this.ExitCollageButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.ExitCollageButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
             // 
             // InsertLabel
             // 
@@ -2847,6 +2958,9 @@
             // 
             // buttonCollage
             // 
+            this.buttonCollage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCollage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.buttonCollage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.buttonCollage.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCollage.Location = new System.Drawing.Point(242, 115);
             this.buttonCollage.Name = "buttonCollage";
@@ -2855,92 +2969,8 @@
             this.buttonCollage.Text = "Make Collage";
             this.buttonCollage.UseVisualStyleBackColor = true;
             this.buttonCollage.Click += new System.EventHandler(this.ButtonCollage_Click);
-            // 
-            // panelResize
-            // 
-            this.panelResize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
-            this.panelResize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelResize.Controls.Add(this.label36);
-            this.panelResize.Controls.Add(this.label35);
-            this.panelResize.Controls.Add(this.ExitResizeButton);
-            this.panelResize.Controls.Add(this.YText);
-            this.panelResize.Controls.Add(this.XText);
-            this.panelResize.Controls.Add(this.resizeDone);
-            this.panelResize.Location = new System.Drawing.Point(688, 3);
-            this.panelResize.Name = "panelResize";
-            this.panelResize.Size = new System.Drawing.Size(103, 115);
-            this.panelResize.TabIndex = 37;
-            this.panelResize.Visible = false;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(9, 29);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(18, 19);
-            this.label36.TabIndex = 5;
-            this.label36.Text = "Y";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(9, 9);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(18, 19);
-            this.label35.TabIndex = 4;
-            this.label35.Text = "X";
-            // 
-            // ExitResizeButton
-            // 
-            this.ExitResizeButton.BackColor = System.Drawing.Color.LightGray;
-            this.ExitResizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitResizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitResizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitResizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitResizeButton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitResizeButton.Location = new System.Drawing.Point(13, 84);
-            this.ExitResizeButton.Name = "ExitResizeButton";
-            this.ExitResizeButton.Size = new System.Drawing.Size(75, 27);
-            this.ExitResizeButton.TabIndex = 3;
-            this.ExitResizeButton.Text = "Exit";
-            this.ExitResizeButton.UseVisualStyleBackColor = false;
-            this.ExitResizeButton.Click += new System.EventHandler(this.ExitResizeButton_Click);
-            // 
-            // YText
-            // 
-            this.YText.Location = new System.Drawing.Point(35, 30);
-            this.YText.Name = "YText";
-            this.YText.Size = new System.Drawing.Size(52, 20);
-            this.YText.TabIndex = 2;
-            this.YText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // XText
-            // 
-            this.XText.Location = new System.Drawing.Point(35, 7);
-            this.XText.Name = "XText";
-            this.XText.Size = new System.Drawing.Size(52, 20);
-            this.XText.TabIndex = 1;
-            this.XText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // resizeDone
-            // 
-            this.resizeDone.BackColor = System.Drawing.Color.LightGray;
-            this.resizeDone.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resizeDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.resizeDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.resizeDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resizeDone.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resizeDone.Location = new System.Drawing.Point(13, 56);
-            this.resizeDone.Name = "resizeDone";
-            this.resizeDone.Size = new System.Drawing.Size(75, 26);
-            this.resizeDone.TabIndex = 0;
-            this.resizeDone.Text = "Resize";
-            this.resizeDone.UseVisualStyleBackColor = false;
-            this.resizeDone.Click += new System.EventHandler(this.ResizeDone_Click);
+            this.buttonCollage.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.buttonCollage.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
             // 
             // UpperRightPanel
             // 
@@ -3563,11 +3593,11 @@
             this.MosaicPanel.ResumeLayout(false);
             this.MosaicPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MosaicpictureBox)).EndInit();
+            this.panelResize.ResumeLayout(false);
+            this.panelResize.PerformLayout();
             this.panelCollage.ResumeLayout(false);
             this.panelCollage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).EndInit();
-            this.panelResize.ResumeLayout(false);
-            this.panelResize.PerformLayout();
             this.UpperRightPanel.ResumeLayout(false);
             this.EditingAreaPanel.ResumeLayout(false);
             this.EditingAreaPanel.PerformLayout();
