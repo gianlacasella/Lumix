@@ -22,7 +22,7 @@ namespace Entrega2_Equipo1
         Label createdLabel;
         Image imagetoaddlabel;
         Size formsizewithrightpanel = new Size(1662, 822);
-        Size formsizewithoutrightpanel = new Size(665, 822);
+        Size formsizewithoutrightpanel = new Size(558, 822);
         // Usuario que se ha logueado
         User userLoggedIn = null;
         // bool que controla si el usuario desea cerrar el programa o cerrar sesion
@@ -291,7 +291,6 @@ namespace Entrega2_Equipo1
                         Bitmap leftarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "leftarrow.png");
                         OpenRightPanelButton.BackgroundImage = leftarrow;
                     }
-                    this.addnewlabelbutton.Enabled = false;
                     this.SearchTextBox.Enabled = false;
                     //panelImages.Visible = false;
                     AddLabelController();
@@ -403,7 +402,6 @@ namespace Entrega2_Equipo1
             this.SetCalificationButton.Enabled = true;
             this.setNewNameButton.Enabled = true;
             this.nameTextBox.Enabled = true;
-            this.addnewlabelbutton.Enabled = true;
             this.DeleteLabelButton.Enabled = true;
             this.imagetoaddlabel = image;
             // Mostrar los datos en el tree view
@@ -455,7 +453,6 @@ namespace Entrega2_Equipo1
                 this.calificationUpDown.Enabled = false;
                 this.SetCalificationButton.Enabled = false;
                 this.setNewNameButton.Enabled = false;
-                this.addnewlabelbutton.Enabled = false;
                 this.DeleteLabelButton.Enabled = false;
                 this.nameTextBox.Enabled = false;
                 InfoTreeView.Nodes.Clear();
@@ -877,7 +874,6 @@ namespace Entrega2_Equipo1
             this.cleanLibraryToolStripMenuItem.Enabled = true;
             this.myAccountToolStripMenuItem.Enabled = true;
             this.exitToolStripMenuItem.Enabled = true;
-            this.addnewlabelbutton.Enabled = true;
             this.SearchTextBox.Enabled = true;
         }
 
@@ -2082,7 +2078,6 @@ namespace Entrega2_Equipo1
             this.cleanLibraryToolStripMenuItem.Enabled = true;
             this.myAccountToolStripMenuItem.Enabled = true;
             this.exitToolStripMenuItem.Enabled = true;
-            this.addnewlabelbutton.Enabled = true;
             this.SearchTextBox.Enabled = true;
             menuStrip1.Enabled = true;
         }
@@ -2171,17 +2166,7 @@ namespace Entrega2_Equipo1
 
         }
 
-        private void ShowSlidersButton_Click(object sender, EventArgs e)
-        {
-            if (ShowMorePanel.Visible == false)
-            {
-                ShowMorePanel.Visible = true;
-            }
-            else
-            {
-                ShowMorePanel.Visible = false;
-            }
-        }
+        
 
 		private void CropButton_Click(object sender, EventArgs e)
 		{
@@ -2253,9 +2238,20 @@ namespace Entrega2_Equipo1
 			}
 		}
 
-	}
+        private void Button9_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.ForeColor = Color.White;
+        }
 
-	public class MyRenderer : ToolStripProfessionalRenderer
+        private void Button9_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.ForeColor = Color.Black;
+        }
+    }
+
+    public class MyRenderer : ToolStripProfessionalRenderer
     {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
