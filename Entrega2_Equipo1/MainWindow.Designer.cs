@@ -123,6 +123,7 @@
             this.RealNameLabel = new System.Windows.Forms.Label();
             this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
@@ -245,6 +246,8 @@
             this.buttonCollage = new System.Windows.Forms.Button();
             this.UpperRightPanel = new System.Windows.Forms.Panel();
             this.EditingAreaPanel = new System.Windows.Forms.Panel();
+            this.ShowFeatureListButton = new System.Windows.Forms.Button();
+            this.FeatureListPanel = new System.Windows.Forms.Panel();
             this.label34 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.brightnessBar = new System.Windows.Forms.TrackBar();
@@ -276,7 +279,6 @@
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.feauturesProgressBar = new System.Windows.Forms.ProgressBar();
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
@@ -289,6 +291,7 @@
             this.panel3.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddPersonLabelPanel.SuspendLayout();
             this.AddSpecialLabelPanel.SuspendLayout();
@@ -321,7 +324,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1517,6 +1519,21 @@
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(0, 55);
             this.UsernameLabel.TabIndex = 5;
+            // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
             // SelectLabelTypeTag
             // 
@@ -2983,6 +3000,8 @@
             // EditingAreaPanel
             // 
             this.EditingAreaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.EditingAreaPanel.Controls.Add(this.ShowFeatureListButton);
+            this.EditingAreaPanel.Controls.Add(this.FeatureListPanel);
             this.EditingAreaPanel.Controls.Add(this.label34);
             this.EditingAreaPanel.Controls.Add(this.splitContainer1);
             this.EditingAreaPanel.Controls.Add(this.pictureChosen);
@@ -2991,6 +3010,36 @@
             this.EditingAreaPanel.Name = "EditingAreaPanel";
             this.EditingAreaPanel.Size = new System.Drawing.Size(772, 484);
             this.EditingAreaPanel.TabIndex = 37;
+            // 
+            // ShowFeatureListButton
+            // 
+            this.ShowFeatureListButton.BackColor = System.Drawing.Color.LightGray;
+            this.ShowFeatureListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShowFeatureListButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ShowFeatureListButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ShowFeatureListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowFeatureListButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowFeatureListButton.ForeColor = System.Drawing.Color.Black;
+            this.ShowFeatureListButton.Location = new System.Drawing.Point(651, 3);
+            this.ShowFeatureListButton.Name = "ShowFeatureListButton";
+            this.ShowFeatureListButton.Size = new System.Drawing.Size(108, 30);
+            this.ShowFeatureListButton.TabIndex = 43;
+            this.ShowFeatureListButton.Text = "Feature List";
+            this.ChangeYourPictureToolTip.SetToolTip(this.ShowFeatureListButton, "Apply color filter");
+            this.ShowFeatureListButton.UseVisualStyleBackColor = false;
+            this.ShowFeatureListButton.Click += new System.EventHandler(this.ShowFeatureListButton_Click);
+            this.ShowFeatureListButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.ShowFeatureListButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // FeatureListPanel
+            // 
+            this.FeatureListPanel.AutoScroll = true;
+            this.FeatureListPanel.BackColor = System.Drawing.Color.LightGray;
+            this.FeatureListPanel.Location = new System.Drawing.Point(464, 36);
+            this.FeatureListPanel.Name = "FeatureListPanel";
+            this.FeatureListPanel.Size = new System.Drawing.Size(296, 314);
+            this.FeatureListPanel.TabIndex = 8;
+            this.FeatureListPanel.Visible = false;
             // 
             // label34
             // 
@@ -3485,7 +3534,7 @@
             // 
             // pictureChosen
             // 
-            this.pictureChosen.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pictureChosen.BackColor = System.Drawing.Color.White;
             this.pictureChosen.Location = new System.Drawing.Point(14, 7);
             this.pictureChosen.Name = "pictureChosen";
             this.pictureChosen.Size = new System.Drawing.Size(444, 343);
@@ -3511,21 +3560,6 @@
             this.feauturesProgressBar.Size = new System.Drawing.Size(225, 23);
             this.feauturesProgressBar.TabIndex = 7;
             this.feauturesProgressBar.Visible = false;
-            // 
-            // UserPicturePictureBox
-            // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
-            this.UserPicturePictureBox.TabIndex = 4;
-            this.UserPicturePictureBox.TabStop = false;
-            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
-            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
-            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
-            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
             // MainWindow
             // 
@@ -3567,6 +3601,7 @@
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
@@ -3610,7 +3645,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3865,6 +3899,8 @@
 		private System.Windows.Forms.Button PaintButton;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Button ShowFeatureListButton;
+        private System.Windows.Forms.Panel FeatureListPanel;
     }
 
 }

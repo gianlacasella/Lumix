@@ -1178,6 +1178,7 @@ namespace Entrega2_Equipo1
                     PictureBox PIC = (PictureBox)sourceControl;
                     Image im = (Image)PIC.Tag;
                     featuresImage.Add(im);
+                    Refresh_FeatureListPanel();
                 }
             }
         }
@@ -2283,7 +2284,61 @@ namespace Entrega2_Equipo1
             Button btn = (Button)sender;
             btn.ForeColor = Color.Black;
         }
+
+        private void ShowFeatureListButton_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (FeatureListPanel.Visible == false)
+            {
+                FeatureListPanel.Visible = true;
+                Refresh_FeatureListPanel();
+                btn.Text = "Editing area";
+                label34.Text = "Feature list images";
+            }
+            else
+            {
+                FeatureListPanel.Visible = false;
+                btn.Text = "Feature list";
+                label34.Text = "Editing area images";
+            }
+        }
+
+        private void Refresh_FeatureListPanel()
+        {
+            FeatureListPanel.Controls.Clear();
+            Paint_FeatureList(this, EventArgs.Empty);
+        }
+
+
+        private void Paint_FeatureList(object sender, EventArgs e)
+        {
+            int x = 20;
+            int y = 20;
+            int maxHeight = -1;
+            foreach (Image image in featuresImage)
+            {
+                PictureBox pic = new PictureBox();
+                pic.Image = NewThumbnailImage(image.BitmapImage);
+                pic.Location = new Point(x, y);
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
+                pic.Click += ImageBorderClick;
+                pic.Name = image.Name;
+                pic.Cursor = Cursors.Hand;
+
+
+                x += pic.Width + 10;
+                maxHeight = Math.Max(pic.Height, maxHeight);
+                if (x > this.FeatureListPanel.Width - 100)
+                {
+                    x = 20;
+                    y += maxHeight + 10;
+                }
+                this.FeatureListPanel.Controls.Add(pic);
+            }
+        }
     }
+
+    
 
     public class MyRenderer : ToolStripProfessionalRenderer
     {
