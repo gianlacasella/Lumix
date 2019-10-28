@@ -21,7 +21,7 @@ namespace Entrega2_Equipo1
         List<Image> featuresImage = new List<Image>();
         Label createdLabel;
         Image imagetoaddlabel;
-        Size formsizewithrightpanel = new Size(1662, 822);
+        Size formsizewithrightpanel = new Size(1702, 822);
         Size formsizewithoutrightpanel = new Size(558, 822);
         // Usuario que se ha logueado
         User userLoggedIn = null;
@@ -271,7 +271,6 @@ namespace Entrega2_Equipo1
                     // Get the control that is displaying this context menu
                     Control sourceControl = owner.SourceControl;
                     PictureBox PIC = (PictureBox)sourceControl;
-                    ImageDetailClick((object)PIC, EventArgs.Empty);
                     Image imagetoaddlabel = (Image)PIC.Tag;
 
                     // Ya reconocimos cual fue el Image seleccionado para agregar el label
@@ -283,14 +282,6 @@ namespace Entrega2_Equipo1
                     ImageInfoPanel.Dock = DockStyle.Fill;
                     Bitmap uparrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "uparrow.png");
                     CollapseInfoPanelButton.BackgroundImage = uparrow;
-
-                    if (RightPanel.Visible == false)
-                    {
-                        RightPanel.Visible = true;
-                        this.Size = formsizewithrightpanel;
-                        Bitmap leftarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "leftarrow.png");
-                        OpenRightPanelButton.BackgroundImage = leftarrow;
-                    }
                     this.SearchTextBox.Enabled = false;
                     //panelImages.Visible = false;
                     AddLabelController();

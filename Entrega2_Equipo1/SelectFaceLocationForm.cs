@@ -146,6 +146,18 @@ namespace Entrega2_Equipo1
             return rect;
         }
 
+        private void DoneButton_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.ForeColor = Color.White;
+        }
+
+        private void DoneButton_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.ForeColor = Color.Black;
+        }
+
         private void DoneButton_Click(object sender, EventArgs e)
         {
 			Exit = true;

@@ -61,13 +61,22 @@
             // 
             // DoneButton
             // 
+            this.DoneButton.BackColor = System.Drawing.Color.LightGray;
+            this.DoneButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoneButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.DoneButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.DoneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DoneButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoneButton.ForeColor = System.Drawing.Color.Black;
             this.DoneButton.Location = new System.Drawing.Point(713, 418);
             this.DoneButton.Name = "DoneButton";
             this.DoneButton.Size = new System.Drawing.Size(75, 23);
             this.DoneButton.TabIndex = 1;
             this.DoneButton.Text = "Done";
-            this.DoneButton.UseVisualStyleBackColor = true;
+            this.DoneButton.UseVisualStyleBackColor = false;
             this.DoneButton.Click += new System.EventHandler(this.DoneButton_Click);
+            this.DoneButton.MouseEnter += new System.EventHandler(this.DoneButton_MouseEnter);
+            this.DoneButton.MouseLeave += new System.EventHandler(this.DoneButton_MouseLeave);
             // 
             // SelectedWidthTag
             // 
@@ -142,9 +151,8 @@
             this.SelectedTopData.ForeColor = System.Drawing.Color.White;
             this.SelectedTopData.Location = new System.Drawing.Point(313, 423);
             this.SelectedTopData.Name = "SelectedTopData";
-            this.SelectedTopData.Size = new System.Drawing.Size(13, 13);
+            this.SelectedTopData.Size = new System.Drawing.Size(0, 13);
             this.SelectedTopData.TabIndex = 10;
-            this.SelectedTopData.Text = "x";
             // 
             // SelectedLeftData
             // 
@@ -153,9 +161,8 @@
             this.SelectedLeftData.ForeColor = System.Drawing.Color.White;
             this.SelectedLeftData.Location = new System.Drawing.Point(433, 423);
             this.SelectedLeftData.Name = "SelectedLeftData";
-            this.SelectedLeftData.Size = new System.Drawing.Size(13, 13);
+            this.SelectedLeftData.Size = new System.Drawing.Size(0, 13);
             this.SelectedLeftData.TabIndex = 11;
-            this.SelectedLeftData.Text = "x";
             // 
             // SelectedWidthData
             // 
@@ -164,9 +171,8 @@
             this.SelectedWidthData.ForeColor = System.Drawing.Color.White;
             this.SelectedWidthData.Location = new System.Drawing.Point(555, 423);
             this.SelectedWidthData.Name = "SelectedWidthData";
-            this.SelectedWidthData.Size = new System.Drawing.Size(13, 13);
+            this.SelectedWidthData.Size = new System.Drawing.Size(0, 13);
             this.SelectedWidthData.TabIndex = 12;
-            this.SelectedWidthData.Text = "x";
             // 
             // SelectedHeightData
             // 
@@ -175,9 +181,8 @@
             this.SelectedHeightData.ForeColor = System.Drawing.Color.White;
             this.SelectedHeightData.Location = new System.Drawing.Point(683, 423);
             this.SelectedHeightData.Name = "SelectedHeightData";
-            this.SelectedHeightData.Size = new System.Drawing.Size(13, 13);
+            this.SelectedHeightData.Size = new System.Drawing.Size(0, 13);
             this.SelectedHeightData.TabIndex = 13;
-            this.SelectedHeightData.Text = "x";
             // 
             // WidthData
             // 
