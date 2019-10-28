@@ -48,12 +48,13 @@ namespace Entrega2_Equipo1
 			foreach (Image image in featuresImage)
 			{
 				PictureBox pic = new PictureBox();
-				pic.Image = image.BitmapImage;
-				pic.Location = new Point(x, y);
-				pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                pic.Image = NewThumbnailImage(image.BitmapImage);
+                pic.Location = new Point(x, y);
+				pic.SizeMode = PictureBoxSizeMode.Zoom;
 				pic.Click += ImageBorderClick;
 				pic.Click += ShowImageDetails;
-				pic.Click += CleanTextBox;
+                pic.Size = new Size(150, 100);
+                pic.Click += CleanTextBox;
 				pic.Name = image.Name;
 				pic.Tag = DEFAULT_TIME;
 
@@ -70,12 +71,34 @@ namespace Entrega2_Equipo1
 			}
 		}
 
-		private void LoadImage(int Index)
+        private System.Drawing.Image NewThumbnailImage(System.Drawing.Image image)
+        {
+            System.Drawing.Image thumb = image.GetThumbnailImage(image.Width / 4, image.Height / 4, () => false, IntPtr.Zero);
+            return thumb;
+        }
+
+        private void LoadImage(int Index)
 		{
-			MainPictureBox.Image = images[Index].BitmapImage;
+            System.Drawing.Image img = (System.Drawing.Image)images[Index].BitmapImage;
+            MainPictureBox.Image = img;
+            MainPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 		}
 
-		private void CleanTextBox(object sender, EventArgs e)
+        private System.Drawing.Image NewThumbnailMainImage(System.Drawing.Image image)
+        {
+            System.Drawing.Image thumb = image.GetThumbnailImage(image.Width, image.Height, () => false, IntPtr.Zero);
+            if (image.Width < 1000 || image.Height < 1000)
+            {
+                thumb = image.GetThumbnailImage(image.Width, image.Height, () => false, IntPtr.Zero);
+            }
+            else
+            {
+                thumb = image.GetThumbnailImage(image.Width / 2, image.Height / 2, () => false, IntPtr.Zero);
+            }
+            return thumb;
+        }
+
+        private void CleanTextBox(object sender, EventArgs e)
 		{
 			textBoxNumber.Text = "";
 		}
@@ -92,7 +115,7 @@ namespace Entrega2_Equipo1
 			{
 				chosenImage = PIC;
 			}
-			PIC.BorderStyle = BorderStyle.Fixed3D;
+			PIC.BorderStyle = BorderStyle.FixedSingle;
 		}
 
 		private void ShowImageDetails(object sender, EventArgs e)

@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paint));
             this.ImagePictureBox = new System.Windows.Forms.PictureBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.DoneButton = new System.Windows.Forms.Button();
@@ -106,6 +107,7 @@
             this.Controls.Add(this.ColorButton);
             this.Controls.Add(this.DoneButton);
             this.Controls.Add(this.ImagePictureBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Paint";
             this.Text = "Paint";
             this.Load += new System.EventHandler(this.Paint_Load);

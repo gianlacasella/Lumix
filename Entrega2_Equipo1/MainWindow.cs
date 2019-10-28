@@ -430,7 +430,8 @@ namespace Entrega2_Equipo1
             this.imagetoaddlabel = image;
             // Mostrar los datos en el tree view
             RefreshInfoTreeView();
-            
+            PIC.BackColor = Color.White;
+            if(chosenImage != null)chosenImage.BackColor = Color.Transparent;
         }
 
         private void ImageBorderClick(object sender, EventArgs e)
@@ -445,7 +446,7 @@ namespace Entrega2_Equipo1
             {
                 chosenImage = PIC;
             }
-            PIC.BorderStyle = BorderStyle.Fixed3D;
+            PIC.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void NoPictureChosen(object sender, EventArgs e)
@@ -473,6 +474,7 @@ namespace Entrega2_Equipo1
             {
                 // Tambien del property grid
                 chosenImage.BorderStyle = BorderStyle.None;
+                chosenImage.BackColor = Color.Transparent;
                 chosenImage = null;
                 this.calificationUpDown.Enabled = false;
                 this.SetCalificationButton.Enabled = false;
@@ -481,7 +483,6 @@ namespace Entrega2_Equipo1
                 this.nameTextBox.Enabled = false;
                 InfoTreeView.Nodes.Clear();
             }
-
         }
 
         private void SetCalificationButton_Click(object sender, EventArgs e)
@@ -602,6 +603,7 @@ namespace Entrega2_Equipo1
                 pic.BackColor = Color.Transparent; //  AGREGUE ESTO
                 pic.Click += ImageEditingBorderClick;
                 pic.Click += MainEditingImage;
+                pic.Cursor = Cursors.Hand;
                 pic.ContextMenuStrip = contextMenuStripEditing;
                 pic.Name = image.Name;
 				if (chosenEditingImage != null)
@@ -626,7 +628,6 @@ namespace Entrega2_Equipo1
         }
 
 
-        // WORKING HERE
         private void MainEditingImage(object sender, EventArgs e)
         {
             PictureBox image = (PictureBox)sender;

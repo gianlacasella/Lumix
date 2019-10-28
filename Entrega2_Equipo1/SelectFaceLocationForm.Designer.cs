@@ -72,108 +72,132 @@
             // SelectedWidthTag
             // 
             this.SelectedWidthTag.AutoSize = true;
+            this.SelectedWidthTag.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedWidthTag.ForeColor = System.Drawing.Color.White;
             this.SelectedWidthTag.Location = new System.Drawing.Point(452, 423);
             this.SelectedWidthTag.Name = "SelectedWidthTag";
-            this.SelectedWidthTag.Size = new System.Drawing.Size(83, 13);
+            this.SelectedWidthTag.Size = new System.Drawing.Size(97, 13);
             this.SelectedWidthTag.TabIndex = 4;
             this.SelectedWidthTag.Text = "Selected Width:";
             // 
             // SelectedHeightTag
             // 
             this.SelectedHeightTag.AutoSize = true;
+            this.SelectedHeightTag.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedHeightTag.ForeColor = System.Drawing.Color.White;
             this.SelectedHeightTag.Location = new System.Drawing.Point(583, 423);
             this.SelectedHeightTag.Name = "SelectedHeightTag";
-            this.SelectedHeightTag.Size = new System.Drawing.Size(86, 13);
+            this.SelectedHeightTag.Size = new System.Drawing.Size(103, 13);
             this.SelectedHeightTag.TabIndex = 5;
             this.SelectedHeightTag.Text = "Selected Height:";
             // 
             // TopData
             // 
             this.TopData.AutoSize = true;
+            this.TopData.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TopData.ForeColor = System.Drawing.Color.White;
             this.TopData.Location = new System.Drawing.Point(46, 428);
             this.TopData.Name = "TopData";
-            this.TopData.Size = new System.Drawing.Size(28, 13);
+            this.TopData.Size = new System.Drawing.Size(31, 13);
             this.TopData.TabIndex = 6;
             this.TopData.Text = "data";
             // 
             // LeftData
             // 
             this.LeftData.AutoSize = true;
+            this.LeftData.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeftData.ForeColor = System.Drawing.Color.White;
             this.LeftData.Location = new System.Drawing.Point(12, 428);
             this.LeftData.Name = "LeftData";
-            this.LeftData.Size = new System.Drawing.Size(28, 13);
+            this.LeftData.Size = new System.Drawing.Size(31, 13);
             this.LeftData.TabIndex = 7;
             this.LeftData.Text = "data";
             // 
             // SelectedTopTag
             // 
             this.SelectedTopTag.AutoSize = true;
+            this.SelectedTopTag.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedTopTag.ForeColor = System.Drawing.Color.White;
             this.SelectedTopTag.Location = new System.Drawing.Point(233, 423);
             this.SelectedTopTag.Name = "SelectedTopTag";
-            this.SelectedTopTag.Size = new System.Drawing.Size(74, 13);
+            this.SelectedTopTag.Size = new System.Drawing.Size(85, 13);
             this.SelectedTopTag.TabIndex = 8;
             this.SelectedTopTag.Text = "Selected Top:";
             // 
             // SelectedLeftTag
             // 
             this.SelectedLeftTag.AutoSize = true;
+            this.SelectedLeftTag.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedLeftTag.ForeColor = System.Drawing.Color.White;
             this.SelectedLeftTag.Location = new System.Drawing.Point(343, 423);
             this.SelectedLeftTag.Name = "SelectedLeftTag";
-            this.SelectedLeftTag.Size = new System.Drawing.Size(73, 13);
+            this.SelectedLeftTag.Size = new System.Drawing.Size(91, 13);
             this.SelectedLeftTag.TabIndex = 9;
             this.SelectedLeftTag.Text = "Selected Left:";
             // 
             // SelectedTopData
             // 
             this.SelectedTopData.AutoSize = true;
+            this.SelectedTopData.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedTopData.ForeColor = System.Drawing.Color.White;
             this.SelectedTopData.Location = new System.Drawing.Point(313, 423);
             this.SelectedTopData.Name = "SelectedTopData";
-            this.SelectedTopData.Size = new System.Drawing.Size(12, 13);
+            this.SelectedTopData.Size = new System.Drawing.Size(13, 13);
             this.SelectedTopData.TabIndex = 10;
             this.SelectedTopData.Text = "x";
             // 
             // SelectedLeftData
             // 
             this.SelectedLeftData.AutoSize = true;
-            this.SelectedLeftData.Location = new System.Drawing.Point(422, 423);
+            this.SelectedLeftData.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedLeftData.ForeColor = System.Drawing.Color.White;
+            this.SelectedLeftData.Location = new System.Drawing.Point(433, 423);
             this.SelectedLeftData.Name = "SelectedLeftData";
-            this.SelectedLeftData.Size = new System.Drawing.Size(12, 13);
+            this.SelectedLeftData.Size = new System.Drawing.Size(13, 13);
             this.SelectedLeftData.TabIndex = 11;
             this.SelectedLeftData.Text = "x";
             // 
             // SelectedWidthData
             // 
             this.SelectedWidthData.AutoSize = true;
-            this.SelectedWidthData.Location = new System.Drawing.Point(541, 423);
+            this.SelectedWidthData.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedWidthData.ForeColor = System.Drawing.Color.White;
+            this.SelectedWidthData.Location = new System.Drawing.Point(555, 423);
             this.SelectedWidthData.Name = "SelectedWidthData";
-            this.SelectedWidthData.Size = new System.Drawing.Size(12, 13);
+            this.SelectedWidthData.Size = new System.Drawing.Size(13, 13);
             this.SelectedWidthData.TabIndex = 12;
             this.SelectedWidthData.Text = "x";
             // 
             // SelectedHeightData
             // 
             this.SelectedHeightData.AutoSize = true;
-            this.SelectedHeightData.Location = new System.Drawing.Point(675, 423);
+            this.SelectedHeightData.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedHeightData.ForeColor = System.Drawing.Color.White;
+            this.SelectedHeightData.Location = new System.Drawing.Point(683, 423);
             this.SelectedHeightData.Name = "SelectedHeightData";
-            this.SelectedHeightData.Size = new System.Drawing.Size(12, 13);
+            this.SelectedHeightData.Size = new System.Drawing.Size(13, 13);
             this.SelectedHeightData.TabIndex = 13;
             this.SelectedHeightData.Text = "x";
             // 
             // WidthData
             // 
             this.WidthData.AutoSize = true;
+            this.WidthData.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WidthData.ForeColor = System.Drawing.Color.White;
             this.WidthData.Location = new System.Drawing.Point(80, 428);
             this.WidthData.Name = "WidthData";
-            this.WidthData.Size = new System.Drawing.Size(28, 13);
+            this.WidthData.Size = new System.Drawing.Size(31, 13);
             this.WidthData.TabIndex = 14;
             this.WidthData.Text = "data";
             // 
             // HeightData
             // 
             this.HeightData.AutoSize = true;
+            this.HeightData.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeightData.ForeColor = System.Drawing.Color.White;
             this.HeightData.Location = new System.Drawing.Point(114, 428);
             this.HeightData.Name = "HeightData";
-            this.HeightData.Size = new System.Drawing.Size(28, 13);
+            this.HeightData.Size = new System.Drawing.Size(31, 13);
             this.HeightData.TabIndex = 15;
             this.HeightData.Text = "data";
             // 
@@ -181,6 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.HeightData);
             this.Controls.Add(this.WidthData);
@@ -196,6 +221,8 @@
             this.Controls.Add(this.SelectedWidthTag);
             this.Controls.Add(this.DoneButton);
             this.Controls.Add(this.ImagePictureBox);
+            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelectFaceLocationForm";
             this.Text = "Select Face Location";
