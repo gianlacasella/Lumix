@@ -2190,7 +2190,6 @@ namespace Entrega2_Equipo1
 					image.ReLoadResolution();
 					chosenEditingImage.Image = image.BitmapImage;
 					pictureChosen.Image = chosenEditingImage.Image;
-					EditingPanel_Paint(sender, e);
 				}
 			}
 		}
