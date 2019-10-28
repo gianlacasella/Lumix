@@ -324,25 +324,27 @@ namespace Entrega2_Equipo1
             foreach (Image image in library.Images)
             {
                 PictureBox pic = new PictureBox();
-                pic.Image = image.BitmapImage;
+                pic.Image = NewThumbnailImage(image.BitmapImage);
                 pic.Location = new Point(x, y);
                 pic.Tag = image;
-                pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                pic.Size = new Size(150, 100);
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
+                pic.BackColor = Color.Transparent;
                 pic.Click += ImageDetailClick;
                 pic.Click += ImageBorderClick;
                 pic.ContextMenuStrip = contextMenuStripImage;
                 pic.Name = image.Name;
                 pic.Cursor = Cursors.Hand;
-				if (chosenImage != null)
-				{
-					if (pic.Image == chosenImage.Image && pic.Tag == chosenImage.Tag && pic.Name == chosenImage.Name)
-					{
-						chosenImage.Location = pic.Location;
-						pic = chosenImage;
-						chosenImage.BorderStyle = BorderStyle.Fixed3D;
-					}
-				}
-				x += pic.Width + 10;
+                if (chosenImage != null)
+                {
+                    if (pic.Image == chosenImage.Image && pic.Tag == chosenImage.Tag && pic.Name == chosenImage.Name)
+                    {
+                        chosenImage.Location = pic.Location;
+                        pic = chosenImage;
+                        chosenImage.BorderStyle = BorderStyle.Fixed3D;
+                    }
+                }
+                x += pic.Width + 10;
                 maxHeight = Math.Max(pic.Height, maxHeight);
                 if (x > this.panelImages.Width - 100)
                 {
@@ -357,6 +359,26 @@ namespace Entrega2_Equipo1
             this.ToolbarProgressBar.Value = 0;
         }
 
+        // Metodo que devuelve un bitmap sobre el que se incrusta la imagen para el library
+        private System.Drawing.Image NewThumbnailImage(System.Drawing.Image image)
+        {
+            System.Drawing.Image thumb = image.GetThumbnailImage(image.Width/4, image.Height/4, () => false, IntPtr.Zero);
+            return thumb;
+        }
+
+        private System.Drawing.Image NewThumbnailMainImage(System.Drawing.Image image)
+        {
+            System.Drawing.Image thumb = image.GetThumbnailImage(image.Width, image.Height, () => false, IntPtr.Zero);
+            if (image.Width < 1000 || image.Height < 1000)
+            {
+                thumb = image.GetThumbnailImage(image.Width, image.Height, () => false, IntPtr.Zero);
+            }
+            else
+            {
+                thumb = image.GetThumbnailImage(image.Width / 2, image.Height / 2, () => false, IntPtr.Zero);
+            }
+            return thumb;
+        }
 
 
         // Metodo que se utiliza para imprimir en pantalla los resultados de una busqueda
@@ -368,10 +390,12 @@ namespace Entrega2_Equipo1
             foreach (Image image in result)
             {
                 PictureBox pic = new PictureBox();
-                pic.Image = image.BitmapImage;
+                pic.Image = NewThumbnailImage(image.BitmapImage);
+                pic.Size = new Size(150, 100);
                 pic.Location = new Point(x, y);
+                pic.BackColor = Color.Transparent;
                 pic.Tag = image;
-                pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
                 pic.Click += ImageDetailClick;
                 pic.Click += ImageBorderClick;
                 pic.ContextMenuStrip = contextMenuStripImage;
@@ -569,10 +593,13 @@ namespace Entrega2_Equipo1
             foreach (Image image in editingImages)
             {
                 PictureBox pic = new PictureBox();
-                pic.Image = image.BitmapImage;
+                pic.Image = NewThumbnailImage(image.BitmapImage); // AGREGUE ESTO
+                pic.Size = new Size(100, 50); // AGREGUE ESTO
+                //pic.Image = image.BitmapImage; <= CAMBIO
                 pic.Location = new Point(x, y);
                 pic.Tag = image;
-                pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                pic.SizeMode = PictureBoxSizeMode.Zoom; // AGREGUE ESTO DE STRETCH A ZOOM
+                pic.BackColor = Color.Transparent; //  AGREGUE ESTO
                 pic.Click += ImageEditingBorderClick;
                 pic.Click += MainEditingImage;
                 pic.ContextMenuStrip = contextMenuStripEditing;
@@ -598,14 +625,22 @@ namespace Entrega2_Equipo1
 
         }
 
+
+        // WORKING HERE
         private void MainEditingImage(object sender, EventArgs e)
         {
             PictureBox image = (PictureBox)sender;
+            /* CAMBIOS
             pictureChosen.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureChosen.Image = image.Image;
+            */
+            pictureChosen.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureChosen.Image = NewThumbnailMainImage(image.Image);
             brightnessBar.Value = 0;
 			ContrastBar.Value = 0;
         }
+
+        
 
         private void ImageEditingBorderClick(object sender, EventArgs e)
         {
@@ -880,8 +915,8 @@ namespace Entrega2_Equipo1
         private void AddLabelController()
         {
             this.createdLabel = null;
-            this.AddLabelImageBox.Image = (Bitmap)this.imagetoaddlabel.BitmapImage.Clone();
-            this.AddLabelImageBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.AddLabelImageBox.Image = NewThumbnailMainImage((Bitmap)this.imagetoaddlabel.BitmapImage.Clone());
+            this.AddLabelImageBox.SizeMode = PictureBoxSizeMode.Zoom;
             this.PersonLabelNationalityComboBox.DataSource = Enum.GetValues(typeof(ENationality));
             this.PersonLabelHairColorComboBox.DataSource = Enum.GetValues(typeof(EColor));
             this.PersonLabelEyesColorComboBox.DataSource = Enum.GetValues(typeof(EColor));
@@ -2196,46 +2231,46 @@ namespace Entrega2_Equipo1
 
 		private void PaintButton_Click(object sender, EventArgs e)
 		{
-			if (chosenEditingImage != null)
-			{
-				Image image = (Image)chosenEditingImage.Tag;
-				Paint form = new Paint();
-				form.ActualImage = image.BitmapImage;
-				form.ShowDialog();
-				int x = form.X;
-				int y = form.Y;
-				Color MainColor = form.MainColor;
-				if (form.Exit)
-				{
-					image.BitmapImage = form.ActualImage;
-					chosenEditingImage.Image = form.ActualImage;
-					pictureChosen.Image = chosenEditingImage.Image;
-				}
-			}
-			else
-			{
-				Paint form = new Paint();
-				Bitmap bmap = new Bitmap(1920, 1080);
-				using (Graphics graph = Graphics.FromImage(bmap))
-				{
-					Rectangle ImageSize = new Rectangle(0, 0, 1920, 1080);
-					graph.FillRectangle(Brushes.White, ImageSize);
-				}
-				form.ActualImage = bmap;
-				form.ShowDialog();
-				int x = form.X;
-				int y = form.Y;
-				Color MainColor = form.MainColor;
-				if (form.Exit)
-				{
-					bmap = form.ActualImage;
-					//pictureChosen.Image = bmap;
-					Image newImage = new Image(bmap, new List<Label>(), -1);
-					producer.LoadImagesToWorkingArea(new List<Image>() { newImage });
-					EditingPanel_Paint(sender, e);
-				}
-			}
-		}
+            if (chosenEditingImage != null)
+            {
+                Image image = (Image)chosenEditingImage.Tag;
+                Paint form = new Paint();
+                form.ActualImage = image.BitmapImage;
+                form.ShowDialog();
+                int x = form.X;
+                int y = form.Y;
+                Color MainColor = form.MainColor;
+                if (form.Exit)
+                {
+                    image.BitmapImage = form.ActualImage;
+                    chosenEditingImage.Image = form.ActualImage;
+                    pictureChosen.Image = chosenEditingImage.Image;
+                }
+            }
+            else
+            {
+                Paint form = new Paint();
+                Bitmap bmap = new Bitmap(1920, 1080);
+                using (Graphics graph = Graphics.FromImage(bmap))
+                {
+                    Rectangle ImageSize = new Rectangle(0, 0, 1920, 1080);
+                    graph.FillRectangle(Brushes.White, ImageSize);
+                }
+                form.ActualImage = bmap;
+                form.ShowDialog();
+                int x = form.X;
+                int y = form.Y;
+                Color MainColor = form.MainColor;
+                if (form.Exit)
+                {
+                    bmap = form.ActualImage;
+                    //pictureChosen.Image = bmap;
+                    Image newImage = new Image(bmap, new List<Label>(), -1);
+                    producer.LoadImagesToWorkingArea(new List<Image>() { newImage });
+                    EditingPanel_Paint(sender, e);
+                }
+            }
+        }
 
         private void Button9_MouseEnter(object sender, EventArgs e)
         {

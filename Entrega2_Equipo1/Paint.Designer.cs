@@ -34,7 +34,6 @@
             this.ColorButton = new System.Windows.Forms.Button();
             this.numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ColorButton2 = new System.Windows.Forms.Button();
-            this.RectangleButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -97,21 +96,11 @@
             this.ColorButton2.UseVisualStyleBackColor = true;
             this.ColorButton2.Click += new System.EventHandler(this.ColorButton2_Click);
             // 
-            // RectangleButton
-            // 
-            this.RectangleButton.Location = new System.Drawing.Point(344, 416);
-            this.RectangleButton.Name = "RectangleButton";
-            this.RectangleButton.Size = new System.Drawing.Size(75, 23);
-            this.RectangleButton.TabIndex = 5;
-            this.RectangleButton.Text = "Rectangle";
-            this.RectangleButton.UseVisualStyleBackColor = true;
-            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.RectangleButton);
             this.Controls.Add(this.ColorButton2);
             this.Controls.Add(this.numericUpDown);
             this.Controls.Add(this.ColorButton);
@@ -134,6 +123,5 @@
 		private System.Windows.Forms.Button ColorButton;
 		private System.Windows.Forms.NumericUpDown numericUpDown;
 		private System.Windows.Forms.Button ColorButton2;
-        private System.Windows.Forms.Button RectangleButton;
     }
 }
