@@ -123,6 +123,7 @@
             this.RealNameLabel = new System.Windows.Forms.Label();
             this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
@@ -193,6 +194,8 @@
             this.OpenRightPanelPanel = new System.Windows.Forms.Panel();
             this.OpenRightPanelButton = new System.Windows.Forms.Button();
             this.RightPanel = new System.Windows.Forms.Panel();
+            this.ExportAllToFeature = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
             this.ClearEditingAreaButton = new System.Windows.Forms.Button();
             this.ImageDataPanel = new System.Windows.Forms.Panel();
             this.InfoSettingPanel = new System.Windows.Forms.Panel();
@@ -279,9 +282,6 @@
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.feauturesProgressBar = new System.Windows.Forms.ProgressBar();
-            this.button19 = new System.Windows.Forms.Button();
-            this.ExportAllToFeature = new System.Windows.Forms.Button();
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
@@ -294,6 +294,7 @@
             this.panel3.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddPersonLabelPanel.SuspendLayout();
             this.AddSpecialLabelPanel.SuspendLayout();
@@ -326,7 +327,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1533,6 +1533,21 @@
             this.UsernameLabel.Size = new System.Drawing.Size(0, 58);
             this.UsernameLabel.TabIndex = 5;
             // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
+            // 
             // SelectLabelTypeTag
             // 
             this.SelectLabelTypeTag.AutoSize = true;
@@ -2365,6 +2380,42 @@
             this.RightPanel.TabIndex = 6;
             this.RightPanel.Visible = false;
             // 
+            // ExportAllToFeature
+            // 
+            this.ExportAllToFeature.BackColor = System.Drawing.Color.LightGray;
+            this.ExportAllToFeature.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExportAllToFeature.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExportAllToFeature.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExportAllToFeature.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExportAllToFeature.Font = new System.Drawing.Font("Consolas", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportAllToFeature.Location = new System.Drawing.Point(1086, 171);
+            this.ExportAllToFeature.Name = "ExportAllToFeature";
+            this.ExportAllToFeature.Size = new System.Drawing.Size(50, 58);
+            this.ExportAllToFeature.TabIndex = 44;
+            this.ExportAllToFeature.Text = "Export all to feature";
+            this.ExportAllToFeature.UseVisualStyleBackColor = false;
+            this.ExportAllToFeature.Click += new System.EventHandler(this.ExportAllToFeature_Click);
+            this.ExportAllToFeature.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.ExportAllToFeature.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.Color.LightGray;
+            this.button19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button19.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button19.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.Font = new System.Drawing.Font("Consolas", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.Location = new System.Drawing.Point(1086, 104);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(50, 58);
+            this.button19.TabIndex = 43;
+            this.button19.Text = "Clear Feature";
+            this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.Button19_Click);
+            this.button19.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.button19.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
             // ClearEditingAreaButton
             // 
             this.ClearEditingAreaButton.BackColor = System.Drawing.Color.LightGray;
@@ -2379,6 +2430,7 @@
             this.ClearEditingAreaButton.TabIndex = 42;
             this.ClearEditingAreaButton.Text = "Clear Editing";
             this.ClearEditingAreaButton.UseVisualStyleBackColor = false;
+            this.ClearEditingAreaButton.Click += new System.EventHandler(this.ClearEditingAreaButton_Click);
             this.ClearEditingAreaButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
             this.ClearEditingAreaButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
             // 
@@ -3182,6 +3234,7 @@
             // 
             // comboRotate
             // 
+            this.comboRotate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboRotate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboRotate.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3235,6 +3288,7 @@
             // 
             // comboCensor
             // 
+            this.comboCensor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboCensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboCensor.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3606,55 +3660,6 @@
             this.feauturesProgressBar.TabIndex = 7;
             this.feauturesProgressBar.Visible = false;
             // 
-            // button19
-            // 
-            this.button19.BackColor = System.Drawing.Color.LightGray;
-            this.button19.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button19.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button19.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("Consolas", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.Location = new System.Drawing.Point(1086, 104);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(50, 58);
-            this.button19.TabIndex = 43;
-            this.button19.Text = "Clear Feature";
-            this.button19.UseVisualStyleBackColor = false;
-            this.button19.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.button19.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // ExportAllToFeature
-            // 
-            this.ExportAllToFeature.BackColor = System.Drawing.Color.LightGray;
-            this.ExportAllToFeature.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExportAllToFeature.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExportAllToFeature.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExportAllToFeature.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExportAllToFeature.Font = new System.Drawing.Font("Consolas", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExportAllToFeature.Location = new System.Drawing.Point(1086, 171);
-            this.ExportAllToFeature.Name = "ExportAllToFeature";
-            this.ExportAllToFeature.Size = new System.Drawing.Size(50, 58);
-            this.ExportAllToFeature.TabIndex = 44;
-            this.ExportAllToFeature.Text = "Export all to feature";
-            this.ExportAllToFeature.UseVisualStyleBackColor = false;
-            this.ExportAllToFeature.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.ExportAllToFeature.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // UserPicturePictureBox
-            // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
-            this.UserPicturePictureBox.TabIndex = 4;
-            this.UserPicturePictureBox.TabStop = false;
-            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
-            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
-            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
-            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3697,6 +3702,7 @@
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
@@ -3740,7 +3746,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

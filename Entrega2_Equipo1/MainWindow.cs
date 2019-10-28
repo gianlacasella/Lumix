@@ -2328,9 +2328,58 @@ namespace Entrega2_Equipo1
                 this.FeatureListPanel.Controls.Add(pic);
             }
         }
+
+        private void ClearEditingAreaButton_Click(object sender, EventArgs e)
+        {
+            if (library.Images.Count != 0)
+            {
+                if (MessageBox.Show("Are you sure you want to delete all the images from the editing area?", "Warning!",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    foreach (Control p in topauxlabel.Controls)
+                    {
+                        if (p is PictureBox)
+                        {
+                            Image im = (Image)p.Tag;
+                            PM.producer.RemoveImage(im);
+                            Saved = false;
+                            if (p == chosenEditingImage)
+                            {
+                                pictureChosen.SizeMode = PictureBoxSizeMode.CenterImage;
+                                pictureChosen.Image = pictureChosen.ErrorImage;
+                                chosenEditingImage = null;
+                            }
+                        }
+                    }
+                    ReLoadEditingPanelImage(this, EventArgs.Empty);
+
+                    //PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
+                }
+            }
+        }
+
+        private void Button19_Click(object sender, EventArgs e)
+        {
+            featuresImage.Clear();
+            Refresh_FeatureListPanel();
+        }
+
+        private void ExportAllToFeature_Click(object sender, EventArgs e)
+        {
+            if (library.Images.Count != 0)
+            {
+                foreach (Image im in PM.producer.imagesInTheWorkingArea())
+                {
+                    featuresImage.Add(im);
+                    Refresh_FeatureListPanel();
+                }
+
+                //PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
+            }
+        }
     }
 
-    
+
 
     public class MyRenderer : ToolStripProfessionalRenderer
     {
