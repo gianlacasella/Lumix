@@ -24,15 +24,11 @@ namespace Entrega2_Equipo1
         Image imagetoaddlabel;
         Size formsizewithrightpanel = new Size(1702, 822);
         Size formsizewithoutrightpanel = new Size(558, 822);
-        // Usuario que se ha logueado
         User userLoggedIn = null;
-        // bool que controla si el usuario desea cerrar el programa o cerrar sesion
         bool exit = true;
-        // bool que controla si el usuario desea eliminar su cuenta
         bool deleteaccount = false;
         Bitmap chooseUserPictureBitmap;
         Searcher mainSearcher;
-        // Bool que controla si agregar los labels se hace de forma multiple o no
         bool multipleImporting = false;
         List<Image> imagestoaddlabel;
         StringBuilder pattern;
@@ -42,7 +38,7 @@ namespace Entrega2_Equipo1
         public bool Exit { get => this.exit; set => this.exit = value; }
         public bool Deleteaccount { get => this.deleteaccount; set => this.deleteaccount = value; }
 
-        // =============================== FRAME METHODS ================================
+
         public MainWindow()
         {
             InitializeComponent();
@@ -71,14 +67,12 @@ namespace Entrega2_Equipo1
             Bitmap rightarrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "rightarrow.png");
             OpenRightPanelButton.BackgroundImage = rightarrow;
             OpenRightPanelButton.BackgroundImageLayout = ImageLayout.Zoom;
-
             string imageLocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\";
             Bitmap image = (Bitmap)Bitmap.FromFile(imageLocation + "changeuserpicture.png");
             Resizer res = new Resizer();
             int x = 150;
             int y = 150;
             this.chooseUserPictureBitmap = res.ResizeImage(image, x, y);
-
             this.mainSearcher = new Searcher();
             pattern = new StringBuilder();
         }
@@ -87,19 +81,13 @@ namespace Entrega2_Equipo1
         {
             if (!Saved)
             {
-                // Display a MsgBox asking the user to close the form.
-                if (MessageBox.Show("Are you sure you want to close without saving?", "Exit without save",
-                   MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                if (MessageBox.Show("Are you sure you want to close without saving?", "Exit without save", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {
-                    // Cancel the Closing event
                     e.Cancel = true;
                 }
             }
-
         }
 
-        // ==============================================================================
-        // =============================== TOOL STRIP MENU METHODS ===========================
         private void ImportOnlyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -164,10 +152,7 @@ namespace Entrega2_Equipo1
                     ReLoadPanelImage(sender, e);
                     SmartList_Click(this, EventArgs.Empty);
                     Saved = false;
-                    if (PIC == chosenImage)
-                    {
-                        chosenImage = null;
-                    }
+                    if (PIC == chosenImage) chosenImage = null;
                 }
             }
         }
@@ -193,10 +178,7 @@ namespace Entrega2_Equipo1
                     bm.Save(sfd.FileName, format);
                 }
             }
-            else
-            {
-                NoPictureChosen(sender, e);
-            }
+            else NoPictureChosen(sender, e);
         }
 
         private void ExportAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -223,30 +205,20 @@ namespace Entrega2_Equipo1
                     bm.Save(sfd.FileName, format);
                 }
             }
-            else
-            {
-                NoPictureChosen(sender, e);
-            }
+            else NoPictureChosen(sender, e);
         }
 
         private void CleanLibraryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (library.Images.Count != 0)
             {
-                if (MessageBox.Show("Are you sure you want to clean the library?", "Warning!",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to clean the library?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     library.ResetImages();
                     ReLoadPanelImage(sender, e);
                 }
             }
-            else
-            {
-
-                MessageBox.Show("There are no pictures in library", "Clean library error.",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
+            else MessageBox.Show("There are no pictures in library", "Clean library error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void AddToEditingAreaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -254,18 +226,14 @@ namespace Entrega2_Equipo1
             ToolStripItem menuItem = sender as ToolStripItem;
             if (menuItem != null)
             {
-                // Retrieve the ContextMenuStrip that owns this ToolStripItem
                 ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
                 if (owner != null)
                 {
-                    // Get the control that is displaying this context menu
                     Control sourceControl = owner.SourceControl;
                     PictureBox PIC = (PictureBox)sourceControl;
-                    //pictureChosen.Image = PIC.Image;
                     pictureChosen.Tag = (Image)PIC.Tag;
                     producer.LoadImagesToWorkingArea(new List<Image>() { (Image)PIC.Tag });
                     EditingPanel_Paint(sender, e);
-                    //PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
                     if (RightPanel.Visible == false) OpenRightPanelButton_Click(this, EventArgs.Empty);
                 }
             }
@@ -276,40 +244,25 @@ namespace Entrega2_Equipo1
             ToolStripItem menuItem = sender as ToolStripItem;
             if (menuItem != null)
             {
-                // Retrieve the ContextMenuStrip that owns this ToolStripItem
                 ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
                 if (owner != null)
                 {
-                    // Get the control that is displaying this context menu
                     Control sourceControl = owner.SourceControl;
                     PictureBox PIC = (PictureBox)sourceControl;
                     Image imagetoaddlabel = (Image)PIC.Tag;
-
-                    // Ya reconocimos cual fue el Image seleccionado para agregar el label
                     AddLabelPanel.Visible = true;
                     this.imagetoaddlabel = imagetoaddlabel;
-
                     string arrowiconslocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\";
                     InfoSettingPanel.Visible = false;
                     ImageInfoPanel.Dock = DockStyle.Fill;
                     Bitmap uparrow = (Bitmap)Bitmap.FromFile(arrowiconslocation + "uparrow.png");
                     CollapseInfoPanelButton.BackgroundImage = uparrow;
                     this.SearchTextBox.Enabled = false;
-                    //panelImages.Visible = false;
                     AddLabelController();
                 }
             }
-            else
-            {
-                return;
-            }
-
-
+            else return;
         }
-
-        // ==============================================================================
-        // =============================== PANEL IMAGES METHODS =========================
-
 
         private void PanelImages_Paint(object sender, EventArgs e)
         {
@@ -362,7 +315,6 @@ namespace Entrega2_Equipo1
             this.ToolbarProgressBar.Value = 0;
         }
 
-        // Metodo que devuelve un bitmap sobre el que se incrusta la imagen para el library
         private System.Drawing.Image NewThumbnailImage(System.Drawing.Image image)
         {
             System.Drawing.Image thumb = image.GetThumbnailImage(image.Width/4, image.Height/4, () => false, IntPtr.Zero);
@@ -383,8 +335,6 @@ namespace Entrega2_Equipo1
             return thumb;
         }
 
-
-        // Metodo que se utiliza para imprimir en pantalla los resultados de una busqueda
         private void PanelImages_PaintSearchResult(List<Image> result)
         {
             int x = 20;
@@ -415,9 +365,6 @@ namespace Entrega2_Equipo1
             }
         }
 
-
-
-        // Metodo que se ejecuta cuando el usuario hace clic sobre una imagen del library
         private void ImageDetailClick(object sender, EventArgs e)
         {
             PictureBox PIC = (PictureBox)sender;
@@ -443,19 +390,13 @@ namespace Entrega2_Equipo1
                 chosenImage.BorderStyle = BorderStyle.None;
                 chosenImage = PIC;
             }
-            else
-            {
-                chosenImage = PIC;
-            }
+            else chosenImage = PIC;
             PIC.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void NoPictureChosen(object sender, EventArgs e)
         {
-
-            MessageBox.Show("A picture has to be chosen in order to export.", "No picture chosen",
-               MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            MessageBox.Show("A picture has to be chosen in order to export.", "No picture chosen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ReLoadPanelImage(object sender, EventArgs e)
@@ -464,16 +405,10 @@ namespace Entrega2_Equipo1
             PanelImages_AddImages();
         }
 
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void PanelImages_Click(object sender, EventArgs e)
         {
             if (chosenImage != null)
             {
-                // Tambien del property grid
                 chosenImage.BorderStyle = BorderStyle.None;
                 chosenImage.BackColor = Color.Transparent;
                 chosenImage = null;
@@ -527,7 +462,6 @@ namespace Entrega2_Equipo1
             InfoTreeView.Nodes[0].Nodes.Add("Aspect ratio: " + Convert.ToString(imagetoaddlabel.AspectRatio[0]) + ":" + Convert.ToString(imagetoaddlabel.AspectRatio[1]));
             string clear = imagetoaddlabel.DarkClear == true ? "Yes" : "No";
             InfoTreeView.Nodes[0].Nodes.Add("Clear: " + clear);
-
             InfoTreeView.Nodes.Add("Labels information");
             InfoTreeView.Nodes[1].Nodes.Add("Simple Labels");
             InfoTreeView.Nodes[1].Nodes.Add("Person Labels");
@@ -580,10 +514,7 @@ namespace Entrega2_Equipo1
             InfoTreeView.ExpandAll();
         }
 
-        // ==============================================================================
-        // =============================== EDITING PANEL METHODS ========================
 
-        // Metodo para guardar en las imagenes que se le aplico un filtro
         private void SaveFilterApplyed(EFilter filter, Image img)
         {
             img.ApplyedFilters[filter] = true;
@@ -598,13 +529,12 @@ namespace Entrega2_Equipo1
             foreach (Image image in editingImages)
             {
                 PictureBox pic = new PictureBox();
-                pic.Image = NewThumbnailImage(image.BitmapImage); // AGREGUE ESTO
-                pic.Size = new Size(100, 50); // AGREGUE ESTO
-                //pic.Image = image.BitmapImage; <= CAMBIO
+                pic.Image = NewThumbnailImage(image.BitmapImage);
+                pic.Size = new Size(100, 50);
                 pic.Location = new Point(x, y);
                 pic.Tag = image;
-                pic.SizeMode = PictureBoxSizeMode.Zoom; // AGREGUE ESTO DE STRETCH A ZOOM
-                pic.BackColor = Color.Transparent; //  AGREGUE ESTO
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
+                pic.BackColor = Color.Transparent;
                 pic.Click += ImageEditingBorderClick;
                 pic.Click += MainEditingImage;
                 pic.Cursor = Cursors.Hand;
@@ -635,15 +565,10 @@ namespace Entrega2_Equipo1
         private void MainEditingImage(object sender, EventArgs e)
         {
             PictureBox image = (PictureBox)sender;
-            /* CAMBIOS
-            pictureChosen.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureChosen.Image = image.Image;
-            */
             pictureChosen.SizeMode = PictureBoxSizeMode.Zoom;
             Image img = (Image)image.Tag;
             Bitmap pic = (Bitmap)img.BitmapImage;
             pictureChosen.Image = NewThumbnailMainImage(pic);
-            //pictureChosen.Image = NewThumbnailMainImage(image.Image);// Cambio en esta linea
             brightnessBar.Value = 0;
 			ContrastBar.Value = 0;
         }
@@ -658,10 +583,7 @@ namespace Entrega2_Equipo1
                 chosenEditingImage.BorderStyle = BorderStyle.None;
                 chosenEditingImage = PIC;
             }
-            else
-            {
-                chosenEditingImage = PIC;
-            }
+            else chosenEditingImage = PIC;
             MosaicpictureBox.Image = chosenEditingImage.Image;
             pictureCollageImage.Image = chosenEditingImage.Image;
             PIC.BorderStyle = BorderStyle.Fixed3D;
@@ -677,17 +599,14 @@ namespace Entrega2_Equipo1
         {
             if (library.Images.Count != 0)
             {
-                if (MessageBox.Show("Are you sure you want to delete this image from the editing area?", "Warning!",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to delete this image from the editing area?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     ToolStripItem menuItem = sender as ToolStripItem;
                     if (menuItem != null)
                     {
-                        // Retrieve the ContextMenuStrip that owns this ToolStripItem
                         ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
                         if (owner != null)
                         {
-                            // Get the control that is displaying this context menu
                             Control sourceControl = owner.SourceControl;
                             PictureBox PIC = (PictureBox)sourceControl;
                             Image im = (Image)PIC.Tag;
@@ -700,7 +619,6 @@ namespace Entrega2_Equipo1
                                 pictureChosen.Image = pictureChosen.ErrorImage;
                                 chosenEditingImage = null;
                             }
-                            //PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
                         }
                     }
                 }
@@ -737,11 +655,9 @@ namespace Entrega2_Equipo1
             ToolStripItem menuItem = sender as ToolStripItem;
             if (menuItem != null)
             {
-                // Retrieve the ContextMenuStrip that owns this ToolStripItem
                 ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
                 if (owner != null)
                 {
-                    // Get the control that is displaying this context menu
                     Control sourceControl = owner.SourceControl;
                     PictureBox PIC = (PictureBox)sourceControl;
                     Image im = (Image)PIC.Tag;
@@ -834,8 +750,6 @@ namespace Entrega2_Equipo1
                     pictureChosen.Image = chosenEditingImage.Image;
                 }
             }
-
-
         }
 
         private void ComboRotate_SelectedIndexChanged(object sender, EventArgs e)
@@ -850,16 +764,6 @@ namespace Entrega2_Equipo1
             }
         }
 
-        private void TrackBar1_Scroll(object sender, EventArgs e)
-        {
-
-		}
-
-		private void Contrast_Bar_Scroll(object sender, EventArgs e)
-		{
-			
-		}
-
 		private void ComboCensor_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (chosenEditingImage != null)
@@ -872,8 +776,8 @@ namespace Entrega2_Equipo1
                 int newTop = newForm.ReturningTop;
                 int newHeight = newForm.ReturningHeight;
                 int newWidth = newForm.ReturningWidth;
-
-                switch (comboCensor.SelectedItem) {
+                switch (comboCensor.SelectedItem)
+                {
                     case "Black bar":
                         if (newForm.Exit)
                         {
@@ -896,15 +800,11 @@ namespace Entrega2_Equipo1
             }
         }
 
-        // ==============================================================================
-        // =============================== ADD LABEL METHODS ============================
-
         private void DoneButton_Click(object sender, EventArgs e)
         {
             if (createdLabel == null)
             {
-                if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("You didn't create any new Label. Do you want to exit?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     AddLabelPanel.Visible = false;
                 }
@@ -940,8 +840,6 @@ namespace Entrega2_Equipo1
             this.cleanLibraryToolStripMenuItem.Enabled = false;
         }
 
-        
-
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox combo = (ComboBox)sender;
@@ -968,7 +866,6 @@ namespace Entrega2_Equipo1
                     AddPersonLabelPanel.Visible = false;
                     AddSpecialLabelPanel.Visible = false;
                     break;
-
                 case "PersonLabel":
                     AddPersonLabelPanel.Visible = true;
                     AddSimpleLabelPanel.Visible = false;
@@ -1062,7 +959,6 @@ namespace Entrega2_Equipo1
                 WatsonRecommendationsComboBox.Enabled = false;
                 LoadingWatsonRecommendationsLabel.Text = "";
             }
-
         }
 
         private void LoadWatsonRecommendationsButton_Click(object sender, EventArgs e)
@@ -1111,7 +1007,6 @@ namespace Entrega2_Equipo1
 
         private void Asdfbutton_Click(object sender, EventArgs e)
         {
-            // Ya reconocimos cual fue el Image seleccionado para agregar el label
             AddLabelPanel.Visible = true;
             panelImages.Visible = false;
             AddLabelController();
@@ -1154,9 +1049,7 @@ namespace Entrega2_Equipo1
                 Image image = (Image)chosenEditingImage.Tag;
                 XText.Text = image.Resolution[0].ToString();
                 YText.Text = image.Resolution[1].ToString();
-                // ??
             }
-
         }
 
         private void ResizeDone_Click(object sender, EventArgs e)
@@ -1178,11 +1071,9 @@ namespace Entrega2_Equipo1
             ToolStripItem menuItem = sender as ToolStripItem;
             if (menuItem != null)
             {
-                // Retrieve the ContextMenuStrip that owns this ToolStripItem
                 ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
                 if (owner != null)
                 {
-                    // Get the control that is displaying this context menu
                     Control sourceControl = owner.SourceControl;
                     PictureBox PIC = (PictureBox)sourceControl;
                     Image im = (Image)PIC.Tag;
@@ -1204,8 +1095,7 @@ namespace Entrega2_Equipo1
             }
             else
             {
-                MessageBox.Show("Select at least two images", "Not enough images.",
-                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Select at least two images", "Not enough images.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1214,11 +1104,9 @@ namespace Entrega2_Equipo1
             ToolStripItem menuItem = sender as ToolStripItem;
             if (menuItem != null)
             {
-                // Retrieve the ContextMenuStrip that owns this ToolStripItem
                 ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
                 if (owner != null)
                 {
-                    // Get the control that is displaying this context menu
                     Control sourceControl = owner.SourceControl;
                     PictureBox PIC = (PictureBox)sourceControl;
                     Image im = (Image)PIC.Tag;
@@ -1226,7 +1114,6 @@ namespace Entrega2_Equipo1
                 }
             }
         }
-
 
         private void Button15_Click(object sender, EventArgs e)
         {
@@ -1246,8 +1133,7 @@ namespace Entrega2_Equipo1
             }
             else
             {
-                MessageBox.Show("There has to be at least one picture selected", "Error",
-                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There has to be at least one picture selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1269,11 +1155,9 @@ namespace Entrega2_Equipo1
             }
             else
             {
-                MessageBox.Show("Select at least two images", "Not enough images.",
-                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Select at least two images", "Not enough images.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
 
         private void ButtonCollage_Click(object sender, EventArgs e)
         {
@@ -1317,14 +1201,12 @@ namespace Entrega2_Equipo1
                 }
                 else
                 {
-                    MessageBox.Show("There is no picture selected", "Error",
-                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There is no picture selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch
             {
-                MessageBox.Show("Wrong Parameters", "Error",
-                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wrong Parameters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1334,7 +1216,6 @@ namespace Entrega2_Equipo1
             var selecteditem = (ToolStripMenuItem)sender;
             selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
         }
-
 
         private void ImportToolStripMenuItem1_MouseLeave(object sender, EventArgs e)
         {
@@ -1487,8 +1368,7 @@ namespace Entrega2_Equipo1
             }
             else
             {
-                MessageBox.Show("There has to be at least one picture selected", "Error",
-                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There has to be at least one picture selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1501,38 +1381,13 @@ namespace Entrega2_Equipo1
             }
             else
             {
-                MessageBox.Show("There has to be at least one picture selected", "Error",
-                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There has to be at least one picture selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void LogOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Cambiamos el atributo de exit a false, pues quiere cambiar de usuario
-            this.exit = false;
-            // Ya el  usuario no es el current user, por lo tanto
-            this.UserLoggedIn.CurrentUser = false;
-            // Cerramos el form
-            this.Close();
-        }
-
-        private void LogOutToolStripMenuItem_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Hand;
-            var selecteditem = (ToolStripMenuItem)sender;
-            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Bold);
-        }
-
-        private void LogOutToolStripMenuItem_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Arrow;
-            var selecteditem = (ToolStripMenuItem)sender;
-            selecteditem.Font = new Font(selecteditem.Font, FontStyle.Regular);
         }
 
         private void ExitToolStripMenuItem_MouseEnter(object sender, EventArgs e)
@@ -1565,7 +1420,6 @@ namespace Entrega2_Equipo1
 
         private void MyAccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Hacemos switch entre los paneles
             if (AccountPanel.Visible == false)
             {
                 AccountPanel.Visible = true;
@@ -1574,26 +1428,11 @@ namespace Entrega2_Equipo1
                 UsernameLabel.Text = userLoggedIn.Usrname;
                 UserPicturePictureBox.BackgroundImage = userLoggedIn.UsrImage;
                 this.MemberSinceLabel.Text = "Member since " + userLoggedIn.Membersince.Date.ToString("MM/dd/yyyy");
-                if (UserLoggedIn.Name != null && UserLoggedIn.Name != "")
-                {
-                    this.RealNameTextBox.Text = UserLoggedIn.Name;
-                }
-                if (UserLoggedIn.Surname != null && UserLoggedIn.Surname != "")
-                {
-                    this.RealSurnameTextBox.Text = UserLoggedIn.Surname;
-                }
-                if (UserLoggedIn.Nationality != ENationality.None)
-                {
-                    this.RealNationalityComboBox.SelectedItem = UserLoggedIn.Nationality;
-                }
-                if (UserLoggedIn.Description != null && UserLoggedIn.Description != "")
-                {
-                    this.DescriptionTextBox.Text = UserLoggedIn.Description;
-                }
-                if (UserLoggedIn.BirthDate != new DateTime(1, 1, 1, 0, 0, 0))
-                {
-                    this.UserDateTimePicker.Value = UserLoggedIn.BirthDate;
-                }
+                if (UserLoggedIn.Name != null && UserLoggedIn.Name != "") this.RealNameTextBox.Text = UserLoggedIn.Name;
+                if (UserLoggedIn.Surname != null && UserLoggedIn.Surname != "") this.RealSurnameTextBox.Text = UserLoggedIn.Surname;
+                if (UserLoggedIn.Nationality != ENationality.None) this.RealNationalityComboBox.SelectedItem = UserLoggedIn.Nationality;
+                if (UserLoggedIn.Description != null && UserLoggedIn.Description != "") this.DescriptionTextBox.Text = UserLoggedIn.Description;
+                if (UserLoggedIn.BirthDate != new DateTime(1, 1, 1, 0, 0, 0)) this.UserDateTimePicker.Value = UserLoggedIn.BirthDate;
                 RealNationalityComboBox.DataSource = Enum.GetValues(typeof(ENationality));
             }
             else
@@ -1634,11 +1473,8 @@ namespace Entrega2_Equipo1
 
         private void LogOutButton_Click(object sender, EventArgs e)
         {
-            // Cambiamos el atributo de exit a false, pues quiere cambiar de usuario
             this.exit = false;
-            // Ya el  usuario no es el current user, por lo tanto
             this.UserLoggedIn.CurrentUser = false;
-            // Cerramos el form
             this.Close();
         }
 
@@ -1669,30 +1505,21 @@ namespace Entrega2_Equipo1
 
         private void ChangePassButton_Click(object sender, EventArgs e)
         {
-            if (ChangePasswordPanel.Visible == false)
-            {
-                ChangePasswordPanel.Visible = true;
-            }
-            else
-            {
-                ChangePasswordPanel.Visible = false;
-            }
+            if (ChangePasswordPanel.Visible == false) ChangePasswordPanel.Visible = true;
+            else ChangePasswordPanel.Visible = false;
         }
 
         private void OldPasswordTextBox_MouseEnter(object sender, EventArgs e)
         {
-
             if (OldPasswordTextBox.Text == "old password")
             {
                 OldPasswordTextBox.Text = "";
                 OldPasswordTextBox.ForeColor = Color.White;
             }
-
         }
 
         private void OldPasswordTextBox_MouseLeave(object sender, EventArgs e)
         {
-
             if (OldPasswordTextBox.Text == "")
             {
                 OldPasswordTextBox.Text = "old password";
@@ -1702,7 +1529,6 @@ namespace Entrega2_Equipo1
 
         private void NewPasswordTextBox_MouseEnter(object sender, EventArgs e)
         {
-
             if (NewPasswordTextBox.Text == "new password")
             {
                 NewPasswordTextBox.Text = "";
@@ -1712,7 +1538,6 @@ namespace Entrega2_Equipo1
 
         private void NewPasswordTextBox_MouseLeave(object sender, EventArgs e)
         {
-
             if (NewPasswordTextBox.Text == "")
             {
                 NewPasswordTextBox.Text = "new password";
@@ -1722,8 +1547,7 @@ namespace Entrega2_Equipo1
 
         private void OldPasswordTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (OldPasswordTextBox.Text != userLoggedIn.Password && OldPasswordTextBox.Text != "OLD PASSWORD" && OldPasswordTextBox.Text != "")
-                WrongOldPassword.Visible = true;
+            if (OldPasswordTextBox.Text != userLoggedIn.Password && OldPasswordTextBox.Text != "OLD PASSWORD" && OldPasswordTextBox.Text != "") WrongOldPassword.Visible = true;
             else WrongOldPassword.Visible = false;
         }
 
@@ -1739,16 +1563,11 @@ namespace Entrega2_Equipo1
 
         private void DeleteAccountButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete your account?", "Delete account",
-                   MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete your account?", "Delete account", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                // Cambiamos el atributo de exit a false, pues no se quiere cerrar la app sino cambiar de usuario
                 this.exit = false;
-                // Ya el  usuario no es el current user, por lo tanto
                 this.UserLoggedIn.CurrentUser = false;
-                // Como quiere eliminar su cuenta
                 this.Deleteaccount = true;
-                // Cerramos el form
                 this.Close();
             }
         }
@@ -1771,11 +1590,8 @@ namespace Entrega2_Equipo1
             }
         }
 
-
-        // METODO QUE SE EJECUTA CUANDO CAMBIA EL TEXTO EN EL SEARCHTEXTBOX
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            // No hace el clear nisiquiera, no se porque
             this.panelImages.Controls.Clear();
             this.ValidNotValidPatternLabel.Text = "";
             try
@@ -1793,7 +1609,6 @@ namespace Entrega2_Equipo1
                     {
                         ValidNotValidPatternLabel.Text = "No results";
                         ValidNotValidPatternLabel.ForeColor = Color.FromArgb(34,160,182);
-                        
                     }
                 }
                 else
@@ -1857,16 +1672,11 @@ namespace Entrega2_Equipo1
                     InsertHeightText.Text = "";
                     MosaicPanel.Visible = false;
                 }
-                else
-                {
-                    MessageBox.Show("Select a base Image", "Error",
-                          MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                else MessageBox.Show("Select a base Image", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch
             {
-                MessageBox.Show("Wrong parameters", "Error",
-                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wrong parameters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1927,20 +1737,14 @@ namespace Entrega2_Equipo1
                 }
                 catch
                 {
-                    MessageBox.Show("Didn't select a Label to delete", "Error",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Didn't select a Label to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-
-        // working here
         private void ImportWithLabelsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            // Lista de imagenes creadas
             List<Image> importedImages = new List<Image>();
-
-            // Pedimos las imagenes
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Select the desired images";
             ofd.Multiselect = true;
@@ -1972,30 +1776,14 @@ namespace Entrega2_Equipo1
                 Saved = false;
                 this.Cursor = Cursors.Arrow;
             }
-
             Bitmap baseimage = new Bitmap(MultipleImagesPictureBox.Width, MultipleImagesPictureBox.Height);
-            if (importedImages.Count == 1)
-            {
-                baseimage = (Bitmap)importedImages[0].BitmapImage.Clone();
-            }
-            else
-            {
-                baseimage = (Bitmap)Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\previewnotavailable2.jpg");
-            }
-            
-            
-
-            // Ya tenemos la lista de images a las que se le debe agregar labels
-            // Switches que hay que hacer para poder mostrar el panel con multiple importado
+            if (importedImages.Count == 1) baseimage = (Bitmap)importedImages[0].BitmapImage.Clone();
+            else baseimage = (Bitmap)Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\logos\previewnotavailable2.jpg");
             AccountPanel.Visible = true;
             panelImages.Visible = false;
             AddLabelPanel.Visible = true;
             MultipleAddLabelPanel.Visible = true;
-
-            // Cambiamos el menustrip enable a false
             menuStrip1.Enabled = false;
-
-            // Seteamos el fondo con el mosaico
             MultipleImagesPictureBox.Image = baseimage;
             MultipleImagesPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             AddLabelController(importedImages, baseimage);
@@ -2112,13 +1900,9 @@ namespace Entrega2_Equipo1
                     MultipleAddLabelPanel.Visible = false;
                 }
             }
-
             AccountPanel.Visible = false;
             panelImages.Visible = true;
             AddLabelPanel.Visible = false;
-            
-
-
             this.importToolStripMenuItem1.Enabled = true;
             this.exportToolStripMenuItem.Enabled = true;
             this.saveToolStripMenuItem.Enabled = true;
@@ -2142,6 +1926,7 @@ namespace Entrega2_Equipo1
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
+
         }
 
         private void ContrastBar_MouseUp(object sender, MouseEventArgs e)
@@ -2167,7 +1952,6 @@ namespace Entrega2_Equipo1
                 pictureChosen.Image = chosenEditingImage.Image;
             }
         }
-
 
         private void GoBackButton_MouseEnter(object sender, EventArgs e)
         {
@@ -2207,14 +1991,10 @@ namespace Entrega2_Equipo1
 			}
 		}
 
-
-        // Metodo que trabajar
         private void Topauxlabel_Click(object sender, EventArgs e)
         {
 
         }
-
-        
 
 		private void CropButton_Click(object sender, EventArgs e)
 		{
@@ -2229,7 +2009,7 @@ namespace Entrega2_Equipo1
 				int newTop = newForm.ReturningTop;
 				int newHeight = newForm.ReturningHeight;
 				int newWidth = newForm.ReturningWidth;
-				//x, y, width, height
+				// x, y, width, height
 				if (newForm.Exit)
 				{
 					double[] coordinates = { Convert.ToDouble(newLeft), Convert.ToDouble(newTop), Convert.ToDouble(newWidth), Convert.ToDouble(newHeight) };
@@ -2277,7 +2057,6 @@ namespace Entrega2_Equipo1
                 if (form.Exit)
                 {
                     bmap = form.ActualImage;
-                    //pictureChosen.Image = bmap;
                     Image newImage = new Image(bmap, new List<Label>(), -1);
                     producer.LoadImagesToWorkingArea(new List<Image>() { newImage });
                     EditingPanel_Paint(sender, e);
@@ -2321,7 +2100,6 @@ namespace Entrega2_Equipo1
             Paint_FeatureList(this, EventArgs.Empty);
         }
 
-
         private void Paint_FeatureList(object sender, EventArgs e)
         {
             int x = 20;
@@ -2336,8 +2114,6 @@ namespace Entrega2_Equipo1
                 pic.Click += ImageBorderClick;
                 pic.Name = image.Name;
                 pic.Cursor = Cursors.Hand;
-
-
                 x += pic.Width + 10;
                 maxHeight = Math.Max(pic.Height, maxHeight);
                 if (x > this.FeatureListPanel.Width - 100)
@@ -2372,8 +2148,6 @@ namespace Entrega2_Equipo1
                         }
                     }
                     ReLoadEditingPanelImage(this, EventArgs.Empty);
-
-                    //PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
                 }
             }
         }
@@ -2393,16 +2167,10 @@ namespace Entrega2_Equipo1
                     featuresImage.Add(im);
                     Refresh_FeatureListPanel();
                 }
-
-                //PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
             }
         }
 
-
-
-
-        // ================================================== Metodos de smart lists
-        private void SmartList_Click(object sender, EventArgs e)  //Button para mostrar las smart list en el panel
+        private void SmartList_Click(object sender, EventArgs e) 
         {
             string imageLocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\icons\listicon.png";
             ImageSmartPanel.Controls.Clear();
@@ -2445,7 +2213,6 @@ namespace Entrega2_Equipo1
                 lb.Dock = DockStyle.Fill;
                 MuestraSmartPanel.Controls.Add(lb);
             }
-            
         }
 
         private void OnSmartButtonClick(object sender, EventArgs e)
@@ -2465,7 +2232,6 @@ namespace Entrega2_Equipo1
             btn.ForeColor = Color.Black;
             btn.FlatAppearance.BorderSize = 0;
         }
-
 
         private void OnImagenes(object sender1, EventArgs e1, List<Image> seccion)  // Crea las funciones de cada smart list
         {
@@ -2554,7 +2320,6 @@ namespace Entrega2_Equipo1
             ImageSmartPanel.Controls.Clear();
             DeletePanel.Visible = true;
             ImageSmartPanel.Controls.Add(DeletePanel);
-
         }
 
         private void SeacherPattern_TextChanged(object sender, EventArgs e)  //srive cuando se elimina algo
@@ -2581,12 +2346,11 @@ namespace Entrega2_Equipo1
             DeletePanel.Visible = false;
         }
 
-        private void Busqueda_SelectedIndexChanged(object sender, EventArgs e)  //maneja las opciones de muestra segun la seleccion para el patron
+        private void Busqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
             OpcionesPanel.Visible = true;
             if (busqueda.SelectedItem.ToString() == "Sentence:" || busqueda.SelectedItem.ToString() == "Name:" || busqueda.SelectedItem.ToString() == "Surname:" || busqueda.SelectedItem.ToString() == "Address:" || busqueda.SelectedItem.ToString() == "Photographer:" || busqueda.SelectedItem.ToString() == "Photomotive:")
             {
-
                 OpcionesPanel.Controls.Clear();
                 SentenceBox.Text = "Sentence";
                 SentenceBox.Visible = true;
@@ -2675,7 +2439,6 @@ namespace Entrega2_Equipo1
 
         private void Agregar_Click(object sender, EventArgs e)  // agrega el patron de busqueda a las smart list
         {
-
             library.AddSmartList(pattern.ToString(), library.Images);
             addSmart.Visible = false;
             SeacherPattern.Text = "Seacher Pattern";
@@ -2693,9 +2456,7 @@ namespace Entrega2_Equipo1
 
         private void AddSmartListButton_Click(object sender, EventArgs e)  //Agrega a un string el patron que se quiere buscar
         {
-
-            System.Text.StringBuilder patron = new System.Text.StringBuilder();
-
+            StringBuilder patron = new System.Text.StringBuilder();
             while (true)
             {
                 string parametro = busqueda.SelectedItem.ToString();
@@ -2916,6 +2677,7 @@ namespace Entrega2_Equipo1
                 }
             }
         }
+
     }
 
 
@@ -2929,36 +2691,16 @@ namespace Entrega2_Equipo1
             Color c = Color.FromArgb(11, 7, 17);
             if (e.Item.Selected)
             {
-                if (e.Item.Text == "My Account")
-                {
-                    c = Color.FromArgb(6, 57, 76);
-                }
-                else if (e.Item.Text == "Import" || e.Item.Text == "Import with labels")
-                {
-                    c = Color.FromArgb(12, 67, 131);
-                }
-                else if (e.Item.Text == "Export" || e.Item.Text == "Export as") 
-                {
-                    c = Color.FromArgb(34, 160, 182);
-                }
-                else if (e.Item.Text == "Save Library")
-                {
-                    c = Color.FromArgb(123, 19, 70);
-                }
-                else if (e.Item.Text == "Clean Library")
-                {
-                    c = Color.FromArgb(203, 12, 89);
-                }
-                else if (e.Item.Text == "Exit")
-                {
-                    c = Color.FromArgb(235, 100, 158);
-                }
+                if (e.Item.Text == "My Account") c = Color.FromArgb(6, 57, 76);
+                else if (e.Item.Text == "Import" || e.Item.Text == "Import with labels") c = Color.FromArgb(12, 67, 131);
+                else if (e.Item.Text == "Export" || e.Item.Text == "Export as") c = Color.FromArgb(34, 160, 182);
+                else if (e.Item.Text == "Save Library") c = Color.FromArgb(123, 19, 70);
+                else if (e.Item.Text == "Clean Library") c = Color.FromArgb(203, 12, 89);
+                else if (e.Item.Text == "Exit") c = Color.FromArgb(235, 100, 158);
             }
-            
-            
-            using (SolidBrush brush = new SolidBrush(c))
-                e.Graphics.FillRectangle(brush, rc);
+            using (SolidBrush brush = new SolidBrush(c)) e.Graphics.FillRectangle(brush, rc);
         }
     }
+
 }
 
