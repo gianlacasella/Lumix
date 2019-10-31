@@ -491,6 +491,7 @@ namespace Entrega2_Equipo1
             {
                 this.imagetoaddlabel.Calification = (calificationUpDown.Value == 0) ? -1 : Convert.ToInt32(calificationUpDown.Value);
                 RefreshInfoTreeView();
+                SmartList_Click(this, EventArgs.Empty);
             }
             catch
             {
@@ -504,6 +505,7 @@ namespace Entrega2_Equipo1
             {
                 this.imagetoaddlabel.Name = nameTextBox.Text;
                 RefreshInfoTreeView();
+                SmartList_Click(this, EventArgs.Empty);
             }
             catch
             {
@@ -1915,6 +1917,7 @@ namespace Entrega2_Equipo1
                     }
                     RefreshInfoTreeView();
                     PM.SavingUsersLibraryManager(UserLoggedIn.Usrname, library);
+                    SmartList_Click(this, EventArgs.Empty);
                 }
                 catch
                 {
@@ -2117,6 +2120,7 @@ namespace Entrega2_Equipo1
             this.exitToolStripMenuItem.Enabled = true;
             this.SearchTextBox.Enabled = true;
             menuStrip1.Enabled = true;
+            SmartList_Click(this, EventArgs.Empty);
         }
 
         private void ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
