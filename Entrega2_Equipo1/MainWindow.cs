@@ -640,7 +640,10 @@ namespace Entrega2_Equipo1
             pictureChosen.Image = image.Image;
             */
             pictureChosen.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureChosen.Image = NewThumbnailMainImage(image.Image);
+            Image img = (Image)image.Tag;
+            Bitmap pic = (Bitmap)img.BitmapImage;
+            pictureChosen.Image = NewThumbnailMainImage(pic);
+            //pictureChosen.Image = NewThumbnailMainImage(image.Image);// Cambio en esta linea
             brightnessBar.Value = 0;
 			ContrastBar.Value = 0;
         }
