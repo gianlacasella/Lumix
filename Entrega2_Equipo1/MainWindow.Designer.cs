@@ -216,29 +216,6 @@
             this.DeleteLabelButton = new System.Windows.Forms.Button();
             this.DownRightPanel = new System.Windows.Forms.Panel();
             this.SmartListsPanel = new System.Windows.Forms.Panel();
-            this.ImageSmartPanel = new System.Windows.Forms.Panel();
-            this.addSmart = new System.Windows.Forms.Panel();
-            this.DeletePanel = new System.Windows.Forms.Panel();
-            this.Atras1 = new System.Windows.Forms.Button();
-            this.ListSmartDelete = new System.Windows.Forms.ComboBox();
-            this.DeleteButtom = new System.Windows.Forms.Button();
-            this.SeacherPattern = new System.Windows.Forms.TextBox();
-            this.agregar = new System.Windows.Forms.Button();
-            this.Atras = new System.Windows.Forms.Button();
-            this.busqueda = new System.Windows.Forms.ComboBox();
-            this.OpcionesPanel = new System.Windows.Forms.Panel();
-            this.CalificationUp = new System.Windows.Forms.NumericUpDown();
-            this.SentenceBox = new System.Windows.Forms.TextBox();
-            this.NationalityComboBox = new System.Windows.Forms.ComboBox();
-            this.ColorComboBox = new System.Windows.Forms.ComboBox();
-            this.SexComboBox = new System.Windows.Forms.ComboBox();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
-            this.UnionComboBox = new System.Windows.Forms.ComboBox();
-            this.Latitud = new System.Windows.Forms.NumericUpDown();
-            this.YesNo = new System.Windows.Forms.DomainUpDown();
-            this.BirthDate = new System.Windows.Forms.DateTimePicker();
-            this.Longitud = new System.Windows.Forms.NumericUpDown();
             this.MuestraSmartPanel = new System.Windows.Forms.Panel();
             this.panelCollage = new System.Windows.Forms.Panel();
             this.ExitCollageButton = new System.Windows.Forms.Button();
@@ -275,6 +252,29 @@
             this.SmartListButton = new System.Windows.Forms.Button();
             this.DeleteSmartButton = new System.Windows.Forms.Button();
             this.AddSmarListButton = new System.Windows.Forms.Button();
+            this.ImageSmartPanel = new System.Windows.Forms.Panel();
+            this.addSmart = new System.Windows.Forms.Panel();
+            this.DeletePanel = new System.Windows.Forms.Panel();
+            this.Atras1 = new System.Windows.Forms.Button();
+            this.ListSmartDelete = new System.Windows.Forms.ComboBox();
+            this.DeleteButtom = new System.Windows.Forms.Button();
+            this.SeacherPattern = new System.Windows.Forms.TextBox();
+            this.agregar = new System.Windows.Forms.Button();
+            this.Atras = new System.Windows.Forms.Button();
+            this.busqueda = new System.Windows.Forms.ComboBox();
+            this.OpcionesPanel = new System.Windows.Forms.Panel();
+            this.CalificationUp = new System.Windows.Forms.NumericUpDown();
+            this.SentenceBox = new System.Windows.Forms.TextBox();
+            this.NationalityComboBox = new System.Windows.Forms.ComboBox();
+            this.ColorComboBox = new System.Windows.Forms.ComboBox();
+            this.SexComboBox = new System.Windows.Forms.ComboBox();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
+            this.UnionComboBox = new System.Windows.Forms.ComboBox();
+            this.Latitud = new System.Windows.Forms.NumericUpDown();
+            this.YesNo = new System.Windows.Forms.DomainUpDown();
+            this.BirthDate = new System.Windows.Forms.DateTimePicker();
+            this.Longitud = new System.Windows.Forms.NumericUpDown();
             this.UpperRightPanel = new System.Windows.Forms.Panel();
             this.EditingAreaPanel = new System.Windows.Forms.Panel();
             this.ShowFeatureListButton = new System.Windows.Forms.Button();
@@ -341,6 +341,12 @@
             this.TtitlePanel.SuspendLayout();
             this.DownRightPanel.SuspendLayout();
             this.SmartListsPanel.SuspendLayout();
+            this.panelCollage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).BeginInit();
+            this.MosaicPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MosaicpictureBox)).BeginInit();
+            this.panelResize.SuspendLayout();
+            this.SmartButtonsPanel.SuspendLayout();
             this.ImageSmartPanel.SuspendLayout();
             this.addSmart.SuspendLayout();
             this.DeletePanel.SuspendLayout();
@@ -348,12 +354,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.CalificationUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Latitud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Longitud)).BeginInit();
-            this.panelCollage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).BeginInit();
-            this.MosaicPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MosaicpictureBox)).BeginInit();
-            this.panelResize.SuspendLayout();
-            this.SmartButtonsPanel.SuspendLayout();
             this.UpperRightPanel.SuspendLayout();
             this.EditingAreaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -2740,17 +2740,467 @@
             // SmartListsPanel
             // 
             this.SmartListsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.SmartListsPanel.Controls.Add(this.ImageSmartPanel);
             this.SmartListsPanel.Controls.Add(this.MuestraSmartPanel);
             this.SmartListsPanel.Controls.Add(this.panelCollage);
             this.SmartListsPanel.Controls.Add(this.MosaicPanel);
             this.SmartListsPanel.Controls.Add(this.panelResize);
             this.SmartListsPanel.Controls.Add(this.SmartButtonsPanel);
-            this.SmartListsPanel.Controls.Add(this.ImageSmartPanel);
             this.SmartListsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SmartListsPanel.Location = new System.Drawing.Point(0, 0);
             this.SmartListsPanel.Name = "SmartListsPanel";
             this.SmartListsPanel.Size = new System.Drawing.Size(1139, 264);
             this.SmartListsPanel.TabIndex = 40;
+            // 
+            // MuestraSmartPanel
+            // 
+            this.MuestraSmartPanel.AutoScroll = true;
+            this.MuestraSmartPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.MuestraSmartPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MuestraSmartPanel.Location = new System.Drawing.Point(0, 30);
+            this.MuestraSmartPanel.Name = "MuestraSmartPanel";
+            this.MuestraSmartPanel.Size = new System.Drawing.Size(208, 234);
+            this.MuestraSmartPanel.TabIndex = 43;
+            this.MuestraSmartPanel.Click += new System.EventHandler(this.MuestraSmartPanel_Click);
+            // 
+            // panelCollage
+            // 
+            this.panelCollage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.panelCollage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCollage.Controls.Add(this.ExitCollageButton);
+            this.panelCollage.Controls.Add(this.InsertLabel);
+            this.panelCollage.Controls.Add(this.BaseLabel);
+            this.panelCollage.Controls.Add(this.pictureCollageImage);
+            this.panelCollage.Controls.Add(this.radioButtonImage);
+            this.panelCollage.Controls.Add(this.radioButtonSolid);
+            this.panelCollage.Controls.Add(this.textInsertH);
+            this.panelCollage.Controls.Add(this.textInsertW);
+            this.panelCollage.Controls.Add(this.textBaseH);
+            this.panelCollage.Controls.Add(this.textBaseW);
+            this.panelCollage.Controls.Add(this.buttonCollage);
+            this.panelCollage.Location = new System.Drawing.Point(688, 114);
+            this.panelCollage.Name = "panelCollage";
+            this.panelCollage.Size = new System.Drawing.Size(408, 150);
+            this.panelCollage.TabIndex = 36;
+            this.panelCollage.Visible = false;
+            // 
+            // ExitCollageButton
+            // 
+            this.ExitCollageButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitCollageButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitCollageButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitCollageButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitCollageButton.Location = new System.Drawing.Point(346, 115);
+            this.ExitCollageButton.Name = "ExitCollageButton";
+            this.ExitCollageButton.Size = new System.Drawing.Size(50, 23);
+            this.ExitCollageButton.TabIndex = 11;
+            this.ExitCollageButton.Text = "Exit";
+            this.ExitCollageButton.UseVisualStyleBackColor = true;
+            this.ExitCollageButton.Click += new System.EventHandler(this.ExitCollageButton_Click);
+            this.ExitCollageButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.ExitCollageButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // InsertLabel
+            // 
+            this.InsertLabel.AutoSize = true;
+            this.InsertLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsertLabel.ForeColor = System.Drawing.Color.White;
+            this.InsertLabel.Location = new System.Drawing.Point(3, 91);
+            this.InsertLabel.Name = "InsertLabel";
+            this.InsertLabel.Size = new System.Drawing.Size(145, 13);
+            this.InsertLabel.TabIndex = 10;
+            this.InsertLabel.Text = "Images Resolution (X,Y)";
+            // 
+            // BaseLabel
+            // 
+            this.BaseLabel.AutoSize = true;
+            this.BaseLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaseLabel.ForeColor = System.Drawing.Color.White;
+            this.BaseLabel.Location = new System.Drawing.Point(3, 25);
+            this.BaseLabel.Name = "BaseLabel";
+            this.BaseLabel.Size = new System.Drawing.Size(169, 13);
+            this.BaseLabel.TabIndex = 9;
+            this.BaseLabel.Text = "Base Image Resolution (X,Y)";
+            // 
+            // pictureCollageImage
+            // 
+            this.pictureCollageImage.Location = new System.Drawing.Point(173, 16);
+            this.pictureCollageImage.Name = "pictureCollageImage";
+            this.pictureCollageImage.Size = new System.Drawing.Size(100, 85);
+            this.pictureCollageImage.TabIndex = 8;
+            this.pictureCollageImage.TabStop = false;
+            // 
+            // radioButtonImage
+            // 
+            this.radioButtonImage.AutoSize = true;
+            this.radioButtonImage.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonImage.ForeColor = System.Drawing.Color.White;
+            this.radioButtonImage.Location = new System.Drawing.Point(278, 71);
+            this.radioButtonImage.Name = "radioButtonImage";
+            this.radioButtonImage.Size = new System.Drawing.Size(121, 17);
+            this.radioButtonImage.TabIndex = 6;
+            this.radioButtonImage.Text = "Image Background";
+            this.radioButtonImage.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSolid
+            // 
+            this.radioButtonSolid.AutoSize = true;
+            this.radioButtonSolid.Checked = true;
+            this.radioButtonSolid.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonSolid.ForeColor = System.Drawing.Color.White;
+            this.radioButtonSolid.Location = new System.Drawing.Point(278, 36);
+            this.radioButtonSolid.Name = "radioButtonSolid";
+            this.radioButtonSolid.Size = new System.Drawing.Size(121, 17);
+            this.radioButtonSolid.TabIndex = 5;
+            this.radioButtonSolid.TabStop = true;
+            this.radioButtonSolid.Text = "Color Background";
+            this.radioButtonSolid.UseVisualStyleBackColor = true;
+            // 
+            // textInsertH
+            // 
+            this.textInsertH.Location = new System.Drawing.Point(90, 107);
+            this.textInsertH.Name = "textInsertH";
+            this.textInsertH.Size = new System.Drawing.Size(64, 20);
+            this.textInsertH.TabIndex = 4;
+            this.textInsertH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // textInsertW
+            // 
+            this.textInsertW.Location = new System.Drawing.Point(18, 107);
+            this.textInsertW.Name = "textInsertW";
+            this.textInsertW.Size = new System.Drawing.Size(65, 20);
+            this.textInsertW.TabIndex = 3;
+            this.textInsertW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // textBaseH
+            // 
+            this.textBaseH.Location = new System.Drawing.Point(89, 43);
+            this.textBaseH.Name = "textBaseH";
+            this.textBaseH.Size = new System.Drawing.Size(65, 20);
+            this.textBaseH.TabIndex = 2;
+            this.textBaseH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // textBaseW
+            // 
+            this.textBaseW.Location = new System.Drawing.Point(18, 43);
+            this.textBaseW.Name = "textBaseW";
+            this.textBaseW.Size = new System.Drawing.Size(65, 20);
+            this.textBaseW.TabIndex = 1;
+            this.textBaseW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // buttonCollage
+            // 
+            this.buttonCollage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCollage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.buttonCollage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.buttonCollage.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCollage.Location = new System.Drawing.Point(242, 115);
+            this.buttonCollage.Name = "buttonCollage";
+            this.buttonCollage.Size = new System.Drawing.Size(98, 23);
+            this.buttonCollage.TabIndex = 0;
+            this.buttonCollage.Text = "Make Collage";
+            this.buttonCollage.UseVisualStyleBackColor = true;
+            this.buttonCollage.Click += new System.EventHandler(this.ButtonCollage_Click);
+            this.buttonCollage.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.buttonCollage.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // MosaicPanel
+            // 
+            this.MosaicPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.MosaicPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MosaicPanel.Controls.Add(this.BaseHMosaicText);
+            this.MosaicPanel.Controls.Add(this.BaseWMosaicText);
+            this.MosaicPanel.Controls.Add(this.BaseMosaicHeightLabel);
+            this.MosaicPanel.Controls.Add(this.BaseMosaicWidthLabel);
+            this.MosaicPanel.Controls.Add(this.ExitMosaic);
+            this.MosaicPanel.Controls.Add(this.MosaicButton);
+            this.MosaicPanel.Controls.Add(this.InsertHeightText);
+            this.MosaicPanel.Controls.Add(this.label5);
+            this.MosaicPanel.Controls.Add(this.MosaicpictureBox);
+            this.MosaicPanel.Controls.Add(this.label1);
+            this.MosaicPanel.Controls.Add(this.InsertWidthText);
+            this.MosaicPanel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.MosaicPanel.Location = new System.Drawing.Point(791, 0);
+            this.MosaicPanel.Name = "MosaicPanel";
+            this.MosaicPanel.Size = new System.Drawing.Size(304, 115);
+            this.MosaicPanel.TabIndex = 38;
+            this.MosaicPanel.Visible = false;
+            // 
+            // BaseHMosaicText
+            // 
+            this.BaseHMosaicText.Location = new System.Drawing.Point(93, 86);
+            this.BaseHMosaicText.Name = "BaseHMosaicText";
+            this.BaseHMosaicText.Size = new System.Drawing.Size(53, 20);
+            this.BaseHMosaicText.TabIndex = 10;
+            this.BaseHMosaicText.Text = "400";
+            // 
+            // BaseWMosaicText
+            // 
+            this.BaseWMosaicText.Location = new System.Drawing.Point(9, 88);
+            this.BaseWMosaicText.Name = "BaseWMosaicText";
+            this.BaseWMosaicText.Size = new System.Drawing.Size(56, 20);
+            this.BaseWMosaicText.TabIndex = 9;
+            this.BaseWMosaicText.Text = "400";
+            // 
+            // BaseMosaicHeightLabel
+            // 
+            this.BaseMosaicHeightLabel.AutoSize = true;
+            this.BaseMosaicHeightLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaseMosaicHeightLabel.ForeColor = System.Drawing.Color.White;
+            this.BaseMosaicHeightLabel.Location = new System.Drawing.Point(85, 72);
+            this.BaseMosaicHeightLabel.Name = "BaseMosaicHeightLabel";
+            this.BaseMosaicHeightLabel.Size = new System.Drawing.Size(73, 13);
+            this.BaseMosaicHeightLabel.TabIndex = 8;
+            this.BaseMosaicHeightLabel.Text = "Base Height";
+            // 
+            // BaseMosaicWidthLabel
+            // 
+            this.BaseMosaicWidthLabel.AutoSize = true;
+            this.BaseMosaicWidthLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaseMosaicWidthLabel.ForeColor = System.Drawing.Color.White;
+            this.BaseMosaicWidthLabel.Location = new System.Drawing.Point(-2, 73);
+            this.BaseMosaicWidthLabel.Name = "BaseMosaicWidthLabel";
+            this.BaseMosaicWidthLabel.Size = new System.Drawing.Size(67, 13);
+            this.BaseMosaicWidthLabel.TabIndex = 7;
+            this.BaseMosaicWidthLabel.Text = "Base Width";
+            // 
+            // ExitMosaic
+            // 
+            this.ExitMosaic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitMosaic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitMosaic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitMosaic.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitMosaic.Location = new System.Drawing.Point(245, 84);
+            this.ExitMosaic.Name = "ExitMosaic";
+            this.ExitMosaic.Size = new System.Drawing.Size(50, 23);
+            this.ExitMosaic.TabIndex = 6;
+            this.ExitMosaic.Text = "Exit";
+            this.ExitMosaic.UseVisualStyleBackColor = true;
+            this.ExitMosaic.Click += new System.EventHandler(this.ExitMosaic_Click);
+            this.ExitMosaic.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.ExitMosaic.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // MosaicButton
+            // 
+            this.MosaicButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MosaicButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.MosaicButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.MosaicButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MosaicButton.Location = new System.Drawing.Point(164, 85);
+            this.MosaicButton.Name = "MosaicButton";
+            this.MosaicButton.Size = new System.Drawing.Size(75, 23);
+            this.MosaicButton.TabIndex = 5;
+            this.MosaicButton.Text = "Mosaic";
+            this.MosaicButton.UseVisualStyleBackColor = true;
+            this.MosaicButton.Click += new System.EventHandler(this.MosaicButton_Click);
+            this.MosaicButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.MosaicButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // InsertHeightText
+            // 
+            this.InsertHeightText.Location = new System.Drawing.Point(90, 39);
+            this.InsertHeightText.Name = "InsertHeightText";
+            this.InsertHeightText.Size = new System.Drawing.Size(56, 20);
+            this.InsertHeightText.TabIndex = 4;
+            this.InsertHeightText.Text = "10";
+            this.InsertHeightText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(82, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Images Height";
+            // 
+            // MosaicpictureBox
+            // 
+            this.MosaicpictureBox.Location = new System.Drawing.Point(171, 8);
+            this.MosaicpictureBox.Name = "MosaicpictureBox";
+            this.MosaicpictureBox.Size = new System.Drawing.Size(124, 73);
+            this.MosaicpictureBox.TabIndex = 2;
+            this.MosaicpictureBox.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(1, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Images Width";
+            // 
+            // InsertWidthText
+            // 
+            this.InsertWidthText.Location = new System.Drawing.Point(9, 39);
+            this.InsertWidthText.Name = "InsertWidthText";
+            this.InsertWidthText.Size = new System.Drawing.Size(56, 20);
+            this.InsertWidthText.TabIndex = 0;
+            this.InsertWidthText.Text = "10";
+            this.InsertWidthText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // panelResize
+            // 
+            this.panelResize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.panelResize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelResize.Controls.Add(this.label36);
+            this.panelResize.Controls.Add(this.label35);
+            this.panelResize.Controls.Add(this.ExitResizeButton);
+            this.panelResize.Controls.Add(this.YText);
+            this.panelResize.Controls.Add(this.XText);
+            this.panelResize.Controls.Add(this.resizeDone);
+            this.panelResize.Location = new System.Drawing.Point(688, 3);
+            this.panelResize.Name = "panelResize";
+            this.panelResize.Size = new System.Drawing.Size(103, 115);
+            this.panelResize.TabIndex = 37;
+            this.panelResize.Visible = false;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(9, 29);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(18, 19);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Y";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(9, 9);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(18, 19);
+            this.label35.TabIndex = 4;
+            this.label35.Text = "X";
+            // 
+            // ExitResizeButton
+            // 
+            this.ExitResizeButton.BackColor = System.Drawing.Color.LightGray;
+            this.ExitResizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitResizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitResizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitResizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitResizeButton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitResizeButton.Location = new System.Drawing.Point(13, 84);
+            this.ExitResizeButton.Name = "ExitResizeButton";
+            this.ExitResizeButton.Size = new System.Drawing.Size(75, 27);
+            this.ExitResizeButton.TabIndex = 3;
+            this.ExitResizeButton.Text = "Exit";
+            this.ExitResizeButton.UseVisualStyleBackColor = false;
+            this.ExitResizeButton.Click += new System.EventHandler(this.ExitResizeButton_Click);
+            this.ExitResizeButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.ExitResizeButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // YText
+            // 
+            this.YText.Location = new System.Drawing.Point(35, 30);
+            this.YText.Name = "YText";
+            this.YText.Size = new System.Drawing.Size(52, 20);
+            this.YText.TabIndex = 2;
+            this.YText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // XText
+            // 
+            this.XText.Location = new System.Drawing.Point(35, 7);
+            this.XText.Name = "XText";
+            this.XText.Size = new System.Drawing.Size(52, 20);
+            this.XText.TabIndex = 1;
+            this.XText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // resizeDone
+            // 
+            this.resizeDone.BackColor = System.Drawing.Color.LightGray;
+            this.resizeDone.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resizeDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.resizeDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.resizeDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resizeDone.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resizeDone.Location = new System.Drawing.Point(13, 56);
+            this.resizeDone.Name = "resizeDone";
+            this.resizeDone.Size = new System.Drawing.Size(75, 26);
+            this.resizeDone.TabIndex = 0;
+            this.resizeDone.Text = "Resize";
+            this.resizeDone.UseVisualStyleBackColor = false;
+            this.resizeDone.Click += new System.EventHandler(this.ResizeDone_Click);
+            this.resizeDone.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.resizeDone.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // SmartButtonsPanel
+            // 
+            this.SmartButtonsPanel.Controls.Add(this.SmartListButton);
+            this.SmartButtonsPanel.Controls.Add(this.DeleteSmartButton);
+            this.SmartButtonsPanel.Controls.Add(this.AddSmarListButton);
+            this.SmartButtonsPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SmartButtonsPanel.Location = new System.Drawing.Point(0, 0);
+            this.SmartButtonsPanel.Name = "SmartButtonsPanel";
+            this.SmartButtonsPanel.Size = new System.Drawing.Size(1139, 30);
+            this.SmartButtonsPanel.TabIndex = 42;
+            // 
+            // SmartListButton
+            // 
+            this.SmartListButton.BackColor = System.Drawing.Color.LightGray;
+            this.SmartListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SmartListButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SmartListButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.SmartListButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.SmartListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SmartListButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SmartListButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SmartListButton.Location = new System.Drawing.Point(0, 0);
+            this.SmartListButton.MaximumSize = new System.Drawing.Size(150, 30);
+            this.SmartListButton.Name = "SmartListButton";
+            this.SmartListButton.Size = new System.Drawing.Size(139, 30);
+            this.SmartListButton.TabIndex = 39;
+            this.SmartListButton.Text = "My Smart Lists";
+            this.SmartListButton.UseVisualStyleBackColor = false;
+            this.SmartListButton.Click += new System.EventHandler(this.SmartList_Click);
+            this.SmartListButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.SmartListButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // DeleteSmartButton
+            // 
+            this.DeleteSmartButton.BackColor = System.Drawing.Color.LightGray;
+            this.DeleteSmartButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteSmartButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.DeleteSmartButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.DeleteSmartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteSmartButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteSmartButton.Location = new System.Drawing.Point(269, 0);
+            this.DeleteSmartButton.Name = "DeleteSmartButton";
+            this.DeleteSmartButton.Size = new System.Drawing.Size(139, 30);
+            this.DeleteSmartButton.TabIndex = 41;
+            this.DeleteSmartButton.Text = "Delete Smart List";
+            this.DeleteSmartButton.UseVisualStyleBackColor = false;
+            this.DeleteSmartButton.Click += new System.EventHandler(this.DeleteSmartButton_Click);
+            this.DeleteSmartButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.DeleteSmartButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // AddSmarListButton
+            // 
+            this.AddSmarListButton.BackColor = System.Drawing.Color.LightGray;
+            this.AddSmarListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddSmarListButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.AddSmarListButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.AddSmarListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddSmarListButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddSmarListButton.Location = new System.Drawing.Point(134, 0);
+            this.AddSmarListButton.Name = "AddSmarListButton";
+            this.AddSmarListButton.Size = new System.Drawing.Size(139, 30);
+            this.AddSmarListButton.TabIndex = 40;
+            this.AddSmarListButton.Text = "Add Smart List";
+            this.AddSmarListButton.UseVisualStyleBackColor = false;
+            this.AddSmarListButton.Click += new System.EventHandler(this.AddSmarListButton_Click);
+            this.AddSmarListButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.AddSmarListButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
             // 
             // ImageSmartPanel
             // 
@@ -2758,9 +3208,9 @@
             this.ImageSmartPanel.BackColor = System.Drawing.Color.Transparent;
             this.ImageSmartPanel.Controls.Add(this.addSmart);
             this.ImageSmartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ImageSmartPanel.Location = new System.Drawing.Point(0, 0);
+            this.ImageSmartPanel.Location = new System.Drawing.Point(208, 30);
             this.ImageSmartPanel.Name = "ImageSmartPanel";
-            this.ImageSmartPanel.Size = new System.Drawing.Size(1139, 264);
+            this.ImageSmartPanel.Size = new System.Drawing.Size(931, 234);
             this.ImageSmartPanel.TabIndex = 44;
             this.ImageSmartPanel.Click += new System.EventHandler(this.ImageSmartPanel_Click);
             // 
@@ -3339,456 +3789,6 @@
             this.Longitud.Size = new System.Drawing.Size(54, 23);
             this.Longitud.TabIndex = 13;
             this.Longitud.Visible = false;
-            // 
-            // MuestraSmartPanel
-            // 
-            this.MuestraSmartPanel.AutoScroll = true;
-            this.MuestraSmartPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.MuestraSmartPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MuestraSmartPanel.Location = new System.Drawing.Point(0, 30);
-            this.MuestraSmartPanel.Name = "MuestraSmartPanel";
-            this.MuestraSmartPanel.Size = new System.Drawing.Size(208, 234);
-            this.MuestraSmartPanel.TabIndex = 43;
-            this.MuestraSmartPanel.Click += new System.EventHandler(this.MuestraSmartPanel_Click);
-            // 
-            // panelCollage
-            // 
-            this.panelCollage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
-            this.panelCollage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCollage.Controls.Add(this.ExitCollageButton);
-            this.panelCollage.Controls.Add(this.InsertLabel);
-            this.panelCollage.Controls.Add(this.BaseLabel);
-            this.panelCollage.Controls.Add(this.pictureCollageImage);
-            this.panelCollage.Controls.Add(this.radioButtonImage);
-            this.panelCollage.Controls.Add(this.radioButtonSolid);
-            this.panelCollage.Controls.Add(this.textInsertH);
-            this.panelCollage.Controls.Add(this.textInsertW);
-            this.panelCollage.Controls.Add(this.textBaseH);
-            this.panelCollage.Controls.Add(this.textBaseW);
-            this.panelCollage.Controls.Add(this.buttonCollage);
-            this.panelCollage.Location = new System.Drawing.Point(688, 114);
-            this.panelCollage.Name = "panelCollage";
-            this.panelCollage.Size = new System.Drawing.Size(408, 150);
-            this.panelCollage.TabIndex = 36;
-            this.panelCollage.Visible = false;
-            // 
-            // ExitCollageButton
-            // 
-            this.ExitCollageButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitCollageButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitCollageButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitCollageButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitCollageButton.Location = new System.Drawing.Point(346, 115);
-            this.ExitCollageButton.Name = "ExitCollageButton";
-            this.ExitCollageButton.Size = new System.Drawing.Size(50, 23);
-            this.ExitCollageButton.TabIndex = 11;
-            this.ExitCollageButton.Text = "Exit";
-            this.ExitCollageButton.UseVisualStyleBackColor = true;
-            this.ExitCollageButton.Click += new System.EventHandler(this.ExitCollageButton_Click);
-            this.ExitCollageButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.ExitCollageButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // InsertLabel
-            // 
-            this.InsertLabel.AutoSize = true;
-            this.InsertLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertLabel.ForeColor = System.Drawing.Color.White;
-            this.InsertLabel.Location = new System.Drawing.Point(3, 91);
-            this.InsertLabel.Name = "InsertLabel";
-            this.InsertLabel.Size = new System.Drawing.Size(145, 13);
-            this.InsertLabel.TabIndex = 10;
-            this.InsertLabel.Text = "Images Resolution (X,Y)";
-            // 
-            // BaseLabel
-            // 
-            this.BaseLabel.AutoSize = true;
-            this.BaseLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaseLabel.ForeColor = System.Drawing.Color.White;
-            this.BaseLabel.Location = new System.Drawing.Point(3, 25);
-            this.BaseLabel.Name = "BaseLabel";
-            this.BaseLabel.Size = new System.Drawing.Size(169, 13);
-            this.BaseLabel.TabIndex = 9;
-            this.BaseLabel.Text = "Base Image Resolution (X,Y)";
-            // 
-            // pictureCollageImage
-            // 
-            this.pictureCollageImage.Location = new System.Drawing.Point(173, 16);
-            this.pictureCollageImage.Name = "pictureCollageImage";
-            this.pictureCollageImage.Size = new System.Drawing.Size(100, 85);
-            this.pictureCollageImage.TabIndex = 8;
-            this.pictureCollageImage.TabStop = false;
-            // 
-            // radioButtonImage
-            // 
-            this.radioButtonImage.AutoSize = true;
-            this.radioButtonImage.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonImage.ForeColor = System.Drawing.Color.White;
-            this.radioButtonImage.Location = new System.Drawing.Point(278, 71);
-            this.radioButtonImage.Name = "radioButtonImage";
-            this.radioButtonImage.Size = new System.Drawing.Size(121, 17);
-            this.radioButtonImage.TabIndex = 6;
-            this.radioButtonImage.Text = "Image Background";
-            this.radioButtonImage.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSolid
-            // 
-            this.radioButtonSolid.AutoSize = true;
-            this.radioButtonSolid.Checked = true;
-            this.radioButtonSolid.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonSolid.ForeColor = System.Drawing.Color.White;
-            this.radioButtonSolid.Location = new System.Drawing.Point(278, 36);
-            this.radioButtonSolid.Name = "radioButtonSolid";
-            this.radioButtonSolid.Size = new System.Drawing.Size(121, 17);
-            this.radioButtonSolid.TabIndex = 5;
-            this.radioButtonSolid.TabStop = true;
-            this.radioButtonSolid.Text = "Color Background";
-            this.radioButtonSolid.UseVisualStyleBackColor = true;
-            // 
-            // textInsertH
-            // 
-            this.textInsertH.Location = new System.Drawing.Point(90, 107);
-            this.textInsertH.Name = "textInsertH";
-            this.textInsertH.Size = new System.Drawing.Size(64, 20);
-            this.textInsertH.TabIndex = 4;
-            this.textInsertH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // textInsertW
-            // 
-            this.textInsertW.Location = new System.Drawing.Point(18, 107);
-            this.textInsertW.Name = "textInsertW";
-            this.textInsertW.Size = new System.Drawing.Size(65, 20);
-            this.textInsertW.TabIndex = 3;
-            this.textInsertW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // textBaseH
-            // 
-            this.textBaseH.Location = new System.Drawing.Point(89, 43);
-            this.textBaseH.Name = "textBaseH";
-            this.textBaseH.Size = new System.Drawing.Size(65, 20);
-            this.textBaseH.TabIndex = 2;
-            this.textBaseH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // textBaseW
-            // 
-            this.textBaseW.Location = new System.Drawing.Point(18, 43);
-            this.textBaseW.Name = "textBaseW";
-            this.textBaseW.Size = new System.Drawing.Size(65, 20);
-            this.textBaseW.TabIndex = 1;
-            this.textBaseW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // buttonCollage
-            // 
-            this.buttonCollage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCollage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.buttonCollage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.buttonCollage.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCollage.Location = new System.Drawing.Point(242, 115);
-            this.buttonCollage.Name = "buttonCollage";
-            this.buttonCollage.Size = new System.Drawing.Size(98, 23);
-            this.buttonCollage.TabIndex = 0;
-            this.buttonCollage.Text = "Make Collage";
-            this.buttonCollage.UseVisualStyleBackColor = true;
-            this.buttonCollage.Click += new System.EventHandler(this.ButtonCollage_Click);
-            this.buttonCollage.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.buttonCollage.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // MosaicPanel
-            // 
-            this.MosaicPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
-            this.MosaicPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MosaicPanel.Controls.Add(this.BaseHMosaicText);
-            this.MosaicPanel.Controls.Add(this.BaseWMosaicText);
-            this.MosaicPanel.Controls.Add(this.BaseMosaicHeightLabel);
-            this.MosaicPanel.Controls.Add(this.BaseMosaicWidthLabel);
-            this.MosaicPanel.Controls.Add(this.ExitMosaic);
-            this.MosaicPanel.Controls.Add(this.MosaicButton);
-            this.MosaicPanel.Controls.Add(this.InsertHeightText);
-            this.MosaicPanel.Controls.Add(this.label5);
-            this.MosaicPanel.Controls.Add(this.MosaicpictureBox);
-            this.MosaicPanel.Controls.Add(this.label1);
-            this.MosaicPanel.Controls.Add(this.InsertWidthText);
-            this.MosaicPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MosaicPanel.Location = new System.Drawing.Point(791, 0);
-            this.MosaicPanel.Name = "MosaicPanel";
-            this.MosaicPanel.Size = new System.Drawing.Size(304, 115);
-            this.MosaicPanel.TabIndex = 38;
-            this.MosaicPanel.Visible = false;
-            // 
-            // BaseHMosaicText
-            // 
-            this.BaseHMosaicText.Location = new System.Drawing.Point(93, 86);
-            this.BaseHMosaicText.Name = "BaseHMosaicText";
-            this.BaseHMosaicText.Size = new System.Drawing.Size(53, 20);
-            this.BaseHMosaicText.TabIndex = 10;
-            this.BaseHMosaicText.Text = "400";
-            // 
-            // BaseWMosaicText
-            // 
-            this.BaseWMosaicText.Location = new System.Drawing.Point(9, 88);
-            this.BaseWMosaicText.Name = "BaseWMosaicText";
-            this.BaseWMosaicText.Size = new System.Drawing.Size(56, 20);
-            this.BaseWMosaicText.TabIndex = 9;
-            this.BaseWMosaicText.Text = "400";
-            // 
-            // BaseMosaicHeightLabel
-            // 
-            this.BaseMosaicHeightLabel.AutoSize = true;
-            this.BaseMosaicHeightLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaseMosaicHeightLabel.ForeColor = System.Drawing.Color.White;
-            this.BaseMosaicHeightLabel.Location = new System.Drawing.Point(85, 72);
-            this.BaseMosaicHeightLabel.Name = "BaseMosaicHeightLabel";
-            this.BaseMosaicHeightLabel.Size = new System.Drawing.Size(73, 13);
-            this.BaseMosaicHeightLabel.TabIndex = 8;
-            this.BaseMosaicHeightLabel.Text = "Base Height";
-            // 
-            // BaseMosaicWidthLabel
-            // 
-            this.BaseMosaicWidthLabel.AutoSize = true;
-            this.BaseMosaicWidthLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaseMosaicWidthLabel.ForeColor = System.Drawing.Color.White;
-            this.BaseMosaicWidthLabel.Location = new System.Drawing.Point(-2, 73);
-            this.BaseMosaicWidthLabel.Name = "BaseMosaicWidthLabel";
-            this.BaseMosaicWidthLabel.Size = new System.Drawing.Size(67, 13);
-            this.BaseMosaicWidthLabel.TabIndex = 7;
-            this.BaseMosaicWidthLabel.Text = "Base Width";
-            // 
-            // ExitMosaic
-            // 
-            this.ExitMosaic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitMosaic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitMosaic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitMosaic.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitMosaic.Location = new System.Drawing.Point(245, 84);
-            this.ExitMosaic.Name = "ExitMosaic";
-            this.ExitMosaic.Size = new System.Drawing.Size(50, 23);
-            this.ExitMosaic.TabIndex = 6;
-            this.ExitMosaic.Text = "Exit";
-            this.ExitMosaic.UseVisualStyleBackColor = true;
-            this.ExitMosaic.Click += new System.EventHandler(this.ExitMosaic_Click);
-            this.ExitMosaic.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.ExitMosaic.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // MosaicButton
-            // 
-            this.MosaicButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MosaicButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.MosaicButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.MosaicButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MosaicButton.Location = new System.Drawing.Point(164, 85);
-            this.MosaicButton.Name = "MosaicButton";
-            this.MosaicButton.Size = new System.Drawing.Size(75, 23);
-            this.MosaicButton.TabIndex = 5;
-            this.MosaicButton.Text = "Mosaic";
-            this.MosaicButton.UseVisualStyleBackColor = true;
-            this.MosaicButton.Click += new System.EventHandler(this.MosaicButton_Click);
-            this.MosaicButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.MosaicButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // InsertHeightText
-            // 
-            this.InsertHeightText.Location = new System.Drawing.Point(90, 39);
-            this.InsertHeightText.Name = "InsertHeightText";
-            this.InsertHeightText.Size = new System.Drawing.Size(56, 20);
-            this.InsertHeightText.TabIndex = 4;
-            this.InsertHeightText.Text = "10";
-            this.InsertHeightText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(82, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Images Height";
-            // 
-            // MosaicpictureBox
-            // 
-            this.MosaicpictureBox.Location = new System.Drawing.Point(171, 8);
-            this.MosaicpictureBox.Name = "MosaicpictureBox";
-            this.MosaicpictureBox.Size = new System.Drawing.Size(124, 73);
-            this.MosaicpictureBox.TabIndex = 2;
-            this.MosaicpictureBox.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Images Width";
-            // 
-            // InsertWidthText
-            // 
-            this.InsertWidthText.Location = new System.Drawing.Point(9, 39);
-            this.InsertWidthText.Name = "InsertWidthText";
-            this.InsertWidthText.Size = new System.Drawing.Size(56, 20);
-            this.InsertWidthText.TabIndex = 0;
-            this.InsertWidthText.Text = "10";
-            this.InsertWidthText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // panelResize
-            // 
-            this.panelResize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
-            this.panelResize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelResize.Controls.Add(this.label36);
-            this.panelResize.Controls.Add(this.label35);
-            this.panelResize.Controls.Add(this.ExitResizeButton);
-            this.panelResize.Controls.Add(this.YText);
-            this.panelResize.Controls.Add(this.XText);
-            this.panelResize.Controls.Add(this.resizeDone);
-            this.panelResize.Location = new System.Drawing.Point(688, 3);
-            this.panelResize.Name = "panelResize";
-            this.panelResize.Size = new System.Drawing.Size(103, 115);
-            this.panelResize.TabIndex = 37;
-            this.panelResize.Visible = false;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(9, 29);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(18, 19);
-            this.label36.TabIndex = 5;
-            this.label36.Text = "Y";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(9, 9);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(18, 19);
-            this.label35.TabIndex = 4;
-            this.label35.Text = "X";
-            // 
-            // ExitResizeButton
-            // 
-            this.ExitResizeButton.BackColor = System.Drawing.Color.LightGray;
-            this.ExitResizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitResizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitResizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitResizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitResizeButton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitResizeButton.Location = new System.Drawing.Point(13, 84);
-            this.ExitResizeButton.Name = "ExitResizeButton";
-            this.ExitResizeButton.Size = new System.Drawing.Size(75, 27);
-            this.ExitResizeButton.TabIndex = 3;
-            this.ExitResizeButton.Text = "Exit";
-            this.ExitResizeButton.UseVisualStyleBackColor = false;
-            this.ExitResizeButton.Click += new System.EventHandler(this.ExitResizeButton_Click);
-            this.ExitResizeButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.ExitResizeButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // YText
-            // 
-            this.YText.Location = new System.Drawing.Point(35, 30);
-            this.YText.Name = "YText";
-            this.YText.Size = new System.Drawing.Size(52, 20);
-            this.YText.TabIndex = 2;
-            this.YText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // XText
-            // 
-            this.XText.Location = new System.Drawing.Point(35, 7);
-            this.XText.Name = "XText";
-            this.XText.Size = new System.Drawing.Size(52, 20);
-            this.XText.TabIndex = 1;
-            this.XText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // resizeDone
-            // 
-            this.resizeDone.BackColor = System.Drawing.Color.LightGray;
-            this.resizeDone.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resizeDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.resizeDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.resizeDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resizeDone.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resizeDone.Location = new System.Drawing.Point(13, 56);
-            this.resizeDone.Name = "resizeDone";
-            this.resizeDone.Size = new System.Drawing.Size(75, 26);
-            this.resizeDone.TabIndex = 0;
-            this.resizeDone.Text = "Resize";
-            this.resizeDone.UseVisualStyleBackColor = false;
-            this.resizeDone.Click += new System.EventHandler(this.ResizeDone_Click);
-            this.resizeDone.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.resizeDone.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // SmartButtonsPanel
-            // 
-            this.SmartButtonsPanel.Controls.Add(this.SmartListButton);
-            this.SmartButtonsPanel.Controls.Add(this.DeleteSmartButton);
-            this.SmartButtonsPanel.Controls.Add(this.AddSmarListButton);
-            this.SmartButtonsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SmartButtonsPanel.Location = new System.Drawing.Point(0, 0);
-            this.SmartButtonsPanel.Name = "SmartButtonsPanel";
-            this.SmartButtonsPanel.Size = new System.Drawing.Size(1139, 30);
-            this.SmartButtonsPanel.TabIndex = 42;
-            // 
-            // SmartListButton
-            // 
-            this.SmartListButton.BackColor = System.Drawing.Color.LightGray;
-            this.SmartListButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SmartListButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SmartListButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.SmartListButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.SmartListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SmartListButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SmartListButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.SmartListButton.Location = new System.Drawing.Point(0, 0);
-            this.SmartListButton.MaximumSize = new System.Drawing.Size(150, 30);
-            this.SmartListButton.Name = "SmartListButton";
-            this.SmartListButton.Size = new System.Drawing.Size(139, 30);
-            this.SmartListButton.TabIndex = 39;
-            this.SmartListButton.Text = "My Smart Lists";
-            this.SmartListButton.UseVisualStyleBackColor = false;
-            this.SmartListButton.Click += new System.EventHandler(this.SmartList_Click);
-            this.SmartListButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.SmartListButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // DeleteSmartButton
-            // 
-            this.DeleteSmartButton.BackColor = System.Drawing.Color.LightGray;
-            this.DeleteSmartButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteSmartButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.DeleteSmartButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.DeleteSmartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteSmartButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteSmartButton.Location = new System.Drawing.Point(269, 0);
-            this.DeleteSmartButton.Name = "DeleteSmartButton";
-            this.DeleteSmartButton.Size = new System.Drawing.Size(139, 30);
-            this.DeleteSmartButton.TabIndex = 41;
-            this.DeleteSmartButton.Text = "Delete Smart List";
-            this.DeleteSmartButton.UseVisualStyleBackColor = false;
-            this.DeleteSmartButton.Click += new System.EventHandler(this.DeleteSmartButton_Click);
-            this.DeleteSmartButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.DeleteSmartButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // AddSmarListButton
-            // 
-            this.AddSmarListButton.BackColor = System.Drawing.Color.LightGray;
-            this.AddSmarListButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddSmarListButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.AddSmarListButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.AddSmarListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddSmarListButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddSmarListButton.Location = new System.Drawing.Point(134, 0);
-            this.AddSmarListButton.Name = "AddSmarListButton";
-            this.AddSmarListButton.Size = new System.Drawing.Size(139, 30);
-            this.AddSmarListButton.TabIndex = 40;
-            this.AddSmarListButton.Text = "Add Smart List";
-            this.AddSmarListButton.UseVisualStyleBackColor = false;
-            this.AddSmarListButton.Click += new System.EventHandler(this.AddSmarListButton_Click);
-            this.AddSmarListButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.AddSmarListButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
             // 
             // UpperRightPanel
             // 
@@ -4432,15 +4432,6 @@
             this.TtitlePanel.PerformLayout();
             this.DownRightPanel.ResumeLayout(false);
             this.SmartListsPanel.ResumeLayout(false);
-            this.ImageSmartPanel.ResumeLayout(false);
-            this.addSmart.ResumeLayout(false);
-            this.addSmart.PerformLayout();
-            this.DeletePanel.ResumeLayout(false);
-            this.OpcionesPanel.ResumeLayout(false);
-            this.OpcionesPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CalificationUp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Latitud)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Longitud)).EndInit();
             this.panelCollage.ResumeLayout(false);
             this.panelCollage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).EndInit();
@@ -4450,6 +4441,15 @@
             this.panelResize.ResumeLayout(false);
             this.panelResize.PerformLayout();
             this.SmartButtonsPanel.ResumeLayout(false);
+            this.ImageSmartPanel.ResumeLayout(false);
+            this.addSmart.ResumeLayout(false);
+            this.addSmart.PerformLayout();
+            this.DeletePanel.ResumeLayout(false);
+            this.OpcionesPanel.ResumeLayout(false);
+            this.OpcionesPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CalificationUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Latitud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Longitud)).EndInit();
             this.UpperRightPanel.ResumeLayout(false);
             this.EditingAreaPanel.ResumeLayout(false);
             this.EditingAreaPanel.PerformLayout();
