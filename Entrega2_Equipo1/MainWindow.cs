@@ -218,7 +218,7 @@ namespace Entrega2_Equipo1
             {
                 NoPictureChosen(sender, e);
             }
-
+            // nice
         }
 
         private void CleanLibraryToolStripMenuItem_Click(object sender, EventArgs e)
