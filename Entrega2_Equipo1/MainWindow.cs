@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Entrega2_Equipo1
@@ -34,6 +35,8 @@ namespace Entrega2_Equipo1
         // Bool que controla si agregar los labels se hace de forma multiple o no
         bool multipleImporting = false;
         List<Image> imagestoaddlabel;
+        StringBuilder pattern;
+        PictureBox selectedSmartBox = null;
 
         public User UserLoggedIn { get => this.userLoggedIn; set => this.userLoggedIn = value; }
         public bool Exit { get => this.exit; set => this.exit = value; }
@@ -74,6 +77,7 @@ namespace Entrega2_Equipo1
             this.chooseUserPictureBitmap = res.ResizeImage(image, x, y);
 
             this.mainSearcher = new Searcher();
+            pattern = new StringBuilder();
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -218,7 +222,6 @@ namespace Entrega2_Equipo1
             {
                 NoPictureChosen(sender, e);
             }
-            // nice
         }
 
         private void CleanLibraryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -475,6 +478,7 @@ namespace Entrega2_Equipo1
                 this.DeleteLabelButton.Enabled = false;
                 this.nameTextBox.Enabled = false;
                 InfoTreeView.Nodes.Clear();
+                chosenImage = null;
             }
         }
 
@@ -2377,6 +2381,522 @@ namespace Entrega2_Equipo1
                 }
 
                 //PM.SaveProducer();    ERRORES CUANDO SE LEE IMAGENES EN producer.bin
+            }
+        }
+
+
+
+
+        // ================================================== Metodos de smart lists
+        private void SmartList_Click(object sender, EventArgs e)  //Button para mostrar las smart list en el panel
+        {
+            string imageLocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\icons\listicon.png";
+            ImageSmartPanel.Controls.Clear();
+            library.UpdateSmartList(library.Images);
+            foreach (KeyValuePair<string, List<Image>> val in library.SmartList)
+            {
+                ListSmartDelete.Items.Add(val.Key);
+            }
+            if (ListSmartDelete.Items.Count > 0)
+            {
+                Dictionary<string, List<Image>> dicc = library.SmartList;
+                int altura = 40;
+                MuestraSmartPanel.Controls.Clear();
+                ListSmartDelete.Items.Clear();
+                foreach (KeyValuePair<string, List<Image>> nuevo in dicc)
+                {
+                    Button button = new Button();
+                    button.Name = nuevo.Key;
+                    button.Text = nuevo.Key;
+                    button.ForeColor = Color.White;
+                    button.FlatStyle = FlatStyle.Flat;
+                    button.Dock = DockStyle.Top;
+                    button.Click += OnSmartButtonClick;
+                    button.Cursor = Cursors.Hand;
+                    button.Click += new EventHandler((sender1, e1) => OnImagenes(sender1, e1, nuevo.Value));
+                    button.Location = new System.Drawing.Point(12, altura);
+                    MuestraSmartPanel.Controls.Add(button);
+                    ListSmartDelete.Items.Add(nuevo.Key);
+                    altura += 40;
+                }
+            }
+            else
+            {
+                MuestraSmartPanel.Controls.Clear();
+                System.Windows.Forms.Label lb = new System.Windows.Forms.Label();
+                lb.Text = "\n\n\nYou don't have any Smart Lists yet";
+                lb.Font = new Font("Consolas", 15F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+                lb.ForeColor = Color.White;
+                lb.BackColor = Color.Transparent;
+                lb.Dock = DockStyle.Fill;
+                MuestraSmartPanel.Controls.Add(lb);
+            }
+            
+        }
+
+        private void OnSmartButtonClick(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in MuestraSmartPanel.Controls)
+            {
+                if (ctrl is Button)
+                {
+                    ctrl.BackColor = Color.FromArgb(35, 32, 39);
+                    ctrl.ForeColor = Color.White;
+                }
+            }
+            Button btn = (Button)sender;
+            btn.BackColor = Color.LightGray;
+            btn.ForeColor = Color.Black;
+        }
+
+
+        private void OnImagenes(object sender1, EventArgs e1, List<Image> seccion)  // Crea las funciones de cada smart list
+        {
+            ImageSmartPanel.BackColor = Color.LightGray;
+            int lado = 20;
+            Button button1 = (Button)sender1;
+            ImageSmartPanel.Controls.Clear();
+            foreach (Image pala in seccion)
+            {
+
+                System.Windows.Forms.Label label = new System.Windows.Forms.Label();
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Name = pala.Name;
+                pictureBox.Tag = pala;
+                pictureBox.Cursor = Cursors.Hand;
+                pictureBox.Image = NewThumbnailImage((System.Drawing.Image)pala.BitmapImage);
+                pictureBox.Size = new Size(150, 100);
+                pictureBox.Location = new Point(lado, 12);
+                pictureBox.Click += ImageBorderClick;
+                pictureBox.Click += OnSmartListClick;
+                if (pala.Name.Length < 5) label.Text = pala.Name;
+                else
+                {
+                    string text = "";
+                    int count = 0;
+                    while (count < 5)
+                    {
+                        text += pala.Name[count];
+                        count++;
+                    }
+                    text += "...";
+                    label.Text = text;
+                }
+                label.Location = new Point(lado + 50, 120);
+                label.ForeColor = Color.Black;
+                label.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                ImageSmartPanel.Controls.Add(pictureBox);
+                ImageSmartPanel.Controls.Add(label);
+                lado += 160;
+            }
+        }
+
+        private void OnSmartListClick(object sender, EventArgs e)
+        {
+            this.selectedSmartBox = (PictureBox)sender;
+            Image selectedImg = (Image)selectedSmartBox.Tag;
+            PanelImages_Click(this, EventArgs.Empty);
+            foreach (Control ctrl in panelImages.Controls)
+            {
+                if (ctrl is PictureBox)
+                {
+                    PictureBox PIC = (PictureBox)ctrl;
+                    PIC.BackColor = Color.Transparent;
+                    PIC.BorderStyle = BorderStyle.None;
+                }
+            }
+            foreach (Control ctrl in panelImages.Controls)
+            {
+                if (ctrl is PictureBox)
+                {
+                    if (ctrl.Tag == selectedImg)
+                    {
+                        ImageBorderClick(ctrl, EventArgs.Empty);
+                        ImageDetailClick(ctrl, EventArgs.Empty);
+                    }
+                }
+            }
+        }
+
+        private void AddSmarListButton_Click(object sender, EventArgs e)  //Abrir el panel para crear  smart list
+        {
+            MuestraSmartPanel.Controls.Clear();
+            ImageSmartPanel.Controls.Clear();
+            SeacherPattern.Text = "";
+            busqueda.Text = "Busqueda";
+            OpcionesPanel.Visible = false;
+            addSmart.Visible = true;
+            ImageSmartPanel.Controls.Add(addSmart);
+        }
+
+        private void DeleteSmartButton_Click(object sender, EventArgs e)  //muestra el panel de las smart list para eliminar
+        {
+            SmartList_Click(this, EventArgs.Empty);
+            MuestraSmartPanel.Controls.Clear();
+            ImageSmartPanel.Controls.Clear();
+            DeletePanel.Visible = true;
+            ImageSmartPanel.Controls.Add(DeletePanel);
+
+        }
+
+        private void SeacherPattern_TextChanged(object sender, EventArgs e)  //srive cuando se elimina algo
+        {
+            pattern = new StringBuilder(SeacherPattern.Text);
+        }
+
+        private void DeleteButtom_Click(object sender, EventArgs e)  //elimina la smart list
+        {
+            try
+            {
+                string palabra = ListSmartDelete.SelectedItem.ToString();
+                library.RemoveSmartList(palabra);
+                DeletePanel.Visible = false;
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void Atras1_Click(object sender, EventArgs e)  //cierra la ventana
+        {
+            DeletePanel.Visible = false;
+        }
+
+        private void Busqueda_SelectedIndexChanged(object sender, EventArgs e)  //maneja las opciones de muestra segun la seleccion para el patron
+        {
+            OpcionesPanel.Visible = true;
+            if (busqueda.SelectedItem.ToString() == "Sentence:" || busqueda.SelectedItem.ToString() == "Name:" || busqueda.SelectedItem.ToString() == "Surname:" || busqueda.SelectedItem.ToString() == "Address:" || busqueda.SelectedItem.ToString() == "Photographer:" || busqueda.SelectedItem.ToString() == "Photomotive:")
+            {
+
+                OpcionesPanel.Controls.Clear();
+                SentenceBox.Text = "Sentence";
+                SentenceBox.Visible = true;
+                UnionComboBox.Visible = true;
+                AddButton.Visible = true;
+                OpcionesPanel.Controls.Add(SentenceBox);
+            }
+            else if (busqueda.SelectedItem.ToString() == "GeographicLocation:")
+            {
+                OpcionesPanel.Controls.Clear();
+                Longitud.ResetText();
+                Latitud.ResetText();
+                Longitud.Visible = true;
+                Latitud.Visible = true;
+                UnionComboBox.Visible = true;
+                AddButton.Visible = true;
+                OpcionesPanel.Controls.Add(Longitud);
+                OpcionesPanel.Controls.Add(Latitud);
+            }
+            else if (busqueda.SelectedItem.ToString() == "Selfie:")
+            {
+                OpcionesPanel.Controls.Clear();
+                YesNo.ResetText();
+                YesNo.Visible = true;
+                UnionComboBox.Visible = true;
+                AddButton.Visible = true;
+                OpcionesPanel.Controls.Add(YesNo);
+            }
+            else if (busqueda.SelectedItem.ToString() == "Nationality:")
+            {
+                OpcionesPanel.Controls.Clear();
+                NationalityComboBox.ResetText();
+                NationalityComboBox.Visible = true;
+                UnionComboBox.Visible = true;
+                AddButton.Visible = true;
+                OpcionesPanel.Controls.Add(NationalityComboBox);
+            }
+            else if (busqueda.SelectedItem.ToString() == "HairColor:" || busqueda.SelectedItem.ToString() == "EyesColor:")
+            {
+                OpcionesPanel.Controls.Clear();
+                ColorComboBox.ResetText();
+                ColorComboBox.Visible = true;
+                UnionComboBox.Visible = true;
+                AddButton.Visible = true;
+                OpcionesPanel.Controls.Add(ColorComboBox);
+            }
+            else if (busqueda.SelectedItem.ToString() == "Sex:")
+            {
+                OpcionesPanel.Controls.Clear();
+                SexComboBox.ResetText();
+                SexComboBox.Visible = true;
+                UnionComboBox.Visible = true;
+                AddButton.Visible = true;
+                OpcionesPanel.Controls.Add(SexComboBox);
+            }
+            else if (busqueda.SelectedItem.ToString() == "Birthdate:")
+            {
+                OpcionesPanel.Controls.Clear();
+                BirthDate.ResetText();
+                BirthDate.Visible = true;
+                UnionComboBox.Visible = true;
+                AddButton.Visible = true;
+                OpcionesPanel.Controls.Add(BirthDate);
+            }
+            else if (busqueda.SelectedItem.ToString() == "Filter:")
+            {
+                OpcionesPanel.Controls.Clear();
+                FiltroComboBox.ResetText();
+                UnionComboBox.Visible = true;
+                AddButton.Visible = true;
+                FiltroComboBox.Visible = true;
+                OpcionesPanel.Controls.Add(FiltroComboBox);
+            }
+            else if (busqueda.SelectedItem.ToString() == "Calification:")
+            {
+                OpcionesPanel.Controls.Clear();
+                CalificationUp.ResetText();
+                CalificationUp.Visible = true;
+                AddButton.Visible = true;
+                UnionComboBox.Visible = true;
+                OpcionesPanel.Controls.Add(CalificationUp);
+            }
+            OpcionesPanel.Controls.Add(UnionComboBox);
+            OpcionesPanel.Controls.Add(AddButton);
+        }
+
+        private void Agregar_Click(object sender, EventArgs e)  // agrega el patron de busqueda a las smart list
+        {
+
+            library.AddSmartList(pattern.ToString(), library.Images);
+            addSmart.Visible = false;
+            SeacherPattern.Text = "Seacher Pattern";
+            pattern.Clear();
+            busqueda.Text = "Busqueda";
+        }
+
+        private void Atras_Click(object sender, EventArgs e)  //vuelve  atras
+        {
+            addSmart.Visible = false;
+            SeacherPattern.Text = "Seacher Pattern";
+            pattern.Clear();
+            busqueda.Text = "Busqueda";
+        }
+
+        private void AddSmartListButton_Click(object sender, EventArgs e)  //Agrega a un string el patron que se quiere buscar
+        {
+
+            System.Text.StringBuilder patron = new System.Text.StringBuilder();
+
+            while (true)
+            {
+                string parametro = busqueda.SelectedItem.ToString();
+                switch (parametro)
+                {
+                    case "Sentence:":
+                        patron.Append(busqueda.SelectedItem + SentenceBox.Text);
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Name:":
+                        patron.Append(busqueda.SelectedItem + SentenceBox.Text);
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Surname:":
+                        patron.Append(busqueda.SelectedItem + SentenceBox.Text);
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Filter:":
+                        patron.Append(busqueda.SelectedItem + FiltroComboBox.SelectedItem.ToString());
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Birthdate:":
+                        patron.Append(busqueda.SelectedItem + BirthDate.Value.ToString());
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Sex:":
+                        patron.Append(busqueda.SelectedItem + SexComboBox.SelectedItem.ToString());
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "EyesColor:":
+                        patron.Append(busqueda.SelectedItem + ColorComboBox.SelectedItem.ToString());
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "HairColor:":
+                        patron.Append(busqueda.SelectedItem + ColorComboBox.SelectedItem.ToString());
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Nationality:":
+                        patron.Append(busqueda.SelectedItem + NationalityComboBox.SelectedItem.ToString());
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "GeographicLocation:":
+                        patron.Append(busqueda.SelectedItem + Latitud.Value.ToString() + "," + Longitud.Value.ToString());
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Address:":
+                        patron.Append(busqueda.SelectedItem + SentenceBox.Text);
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Photographer:":
+                        patron.Append(busqueda.SelectedItem + SentenceBox.Text);
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Photomotive:":
+                        patron.Append(busqueda.SelectedItem + SentenceBox.Text);
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Selfie:":
+                        patron.Append(busqueda.SelectedItem + YesNo.SelectedItem.ToString());
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Calification:":
+                        patron.Append(busqueda.SelectedItem + CalificationUp.Value.ToString());
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                }
+                pattern.Append(patron.ToString());
+                SeacherPattern.Text = pattern.ToString();
+                break;
+            }
+        }
+
+        private void ImageSmartPanel_Click(object sender, EventArgs e)
+        {
+            if (this.selectedSmartBox != null)
+            {
+                selectedSmartBox.BorderStyle = BorderStyle.None;
+                this.selectedSmartBox = null;
+            }
+            PanelImages_Click(this, EventArgs.Empty);
+            foreach (Control ctrl in panelImages.Controls)
+            {
+                if (ctrl is PictureBox)
+                {
+                    PictureBox PIC = (PictureBox)ctrl;
+                    PIC.BackColor = Color.Transparent;
+                    PIC.BorderStyle = BorderStyle.None;
+                }
+            }
+        }
+
+        private void MuestraSmartPanel_Click(object sender, EventArgs e)
+        {
+            ImageSmartPanel.BackColor = Color.Transparent;
+            ImageSmartPanel.Controls.Clear();
+            foreach (Control ctrl in MuestraSmartPanel.Controls)
+            {
+                if (ctrl is Button)
+                {
+                    ctrl.BackColor = Color.FromArgb(35, 32, 39);
+                    ctrl.ForeColor = Color.White;
+                }
+            }
+
+            PanelImages_Click(this, EventArgs.Empty);
+            foreach (Control ctrl in panelImages.Controls)
+            {
+                if (ctrl is PictureBox)
+                {
+                    PictureBox PIC = (PictureBox)ctrl;
+                    PIC.BackColor = Color.Transparent;
+                    PIC.BorderStyle = BorderStyle.None;
+                }
             }
         }
     }

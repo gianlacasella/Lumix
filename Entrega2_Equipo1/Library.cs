@@ -128,5 +128,17 @@ namespace Entrega2_Equipo1
             return;
         }
 
+        public void UpdateSmartList(List<Image> images)
+        {
+            Dictionary<string, List<Image>> nuevo = new Dictionary<string, List<Image>>();
+            Searcher searcher = new Searcher();
+            foreach (KeyValuePair<string, List<Image>> pattern in smartList)
+            {
+                List<Image> nuevaList = searcher.Search(images, pattern.Key);
+                nuevo.Add(pattern.Key, nuevaList);
+            }
+            smartList = nuevo;
+        }
+
     }
 }
