@@ -228,14 +228,10 @@
       <DependentUpon>iFruitUserLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Image.cs" />
-    <Compile Include="ImageToShow.cs" />
     <Compile Include="Labels\Label.cs" />
     <Compile Include="Labels\PersonLabel.cs" />
-    <Compile Include="Labels\PersonLabelToShow.cs" />
     <Compile Include="Labels\SimpleLabel.cs" />
-    <Compile Include="Labels\SimpleLabelToShow.cs" />
     <Compile Include="Labels\SpecialLabel.cs" />
-    <Compile Include="Labels\SpecialLabelToShow.cs" />
     <Compile Include="Library.cs" />
     <Compile Include="LogInEventArgs.cs" />
     <Compile Include="MainWindow.cs">
