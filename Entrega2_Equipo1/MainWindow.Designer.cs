@@ -411,7 +411,7 @@
             // 
             this.exportToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
+            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.exportToolStripMenuItem1.Text = "Export";
             this.exportToolStripMenuItem1.Click += new System.EventHandler(this.ExportToolStripMenuItem_Click);
             this.exportToolStripMenuItem1.MouseEnter += new System.EventHandler(this.ExportToolStripMenuItem_MouseEnter);
@@ -421,7 +421,7 @@
             // 
             this.exportAsToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.exportAsToolStripMenuItem1.Name = "exportAsToolStripMenuItem1";
-            this.exportAsToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
+            this.exportAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.exportAsToolStripMenuItem1.Text = "Export as";
             this.exportAsToolStripMenuItem1.Click += new System.EventHandler(this.ExportAsToolStripMenuItem_Click);
             this.exportAsToolStripMenuItem1.MouseEnter += new System.EventHandler(this.ExportAsToolStripMenuItem_MouseEnter);

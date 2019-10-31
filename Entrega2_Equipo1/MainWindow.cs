@@ -169,6 +169,7 @@ namespace Entrega2_Equipo1
             Saved = true;
         }
 
+        
         private void ExportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (chosenImage != null)
@@ -178,8 +179,9 @@ namespace Entrega2_Equipo1
                 ImageFormat format = ImageFormat.Jpeg;
                 if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-
-                    chosenImage.Image.Save(sfd.FileName, format);
+                    Image img = (Image)chosenImage.Tag;
+                    Bitmap bm = img.BitmapImage;
+                    bm.Save(sfd.FileName, format);
                 }
             }
             else
@@ -201,13 +203,15 @@ namespace Entrega2_Equipo1
                     switch (ext)
                     {
                         case ".png":
-                            format = ImageFormat.Jpeg;
+                            format = ImageFormat.Png;
                             break;
                         case ".bmp":
                             format = ImageFormat.Bmp;
                             break;
                     }
-                    chosenImage.Image.Save(sfd.FileName, format);
+                    Image img = (Image)chosenImage.Tag;
+                    Bitmap bm = img.BitmapImage;
+                    bm.Save(sfd.FileName, format);
                 }
             }
             else
@@ -410,9 +414,7 @@ namespace Entrega2_Equipo1
         {
             PictureBox PIC = (PictureBox)sender;
             Image image = (Image)PIC.Tag;
-            ImageToShow imagets = new ImageToShow(image);
             // Esto estaba del property grid
-            //this.LabelsPropertyGrid.SelectedObject = imagets;
             this.calificationUpDown.Enabled = true;
             this.SetCalificationButton.Enabled = true;
             this.setNewNameButton.Enabled = true;
