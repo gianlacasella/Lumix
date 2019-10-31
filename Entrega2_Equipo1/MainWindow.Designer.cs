@@ -310,6 +310,8 @@
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.feauturesProgressBar = new System.Windows.Forms.ProgressBar();
             this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
@@ -3755,6 +3757,8 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.splitContainer1.Panel1.Controls.Add(this.label38);
+            this.splitContainer1.Panel1.Controls.Add(this.label37);
             this.splitContainer1.Panel1.Controls.Add(this.brightnessBar);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.ContrastBar);
@@ -4373,6 +4377,28 @@
             this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
             this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.White;
+            this.label37.Location = new System.Drawing.Point(25, 100);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(63, 15);
+            this.label37.TabIndex = 32;
+            this.label37.Text = "Contrast";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.White;
+            this.label38.Location = new System.Drawing.Point(138, 98);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(77, 15);
+            this.label38.TabIndex = 33;
+            this.label38.Text = "Brightness";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4756,6 +4782,8 @@
         private System.Windows.Forms.DomainUpDown YesNo;
         private System.Windows.Forms.DateTimePicker BirthDate;
         private System.Windows.Forms.NumericUpDown Longitud;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
     }
 
 }
