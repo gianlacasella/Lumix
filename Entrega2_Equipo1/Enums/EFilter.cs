@@ -8,16 +8,16 @@ namespace Entrega2_Equipo1
 {
     public enum EFilter
     {
-        AutomaticAdjustmentFilter,
-        BlackNWhiteFilter,
-        BrightnessFilter,
-        ColorFilter,
-        InvertFilter,
-        SepiaFilter,
-        RotateFlipFilter,
-        MirrorFilter,
-        OldFilmFilter,
-        WindowsFilter,
+        AutomaticAdjustment,
+        Grayscale,
+        Brightness,
+        Color,
+        Invert,
+        Sepia,
+        RotateFlip,
+        Mirror,
+        OldFilm,
+        Windows,
 		Contrast,
 		Burned
     }

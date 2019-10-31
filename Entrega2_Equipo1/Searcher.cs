@@ -186,61 +186,61 @@ namespace Entrega2_Equipo1
 								}
 								break;
 							case "AutomaticAdjustment":
-								if (image.ApplyedFilters[EFilter.AutomaticAdjustmentFilter].ToString() == atributes[1])
+								if (image.ApplyedFilters[EFilter.AutomaticAdjustment].ToString() == atributes[1])
 								{
 									cont++;
 								}
 								break;
 							case "Grayscale":
-								if (image.ApplyedFilters[EFilter.BlackNWhiteFilter].ToString() == atributes[1])
+								if (image.ApplyedFilters[EFilter.Grayscale].ToString() == atributes[1])
 								{
 									cont++;
 								}
 								break;
 							case "Brightness":
-								if (image.ApplyedFilters[EFilter.BrightnessFilter].ToString() == atributes[1])
+								if (image.ApplyedFilters[EFilter.Brightness].ToString() == atributes[1])
 								{
 									cont++;
 								}
 								break;
 							case "Color":
-								if (image.ApplyedFilters[EFilter.ColorFilter].ToString() == atributes[1])
+								if (image.ApplyedFilters[EFilter.Color].ToString() == atributes[1])
 								{
 									cont++;
 								}
 								break;
 							case "Invert":
-								if (image.ApplyedFilters[EFilter.InvertFilter].ToString() == atributes[1])
+								if (image.ApplyedFilters[EFilter.Invert].ToString() == atributes[1])
 								{
 									cont++;
 								}
 								break;
 							case "Sepia":
-								if (image.ApplyedFilters[EFilter.SepiaFilter].ToString() == atributes[1])
+								if (image.ApplyedFilters[EFilter.Sepia].ToString() == atributes[1])
 								{
 									cont++;
 								}
 								break;
 							case "RotateFlip":
-								if (image.ApplyedFilters[EFilter.RotateFlipFilter].ToString() == atributes[1])
+								if (image.ApplyedFilters[EFilter.RotateFlip].ToString() == atributes[1])
 								{
 									cont++;
 								}
 								break;
 							case "Mirror":
-								if (image.ApplyedFilters[EFilter.MirrorFilter].ToString() == atributes[1])
+								if (image.ApplyedFilters[EFilter.Mirror].ToString() == atributes[1])
 								{
 									cont++;
 								}
 								break;
 							case "OldFilm":
-								if (image.ApplyedFilters[EFilter.OldFilmFilter].ToString() == atributes[1])
+								if (image.ApplyedFilters[EFilter.OldFilm].ToString() == atributes[1])
 								{
 									cont++;
 								}
 								break;
 							case "Windows":
-								if (image.ApplyedFilters[EFilter.WindowsFilter].ToString() == atributes[1])
+								if (image.ApplyedFilters[EFilter.Windows].ToString() == atributes[1])
 								{
 									cont++;
 								}

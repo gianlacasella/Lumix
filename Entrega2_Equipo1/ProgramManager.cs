@@ -1371,7 +1371,7 @@ namespace Entrega2_Equipo1
 
                 // Switch for the usrDecision
 
-
+                /*
                 switch (usrDec)
                 {
                     // Apply blacknwhite filter
@@ -1565,6 +1565,7 @@ namespace Entrega2_Equipo1
                         }
                         break;
                 }
+                */
                 Console.WriteLine("\n");
                 Console.SetCursorPosition((Console.WindowWidth - presskey.Length) / 2, Console.CursorTop);
                 Console.WriteLine(presskey);

@@ -44,9 +44,9 @@ namespace Entrega2_Equipo1
 			this.AspectRatio = LoadAspectRatio();
 			this.DarkClear = LoadDarkClear();
 			this.exif = LoadExif();
-            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
-                { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
-                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false }
+            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustment, false}, {EFilter.Grayscale, false },
+                { EFilter.Brightness, false}, { EFilter.Color, false}, { EFilter.Invert, false}, { EFilter.Mirror, false},
+                { EFilter.OldFilm, false}, { EFilter.RotateFlip, false}, { EFilter.Sepia, false}, {EFilter.Windows, false }
 				,{EFilter.Contrast,false },{EFilter.Burned, false } };
 		}
 
@@ -60,9 +60,9 @@ namespace Entrega2_Equipo1
             this.AspectRatio = LoadAspectRatio();
             this.DarkClear = LoadDarkClear();
             this.exif = LoadExif();
-            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
-                { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
-                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false }
+            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustment, false}, {EFilter.Grayscale, false },
+                { EFilter.Brightness, false}, { EFilter.Color, false}, { EFilter.Invert, false}, { EFilter.Mirror, false},
+                { EFilter.OldFilm, false}, { EFilter.RotateFlip, false}, { EFilter.Sepia, false}, {EFilter.Windows, false }
 				,{EFilter.Contrast,false } ,{EFilter.Burned, false }};
         }
 
@@ -77,18 +77,18 @@ namespace Entrega2_Equipo1
             this.aspectRatio = aspectratio;
             this.darkClear = darkclear;
             this.exif = exif;
-            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
-                { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
-                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } 
+            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustment, false}, {EFilter.Grayscale, false },
+                { EFilter.Brightness, false}, { EFilter.Color, false}, { EFilter.Invert, false}, { EFilter.Mirror, false},
+                { EFilter.OldFilm, false}, { EFilter.RotateFlip, false}, { EFilter.Sepia, false}, {EFilter.Windows, false } 
 				,{EFilter.Contrast,false },{EFilter.Burned, false }};
         }
 
         // Other constructor with DEFAULT_CALIFICATION
         public Image(string name, List<Label> labels) : this(name, labels, DEFAULT_CALIFICATION)
         {
-            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustmentFilter, false}, {EFilter.BlackNWhiteFilter, false },
-                { EFilter.BrightnessFilter, false}, { EFilter.ColorFilter, false}, { EFilter.InvertFilter, false}, { EFilter.MirrorFilter, false},
-                { EFilter.OldFilmFilter, false}, { EFilter.RotateFlipFilter, false}, { EFilter.SepiaFilter, false}, {EFilter.WindowsFilter, false } 
+            this.ApplyedFilters = new Dictionary<EFilter, bool>() { { EFilter.AutomaticAdjustment, false}, {EFilter.Grayscale, false },
+                { EFilter.Brightness, false}, { EFilter.Color, false}, { EFilter.Invert, false}, { EFilter.Mirror, false},
+                { EFilter.OldFilm, false}, { EFilter.RotateFlip, false}, { EFilter.Sepia, false}, {EFilter.Windows, false } 
 				,{EFilter.Contrast,false },{EFilter.Burned, false }};
         }
 

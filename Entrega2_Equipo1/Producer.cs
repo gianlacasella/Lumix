@@ -201,61 +201,61 @@ namespace Entrega2_Equipo1
         {   
             switch (filtro)
             {
-                case EFilter.AutomaticAdjustmentFilter:
+                case EFilter.AutomaticAdjustment:
                     AutomaticAdjustmentFilter AAF = new AutomaticAdjustmentFilter();
                     Bitmap ret = AAF.ApplyFilter(image.BitmapImage);
                     GC.Collect();
                     return ret;
 
-                case EFilter.BlackNWhiteFilter:
+                case EFilter.Grayscale:
                     BlackNWhiteFilter BNWF = new BlackNWhiteFilter();
                     Bitmap ret2 = BNWF.ApplyFilter(image.BitmapImage);
                     GC.Collect();
                     return ret2;
 
-                case EFilter.BrightnessFilter:
+                case EFilter.Brightness:
                     BrightnessFilter BF = new BrightnessFilter();
                     Bitmap ret3 = BF.ApplyFilter(image.BitmapImage, brightness);
                     GC.Collect();
                     return ret3;
                 
-                case EFilter.ColorFilter:
+                case EFilter.Color:
                     ColorFilter CF = new ColorFilter();
                     Bitmap ret4 = CF.ApplyFilter(image.BitmapImage, color);
                     GC.Collect();
                     return ret4;
                 
-                case EFilter.InvertFilter:
+                case EFilter.Invert:
                     InvertFilter IF = new InvertFilter();
                     Bitmap ret5 = IF.ApplyFilter(image.BitmapImage);
                     GC.Collect();
                     return ret5;
 
-                case EFilter.MirrorFilter:
+                case EFilter.Mirror:
                     MirrorFilter MF = new MirrorFilter();
                     Bitmap ret6 = MF.ApplyFilter(image.BitmapImage);
                     GC.Collect();
                     return ret6;
 
-                case EFilter.OldFilmFilter:
+                case EFilter.OldFilm:
                     OldFilmFilter OFF = new OldFilmFilter();
                     Bitmap ret7 = OFF.ApplyFilter(image.BitmapImage, noise);
                     GC.Collect();
                     return ret7;
 
-                case EFilter.RotateFlipFilter:
+                case EFilter.RotateFlip:
                     RotateFlipFilter RFF = new RotateFlipFilter();
                     Bitmap ret8 = RFF.RotateFlip(image.BitmapImage, RFT);
                     GC.Collect();
                     return ret8;
 
-                case EFilter.SepiaFilter:
+                case EFilter.Sepia:
                     SepiaFilter SF = new SepiaFilter();
                     Bitmap ret9 = SF.ApplyFilter(image.BitmapImage);
                     GC.Collect();
                     return ret9;
 
-                case EFilter.WindowsFilter:
+                case EFilter.Windows:
                     WindowsFilter WF = new WindowsFilter();
                     Bitmap ret10 = WF.ApplyFilter(image.BitmapImage);
                     GC.Collect();

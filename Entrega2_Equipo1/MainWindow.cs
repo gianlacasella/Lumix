@@ -51,8 +51,11 @@ namespace Entrega2_Equipo1
 			worker.ProgressChanged += WorkerImportFilesProgess;
 			worker.WorkerReportsProgress = true;
 			worker.RunWorkerCompleted += WorkerImportFileCompleted;
+            FiltroComboBox.Items.Clear();
+            FiltroComboBox.DataSource = Enum.GetValues(typeof(EFilter));
+            YesNo.Items.Clear();YesNo.Items.Add(true);YesNo.Items.Add(false);
 
-		}
+        }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -703,8 +706,8 @@ namespace Entrega2_Equipo1
             if (chosenEditingImage != null)
             {
                 Image image = (Image)chosenEditingImage.Tag;
-                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.BlackNWhiteFilter);
-                SaveFilterApplyed(EFilter.BlackNWhiteFilter, image);
+                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.Grayscale);
+                SaveFilterApplyed(EFilter.Grayscale, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -715,8 +718,8 @@ namespace Entrega2_Equipo1
             if (chosenEditingImage != null)
             {
                 Image image = (Image)chosenEditingImage.Tag;
-                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.SepiaFilter);
-                SaveFilterApplyed(EFilter.SepiaFilter, image);
+                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.Sepia);
+                SaveFilterApplyed(EFilter.Sepia, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -756,8 +759,8 @@ namespace Entrega2_Equipo1
             if (chosenEditingImage != null)
             {
                 Image image = (Image)chosenEditingImage.Tag;
-                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.WindowsFilter);
-                SaveFilterApplyed(EFilter.WindowsFilter, image);
+                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.Windows);
+                SaveFilterApplyed(EFilter.Windows, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -768,8 +771,8 @@ namespace Entrega2_Equipo1
             if (chosenEditingImage != null)
             {
                 Image image = (Image)chosenEditingImage.Tag;
-                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.OldFilmFilter);
-                SaveFilterApplyed(EFilter.OldFilmFilter, image);
+                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.OldFilm);
+                SaveFilterApplyed(EFilter.OldFilm, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -780,8 +783,8 @@ namespace Entrega2_Equipo1
             if (chosenEditingImage != null)
             {
                 Image image = (Image)chosenEditingImage.Tag;
-                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.InvertFilter);
-                SaveFilterApplyed(EFilter.InvertFilter, image);
+                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.Invert);
+                SaveFilterApplyed(EFilter.Invert, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -792,8 +795,8 @@ namespace Entrega2_Equipo1
             if (chosenEditingImage != null)
             {
                 Image image = (Image)chosenEditingImage.Tag;
-                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.AutomaticAdjustmentFilter);
-                SaveFilterApplyed(EFilter.AutomaticAdjustmentFilter, image);
+                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.AutomaticAdjustment);
+                SaveFilterApplyed(EFilter.AutomaticAdjustment, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -804,8 +807,8 @@ namespace Entrega2_Equipo1
             if (chosenEditingImage != null)
             {
                 Image image = (Image)chosenEditingImage.Tag;
-                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.MirrorFilter);
-                SaveFilterApplyed(EFilter.MirrorFilter, image);
+                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.Mirror);
+                SaveFilterApplyed(EFilter.Mirror, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -818,8 +821,8 @@ namespace Entrega2_Equipo1
                 if (colorDialogFilter.ShowDialog() == DialogResult.OK)
                 {
                     Image image = (Image)chosenEditingImage.Tag;
-                    image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.ColorFilter, colorDialogFilter.Color);
-                    SaveFilterApplyed(EFilter.ColorFilter, image);
+                    image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.Color, colorDialogFilter.Color);
+                    SaveFilterApplyed(EFilter.Color, image);
                     chosenEditingImage.Image = image.BitmapImage;
                     pictureChosen.Image = chosenEditingImage.Image;
                 }
@@ -833,8 +836,8 @@ namespace Entrega2_Equipo1
             if (chosenEditingImage != null)
             {
                 Image image = (Image)chosenEditingImage.Tag;
-                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.RotateFlipFilter, Color.Empty, 0, 60, (RotateFlipType)comboRotate.SelectedItem);
-                SaveFilterApplyed(EFilter.RotateFlipFilter, image);
+                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.RotateFlip, Color.Empty, 0, 60, (RotateFlipType)comboRotate.SelectedItem);
+                SaveFilterApplyed(EFilter.RotateFlip, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -2147,8 +2150,8 @@ namespace Entrega2_Equipo1
             if (chosenEditingImage != null)
             {
                 Image image = (Image)chosenEditingImage.Tag;
-                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.BrightnessFilter, Color.Empty, brightnessBar.Value);
-                SaveFilterApplyed(EFilter.BrightnessFilter, image);
+                image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.Brightness, Color.Empty, brightnessBar.Value);
+                SaveFilterApplyed(EFilter.Brightness, image);
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -2176,15 +2179,15 @@ namespace Entrega2_Equipo1
 					Image image = (Image)chosenEditingImage.Tag;
 					AutomaticAdjustmentFilter auto = new AutomaticAdjustmentFilter();
 					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
-					image.BitmapImage = producer.ApplyFilter(image, EFilter.BrightnessFilter, Color.Red, 15);
+					image.BitmapImage = producer.ApplyFilter(image, EFilter.Brightness, Color.Red, 15);
 					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
 					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
-					image.BitmapImage = producer.ApplyFilter(image, EFilter.BrightnessFilter, Color.Red, 30);
-					image.BitmapImage = producer.ApplyFilter(image, EFilter.SepiaFilter);
-					image.BitmapImage = producer.ApplyFilter(image, EFilter.BlackNWhiteFilter);
+					image.BitmapImage = producer.ApplyFilter(image, EFilter.Brightness, Color.Red, 30);
+					image.BitmapImage = producer.ApplyFilter(image, EFilter.Sepia);
+					image.BitmapImage = producer.ApplyFilter(image, EFilter.Grayscale);
 					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
 					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
-					image.BitmapImage = producer.ApplyFilter(image, EFilter.ColorFilter, colorDialogFilter.Color);
+					image.BitmapImage = producer.ApplyFilter(image, EFilter.Color, colorDialogFilter.Color);
                     GC.Collect();
 					SaveFilterApplyed(EFilter.Burned, image); 
 					chosenEditingImage.Image = image.BitmapImage;
@@ -2718,7 +2721,7 @@ namespace Entrega2_Equipo1
                         }
                         break;
                     case "Filter:":
-                        patron.Append(busqueda.SelectedItem + FiltroComboBox.SelectedItem.ToString());
+                        patron.Append(FiltroComboBox.SelectedItem.ToString()+":True");
                         if (UnionComboBox.SelectedItem.ToString() == "and")
                         {
                             patron.Append(" and ");
