@@ -15,7 +15,6 @@ namespace Entrega2_Equipo1
 	{
 		Bitmap actualImage;
 		Bitmap showedImage;
-		bool down = false;
 		private int y = 0;
 		private int x = 0;
 		private string text = "";

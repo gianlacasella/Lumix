@@ -29,10 +29,10 @@ namespace Entrega2_Equipo1
         bool deleteaccount = false;
         Bitmap chooseUserPictureBitmap;
         Searcher mainSearcher;
-        bool multipleImporting = false;
         List<Image> imagestoaddlabel;
         StringBuilder pattern;
         PictureBox selectedSmartBox = null;
+        bool multipleImporting = false;
 
         public User UserLoggedIn { get => this.userLoggedIn; set => this.userLoggedIn = value; }
         public bool Exit { get => this.exit; set => this.exit = value; }
@@ -50,7 +50,6 @@ namespace Entrega2_Equipo1
             FiltroComboBox.Items.Clear();
             FiltroComboBox.DataSource = Enum.GetValues(typeof(EFilter));
             YesNo.Items.Clear();YesNo.Items.Add(true);YesNo.Items.Add(false);
-
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
