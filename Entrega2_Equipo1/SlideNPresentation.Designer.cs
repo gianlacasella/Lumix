@@ -40,10 +40,11 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.SlidePictureBox = new System.Windows.Forms.PictureBox();
             this.panelShowImage = new System.Windows.Forms.Panel();
-            this.BackButton = new System.Windows.Forms.Button();
-            this.NextButton = new System.Windows.Forms.Button();
             this.MainPictureBox = new System.Windows.Forms.PictureBox();
+            this.NextButton = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
+            this.endLabel = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SlidePictureBox)).BeginInit();
@@ -148,6 +149,7 @@
             // 
             // panelShowImage
             // 
+            this.panelShowImage.Controls.Add(this.endLabel);
             this.panelShowImage.Controls.Add(this.MainPictureBox);
             this.panelShowImage.Controls.Add(this.NextButton);
             this.panelShowImage.Controls.Add(this.BackButton);
@@ -158,21 +160,18 @@
             this.panelShowImage.TabIndex = 1;
             this.panelShowImage.Visible = false;
             // 
-            // BackButton
+            // MainPictureBox
             // 
-            this.BackButton.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BackButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BackButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButton.Location = new System.Drawing.Point(0, 0);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(47, 557);
-            this.BackButton.TabIndex = 3;
-            this.BackButton.Text = "Back";
-            this.BackButton.UseVisualStyleBackColor = false;
-            this.BackButton.Visible = false;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            this.MainPictureBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MainPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("MainPictureBox.ErrorImage")));
+            this.MainPictureBox.Location = new System.Drawing.Point(47, 0);
+            this.MainPictureBox.Name = "MainPictureBox";
+            this.MainPictureBox.Size = new System.Drawing.Size(750, 557);
+            this.MainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MainPictureBox.TabIndex = 1;
+            this.MainPictureBox.TabStop = false;
+            this.MainPictureBox.Visible = false;
             // 
             // NextButton
             // 
@@ -190,23 +189,40 @@
             this.NextButton.Visible = false;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
-            // MainPictureBox
+            // BackButton
             // 
-            this.MainPictureBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.MainPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("MainPictureBox.ErrorImage")));
-            this.MainPictureBox.Location = new System.Drawing.Point(47, 0);
-            this.MainPictureBox.Name = "MainPictureBox";
-            this.MainPictureBox.Size = new System.Drawing.Size(750, 557);
-            this.MainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MainPictureBox.TabIndex = 1;
-            this.MainPictureBox.TabStop = false;
-            this.MainPictureBox.Visible = false;
+            this.BackButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BackButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackButton.Location = new System.Drawing.Point(0, 0);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(47, 557);
+            this.BackButton.TabIndex = 3;
+            this.BackButton.Text = "Back";
+            this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Visible = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // timerMain
             // 
             this.timerMain.Interval = 1;
             this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
+            // 
+            // endLabel
+            // 
+            this.endLabel.AutoSize = true;
+            this.endLabel.BackColor = System.Drawing.Color.Black;
+            this.endLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.endLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endLabel.ForeColor = System.Drawing.Color.White;
+            this.endLabel.Location = new System.Drawing.Point(47, 0);
+            this.endLabel.Name = "endLabel";
+            this.endLabel.Size = new System.Drawing.Size(297, 29);
+            this.endLabel.TabIndex = 4;
+            this.endLabel.Text = "End of the presentation";
+            this.endLabel.Visible = false;
             // 
             // SlideNPresentation
             // 
@@ -223,6 +239,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SlidePictureBox)).EndInit();
             this.panelShowImage.ResumeLayout(false);
+            this.panelShowImage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -244,5 +261,6 @@
 		private System.Windows.Forms.Panel panelShowImage;
 		private System.Windows.Forms.Button BackButton;
 		private System.Windows.Forms.Button NextButton;
-	}
+        private System.Windows.Forms.Label endLabel;
+    }
 }

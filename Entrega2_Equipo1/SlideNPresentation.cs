@@ -32,7 +32,7 @@ namespace Entrega2_Equipo1
 				////////////////////////////
 				MainPanel.Visible = false;
 				NextButton.Visible = true;
-				BackButton.Visible = true;
+				BackButton.Visible = false;
 				MainPictureBox.Visible = true;
 				WindowState = FormWindowState.Maximized;
 				LoadImage(indexPic);
@@ -49,6 +49,7 @@ namespace Entrega2_Equipo1
 			{
 				PictureBox pic = new PictureBox();
                 pic.Image = NewThumbnailImage(image.BitmapImage);
+                pic.ErrorImage = image.BitmapImage;
                 pic.Location = new Point(x, y);
 				pic.SizeMode = PictureBoxSizeMode.Zoom;
 				pic.Click += ImageBorderClick;
@@ -165,23 +166,28 @@ namespace Entrega2_Equipo1
 			{
 				PictureBox Pic = mainList[indexPic];
 				timerMain.Interval = Convert.ToInt32(Pic.Tag);
-				MainPictureBox.Image = Pic.Image;
+				MainPictureBox.Image = Pic.ErrorImage;
 				indexPic++;
 			}
 		}
 
 		private void NextButton_Click(object sender, EventArgs e)
 		{
-			
-			indexPic++;
+            BackButton.Visible = true;
+            indexPic++;
 			if (indexPic < images.Count)
 			{
-				LoadImage(indexPic);
+                endLabel.Visible = false;
+                NextButton.Text = "Next";
+                LoadImage(indexPic);
 			}
 			else if(indexPic == images.Count)
 			{
 				MainPictureBox.Image = MainPictureBox.ErrorImage;
-			}
+                NextButton.Text = "End";
+                endLabel.Visible = true;
+
+            }
 			else
 			{
 				Close();
@@ -191,11 +197,16 @@ namespace Entrega2_Equipo1
 
 		private void BackButton_Click(object sender, EventArgs e)
 		{
+
 			if (indexPic != 0)
 			{
 				indexPic--;
 				LoadImage(indexPic);
 			}
+            if(indexPic == 0)
+            {
+                BackButton.Visible = false;
+            }
 		}
 	}
 }
