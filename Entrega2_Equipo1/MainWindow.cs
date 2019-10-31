@@ -162,6 +162,7 @@ namespace Entrega2_Equipo1
                     Image im = (Image)PIC.Tag;
                     library.RemoveImage(im);
                     ReLoadPanelImage(sender, e);
+                    SmartList_Click(this, EventArgs.Empty);
                     Saved = false;
                     if (PIC == chosenImage)
                     {
@@ -2450,13 +2451,16 @@ namespace Entrega2_Equipo1
             {
                 if (ctrl is Button)
                 {
+                    Button btn1 = (Button)sender;
                     ctrl.BackColor = Color.FromArgb(35, 32, 39);
                     ctrl.ForeColor = Color.White;
+                    btn1.FlatAppearance.BorderSize = 1;
                 }
             }
             Button btn = (Button)sender;
             btn.BackColor = Color.LightGray;
             btn.ForeColor = Color.Black;
+            btn.FlatAppearance.BorderSize = 0;
         }
 
 
