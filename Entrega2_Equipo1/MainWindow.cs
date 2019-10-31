@@ -751,7 +751,7 @@ namespace Entrega2_Equipo1
                         pictureChosen.Image = pictureChosen.ErrorImage;
                         chosenEditingImage = null;
                     }
-
+                    SmartList_Click(this, EventArgs.Empty);
                 }
             }
         }
@@ -912,6 +912,7 @@ namespace Entrega2_Equipo1
             this.cleanLibraryToolStripMenuItem.Enabled = true;
             this.myAccountToolStripMenuItem.Enabled = true;
             this.exitToolStripMenuItem.Enabled = true;
+            SmartList_Click(this, EventArgs.Empty);
             this.SearchTextBox.Enabled = true;
         }
 

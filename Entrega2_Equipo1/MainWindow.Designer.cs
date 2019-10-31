@@ -123,6 +123,7 @@
             this.RealNameLabel = new System.Windows.Forms.Label();
             this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
@@ -238,19 +239,6 @@
             this.YesNo = new System.Windows.Forms.DomainUpDown();
             this.BirthDate = new System.Windows.Forms.DateTimePicker();
             this.Longitud = new System.Windows.Forms.NumericUpDown();
-            this.MuestraSmartPanel = new System.Windows.Forms.Panel();
-            this.panelCollage = new System.Windows.Forms.Panel();
-            this.ExitCollageButton = new System.Windows.Forms.Button();
-            this.InsertLabel = new System.Windows.Forms.Label();
-            this.BaseLabel = new System.Windows.Forms.Label();
-            this.pictureCollageImage = new System.Windows.Forms.PictureBox();
-            this.radioButtonImage = new System.Windows.Forms.RadioButton();
-            this.radioButtonSolid = new System.Windows.Forms.RadioButton();
-            this.textInsertH = new System.Windows.Forms.TextBox();
-            this.textInsertW = new System.Windows.Forms.TextBox();
-            this.textBaseH = new System.Windows.Forms.TextBox();
-            this.textBaseW = new System.Windows.Forms.TextBox();
-            this.buttonCollage = new System.Windows.Forms.Button();
             this.MosaicPanel = new System.Windows.Forms.Panel();
             this.BaseHMosaicText = new System.Windows.Forms.TextBox();
             this.BaseWMosaicText = new System.Windows.Forms.TextBox();
@@ -263,13 +251,19 @@
             this.MosaicpictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.InsertWidthText = new System.Windows.Forms.TextBox();
-            this.panelResize = new System.Windows.Forms.Panel();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.ExitResizeButton = new System.Windows.Forms.Button();
-            this.YText = new System.Windows.Forms.TextBox();
-            this.XText = new System.Windows.Forms.TextBox();
-            this.resizeDone = new System.Windows.Forms.Button();
+            this.panelCollage = new System.Windows.Forms.Panel();
+            this.ExitCollageButton = new System.Windows.Forms.Button();
+            this.InsertLabel = new System.Windows.Forms.Label();
+            this.BaseLabel = new System.Windows.Forms.Label();
+            this.pictureCollageImage = new System.Windows.Forms.PictureBox();
+            this.radioButtonImage = new System.Windows.Forms.RadioButton();
+            this.radioButtonSolid = new System.Windows.Forms.RadioButton();
+            this.textInsertH = new System.Windows.Forms.TextBox();
+            this.textInsertW = new System.Windows.Forms.TextBox();
+            this.textBaseH = new System.Windows.Forms.TextBox();
+            this.textBaseW = new System.Windows.Forms.TextBox();
+            this.buttonCollage = new System.Windows.Forms.Button();
+            this.MuestraSmartPanel = new System.Windows.Forms.Panel();
             this.SmartButtonsPanel = new System.Windows.Forms.Panel();
             this.SmartListButton = new System.Windows.Forms.Button();
             this.DeleteSmartButton = new System.Windows.Forms.Button();
@@ -285,6 +279,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboRotate = new System.Windows.Forms.ComboBox();
             this.PaintButton = new System.Windows.Forms.Button();
+            this.panelResize = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.ExitResizeButton = new System.Windows.Forms.Button();
+            this.YText = new System.Windows.Forms.TextBox();
+            this.XText = new System.Windows.Forms.TextBox();
+            this.resizeDone = new System.Windows.Forms.Button();
             this.CropButton = new System.Windows.Forms.Button();
             this.comboCensor = new System.Windows.Forms.ComboBox();
             this.button9 = new System.Windows.Forms.Button();
@@ -309,7 +310,6 @@
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.feauturesProgressBar = new System.Windows.Forms.ProgressBar();
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
@@ -322,6 +322,7 @@
             this.panel3.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddPersonLabelPanel.SuspendLayout();
             this.AddSpecialLabelPanel.SuspendLayout();
@@ -347,11 +348,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.CalificationUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Latitud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Longitud)).BeginInit();
-            this.panelCollage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).BeginInit();
             this.MosaicPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MosaicpictureBox)).BeginInit();
-            this.panelResize.SuspendLayout();
+            this.panelCollage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).BeginInit();
             this.SmartButtonsPanel.SuspendLayout();
             this.UpperRightPanel.SuspendLayout();
             this.EditingAreaPanel.SuspendLayout();
@@ -361,8 +361,8 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).BeginInit();
+            this.panelResize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1569,6 +1569,21 @@
             this.UsernameLabel.Size = new System.Drawing.Size(0, 58);
             this.UsernameLabel.TabIndex = 5;
             // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
+            // 
             // SelectLabelTypeTag
             // 
             this.SelectLabelTypeTag.AutoSize = true;
@@ -2321,7 +2336,7 @@
             this.addToFeaturesListToolStripMenuItem,
             this.removeFromFeaturesListToolStripMenuItem});
             this.contextMenuStripEditing.Name = "contextMenuStripEditing";
-            this.contextMenuStripEditing.Size = new System.Drawing.Size(215, 92);
+            this.contextMenuStripEditing.Size = new System.Drawing.Size(215, 114);
             // 
             // removeFromEditingAreaToolStripMenuItem
             // 
@@ -3324,16 +3339,149 @@
             this.Longitud.TabIndex = 13;
             this.Longitud.Visible = false;
             // 
-            // MuestraSmartPanel
+            // MosaicPanel
             // 
-            this.MuestraSmartPanel.AutoScroll = true;
-            this.MuestraSmartPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.MuestraSmartPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MuestraSmartPanel.Location = new System.Drawing.Point(0, 30);
-            this.MuestraSmartPanel.Name = "MuestraSmartPanel";
-            this.MuestraSmartPanel.Size = new System.Drawing.Size(208, 234);
-            this.MuestraSmartPanel.TabIndex = 43;
-            this.MuestraSmartPanel.Click += new System.EventHandler(this.MuestraSmartPanel_Click);
+            this.MosaicPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.MosaicPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MosaicPanel.Controls.Add(this.BaseHMosaicText);
+            this.MosaicPanel.Controls.Add(this.BaseWMosaicText);
+            this.MosaicPanel.Controls.Add(this.BaseMosaicHeightLabel);
+            this.MosaicPanel.Controls.Add(this.BaseMosaicWidthLabel);
+            this.MosaicPanel.Controls.Add(this.ExitMosaic);
+            this.MosaicPanel.Controls.Add(this.MosaicButton);
+            this.MosaicPanel.Controls.Add(this.InsertHeightText);
+            this.MosaicPanel.Controls.Add(this.label5);
+            this.MosaicPanel.Controls.Add(this.MosaicpictureBox);
+            this.MosaicPanel.Controls.Add(this.label1);
+            this.MosaicPanel.Controls.Add(this.InsertWidthText);
+            this.MosaicPanel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.MosaicPanel.Location = new System.Drawing.Point(525, 119);
+            this.MosaicPanel.Name = "MosaicPanel";
+            this.MosaicPanel.Size = new System.Drawing.Size(304, 115);
+            this.MosaicPanel.TabIndex = 38;
+            this.MosaicPanel.Visible = false;
+            // 
+            // BaseHMosaicText
+            // 
+            this.BaseHMosaicText.Location = new System.Drawing.Point(93, 86);
+            this.BaseHMosaicText.Name = "BaseHMosaicText";
+            this.BaseHMosaicText.Size = new System.Drawing.Size(53, 20);
+            this.BaseHMosaicText.TabIndex = 10;
+            this.BaseHMosaicText.Text = "400";
+            // 
+            // BaseWMosaicText
+            // 
+            this.BaseWMosaicText.Location = new System.Drawing.Point(9, 88);
+            this.BaseWMosaicText.Name = "BaseWMosaicText";
+            this.BaseWMosaicText.Size = new System.Drawing.Size(56, 20);
+            this.BaseWMosaicText.TabIndex = 9;
+            this.BaseWMosaicText.Text = "400";
+            // 
+            // BaseMosaicHeightLabel
+            // 
+            this.BaseMosaicHeightLabel.AutoSize = true;
+            this.BaseMosaicHeightLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaseMosaicHeightLabel.ForeColor = System.Drawing.Color.White;
+            this.BaseMosaicHeightLabel.Location = new System.Drawing.Point(85, 72);
+            this.BaseMosaicHeightLabel.Name = "BaseMosaicHeightLabel";
+            this.BaseMosaicHeightLabel.Size = new System.Drawing.Size(73, 13);
+            this.BaseMosaicHeightLabel.TabIndex = 8;
+            this.BaseMosaicHeightLabel.Text = "Base Height";
+            // 
+            // BaseMosaicWidthLabel
+            // 
+            this.BaseMosaicWidthLabel.AutoSize = true;
+            this.BaseMosaicWidthLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaseMosaicWidthLabel.ForeColor = System.Drawing.Color.White;
+            this.BaseMosaicWidthLabel.Location = new System.Drawing.Point(-2, 73);
+            this.BaseMosaicWidthLabel.Name = "BaseMosaicWidthLabel";
+            this.BaseMosaicWidthLabel.Size = new System.Drawing.Size(67, 13);
+            this.BaseMosaicWidthLabel.TabIndex = 7;
+            this.BaseMosaicWidthLabel.Text = "Base Width";
+            // 
+            // ExitMosaic
+            // 
+            this.ExitMosaic.BackColor = System.Drawing.Color.LightGray;
+            this.ExitMosaic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitMosaic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitMosaic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitMosaic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitMosaic.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitMosaic.Location = new System.Drawing.Point(245, 84);
+            this.ExitMosaic.Name = "ExitMosaic";
+            this.ExitMosaic.Size = new System.Drawing.Size(50, 23);
+            this.ExitMosaic.TabIndex = 6;
+            this.ExitMosaic.Text = "Exit";
+            this.ExitMosaic.UseVisualStyleBackColor = false;
+            this.ExitMosaic.Click += new System.EventHandler(this.ExitMosaic_Click);
+            this.ExitMosaic.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.ExitMosaic.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // MosaicButton
+            // 
+            this.MosaicButton.BackColor = System.Drawing.Color.LightGray;
+            this.MosaicButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MosaicButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.MosaicButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.MosaicButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MosaicButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MosaicButton.Location = new System.Drawing.Point(164, 85);
+            this.MosaicButton.Name = "MosaicButton";
+            this.MosaicButton.Size = new System.Drawing.Size(75, 23);
+            this.MosaicButton.TabIndex = 5;
+            this.MosaicButton.Text = "Mosaic";
+            this.MosaicButton.UseVisualStyleBackColor = false;
+            this.MosaicButton.Click += new System.EventHandler(this.MosaicButton_Click);
+            this.MosaicButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.MosaicButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // InsertHeightText
+            // 
+            this.InsertHeightText.Location = new System.Drawing.Point(90, 39);
+            this.InsertHeightText.Name = "InsertHeightText";
+            this.InsertHeightText.Size = new System.Drawing.Size(56, 20);
+            this.InsertHeightText.TabIndex = 4;
+            this.InsertHeightText.Text = "10";
+            this.InsertHeightText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(82, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Images Height";
+            // 
+            // MosaicpictureBox
+            // 
+            this.MosaicpictureBox.Location = new System.Drawing.Point(171, 8);
+            this.MosaicpictureBox.Name = "MosaicpictureBox";
+            this.MosaicpictureBox.Size = new System.Drawing.Size(124, 73);
+            this.MosaicpictureBox.TabIndex = 2;
+            this.MosaicpictureBox.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(1, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Images Width";
+            // 
+            // InsertWidthText
+            // 
+            this.InsertWidthText.Location = new System.Drawing.Point(9, 39);
+            this.InsertWidthText.Name = "InsertWidthText";
+            this.InsertWidthText.Size = new System.Drawing.Size(56, 20);
+            this.InsertWidthText.TabIndex = 0;
+            this.InsertWidthText.Text = "10";
+            this.InsertWidthText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
             // 
             // panelCollage
             // 
@@ -3480,239 +3628,16 @@
             this.buttonCollage.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
             this.buttonCollage.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
             // 
-            // MosaicPanel
+            // MuestraSmartPanel
             // 
-            this.MosaicPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
-            this.MosaicPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MosaicPanel.Controls.Add(this.BaseHMosaicText);
-            this.MosaicPanel.Controls.Add(this.BaseWMosaicText);
-            this.MosaicPanel.Controls.Add(this.BaseMosaicHeightLabel);
-            this.MosaicPanel.Controls.Add(this.BaseMosaicWidthLabel);
-            this.MosaicPanel.Controls.Add(this.ExitMosaic);
-            this.MosaicPanel.Controls.Add(this.MosaicButton);
-            this.MosaicPanel.Controls.Add(this.InsertHeightText);
-            this.MosaicPanel.Controls.Add(this.label5);
-            this.MosaicPanel.Controls.Add(this.MosaicpictureBox);
-            this.MosaicPanel.Controls.Add(this.label1);
-            this.MosaicPanel.Controls.Add(this.InsertWidthText);
-            this.MosaicPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MosaicPanel.Location = new System.Drawing.Point(525, 119);
-            this.MosaicPanel.Name = "MosaicPanel";
-            this.MosaicPanel.Size = new System.Drawing.Size(304, 115);
-            this.MosaicPanel.TabIndex = 38;
-            this.MosaicPanel.Visible = false;
-            // 
-            // BaseHMosaicText
-            // 
-            this.BaseHMosaicText.Location = new System.Drawing.Point(93, 86);
-            this.BaseHMosaicText.Name = "BaseHMosaicText";
-            this.BaseHMosaicText.Size = new System.Drawing.Size(53, 20);
-            this.BaseHMosaicText.TabIndex = 10;
-            this.BaseHMosaicText.Text = "400";
-            // 
-            // BaseWMosaicText
-            // 
-            this.BaseWMosaicText.Location = new System.Drawing.Point(9, 88);
-            this.BaseWMosaicText.Name = "BaseWMosaicText";
-            this.BaseWMosaicText.Size = new System.Drawing.Size(56, 20);
-            this.BaseWMosaicText.TabIndex = 9;
-            this.BaseWMosaicText.Text = "400";
-            // 
-            // BaseMosaicHeightLabel
-            // 
-            this.BaseMosaicHeightLabel.AutoSize = true;
-            this.BaseMosaicHeightLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaseMosaicHeightLabel.ForeColor = System.Drawing.Color.White;
-            this.BaseMosaicHeightLabel.Location = new System.Drawing.Point(85, 72);
-            this.BaseMosaicHeightLabel.Name = "BaseMosaicHeightLabel";
-            this.BaseMosaicHeightLabel.Size = new System.Drawing.Size(73, 13);
-            this.BaseMosaicHeightLabel.TabIndex = 8;
-            this.BaseMosaicHeightLabel.Text = "Base Height";
-            // 
-            // BaseMosaicWidthLabel
-            // 
-            this.BaseMosaicWidthLabel.AutoSize = true;
-            this.BaseMosaicWidthLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaseMosaicWidthLabel.ForeColor = System.Drawing.Color.White;
-            this.BaseMosaicWidthLabel.Location = new System.Drawing.Point(-2, 73);
-            this.BaseMosaicWidthLabel.Name = "BaseMosaicWidthLabel";
-            this.BaseMosaicWidthLabel.Size = new System.Drawing.Size(67, 13);
-            this.BaseMosaicWidthLabel.TabIndex = 7;
-            this.BaseMosaicWidthLabel.Text = "Base Width";
-            // 
-            // ExitMosaic
-            // 
-            this.ExitMosaic.BackColor = System.Drawing.Color.LightGray;
-            this.ExitMosaic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitMosaic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitMosaic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitMosaic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitMosaic.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitMosaic.Location = new System.Drawing.Point(245, 84);
-            this.ExitMosaic.Name = "ExitMosaic";
-            this.ExitMosaic.Size = new System.Drawing.Size(50, 23);
-            this.ExitMosaic.TabIndex = 6;
-            this.ExitMosaic.Text = "Exit";
-            this.ExitMosaic.UseVisualStyleBackColor = false;
-            this.ExitMosaic.Click += new System.EventHandler(this.ExitMosaic_Click);
-            this.ExitMosaic.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.ExitMosaic.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // MosaicButton
-            // 
-            this.MosaicButton.BackColor = System.Drawing.Color.LightGray;
-            this.MosaicButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MosaicButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.MosaicButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.MosaicButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MosaicButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MosaicButton.Location = new System.Drawing.Point(164, 85);
-            this.MosaicButton.Name = "MosaicButton";
-            this.MosaicButton.Size = new System.Drawing.Size(75, 23);
-            this.MosaicButton.TabIndex = 5;
-            this.MosaicButton.Text = "Mosaic";
-            this.MosaicButton.UseVisualStyleBackColor = false;
-            this.MosaicButton.Click += new System.EventHandler(this.MosaicButton_Click);
-            this.MosaicButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.MosaicButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // InsertHeightText
-            // 
-            this.InsertHeightText.Location = new System.Drawing.Point(90, 39);
-            this.InsertHeightText.Name = "InsertHeightText";
-            this.InsertHeightText.Size = new System.Drawing.Size(56, 20);
-            this.InsertHeightText.TabIndex = 4;
-            this.InsertHeightText.Text = "10";
-            this.InsertHeightText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(82, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Images Height";
-            // 
-            // MosaicpictureBox
-            // 
-            this.MosaicpictureBox.Location = new System.Drawing.Point(171, 8);
-            this.MosaicpictureBox.Name = "MosaicpictureBox";
-            this.MosaicpictureBox.Size = new System.Drawing.Size(124, 73);
-            this.MosaicpictureBox.TabIndex = 2;
-            this.MosaicpictureBox.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Images Width";
-            // 
-            // InsertWidthText
-            // 
-            this.InsertWidthText.Location = new System.Drawing.Point(9, 39);
-            this.InsertWidthText.Name = "InsertWidthText";
-            this.InsertWidthText.Size = new System.Drawing.Size(56, 20);
-            this.InsertWidthText.TabIndex = 0;
-            this.InsertWidthText.Text = "10";
-            this.InsertWidthText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // panelResize
-            // 
-            this.panelResize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
-            this.panelResize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelResize.Controls.Add(this.label36);
-            this.panelResize.Controls.Add(this.label35);
-            this.panelResize.Controls.Add(this.ExitResizeButton);
-            this.panelResize.Controls.Add(this.YText);
-            this.panelResize.Controls.Add(this.XText);
-            this.panelResize.Controls.Add(this.resizeDone);
-            this.panelResize.Location = new System.Drawing.Point(0, -4);
-            this.panelResize.Name = "panelResize";
-            this.panelResize.Size = new System.Drawing.Size(103, 126);
-            this.panelResize.TabIndex = 37;
-            this.panelResize.Visible = false;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(9, 29);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(18, 19);
-            this.label36.TabIndex = 5;
-            this.label36.Text = "Y";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(9, 9);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(18, 19);
-            this.label35.TabIndex = 4;
-            this.label35.Text = "X";
-            // 
-            // ExitResizeButton
-            // 
-            this.ExitResizeButton.BackColor = System.Drawing.Color.LightGray;
-            this.ExitResizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitResizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitResizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ExitResizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitResizeButton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitResizeButton.Location = new System.Drawing.Point(13, 84);
-            this.ExitResizeButton.Name = "ExitResizeButton";
-            this.ExitResizeButton.Size = new System.Drawing.Size(75, 27);
-            this.ExitResizeButton.TabIndex = 3;
-            this.ExitResizeButton.Text = "Exit";
-            this.ExitResizeButton.UseVisualStyleBackColor = false;
-            this.ExitResizeButton.Click += new System.EventHandler(this.ExitResizeButton_Click);
-            this.ExitResizeButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.ExitResizeButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // YText
-            // 
-            this.YText.Location = new System.Drawing.Point(35, 30);
-            this.YText.Name = "YText";
-            this.YText.Size = new System.Drawing.Size(52, 20);
-            this.YText.TabIndex = 2;
-            this.YText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // XText
-            // 
-            this.XText.Location = new System.Drawing.Point(35, 7);
-            this.XText.Name = "XText";
-            this.XText.Size = new System.Drawing.Size(52, 20);
-            this.XText.TabIndex = 1;
-            this.XText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
-            // 
-            // resizeDone
-            // 
-            this.resizeDone.BackColor = System.Drawing.Color.LightGray;
-            this.resizeDone.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resizeDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.resizeDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.resizeDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resizeDone.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resizeDone.Location = new System.Drawing.Point(13, 56);
-            this.resizeDone.Name = "resizeDone";
-            this.resizeDone.Size = new System.Drawing.Size(75, 26);
-            this.resizeDone.TabIndex = 0;
-            this.resizeDone.Text = "Resize";
-            this.resizeDone.UseVisualStyleBackColor = false;
-            this.resizeDone.Click += new System.EventHandler(this.ResizeDone_Click);
-            this.resizeDone.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.resizeDone.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            this.MuestraSmartPanel.AutoScroll = true;
+            this.MuestraSmartPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.MuestraSmartPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MuestraSmartPanel.Location = new System.Drawing.Point(0, 30);
+            this.MuestraSmartPanel.Name = "MuestraSmartPanel";
+            this.MuestraSmartPanel.Size = new System.Drawing.Size(208, 234);
+            this.MuestraSmartPanel.TabIndex = 43;
+            this.MuestraSmartPanel.Click += new System.EventHandler(this.MuestraSmartPanel_Click);
             // 
             // SmartButtonsPanel
             // 
@@ -3964,6 +3889,96 @@
             this.PaintButton.Click += new System.EventHandler(this.PaintButton_Click);
             this.PaintButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
             this.PaintButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // panelResize
+            // 
+            this.panelResize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.panelResize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelResize.Controls.Add(this.label36);
+            this.panelResize.Controls.Add(this.label35);
+            this.panelResize.Controls.Add(this.ExitResizeButton);
+            this.panelResize.Controls.Add(this.YText);
+            this.panelResize.Controls.Add(this.XText);
+            this.panelResize.Controls.Add(this.resizeDone);
+            this.panelResize.Location = new System.Drawing.Point(0, -4);
+            this.panelResize.Name = "panelResize";
+            this.panelResize.Size = new System.Drawing.Size(103, 126);
+            this.panelResize.TabIndex = 37;
+            this.panelResize.Visible = false;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(9, 29);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(18, 19);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Y";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(9, 9);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(18, 19);
+            this.label35.TabIndex = 4;
+            this.label35.Text = "X";
+            // 
+            // ExitResizeButton
+            // 
+            this.ExitResizeButton.BackColor = System.Drawing.Color.LightGray;
+            this.ExitResizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitResizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitResizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ExitResizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitResizeButton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitResizeButton.Location = new System.Drawing.Point(13, 84);
+            this.ExitResizeButton.Name = "ExitResizeButton";
+            this.ExitResizeButton.Size = new System.Drawing.Size(75, 27);
+            this.ExitResizeButton.TabIndex = 3;
+            this.ExitResizeButton.Text = "Exit";
+            this.ExitResizeButton.UseVisualStyleBackColor = false;
+            this.ExitResizeButton.Click += new System.EventHandler(this.ExitResizeButton_Click);
+            this.ExitResizeButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.ExitResizeButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // YText
+            // 
+            this.YText.Location = new System.Drawing.Point(35, 30);
+            this.YText.Name = "YText";
+            this.YText.Size = new System.Drawing.Size(52, 20);
+            this.YText.TabIndex = 2;
+            this.YText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // XText
+            // 
+            this.XText.Location = new System.Drawing.Point(35, 7);
+            this.XText.Name = "XText";
+            this.XText.Size = new System.Drawing.Size(52, 20);
+            this.XText.TabIndex = 1;
+            this.XText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberOnly);
+            // 
+            // resizeDone
+            // 
+            this.resizeDone.BackColor = System.Drawing.Color.LightGray;
+            this.resizeDone.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resizeDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.resizeDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.resizeDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resizeDone.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resizeDone.Location = new System.Drawing.Point(13, 56);
+            this.resizeDone.Name = "resizeDone";
+            this.resizeDone.Size = new System.Drawing.Size(75, 26);
+            this.resizeDone.TabIndex = 0;
+            this.resizeDone.Text = "Resize";
+            this.resizeDone.UseVisualStyleBackColor = false;
+            this.resizeDone.Click += new System.EventHandler(this.ResizeDone_Click);
+            this.resizeDone.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.resizeDone.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
             // 
             // CropButton
             // 
@@ -4359,21 +4374,6 @@
             this.feauturesProgressBar.TabIndex = 7;
             this.feauturesProgressBar.Visible = false;
             // 
-            // UserPicturePictureBox
-            // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
-            this.UserPicturePictureBox.TabIndex = 4;
-            this.UserPicturePictureBox.TabStop = false;
-            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
-            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
-            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
-            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4416,6 +4416,7 @@
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
@@ -4448,14 +4449,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.CalificationUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Latitud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Longitud)).EndInit();
-            this.panelCollage.ResumeLayout(false);
-            this.panelCollage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).EndInit();
             this.MosaicPanel.ResumeLayout(false);
             this.MosaicPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MosaicpictureBox)).EndInit();
-            this.panelResize.ResumeLayout(false);
-            this.panelResize.PerformLayout();
+            this.panelCollage.ResumeLayout(false);
+            this.panelCollage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCollageImage)).EndInit();
             this.SmartButtonsPanel.ResumeLayout(false);
             this.UpperRightPanel.ResumeLayout(false);
             this.EditingAreaPanel.ResumeLayout(false);
@@ -4468,8 +4467,9 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).EndInit();
+            this.panelResize.ResumeLayout(false);
+            this.panelResize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
