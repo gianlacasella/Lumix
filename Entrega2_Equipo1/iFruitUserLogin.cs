@@ -164,7 +164,7 @@ namespace Entrega2_Equipo1
                 if (user.Usrname == selecteditem)
                 {
                     this.LogInUser = user;
-                    this.UserPicturePictureBox.BackgroundImage = user.UsrImage;
+                    this.UserPicturePictureBox2.BackgroundImage = user.UsrImage;
                 }
             }
         }

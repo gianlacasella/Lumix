@@ -42,11 +42,11 @@
             this.LogInPasswordTextBox = new System.Windows.Forms.TextBox();
             this.UserNamesComboBox = new System.Windows.Forms.ComboBox();
             this.WrongPasswordLabel = new System.Windows.Forms.Label();
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
+            this.UserPicturePictureBox2 = new Entrega2_Equipo1.OvalPictureBox();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.CreateUserPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LogoPanel
@@ -76,7 +76,7 @@
             this.CreateUserPanel.Controls.Add(this.NewPasswordEmptyErrorLabel);
             this.CreateUserPanel.Controls.Add(this.NewUsernameErrorLabel);
             this.CreateUserPanel.Controls.Add(this.SignUpButton);
-            this.CreateUserPanel.Location = new System.Drawing.Point(253, 205);
+            this.CreateUserPanel.Location = new System.Drawing.Point(250, 205);
             this.CreateUserPanel.Name = "CreateUserPanel";
             this.CreateUserPanel.Size = new System.Drawing.Size(262, 230);
             this.CreateUserPanel.TabIndex = 10;
@@ -225,16 +225,14 @@
             this.WrongPasswordLabel.TabIndex = 15;
             this.WrongPasswordLabel.Visible = false;
             // 
-            // UserPicturePictureBox
+            // UserPicturePictureBox2
             // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.DarkGray;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(262, 205);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(209, 210);
-            this.UserPicturePictureBox.TabIndex = 3;
-            this.UserPicturePictureBox.TabStop = false;
+            this.UserPicturePictureBox2.BackColor = System.Drawing.Color.DarkGray;
+            this.UserPicturePictureBox2.Location = new System.Drawing.Point(288, 215);
+            this.UserPicturePictureBox2.Name = "UserPicturePictureBox2";
+            this.UserPicturePictureBox2.Size = new System.Drawing.Size(195, 200);
+            this.UserPicturePictureBox2.TabIndex = 16;
+            this.UserPicturePictureBox2.TabStop = false;
             // 
             // iFruitUserLogin
             // 
@@ -243,12 +241,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(776, 678);
             this.Controls.Add(this.CreateUserPanel);
+            this.Controls.Add(this.UserPicturePictureBox2);
             this.Controls.Add(this.WrongPasswordLabel);
             this.Controls.Add(this.NewUserLabel);
             this.Controls.Add(this.LogInButton);
             this.Controls.Add(this.LogInPasswordTextBox);
             this.Controls.Add(this.UserNamesComboBox);
-            this.Controls.Add(this.UserPicturePictureBox);
             this.Controls.Add(this.LogoPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -261,7 +259,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.CreateUserPanel.ResumeLayout(false);
             this.CreateUserPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +281,6 @@
         private System.Windows.Forms.Label WrongPasswordLabel;
         private System.Windows.Forms.TextBox NewPasswordTextBox;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private OvalPictureBox UserPicturePictureBox2;
     }
 }
