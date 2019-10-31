@@ -143,7 +143,8 @@ namespace Entrega2_Equipo1
 			ReLoadPanelImage(sender, e);
 			Saved = false;
 			this.ToolbarProgressBar.Value = 0;
-		}
+            SmartList_Click(this, EventArgs.Empty);
+        }
 
         private void RemoveFromLibraryToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1963,6 +1964,7 @@ namespace Entrega2_Equipo1
                 this.ToolbarProgressBar.Visible = false;
                 this.ToolbarProgressBar.Value = 0;
                 ReLoadPanelImage(sender, e);
+                SmartList_Click(this, EventArgs.Empty);
                 Saved = false;
                 this.Cursor = Cursors.Arrow;
             }
