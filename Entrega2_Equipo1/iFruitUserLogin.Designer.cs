@@ -262,7 +262,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

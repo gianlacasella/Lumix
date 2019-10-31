@@ -123,7 +123,6 @@
             this.RealNameLabel = new System.Windows.Forms.Label();
             this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
@@ -310,6 +309,7 @@
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.feauturesProgressBar = new System.Windows.Forms.ProgressBar();
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
@@ -322,7 +322,6 @@
             this.panel3.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddPersonLabelPanel.SuspendLayout();
             this.AddSpecialLabelPanel.SuspendLayout();
@@ -363,6 +362,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).BeginInit();
             this.panelResize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1569,21 +1569,6 @@
             this.UsernameLabel.Size = new System.Drawing.Size(0, 58);
             this.UsernameLabel.TabIndex = 5;
             // 
-            // UserPicturePictureBox
-            // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
-            this.UserPicturePictureBox.TabIndex = 4;
-            this.UserPicturePictureBox.TabStop = false;
-            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
-            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
-            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
-            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
-            // 
             // SelectLabelTypeTag
             // 
             this.SelectLabelTypeTag.AutoSize = true;
@@ -2336,7 +2321,7 @@
             this.addToFeaturesListToolStripMenuItem,
             this.removeFromFeaturesListToolStripMenuItem});
             this.contextMenuStripEditing.Name = "contextMenuStripEditing";
-            this.contextMenuStripEditing.Size = new System.Drawing.Size(215, 114);
+            this.contextMenuStripEditing.Size = new System.Drawing.Size(215, 92);
             // 
             // removeFromEditingAreaToolStripMenuItem
             // 
@@ -2740,6 +2725,9 @@
             // SmartListsPanel
             // 
             this.SmartListsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.SmartListsPanel.Controls.Add(this.panelResize);
+            this.SmartListsPanel.Controls.Add(this.MosaicPanel);
+            this.SmartListsPanel.Controls.Add(this.panelCollage);
             this.SmartListsPanel.Controls.Add(this.ImageSmartPanel);
             this.SmartListsPanel.Controls.Add(this.MuestraSmartPanel);
             this.SmartListsPanel.Controls.Add(this.SmartButtonsPanel);
@@ -2754,12 +2742,9 @@
             this.ImageSmartPanel.AutoScroll = true;
             this.ImageSmartPanel.BackColor = System.Drawing.Color.Transparent;
             this.ImageSmartPanel.Controls.Add(this.addSmart);
-            this.ImageSmartPanel.Controls.Add(this.MosaicPanel);
-            this.ImageSmartPanel.Controls.Add(this.panelCollage);
-            this.ImageSmartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ImageSmartPanel.Location = new System.Drawing.Point(208, 30);
             this.ImageSmartPanel.Name = "ImageSmartPanel";
-            this.ImageSmartPanel.Size = new System.Drawing.Size(931, 234);
+            this.ImageSmartPanel.Size = new System.Drawing.Size(521, 234);
             this.ImageSmartPanel.TabIndex = 44;
             this.ImageSmartPanel.Click += new System.EventHandler(this.ImageSmartPanel_Click);
             // 
@@ -2772,7 +2757,7 @@
             this.addSmart.Controls.Add(this.Atras);
             this.addSmart.Controls.Add(this.busqueda);
             this.addSmart.Controls.Add(this.OpcionesPanel);
-            this.addSmart.Location = new System.Drawing.Point(3, 1);
+            this.addSmart.Location = new System.Drawing.Point(32, 5);
             this.addSmart.Name = "addSmart";
             this.addSmart.Size = new System.Drawing.Size(471, 226);
             this.addSmart.TabIndex = 5;
@@ -3355,7 +3340,7 @@
             this.MosaicPanel.Controls.Add(this.label1);
             this.MosaicPanel.Controls.Add(this.InsertWidthText);
             this.MosaicPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MosaicPanel.Location = new System.Drawing.Point(525, 119);
+            this.MosaicPanel.Location = new System.Drawing.Point(836, 32);
             this.MosaicPanel.Name = "MosaicPanel";
             this.MosaicPanel.Size = new System.Drawing.Size(304, 115);
             this.MosaicPanel.TabIndex = 38;
@@ -3498,9 +3483,9 @@
             this.panelCollage.Controls.Add(this.textBaseH);
             this.panelCollage.Controls.Add(this.textBaseW);
             this.panelCollage.Controls.Add(this.buttonCollage);
-            this.panelCollage.Location = new System.Drawing.Point(525, 3);
+            this.panelCollage.Location = new System.Drawing.Point(736, 120);
             this.panelCollage.Name = "panelCollage";
-            this.panelCollage.Size = new System.Drawing.Size(403, 147);
+            this.panelCollage.Size = new System.Drawing.Size(403, 144);
             this.panelCollage.TabIndex = 36;
             this.panelCollage.Visible = false;
             // 
@@ -3779,7 +3764,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.PaintButton);
-            this.splitContainer1.Panel2.Controls.Add(this.panelResize);
             this.splitContainer1.Panel2.Controls.Add(this.CropButton);
             this.splitContainer1.Panel2.Controls.Add(this.comboCensor);
             this.splitContainer1.Panel2.Controls.Add(this.button9);
@@ -3900,9 +3884,9 @@
             this.panelResize.Controls.Add(this.YText);
             this.panelResize.Controls.Add(this.XText);
             this.panelResize.Controls.Add(this.resizeDone);
-            this.panelResize.Location = new System.Drawing.Point(0, -4);
+            this.panelResize.Location = new System.Drawing.Point(735, 31);
             this.panelResize.Name = "panelResize";
-            this.panelResize.Size = new System.Drawing.Size(103, 126);
+            this.panelResize.Size = new System.Drawing.Size(103, 119);
             this.panelResize.TabIndex = 37;
             this.panelResize.Visible = false;
             // 
@@ -4374,6 +4358,21 @@
             this.feauturesProgressBar.TabIndex = 7;
             this.feauturesProgressBar.Visible = false;
             // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4416,7 +4415,6 @@
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
@@ -4470,6 +4468,7 @@
             this.panelResize.ResumeLayout(false);
             this.panelResize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
