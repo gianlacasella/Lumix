@@ -28,7 +28,7 @@ namespace Entrega2_Equipo1
 		public Bitmap ActualImage { get => this.actualImage; set => this.actualImage = value; }
 		public int X { get => x; set => x = value; }
 		public int Y { get => y; set => y = value; }
-		public string Text { get => text; set => text = value; }
+		public override string Text { get => text; set => text = value; }
 		public string FontName { get => fontName; set => fontName = value; }
 		public string FontStyle { get => fontStyle; set => fontStyle = value; }
 		public Color MainColor { get => mainColor; set => mainColor = value; }

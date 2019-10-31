@@ -11,7 +11,6 @@ namespace Entrega2_Equipo1
     {
         private string sentence;
         private const string DEFAULT_SENTENCE = null;
-        private string type;
         
         public SimpleLabel() : base(DEFAULT_SERIAL_NUMBER)
         {

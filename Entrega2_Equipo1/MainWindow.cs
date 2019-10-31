@@ -32,7 +32,6 @@ namespace Entrega2_Equipo1
         List<Image> imagestoaddlabel;
         StringBuilder pattern;
         PictureBox selectedSmartBox = null;
-        bool multipleImporting = false;
 
         public User UserLoggedIn { get => this.userLoggedIn; set => this.userLoggedIn = value; }
         public bool Exit { get => this.exit; set => this.exit = value; }
@@ -1791,7 +1790,6 @@ namespace Entrega2_Equipo1
 
         private void AddLabelController(List<Image> importedimages, Bitmap baseImage)
         {
-            this.multipleImporting = true;
             this.comboBox2.DataSource = Enum.GetValues(typeof(ENationality));
             this.comboBox3.DataSource = Enum.GetValues(typeof(EColor));
             this.comboBox4.DataSource = Enum.GetValues(typeof(EColor));

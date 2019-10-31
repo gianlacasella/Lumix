@@ -10,7 +10,10 @@ namespace Entrega2_Equipo1
     {
 		private Scissors scissors;
 
-        public Searcher() { }
+        public Searcher()
+        {
+            this.scissors = new Scissors();
+        }
 
         public List<Image> Search(List<Image> images, string searchDeclaration)
         {

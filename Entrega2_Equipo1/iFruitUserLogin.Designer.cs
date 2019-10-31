@@ -268,7 +268,6 @@
         #endregion
 
         private System.Windows.Forms.Panel LogoPanel;
-        private OvalPictureBox UserPicturePictureBox;
         private System.Windows.Forms.Panel CreateUserPanel;
         private System.Windows.Forms.TextBox NewUserNameTextBox;
         private System.Windows.Forms.Label NewPasswordEmptyErrorLabel;

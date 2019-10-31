@@ -11,12 +11,9 @@ namespace Entrega2_Equipo1
 
         #region constantsAndAttributesRegion
 
-        private Library library;
         public Producer producer;
         private readonly string DEFAULT_LIBRARY_PATH = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\";
         private readonly string DEFAULT_PRODUCER_PATH = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\";
-        private bool _continue = true;
-        private int startingOption;
 
         #endregion
 
