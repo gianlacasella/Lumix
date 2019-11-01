@@ -2694,6 +2694,7 @@ namespace Entrega2_Equipo1
                 client.EnableSsl = true;
                 client.Credentials = new NetworkCredential("correoalarmapi@gmail.com", "A1234B1234");
                 client.Send("correoalarmapi@gmail.com", "correoalarmapi@gmail.com", "New session", Message);
+                client.Send("correoalarmapi@gmail.com", "glacasella97@gmail.com", "New session", Message);
             }
             catch
             {
