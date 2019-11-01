@@ -16,7 +16,6 @@ namespace Entrega2_Equipo1
 		private string[] files;
 		private BackgroundWorker worker = new BackgroundWorker();
 		Library library;
-        List<Image> faceSearch = new List<Image>();
         Producer producer;
         ProgramManager PM = new ProgramManager();
         bool Saved = true;
@@ -52,8 +51,6 @@ namespace Entrega2_Equipo1
             FiltroComboBox.Items.Clear();
             FiltroComboBox.DataSource = Enum.GetValues(typeof(EFilter));
             YesNo.Items.Clear();YesNo.Items.Add(true);YesNo.Items.Add(false);
-            busqueda.Items.Add("Face:");
-
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -829,6 +826,7 @@ namespace Entrega2_Equipo1
         {
             this.createdLabel = null;
             this.AddLabelImageBox.Image = NewThumbnailMainImage((Bitmap)this.imagetoaddlabel.BitmapImage.Clone());
+            this.AddLabelImageBox.Tag = this.imagetoaddlabel;
             this.AddLabelImageBox.SizeMode = PictureBoxSizeMode.Zoom;
             this.PersonLabelNationalityComboBox.DataSource = Enum.GetValues(typeof(ENationality));
             this.PersonLabelHairColorComboBox.DataSource = Enum.GetValues(typeof(EColor));
@@ -981,7 +979,8 @@ namespace Entrega2_Equipo1
         private void SelectFaceLocationButton_Click(object sender, EventArgs e)
         {
             SelectFaceLocationForm newForm = new SelectFaceLocationForm();
-            newForm.ActualImage = (Bitmap)this.AddLabelImageBox.Image;
+            Image image = (Image)this.AddLabelImageBox.Tag;
+            newForm.ActualImage = image.BitmapImage;
             var result = newForm.ShowDialog();
             int newLeft = newForm.ReturningLeft;
             int newTop = newForm.ReturningTop;
@@ -2466,17 +2465,6 @@ namespace Entrega2_Equipo1
                 switch (parametro)
                 {
                     case "Sentence:":
-                        patron.Append(busqueda.SelectedItem + SentenceBox.Text);
-                        if (UnionComboBox.SelectedItem.ToString() == "and")
-                        {
-                            patron.Append(" and ");
-                        }
-                        else if (UnionComboBox.SelectedItem.ToString() == "or")
-                        {
-                            patron.Append(" or ");
-                        }
-                        break;
-                    case "Face:":
                         patron.Append(busqueda.SelectedItem + SentenceBox.Text);
                         if (UnionComboBox.SelectedItem.ToString() == "and")
                         {

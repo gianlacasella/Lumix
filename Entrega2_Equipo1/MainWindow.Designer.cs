@@ -123,7 +123,6 @@
             this.RealNameLabel = new System.Windows.Forms.Label();
             this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
@@ -312,6 +311,7 @@
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.feauturesProgressBar = new System.Windows.Forms.ProgressBar();
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
@@ -324,7 +324,6 @@
             this.panel3.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
             this.AddPersonLabelPanel.SuspendLayout();
             this.AddSpecialLabelPanel.SuspendLayout();
@@ -365,6 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1570,21 +1570,6 @@
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(0, 58);
             this.UsernameLabel.TabIndex = 5;
-            // 
-            // UserPicturePictureBox
-            // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
-            this.UserPicturePictureBox.TabIndex = 4;
-            this.UserPicturePictureBox.TabStop = false;
-            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
-            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
-            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
-            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
             // 
             // SelectLabelTypeTag
             // 
@@ -4399,6 +4384,21 @@
             this.feauturesProgressBar.TabIndex = 7;
             this.feauturesProgressBar.Visible = false;
             // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4441,7 +4441,6 @@
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
@@ -4495,6 +4494,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
