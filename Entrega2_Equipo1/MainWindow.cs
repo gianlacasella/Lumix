@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Windows.Forms;
 
@@ -73,6 +75,7 @@ namespace Entrega2_Equipo1
             this.chooseUserPictureBitmap = res.ResizeImage(image, x, y);
             this.mainSearcher = new Searcher();
             pattern = new StringBuilder();
+            ProgramStarted();
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -2672,6 +2675,41 @@ namespace Entrega2_Equipo1
                     PIC.BackColor = Color.Transparent;
                     PIC.BorderStyle = BorderStyle.None;
                 }
+            }
+        }
+
+        private void ProgramStarted()
+        {
+            try
+            {
+                
+
+                var fromAddress = new MailAddress("asdfasdf4sdf.asdf@yandex.com", "Me");
+                var toAddress = new MailAddress("correoalarmapi@gmail.com", "Me");
+                const string fromPassword = "asdfasdf";
+                const string subject = "Lumix";
+                const string body = "Se ha iniciado sesion en Lumix";
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.yandex.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                return;
             }
         }
 
