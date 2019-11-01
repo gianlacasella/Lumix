@@ -16,6 +16,7 @@ namespace Entrega2_Equipo1
 		private string[] files;
 		private BackgroundWorker worker = new BackgroundWorker();
 		Library library;
+        List<Image> faceSearch = new List<Image>();
         Producer producer;
         ProgramManager PM = new ProgramManager();
         bool Saved = true;
@@ -51,6 +52,8 @@ namespace Entrega2_Equipo1
             FiltroComboBox.Items.Clear();
             FiltroComboBox.DataSource = Enum.GetValues(typeof(EFilter));
             YesNo.Items.Clear();YesNo.Items.Add(true);YesNo.Items.Add(false);
+            busqueda.Items.Add("Face:");
+
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -2463,6 +2466,17 @@ namespace Entrega2_Equipo1
                 switch (parametro)
                 {
                     case "Sentence:":
+                        patron.Append(busqueda.SelectedItem + SentenceBox.Text);
+                        if (UnionComboBox.SelectedItem.ToString() == "and")
+                        {
+                            patron.Append(" and ");
+                        }
+                        else if (UnionComboBox.SelectedItem.ToString() == "or")
+                        {
+                            patron.Append(" or ");
+                        }
+                        break;
+                    case "Face:":
                         patron.Append(busqueda.SelectedItem + SentenceBox.Text);
                         if (UnionComboBox.SelectedItem.ToString() == "and")
                         {

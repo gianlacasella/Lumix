@@ -56,7 +56,26 @@ namespace Entrega2_Equipo1
 									cont++;
 								}
 								break;
-							case "Surname":
+                            case "Face":
+
+                                    foreach(Label b in image.Labels)
+                                    {
+                                        if(b.labelType == "PersonLabel")
+                                        {
+                                            PersonLabel plb = (PersonLabel)b;
+                                            if (plb.FaceLocation != null&& plb.Name == atributes[1])
+                                            {
+                                            // x, y, width, height
+                                            double[] coord = { plb.FaceLocation[0], plb.FaceLocation[1], plb.FaceLocation[2], plb.FaceLocation[3] };
+                                            System.Drawing.Bitmap BmapClone = (System.Drawing.Bitmap)image.BitmapImage.Clone();
+                                            BmapClone = scissors.Crop(BmapClone, coord);
+                                            Image faceImage = new Image(BmapClone, new List<Label>() { plb}, image.Calification);
+                                            temp.Add(faceImage);
+                                            }
+                                        }
+                                    }
+                                break;
+                            case "Surname":
 								//Console.WriteLine(atributes[1]);
 								if (image.SomePersonLabelContains(atributes[0], atributes[1]))
 								{
