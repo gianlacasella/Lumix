@@ -51,6 +51,10 @@ namespace Entrega2_Equipo1
             FiltroComboBox.Items.Clear();
             FiltroComboBox.DataSource = Enum.GetValues(typeof(EFilter));
             YesNo.Items.Clear();YesNo.Items.Add(true);YesNo.Items.Add(false);
+            SexComboBox.Items.Clear();
+            SexComboBox.DataSource = Enum.GetValues(typeof(ESex));
+            ColorComboBox.Items.Clear();
+            ColorComboBox.DataSource = Enum.GetValues(typeof(EColor));
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
