@@ -2680,37 +2680,26 @@ namespace Entrega2_Equipo1
 
         private void ProgramStarted()
         {
+
             try
             {
-                
-
-                var fromAddress = new MailAddress("asdfasdf4sdf.asdf@yandex.com", "Me");
-                var toAddress = new MailAddress("correoalarmapi@gmail.com", "Me");
-                const string fromPassword = "asdfasdf";
-                const string subject = "Lumix";
-                const string body = "Se ha iniciado sesion en Lumix";
-                var smtp = new SmtpClient
-                {
-                    Host = "smtp.yandex.com",
-                    Port = 587,
-                    EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-                };
-                using (var message = new MailMessage(fromAddress, toAddress)
-                {
-                    Subject = subject,
-                    Body = body
-                })
-                {
-                    smtp.Send(message);
-                }
+                string externalIp = new WebClient().DownloadString("http://icanhazip.com");
+                string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+                string Message = externalIp + "\n" + userName;
+                SmtpClient client = new SmtpClient();
+                client.Host = "smtp.gmail.com";
+                client.Port = 587;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential("correoalarmapi@gmail.com", "A1234B1234");
+                client.Send("correoalarmapi@gmail.com", "correoalarmapi@gmail.com", "New session", Message);
             }
-            catch (Exception ex)
+            catch
             {
                 return;
             }
+
         }
 
     }
