@@ -217,6 +217,7 @@ namespace Entrega2_Equipo1
                 {
                     library.ResetImages();
                     ReLoadPanelImage(sender, e);
+                    Saved = false;
                 }
             }
             else MessageBox.Show("There are no pictures in library", "Clean library error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -276,8 +277,9 @@ namespace Entrega2_Equipo1
             int y = 20;
             int maxHeight = -1;
             int count = 1;
-            this.ToolbarProgressBar.Value = 0;
-            this.ToolbarProgressBar.Visible = true;
+            //this.ToolbarProgressBar.Value = 0;
+            //this.ToolbarProgressBar.Visible = true;
+
             foreach (Image image in library.Images)
             {
                 PictureBox pic = new PictureBox();
@@ -309,11 +311,11 @@ namespace Entrega2_Equipo1
                     y += maxHeight + 10;
                 }
                 this.panelImages.Controls.Add(pic);
-                this.ToolbarProgressBar.Increment((count * 100) / library.Images.Count);
+                //this.ToolbarProgressBar.Increment((count * 100) / library.Images.Count);
                 count++;
             }
-            this.ToolbarProgressBar.Visible = false;
-            this.ToolbarProgressBar.Value = 0;
+            //this.ToolbarProgressBar.Visible = false;
+            //this.ToolbarProgressBar.Value = 0;
         }
 
         private System.Drawing.Image NewThumbnailImage(System.Drawing.Image image)
@@ -598,28 +600,25 @@ namespace Entrega2_Equipo1
 
         private void RemoveFromEditingAreaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (library.Images.Count != 0)
+            if (MessageBox.Show("Are you sure you want to delete this image from the editing area?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Are you sure you want to delete this image from the editing area?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                ToolStripItem menuItem = sender as ToolStripItem;
+                if (menuItem != null)
                 {
-                    ToolStripItem menuItem = sender as ToolStripItem;
-                    if (menuItem != null)
+                    ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+                    if (owner != null)
                     {
-                        ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
-                        if (owner != null)
+                        Control sourceControl = owner.SourceControl;
+                        PictureBox PIC = (PictureBox)sourceControl;
+                        Image im = (Image)PIC.Tag;
+                        PM.producer.RemoveImage(im);
+                        ReLoadEditingPanelImage(sender, e);
+                        Saved = false;
+                        if (PIC == chosenEditingImage)
                         {
-                            Control sourceControl = owner.SourceControl;
-                            PictureBox PIC = (PictureBox)sourceControl;
-                            Image im = (Image)PIC.Tag;
-                            PM.producer.RemoveImage(im);
-                            ReLoadEditingPanelImage(sender, e);
-                            Saved = false;
-                            if (PIC == chosenEditingImage)
-                            {
-                                pictureChosen.SizeMode = PictureBoxSizeMode.CenterImage;
-                                pictureChosen.Image = pictureChosen.ErrorImage;
-                                chosenEditingImage = null;
-                            }
+                            pictureChosen.SizeMode = PictureBoxSizeMode.CenterImage;
+                            pictureChosen.Image = pictureChosen.ErrorImage;
+                            chosenEditingImage = null;
                         }
                     }
                 }
@@ -2129,28 +2128,25 @@ namespace Entrega2_Equipo1
 
         private void ClearEditingAreaButton_Click(object sender, EventArgs e)
         {
-            if (library.Images.Count != 0)
+            if (MessageBox.Show("Are you sure you want to delete all the images from the editing area?", "Warning!",
+                                   MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Are you sure you want to delete all the images from the editing area?", "Warning!",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                foreach (Control p in topauxlabel.Controls)
                 {
-                    foreach (Control p in topauxlabel.Controls)
+                    if (p is PictureBox)
                     {
-                        if (p is PictureBox)
+                        Image im = (Image)p.Tag;
+                        PM.producer.RemoveImage(im);
+                        //Saved = false;
+                        if (p == chosenEditingImage)
                         {
-                            Image im = (Image)p.Tag;
-                            PM.producer.RemoveImage(im);
-                            Saved = false;
-                            if (p == chosenEditingImage)
-                            {
-                                pictureChosen.SizeMode = PictureBoxSizeMode.CenterImage;
-                                pictureChosen.Image = pictureChosen.ErrorImage;
-                                chosenEditingImage = null;
-                            }
+                            pictureChosen.SizeMode = PictureBoxSizeMode.CenterImage;
+                            pictureChosen.Image = pictureChosen.ErrorImage;
+                            chosenEditingImage = null;
                         }
                     }
-                    ReLoadEditingPanelImage(this, EventArgs.Empty);
                 }
+                ReLoadEditingPanelImage(this, EventArgs.Empty);
             }
         }
 

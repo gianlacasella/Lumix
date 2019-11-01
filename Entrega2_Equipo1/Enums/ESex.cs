@@ -9,7 +9,7 @@ namespace Entrega2_Equipo1
     public enum ESex
     {
         None,
-        Hombre,
-        Mujer,
+        Male,
+        Female,
     }
 }
