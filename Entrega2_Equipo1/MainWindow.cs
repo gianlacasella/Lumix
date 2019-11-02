@@ -470,10 +470,24 @@ namespace Entrega2_Equipo1
             InfoTreeView.Nodes[0].Nodes.Add("Saturation: " + Convert.ToString(imagetoaddlabel.Saturation));
             string clear = imagetoaddlabel.DarkClear == true ? "Yes" : "No";
             InfoTreeView.Nodes[0].Nodes.Add("Clear: " + clear);
+            InfoTreeView.Nodes.Add("Metadata information");
+            if (imagetoaddlabel.Metadata != null)
+            {
+                foreach (string directoryname in imagetoaddlabel.Metadata.Keys)
+                {
+                    int count = 0;
+                    InfoTreeView.Nodes[1].Nodes.Add(directoryname);
+                    foreach (string tagname in imagetoaddlabel.Metadata[directoryname].Keys)
+                    {
+                        InfoTreeView.Nodes[1].Nodes[count].Nodes.Add(tagname + ": " + imagetoaddlabel.Metadata[directoryname][tagname]);
+                    }
+                    count++;
+                }
+            }
             InfoTreeView.Nodes.Add("Labels information");
-            InfoTreeView.Nodes[1].Nodes.Add("Simple Labels");
-            InfoTreeView.Nodes[1].Nodes.Add("Person Labels");
-            InfoTreeView.Nodes[1].Nodes.Add("Special Labels");
+            InfoTreeView.Nodes[2].Nodes.Add("Simple Labels");
+            InfoTreeView.Nodes[2].Nodes.Add("Person Labels");
+            InfoTreeView.Nodes[2].Nodes.Add("Special Labels");
             int simplecounter = 0, specialcounter = 0, personcounter = 0;
             foreach (Label label in imagetoaddlabel.Labels)
             {
@@ -481,45 +495,45 @@ namespace Entrega2_Equipo1
                 {
                     case "SimpleLabel":
                         SimpleLabel label2 = (SimpleLabel)label;
-                        InfoTreeView.Nodes[1].Nodes[0].Nodes.Add("Simple " + Convert.ToInt32(simplecounter + 1));
-                        InfoTreeView.Nodes[1].Nodes[0].Nodes[simplecounter].Nodes.Add("Tag: " + label2.Sentence);
+                        InfoTreeView.Nodes[2].Nodes[0].Nodes.Add("Simple " + Convert.ToInt32(simplecounter + 1));
+                        InfoTreeView.Nodes[2].Nodes[0].Nodes[simplecounter].Nodes.Add("Tag: " + label2.Sentence);
                         simplecounter++;
                         break;
                     case "PersonLabel":
                         PersonLabel label3 = (PersonLabel)label;
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes.Add("Person " + Convert.ToInt32(personcounter + 1));
-                        if (label3.Name != null) InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Name: " + label3.Name);
-                        else InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Name: None");
-                        if (label3.Surname != null) InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Surname: " + label3.Surname);
-                        else InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Surname: None");
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Sex: " + label3.Sex);
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Country: " + label3.Nationality);
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Eyes Color: " + label3.EyesColor);
-                        InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Hair Color: " + label3.HairColor);
-                        if (label3.BirthDate != "") InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Birth Date: " + label3.BirthDate);
-                        else InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Birth Date: None");
-                        if (label3.FaceLocation != null) InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Face Location: " + label3.FaceLocation[0].ToString() + "," + label3.FaceLocation[1].ToString() + "," + label3.FaceLocation[2].ToString() + "," + label3.FaceLocation[3].ToString());
-                        else InfoTreeView.Nodes[1].Nodes[1].Nodes[personcounter].Nodes.Add("Face Location: None");
+                        InfoTreeView.Nodes[2].Nodes[1].Nodes.Add("Person " + Convert.ToInt32(personcounter + 1));
+                        if (label3.Name != null) InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Name: " + label3.Name);
+                        else InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Name: None");
+                        if (label3.Surname != null) InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Surname: " + label3.Surname);
+                        else InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Surname: None");
+                        InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Sex: " + label3.Sex);
+                        InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Country: " + label3.Nationality);
+                        InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Eyes Color: " + label3.EyesColor);
+                        InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Hair Color: " + label3.HairColor);
+                        if (label3.BirthDate != "") InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Birth Date: " + label3.BirthDate);
+                        else InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Birth Date: None");
+                        if (label3.FaceLocation != null) InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Face Location: " + label3.FaceLocation[0].ToString() + "," + label3.FaceLocation[1].ToString() + "," + label3.FaceLocation[2].ToString() + "," + label3.FaceLocation[3].ToString());
+                        else InfoTreeView.Nodes[2].Nodes[1].Nodes[personcounter].Nodes.Add("Face Location: None");
                         personcounter++;
                         break;
                     case "SpecialLabel":
                         SpecialLabel label4 = (SpecialLabel)label;
-                        InfoTreeView.Nodes[1].Nodes[2].Nodes.Add("Special " + Convert.ToInt32(specialcounter + 1));
-                        if (label4.GeographicLocation != null) InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Geo Location: " + label4.GeographicLocation[0].ToString() + "," + label4.GeographicLocation[1].ToString());
-                        else InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Geo Location: None");
-                        if (label4.Address != null) InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Address: " + label4.Address);
-                        else InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Address: None");
-                        if (label4.Photographer != null) InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photographer: " + label4.Photographer);
-                        else InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photographer: None");
-                        if (label4.PhotoMotive != null) InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photo Motive: " + label4.PhotoMotive);
-                        else InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Photo Motive: None");
-                        if (label4.Selfie != false) InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Selfie: Yes");
-                        else InfoTreeView.Nodes[1].Nodes[2].Nodes[specialcounter].Nodes.Add("Selfie: No");
+                        InfoTreeView.Nodes[2].Nodes[2].Nodes.Add("Special " + Convert.ToInt32(specialcounter + 1));
+                        if (label4.GeographicLocation != null) InfoTreeView.Nodes[2].Nodes[2].Nodes[specialcounter].Nodes.Add("Geo Location: " + label4.GeographicLocation[0].ToString() + "," + label4.GeographicLocation[1].ToString());
+                        else InfoTreeView.Nodes[2].Nodes[2].Nodes[specialcounter].Nodes.Add("Geo Location: None");
+                        if (label4.Address != null) InfoTreeView.Nodes[2].Nodes[2].Nodes[specialcounter].Nodes.Add("Address: " + label4.Address);
+                        else InfoTreeView.Nodes[2].Nodes[2].Nodes[specialcounter].Nodes.Add("Address: None");
+                        if (label4.Photographer != null) InfoTreeView.Nodes[2].Nodes[2].Nodes[specialcounter].Nodes.Add("Photographer: " + label4.Photographer);
+                        else InfoTreeView.Nodes[2].Nodes[2].Nodes[specialcounter].Nodes.Add("Photographer: None");
+                        if (label4.PhotoMotive != null) InfoTreeView.Nodes[2].Nodes[2].Nodes[specialcounter].Nodes.Add("Photo Motive: " + label4.PhotoMotive);
+                        else InfoTreeView.Nodes[2].Nodes[2].Nodes[specialcounter].Nodes.Add("Photo Motive: None");
+                        if (label4.Selfie != false) InfoTreeView.Nodes[2].Nodes[2].Nodes[specialcounter].Nodes.Add("Selfie: Yes");
+                        else InfoTreeView.Nodes[2].Nodes[2].Nodes[specialcounter].Nodes.Add("Selfie: No");
                         specialcounter++;
                         break;
                 }
             }
-            InfoTreeView.ExpandAll();
+            InfoTreeView.CollapseAll();
         }
 
 
