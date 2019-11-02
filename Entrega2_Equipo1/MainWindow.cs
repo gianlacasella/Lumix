@@ -1955,6 +1955,7 @@ namespace Entrega2_Equipo1
             AccountPanel.Visible = false;
             panelImages.Visible = true;
             AddLabelPanel.Visible = false;
+            MultipleAddLabelPanel.Visible = false;
             this.importToolStripMenuItem1.Enabled = true;
             this.exportToolStripMenuItem.Enabled = true;
             this.saveToolStripMenuItem.Enabled = true;
