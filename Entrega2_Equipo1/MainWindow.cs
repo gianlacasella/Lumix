@@ -1011,12 +1011,19 @@ namespace Entrega2_Equipo1
             this.WatsonRecommendationsComboBox.Items.Clear();
             this.LoadingWatsonRecommendationsLabel.Text = "Loading...";
             this.LoadingWatsonRecommendationsLabel.Visible = true;
-            List<string> options = this.PM.LoadWatsonRecommendations(this.imagetoaddlabel, this.producer);
-            foreach (string option in options)
+            try
             {
-                this.WatsonRecommendationsComboBox.Items.Add(option);
+                List<string> options = this.PM.LoadWatsonRecommendations(this.imagetoaddlabel, this.producer);
+                foreach (string option in options)
+                {
+                    this.WatsonRecommendationsComboBox.Items.Add(option);
+                }
+                this.LoadingWatsonRecommendationsLabel.Text = "Done!";
             }
-            this.LoadingWatsonRecommendationsLabel.Text = "Done!";
+            catch
+            {
+                this.LoadingWatsonRecommendationsLabel.Text = "[!] ERROR";
+            }
         }
 
         private void SelectFaceLocationButton_Click(object sender, EventArgs e)

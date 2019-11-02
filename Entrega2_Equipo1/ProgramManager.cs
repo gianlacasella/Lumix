@@ -97,6 +97,7 @@ namespace Entrega2_Equipo1
 
         public List<string> LoadWatsonRecommendations(Image image, Producer producer)
         {
+            if (image.Resolution[0] > 1920 || image.Resolution[1] > 1080) throw new Exception();
             string temppath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Files\Temp\";
             string[] currentfiles = Directory.GetFiles(temppath);
             Random randomNumber = new Random();
@@ -116,6 +117,9 @@ namespace Entrega2_Equipo1
                     continue;
                 }
             }
+            long filelength = new System.IO.FileInfo(realpath).Length;
+            filelength /= 1048576;
+            if (filelength > 10) throw new Exception();
             Dictionary<int, Dictionary<string, double>> watsonResults = producer.ClassifyImage(realpath);
             List<string> watsonOptions = new List<string>();
             foreach (Dictionary<string, double> dic in watsonResults.Values)
