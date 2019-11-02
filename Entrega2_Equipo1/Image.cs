@@ -20,10 +20,10 @@ namespace Entrega2_Equipo1
         private int[] resolution;
         private int[] aspectRatio;
         private bool darkClear;
+        private double saturation;
         private Dictionary<int, Dictionary<string, string>> exif;
         private const int DEFAULT_CALIFICATION = -1;
         private Dictionary<EFilter,bool> applyedFilters;
-        private double saturation;
         private Dictionary<string, Dictionary<string, string>> metadata;
 
         public List<Label> Labels { get => this.labels; set => this.labels = value; }
@@ -63,6 +63,7 @@ namespace Entrega2_Equipo1
                 { EFilter.OldFilm, false}, { EFilter.RotateFlip, false}, { EFilter.Sepia, false}, {EFilter.Windows, false }
 				,{EFilter.Contrast,false },{EFilter.Burned, false } };
             this.saturation = LoadSaturation();
+            this.metadata = null;
         }
 
 		public Image(string path, List<Label> labels, int calification)
@@ -99,6 +100,7 @@ namespace Entrega2_Equipo1
                 { EFilter.OldFilm, false}, { EFilter.RotateFlip, false}, { EFilter.Sepia, false}, {EFilter.Windows, false } 
 				,{EFilter.Contrast,false },{EFilter.Burned, false }};
             this.saturation = LoadSaturation();
+            this.metadata = null;
         }
 
         // Other constructor with DEFAULT_CALIFICATION
@@ -225,7 +227,9 @@ namespace Entrega2_Equipo1
                     count++;
                 }
             }
-            return sat /= count;
+            sat /= count;
+            sat = Math.Truncate(sat * 1000) / 1000;
+            return sat;
         }
 
         private Dictionary<string, Dictionary<string, string>> LoadMetadata(string path)
@@ -233,15 +237,19 @@ namespace Entrega2_Equipo1
             Dictionary<string, Dictionary<string, string>> returningDict = new Dictionary<string, Dictionary<string, string>>();
             IEnumerable <MetadataExtractor.Directory> directories = ImageMetadataReader.ReadMetadata(@path);
 
-            foreach (var directory in directories)
+            if (directories.Count() != 0)
             {
-                returningDict[directory.Name] = new Dictionary<string, string>();
-                foreach (var tag in directory.Tags)
+                foreach (var directory in directories)
                 {
-                    returningDict[directory.Name][tag.Name] = tag.Description;
-                } 
+                    returningDict[directory.Name] = new Dictionary<string, string>();
+                    foreach (var tag in directory.Tags)
+                    {
+                        returningDict[directory.Name][tag.Name] = tag.Description;
+                    }
+                }
+                return returningDict;
             }
-            return returningDict;
+            else return null;
         }
 
         private Dictionary<int, Dictionary<string, string>> LoadExif()

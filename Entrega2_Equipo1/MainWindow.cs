@@ -467,6 +467,7 @@ namespace Entrega2_Equipo1
             InfoTreeView.Nodes[0].Nodes.Add("Calification: " + cal);
             InfoTreeView.Nodes[0].Nodes.Add("Resolution: " + Convert.ToString(imagetoaddlabel.Resolution[0]) + "x" + Convert.ToString(imagetoaddlabel.Resolution[1]));
             InfoTreeView.Nodes[0].Nodes.Add("Aspect ratio: " + Convert.ToString(imagetoaddlabel.AspectRatio[0]) + ":" + Convert.ToString(imagetoaddlabel.AspectRatio[1]));
+            InfoTreeView.Nodes[0].Nodes.Add("Saturation: " + Convert.ToString(imagetoaddlabel.Saturation));
             string clear = imagetoaddlabel.DarkClear == true ? "Yes" : "No";
             InfoTreeView.Nodes[0].Nodes.Add("Clear: " + clear);
             InfoTreeView.Nodes.Add("Labels information");
