@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.IO;
 using System.Drawing.Imaging;
+using MetadataExtractor;
 
 namespace Entrega2_Equipo1
 {
@@ -23,6 +24,7 @@ namespace Entrega2_Equipo1
         private const int DEFAULT_CALIFICATION = -1;
         private Dictionary<EFilter,bool> applyedFilters;
         private double saturation;
+        private Dictionary<string, Dictionary<string, string>> metadata;
 
         public List<Label> Labels { get => this.labels; set => this.labels = value; }
         public string Name { get => this.name; set => this.name = value; }
@@ -44,6 +46,7 @@ namespace Entrega2_Equipo1
         public Dictionary<int, Dictionary<string, string>> Exif { get => this.exif; set => this.exif = value; }
         public Dictionary<EFilter, bool> ApplyedFilters { get => this.applyedFilters; set => this.applyedFilters = value; }
         public double Saturation { get => this.saturation; set => this.saturation = value; }
+        public Dictionary<string, Dictionary<string, string>> Metadata { get => this.metadata; set => this.metadata = value; }
 
         public Image(Bitmap bitmap, List<Label> labels, int calification)
 		{
@@ -77,6 +80,7 @@ namespace Entrega2_Equipo1
                 { EFilter.OldFilm, false}, { EFilter.RotateFlip, false}, { EFilter.Sepia, false}, {EFilter.Windows, false }
 				,{EFilter.Contrast,false } ,{EFilter.Burned, false }};
             this.saturation = LoadSaturation();
+            this.metadata = LoadMetadata(path);
         }
 
         // Other constructor, used to make copies of other images
@@ -224,6 +228,21 @@ namespace Entrega2_Equipo1
             return sat /= count;
         }
 
+        private Dictionary<string, Dictionary<string, string>> LoadMetadata(string path)
+        {
+            Dictionary<string, Dictionary<string, string>> returningDict = new Dictionary<string, Dictionary<string, string>>();
+            IEnumerable <MetadataExtractor.Directory> directories = ImageMetadataReader.ReadMetadata(@path);
+
+            foreach (var directory in directories)
+            {
+                returningDict[directory.Name] = new Dictionary<string, string>();
+                foreach (var tag in directory.Tags)
+                {
+                    returningDict[directory.Name][tag.Name] = tag.Description;
+                } 
+            }
+            return returningDict;
+        }
 
         private Dictionary<int, Dictionary<string, string>> LoadExif()
         {
