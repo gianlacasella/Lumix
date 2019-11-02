@@ -136,6 +136,7 @@ namespace Entrega2_Equipo1
 			ReLoadPanelImage(sender, e);
 			Saved = false;
 			this.ToolbarProgressBar.Value = 0;
+            this.ToolbarProgressBar.Visible = false;
             SmartList_Click(this, EventArgs.Empty);
         }
 
@@ -703,6 +704,7 @@ namespace Entrega2_Equipo1
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.Windows);
                 SaveFilterApplyed(EFilter.Windows, image);
+                image.ResetFaceLocation();
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -751,6 +753,7 @@ namespace Entrega2_Equipo1
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.Mirror);
                 SaveFilterApplyed(EFilter.Mirror, image);
+                image.ResetFaceLocation();
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -778,6 +781,7 @@ namespace Entrega2_Equipo1
                 Image image = (Image)chosenEditingImage.Tag;
                 image.BitmapImage = producer.ApplyFilter((Image)chosenEditingImage.Tag, EFilter.RotateFlip, Color.Empty, 0, 60, (RotateFlipType)comboRotate.SelectedItem);
                 SaveFilterApplyed(EFilter.RotateFlip, image);
+                image.ResetFaceLocation();
                 chosenEditingImage.Image = image.BitmapImage;
                 pictureChosen.Image = chosenEditingImage.Image;
             }
@@ -1100,6 +1104,7 @@ namespace Entrega2_Equipo1
             {
                 panelResize.Visible = true;
                 Image image = (Image)chosenEditingImage.Tag;
+                image.ResetFaceLocation();
                 XText.Text = image.Resolution[0].ToString();
                 YText.Text = image.Resolution[1].ToString();
             }
@@ -1113,8 +1118,7 @@ namespace Entrega2_Equipo1
             int y = Convert.ToInt32(YText.Text);
             Image image = (Image)chosenEditingImage.Tag;
             image.BitmapImage = res.ResizeImage(image.BitmapImage, x, y);
-			image.ReLoadResolution();
-			image.ReLoadAspectRatio();
+            image.ResetFaceLocation();
             chosenEditingImage.Image = image.BitmapImage;
             pictureChosen.Image = chosenEditingImage.Image;
         }
@@ -1805,8 +1809,6 @@ namespace Entrega2_Equipo1
             DialogResult dr = ofd.ShowDialog();
             if (dr == DialogResult.OK)
             {
-				this.ToolbarProgressBar.Value = 0;
-				this.ToolbarProgressBar.Visible = true;
 				this.ToolbarProgressBar.Step = 1;
 				this.ToolbarProgressBar.Value = 0;
                 this.ToolbarProgressBar.Visible = true;
@@ -2085,8 +2087,7 @@ namespace Entrega2_Equipo1
 				{
 					double[] coordinates = { Convert.ToDouble(newLeft), Convert.ToDouble(newTop), Convert.ToDouble(newWidth), Convert.ToDouble(newHeight) };
 					image.BitmapImage = scissors.Crop(image.BitmapImage, coordinates);
-					image.ReLoadAspectRatio();
-					image.ReLoadResolution();
+                    image.ResetFaceLocation();
 					chosenEditingImage.Image = image.BitmapImage;
 					pictureChosen.Image = chosenEditingImage.Image;
 				}

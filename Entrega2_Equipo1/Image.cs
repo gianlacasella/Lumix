@@ -113,7 +113,6 @@ namespace Entrega2_Equipo1
         }
 
 
-
         private Bitmap LoadBitmapImage(string path)
         {
             Bitmap returningbitmapImage = ConvertToBitmap(path);
@@ -470,6 +469,18 @@ namespace Entrega2_Equipo1
                 if (label.Sentence == sentence) return true;
             }
             return false;
+        }
+
+        public void ResetFaceLocation()
+        {
+            foreach (Label labels in Labels)
+            {
+                if (labels.labelType == "PersonLabel")
+                {
+                    PersonLabel PL = (PersonLabel)labels;
+                    PL.FaceLocation = null;
+                }
+            }
         }
     }
 }
