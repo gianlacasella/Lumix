@@ -213,6 +213,7 @@ namespace Entrega2_Equipo1
             }
         }
 
+        // Se carga siempre
         private double LoadSaturation()
         {
             int count = 0;
