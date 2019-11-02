@@ -123,11 +123,20 @@
             this.RealNameLabel = new System.Windows.Forms.Label();
             this.YourDataLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
+            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.SelectLabelTypeTag = new System.Windows.Forms.Label();
             this.SelectedLabelComboBox1 = new System.Windows.Forms.ComboBox();
             this.AddLabelImageBox = new System.Windows.Forms.PictureBox();
             this.DoneButton = new System.Windows.Forms.Button();
             this.AddLabelButton = new System.Windows.Forms.Button();
+            this.AddSimpleLabelPanel = new System.Windows.Forms.Panel();
+            this.LoadingWatsonRecommendationsLabel = new System.Windows.Forms.Label();
+            this.LoadWatsonRecommendationsButton = new System.Windows.Forms.Button();
+            this.WatsonRecommendationsComboBox = new System.Windows.Forms.ComboBox();
+            this.WatsonTagCheck = new System.Windows.Forms.CheckBox();
+            this.PersonalizedTagCheck = new System.Windows.Forms.CheckBox();
+            this.SimpleLabelTagBox = new System.Windows.Forms.TextBox();
+            this.SimpleLabelTitle = new System.Windows.Forms.Label();
             this.AddPersonLabelPanel = new System.Windows.Forms.Panel();
             this.putZeroButton = new System.Windows.Forms.Button();
             this.FaceLocationHeightTag = new System.Windows.Forms.Label();
@@ -170,14 +179,6 @@
             this.SpecialLabelLatitudeUpDown = new System.Windows.Forms.NumericUpDown();
             this.SpecialLabelGeoLocationLabel = new System.Windows.Forms.Label();
             this.SpecialLabelTitle = new System.Windows.Forms.Label();
-            this.AddSimpleLabelPanel = new System.Windows.Forms.Panel();
-            this.LoadingWatsonRecommendationsLabel = new System.Windows.Forms.Label();
-            this.LoadWatsonRecommendationsButton = new System.Windows.Forms.Button();
-            this.WatsonRecommendationsComboBox = new System.Windows.Forms.ComboBox();
-            this.WatsonTagCheck = new System.Windows.Forms.CheckBox();
-            this.PersonalizedTagCheck = new System.Windows.Forms.CheckBox();
-            this.SimpleLabelTagBox = new System.Windows.Forms.TextBox();
-            this.SimpleLabelTitle = new System.Windows.Forms.Label();
             this.contextMenuStripImage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToEditingAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -311,7 +312,6 @@
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.feauturesProgressBar = new System.Windows.Forms.ProgressBar();
-            this.UserPicturePictureBox = new Entrega2_Equipo1.OvalPictureBox();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
@@ -324,12 +324,13 @@
             this.panel3.SuspendLayout();
             this.DataPanel.SuspendLayout();
             this.ChangePasswordPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).BeginInit();
+            this.AddSimpleLabelPanel.SuspendLayout();
             this.AddPersonLabelPanel.SuspendLayout();
             this.AddSpecialLabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLongitudeUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLatitudeUpDown)).BeginInit();
-            this.AddSimpleLabelPanel.SuspendLayout();
             this.contextMenuStripImage.SuspendLayout();
             this.contextMenuStripEditing.SuspendLayout();
             this.LeftNewPanel.SuspendLayout();
@@ -364,7 +365,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -525,9 +525,9 @@
             this.AddLabelPanel.Controls.Add(this.AddLabelImageBox);
             this.AddLabelPanel.Controls.Add(this.DoneButton);
             this.AddLabelPanel.Controls.Add(this.AddLabelButton);
+            this.AddLabelPanel.Controls.Add(this.AddSimpleLabelPanel);
             this.AddLabelPanel.Controls.Add(this.AddPersonLabelPanel);
             this.AddLabelPanel.Controls.Add(this.AddSpecialLabelPanel);
-            this.AddLabelPanel.Controls.Add(this.AddSimpleLabelPanel);
             this.AddLabelPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddLabelPanel.Location = new System.Drawing.Point(0, 0);
             this.AddLabelPanel.Name = "AddLabelPanel";
@@ -1571,6 +1571,21 @@
             this.UsernameLabel.Size = new System.Drawing.Size(0, 58);
             this.UsernameLabel.TabIndex = 5;
             // 
+            // UserPicturePictureBox
+            // 
+            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
+            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
+            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
+            this.UserPicturePictureBox.TabIndex = 4;
+            this.UserPicturePictureBox.TabStop = false;
+            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
+            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
+            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
+            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
+            // 
             // SelectLabelTypeTag
             // 
             this.SelectLabelTypeTag.AutoSize = true;
@@ -1643,6 +1658,112 @@
             this.AddLabelButton.Text = "Add Label";
             this.AddLabelButton.UseVisualStyleBackColor = true;
             this.AddLabelButton.Click += new System.EventHandler(this.AddLabelButton_Click);
+            // 
+            // AddSimpleLabelPanel
+            // 
+            this.AddSimpleLabelPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.AddSimpleLabelPanel.Controls.Add(this.LoadingWatsonRecommendationsLabel);
+            this.AddSimpleLabelPanel.Controls.Add(this.LoadWatsonRecommendationsButton);
+            this.AddSimpleLabelPanel.Controls.Add(this.WatsonRecommendationsComboBox);
+            this.AddSimpleLabelPanel.Controls.Add(this.WatsonTagCheck);
+            this.AddSimpleLabelPanel.Controls.Add(this.PersonalizedTagCheck);
+            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTagBox);
+            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTitle);
+            this.AddSimpleLabelPanel.Location = new System.Drawing.Point(12, 469);
+            this.AddSimpleLabelPanel.Name = "AddSimpleLabelPanel";
+            this.AddSimpleLabelPanel.Size = new System.Drawing.Size(496, 199);
+            this.AddSimpleLabelPanel.TabIndex = 36;
+            this.AddSimpleLabelPanel.Visible = false;
+            // 
+            // LoadingWatsonRecommendationsLabel
+            // 
+            this.LoadingWatsonRecommendationsLabel.AutoSize = true;
+            this.LoadingWatsonRecommendationsLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadingWatsonRecommendationsLabel.ForeColor = System.Drawing.Color.White;
+            this.LoadingWatsonRecommendationsLabel.Location = new System.Drawing.Point(397, 153);
+            this.LoadingWatsonRecommendationsLabel.Name = "LoadingWatsonRecommendationsLabel";
+            this.LoadingWatsonRecommendationsLabel.Size = new System.Drawing.Size(0, 19);
+            this.LoadingWatsonRecommendationsLabel.TabIndex = 13;
+            this.LoadingWatsonRecommendationsLabel.Visible = false;
+            // 
+            // LoadWatsonRecommendationsButton
+            // 
+            this.LoadWatsonRecommendationsButton.BackColor = System.Drawing.Color.LightGray;
+            this.LoadWatsonRecommendationsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoadWatsonRecommendationsButton.Enabled = false;
+            this.LoadWatsonRecommendationsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.LoadWatsonRecommendationsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.LoadWatsonRecommendationsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoadWatsonRecommendationsButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadWatsonRecommendationsButton.Location = new System.Drawing.Point(268, 151);
+            this.LoadWatsonRecommendationsButton.Name = "LoadWatsonRecommendationsButton";
+            this.LoadWatsonRecommendationsButton.Size = new System.Drawing.Size(109, 29);
+            this.LoadWatsonRecommendationsButton.TabIndex = 12;
+            this.LoadWatsonRecommendationsButton.Text = "Ask Watson";
+            this.LoadWatsonRecommendationsButton.UseVisualStyleBackColor = false;
+            this.LoadWatsonRecommendationsButton.Click += new System.EventHandler(this.LoadWatsonRecommendationsButton_Click);
+            this.LoadWatsonRecommendationsButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
+            this.LoadWatsonRecommendationsButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
+            // 
+            // WatsonRecommendationsComboBox
+            // 
+            this.WatsonRecommendationsComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.WatsonRecommendationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WatsonRecommendationsComboBox.Enabled = false;
+            this.WatsonRecommendationsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.WatsonRecommendationsComboBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WatsonRecommendationsComboBox.FormattingEnabled = true;
+            this.WatsonRecommendationsComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.WatsonRecommendationsComboBox.Location = new System.Drawing.Point(134, 153);
+            this.WatsonRecommendationsComboBox.Name = "WatsonRecommendationsComboBox";
+            this.WatsonRecommendationsComboBox.Size = new System.Drawing.Size(121, 23);
+            this.WatsonRecommendationsComboBox.TabIndex = 11;
+            // 
+            // WatsonTagCheck
+            // 
+            this.WatsonTagCheck.AutoSize = true;
+            this.WatsonTagCheck.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WatsonTagCheck.ForeColor = System.Drawing.Color.White;
+            this.WatsonTagCheck.Location = new System.Drawing.Point(46, 124);
+            this.WatsonTagCheck.Name = "WatsonTagCheck";
+            this.WatsonTagCheck.Size = new System.Drawing.Size(217, 23);
+            this.WatsonTagCheck.TabIndex = 10;
+            this.WatsonTagCheck.Text = "Watson Recommendation";
+            this.WatsonTagCheck.UseVisualStyleBackColor = true;
+            this.WatsonTagCheck.CheckedChanged += new System.EventHandler(this.WatsonTagCheck_CheckedChanged);
+            // 
+            // PersonalizedTagCheck
+            // 
+            this.PersonalizedTagCheck.AutoSize = true;
+            this.PersonalizedTagCheck.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonalizedTagCheck.ForeColor = System.Drawing.Color.White;
+            this.PersonalizedTagCheck.Location = new System.Drawing.Point(46, 55);
+            this.PersonalizedTagCheck.Name = "PersonalizedTagCheck";
+            this.PersonalizedTagCheck.Size = new System.Drawing.Size(172, 23);
+            this.PersonalizedTagCheck.TabIndex = 9;
+            this.PersonalizedTagCheck.Text = "Personalized Tag";
+            this.PersonalizedTagCheck.UseVisualStyleBackColor = true;
+            this.PersonalizedTagCheck.CheckedChanged += new System.EventHandler(this.PersonalizedTagCheck_CheckedChanged);
+            // 
+            // SimpleLabelTagBox
+            // 
+            this.SimpleLabelTagBox.Enabled = false;
+            this.SimpleLabelTagBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SimpleLabelTagBox.Location = new System.Drawing.Point(132, 81);
+            this.SimpleLabelTagBox.Name = "SimpleLabelTagBox";
+            this.SimpleLabelTagBox.Size = new System.Drawing.Size(261, 23);
+            this.SimpleLabelTagBox.TabIndex = 8;
+            // 
+            // SimpleLabelTitle
+            // 
+            this.SimpleLabelTitle.AutoSize = true;
+            this.SimpleLabelTitle.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SimpleLabelTitle.ForeColor = System.Drawing.Color.White;
+            this.SimpleLabelTitle.Location = new System.Drawing.Point(0, 0);
+            this.SimpleLabelTitle.Name = "SimpleLabelTitle";
+            this.SimpleLabelTitle.Size = new System.Drawing.Size(154, 24);
+            this.SimpleLabelTitle.TabIndex = 6;
+            this.SimpleLabelTitle.Text = "Simple Label";
             // 
             // AddPersonLabelPanel
             // 
@@ -2167,112 +2288,6 @@
             this.SpecialLabelTitle.TabIndex = 9;
             this.SpecialLabelTitle.Text = "Special Label";
             this.SpecialLabelTitle.Click += new System.EventHandler(this.Label8_Click);
-            // 
-            // AddSimpleLabelPanel
-            // 
-            this.AddSimpleLabelPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.AddSimpleLabelPanel.Controls.Add(this.LoadingWatsonRecommendationsLabel);
-            this.AddSimpleLabelPanel.Controls.Add(this.LoadWatsonRecommendationsButton);
-            this.AddSimpleLabelPanel.Controls.Add(this.WatsonRecommendationsComboBox);
-            this.AddSimpleLabelPanel.Controls.Add(this.WatsonTagCheck);
-            this.AddSimpleLabelPanel.Controls.Add(this.PersonalizedTagCheck);
-            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTagBox);
-            this.AddSimpleLabelPanel.Controls.Add(this.SimpleLabelTitle);
-            this.AddSimpleLabelPanel.Location = new System.Drawing.Point(12, 469);
-            this.AddSimpleLabelPanel.Name = "AddSimpleLabelPanel";
-            this.AddSimpleLabelPanel.Size = new System.Drawing.Size(496, 199);
-            this.AddSimpleLabelPanel.TabIndex = 36;
-            this.AddSimpleLabelPanel.Visible = false;
-            // 
-            // LoadingWatsonRecommendationsLabel
-            // 
-            this.LoadingWatsonRecommendationsLabel.AutoSize = true;
-            this.LoadingWatsonRecommendationsLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadingWatsonRecommendationsLabel.ForeColor = System.Drawing.Color.White;
-            this.LoadingWatsonRecommendationsLabel.Location = new System.Drawing.Point(397, 153);
-            this.LoadingWatsonRecommendationsLabel.Name = "LoadingWatsonRecommendationsLabel";
-            this.LoadingWatsonRecommendationsLabel.Size = new System.Drawing.Size(0, 19);
-            this.LoadingWatsonRecommendationsLabel.TabIndex = 13;
-            this.LoadingWatsonRecommendationsLabel.Visible = false;
-            // 
-            // LoadWatsonRecommendationsButton
-            // 
-            this.LoadWatsonRecommendationsButton.BackColor = System.Drawing.Color.LightGray;
-            this.LoadWatsonRecommendationsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoadWatsonRecommendationsButton.Enabled = false;
-            this.LoadWatsonRecommendationsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.LoadWatsonRecommendationsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.LoadWatsonRecommendationsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoadWatsonRecommendationsButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadWatsonRecommendationsButton.Location = new System.Drawing.Point(268, 151);
-            this.LoadWatsonRecommendationsButton.Name = "LoadWatsonRecommendationsButton";
-            this.LoadWatsonRecommendationsButton.Size = new System.Drawing.Size(109, 29);
-            this.LoadWatsonRecommendationsButton.TabIndex = 12;
-            this.LoadWatsonRecommendationsButton.Text = "Ask Watson";
-            this.LoadWatsonRecommendationsButton.UseVisualStyleBackColor = false;
-            this.LoadWatsonRecommendationsButton.Click += new System.EventHandler(this.LoadWatsonRecommendationsButton_Click);
-            this.LoadWatsonRecommendationsButton.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.LoadWatsonRecommendationsButton.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
-            // 
-            // WatsonRecommendationsComboBox
-            // 
-            this.WatsonRecommendationsComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.WatsonRecommendationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.WatsonRecommendationsComboBox.Enabled = false;
-            this.WatsonRecommendationsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.WatsonRecommendationsComboBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WatsonRecommendationsComboBox.FormattingEnabled = true;
-            this.WatsonRecommendationsComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.WatsonRecommendationsComboBox.Location = new System.Drawing.Point(134, 153);
-            this.WatsonRecommendationsComboBox.Name = "WatsonRecommendationsComboBox";
-            this.WatsonRecommendationsComboBox.Size = new System.Drawing.Size(121, 23);
-            this.WatsonRecommendationsComboBox.TabIndex = 11;
-            // 
-            // WatsonTagCheck
-            // 
-            this.WatsonTagCheck.AutoSize = true;
-            this.WatsonTagCheck.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WatsonTagCheck.ForeColor = System.Drawing.Color.White;
-            this.WatsonTagCheck.Location = new System.Drawing.Point(46, 124);
-            this.WatsonTagCheck.Name = "WatsonTagCheck";
-            this.WatsonTagCheck.Size = new System.Drawing.Size(217, 23);
-            this.WatsonTagCheck.TabIndex = 10;
-            this.WatsonTagCheck.Text = "Watson Recommendation";
-            this.WatsonTagCheck.UseVisualStyleBackColor = true;
-            this.WatsonTagCheck.CheckedChanged += new System.EventHandler(this.WatsonTagCheck_CheckedChanged);
-            // 
-            // PersonalizedTagCheck
-            // 
-            this.PersonalizedTagCheck.AutoSize = true;
-            this.PersonalizedTagCheck.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PersonalizedTagCheck.ForeColor = System.Drawing.Color.White;
-            this.PersonalizedTagCheck.Location = new System.Drawing.Point(46, 55);
-            this.PersonalizedTagCheck.Name = "PersonalizedTagCheck";
-            this.PersonalizedTagCheck.Size = new System.Drawing.Size(172, 23);
-            this.PersonalizedTagCheck.TabIndex = 9;
-            this.PersonalizedTagCheck.Text = "Personalized Tag";
-            this.PersonalizedTagCheck.UseVisualStyleBackColor = true;
-            this.PersonalizedTagCheck.CheckedChanged += new System.EventHandler(this.PersonalizedTagCheck_CheckedChanged);
-            // 
-            // SimpleLabelTagBox
-            // 
-            this.SimpleLabelTagBox.Enabled = false;
-            this.SimpleLabelTagBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SimpleLabelTagBox.Location = new System.Drawing.Point(132, 81);
-            this.SimpleLabelTagBox.Name = "SimpleLabelTagBox";
-            this.SimpleLabelTagBox.Size = new System.Drawing.Size(261, 23);
-            this.SimpleLabelTagBox.TabIndex = 8;
-            // 
-            // SimpleLabelTitle
-            // 
-            this.SimpleLabelTitle.AutoSize = true;
-            this.SimpleLabelTitle.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SimpleLabelTitle.ForeColor = System.Drawing.Color.White;
-            this.SimpleLabelTitle.Location = new System.Drawing.Point(0, 0);
-            this.SimpleLabelTitle.Name = "SimpleLabelTitle";
-            this.SimpleLabelTitle.Size = new System.Drawing.Size(154, 24);
-            this.SimpleLabelTitle.TabIndex = 6;
-            this.SimpleLabelTitle.Text = "Simple Label";
             // 
             // contextMenuStripImage
             // 
@@ -4384,21 +4399,6 @@
             this.feauturesProgressBar.TabIndex = 7;
             this.feauturesProgressBar.Visible = false;
             // 
-            // UserPicturePictureBox
-            // 
-            this.UserPicturePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserPicturePictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.UserPicturePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UserPicturePictureBox.Location = new System.Drawing.Point(142, 22);
-            this.UserPicturePictureBox.Name = "UserPicturePictureBox";
-            this.UserPicturePictureBox.Size = new System.Drawing.Size(203, 207);
-            this.UserPicturePictureBox.TabIndex = 4;
-            this.UserPicturePictureBox.TabStop = false;
-            this.ChangeYourPictureToolTip.SetToolTip(this.UserPicturePictureBox, "Change your profile picture");
-            this.UserPicturePictureBox.Click += new System.EventHandler(this.UserPicturePictureBox_Click);
-            this.UserPicturePictureBox.MouseEnter += new System.EventHandler(this.UserPicturePictureBox_MouseEnter);
-            this.UserPicturePictureBox.MouseLeave += new System.EventHandler(this.UserPicturePictureBox_MouseLeave);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4441,15 +4441,16 @@
             this.DataPanel.PerformLayout();
             this.ChangePasswordPanel.ResumeLayout(false);
             this.ChangePasswordPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddLabelImageBox)).EndInit();
+            this.AddSimpleLabelPanel.ResumeLayout(false);
+            this.AddSimpleLabelPanel.PerformLayout();
             this.AddPersonLabelPanel.ResumeLayout(false);
             this.AddPersonLabelPanel.PerformLayout();
             this.AddSpecialLabelPanel.ResumeLayout(false);
             this.AddSpecialLabelPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLongitudeUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialLabelLatitudeUpDown)).EndInit();
-            this.AddSimpleLabelPanel.ResumeLayout(false);
-            this.AddSimpleLabelPanel.PerformLayout();
             this.contextMenuStripImage.ResumeLayout(false);
             this.contextMenuStripEditing.ResumeLayout(false);
             this.LeftNewPanel.ResumeLayout(false);
@@ -4494,7 +4495,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPicturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

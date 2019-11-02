@@ -838,6 +838,31 @@ namespace Entrega2_Equipo1
             this.exitToolStripMenuItem.Enabled = true;
             SmartList_Click(this, EventArgs.Empty);
             this.SearchTextBox.Enabled = true;
+            ResetAddLabelEntries();
+        }
+
+        private void ResetAddLabelEntries()
+        {
+            PersonLabelNameBox.Text = "";
+            PersonLabelSurnameBox.Text = "";
+            PersonLabelSexComboBox.SelectedItem = null;
+            PersonLabelHairColorComboBox.SelectedItem = null;
+            PersonLabelEyesColorComboBox.SelectedItem = null;
+            PersonLabelNationalityComboBox.SelectedItem = null;
+            PersonLabelBirthDatePicker.Value = new DateTime(1930, 1, 1);
+            SpecialLabelAddressTextBox.Text = "";
+            SpecialLabelPhotographerTextBox.Text = "";
+            SpecialLabelPhotoMotiveTextBox.Text = "";
+            SpecialLabelLatitudeUpDown.Value = 0;
+            SpecialLabelLongitudeUpDown.Value = 0;
+            SpecialLabelSelfieComboxBox.SelectedItem = null;
+            SimpleLabelTagBox.Text = "";
+            WatsonRecommendationsComboBox.SelectedItem = null;
+            WatsonRecommendationsComboBox.Items.Clear();
+            FaceLocationHeightTag.Text = "0";
+            FaceLocationLeftTag.Text = "0";
+            FaceLocationWidthTag.Text = "0";
+            FaceLocationTopTag.Text = "0";
         }
 
         private void AddLabelController()
@@ -1932,6 +1957,24 @@ namespace Entrega2_Equipo1
             this.SearchTextBox.Enabled = true;
             menuStrip1.Enabled = true;
             SmartList_Click(this, EventArgs.Empty);
+            ResetImportWithLabelsEntries();
+        }
+
+        private void ResetImportWithLabelsEntries()
+        {
+            numericUpDown1.Value = 0;
+            numericUpDown2.Value = 0;
+            comboBox1.SelectedItem = null;
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
+            comboBox5.SelectedItem = null;
+            comboBox3.SelectedItem = null;
+            comboBox2.SelectedItem = null;
+            comboBox4.SelectedItem = null;
         }
 
         private void ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
