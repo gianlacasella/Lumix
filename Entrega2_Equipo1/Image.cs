@@ -22,17 +22,28 @@ namespace Entrega2_Equipo1
         private Dictionary<int, Dictionary<string, string>> exif;
         private const int DEFAULT_CALIFICATION = -1;
         private Dictionary<EFilter,bool> applyedFilters;
-        
+        private double saturation;
 
         public List<Label> Labels { get => this.labels; set => this.labels = value; }
         public string Name { get => this.name; set => this.name = value; }
-        public Bitmap BitmapImage { get => this.bitmapImage; set => this.bitmapImage = value; }
+        public Bitmap BitmapImage
+        { get => this.bitmapImage;
+            set
+            {
+                this.bitmapImage = value;
+                this.resolution = LoadResolution();
+                this.aspectRatio = LoadAspectRatio();
+                this.darkClear = LoadDarkClear();
+                this.saturation = LoadSaturation();
+            }
+        }
         public int Calification { get => this.calification; set => this.calification = value; }
         public int[] Resolution { get => this.resolution; set => this.resolution = value; }
         public int[] AspectRatio { get => this.aspectRatio; set => this.aspectRatio = value; }
         public bool DarkClear { get => this.darkClear; set => this.darkClear = value; }
         public Dictionary<int, Dictionary<string, string>> Exif { get => this.exif; set => this.exif = value; }
         public Dictionary<EFilter, bool> ApplyedFilters { get => this.applyedFilters; set => this.applyedFilters = value; }
+        public double Saturation { get => this.saturation; set => this.saturation = value; }
 
         public Image(Bitmap bitmap, List<Label> labels, int calification)
 		{
@@ -48,7 +59,8 @@ namespace Entrega2_Equipo1
                 { EFilter.Brightness, false}, { EFilter.Color, false}, { EFilter.Invert, false}, { EFilter.Mirror, false},
                 { EFilter.OldFilm, false}, { EFilter.RotateFlip, false}, { EFilter.Sepia, false}, {EFilter.Windows, false }
 				,{EFilter.Contrast,false },{EFilter.Burned, false } };
-		}
+            this.saturation = LoadSaturation();
+        }
 
 		public Image(string path, List<Label> labels, int calification)
         {
@@ -64,6 +76,7 @@ namespace Entrega2_Equipo1
                 { EFilter.Brightness, false}, { EFilter.Color, false}, { EFilter.Invert, false}, { EFilter.Mirror, false},
                 { EFilter.OldFilm, false}, { EFilter.RotateFlip, false}, { EFilter.Sepia, false}, {EFilter.Windows, false }
 				,{EFilter.Contrast,false } ,{EFilter.Burned, false }};
+            this.saturation = LoadSaturation();
         }
 
         // Other constructor, used to make copies of other images
@@ -81,6 +94,7 @@ namespace Entrega2_Equipo1
                 { EFilter.Brightness, false}, { EFilter.Color, false}, { EFilter.Invert, false}, { EFilter.Mirror, false},
                 { EFilter.OldFilm, false}, { EFilter.RotateFlip, false}, { EFilter.Sepia, false}, {EFilter.Windows, false } 
 				,{EFilter.Contrast,false },{EFilter.Burned, false }};
+            this.saturation = LoadSaturation();
         }
 
         // Other constructor with DEFAULT_CALIFICATION
@@ -182,8 +196,6 @@ namespace Entrega2_Equipo1
                     count++;
                 }
             }
-
-
             double result = brightnessArray.Average();
             if (result < 0.5)
             {
@@ -193,6 +205,23 @@ namespace Entrega2_Equipo1
             {
                 return true;
             }
+        }
+
+        private double LoadSaturation()
+        {
+            int count = 0;
+            double sat = 0;
+            Color color;
+            for (int i = 0; i < this.bitmapImage.Height; i++)
+            {
+                for (int x = 0; x < this.bitmapImage.Width; x++)
+                {
+                    color = this.bitmapImage.GetPixel(x, i);
+                    sat += color.GetSaturation();
+                    count++;
+                }
+            }
+            return sat /= count;
         }
 
 
