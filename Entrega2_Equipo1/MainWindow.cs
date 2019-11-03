@@ -79,7 +79,6 @@ namespace Entrega2_Equipo1
             this.chooseUserPictureBitmap = res.ResizeImage(image, x, y);
             this.mainSearcher = new Searcher();
             pattern = new StringBuilder();
-            ProgramStarted();
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -2185,7 +2184,9 @@ namespace Entrega2_Equipo1
                 pic.SizeMode = PictureBoxSizeMode.Zoom;
                 pic.Click += ImageBorderClick;
                 pic.Name = image.Name;
+                pic.ContextMenuStrip = contextMenuStripFeatures;
                 pic.Cursor = Cursors.Hand;
+                pic.Tag = image;
                 x += pic.Width + 10;
                 maxHeight = Math.Max(pic.Height, maxHeight);
                 if (x > this.FeatureListPanel.Width - 100)
@@ -2747,31 +2748,23 @@ namespace Entrega2_Equipo1
             }
         }
 
-        private void ProgramStarted()
+
+        private void toolStripMenuIFeaturesRemove_Click(object sender, EventArgs e)
         {
-
-            try
+            ToolStripItem menuItem = sender as ToolStripItem;
+            if (menuItem != null)
             {
-                string externalIp = new WebClient().DownloadString("http://icanhazip.com");
-                string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-                string Message = externalIp + "\n" + userName;
-                SmtpClient client = new SmtpClient();
-                client.Host = "smtp.gmail.com";
-                client.Port = 587;
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.UseDefaultCredentials = false;
-                client.EnableSsl = true;
-                client.Credentials = new NetworkCredential("correoalarmapi@gmail.com", "A1234B1234");
-                client.Send("correoalarmapi@gmail.com", "correoalarmapi@gmail.com", "New session", Message);
-                client.Send("correoalarmapi@gmail.com", "glacasella97@gmail.com", "New session", Message);
+                ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+                if (owner != null)
+                {
+                    Control sourceControl = owner.SourceControl;
+                    PictureBox PIC = (PictureBox)sourceControl;
+                    Image im = (Image)PIC.Tag;
+                    featuresImage.Remove(im);
+                    Refresh_FeatureListPanel();
+                }
             }
-            catch
-            {
-                return;
-            }
-
         }
-
     }
 
 

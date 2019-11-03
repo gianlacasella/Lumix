@@ -312,6 +312,8 @@
             this.topauxlabel = new System.Windows.Forms.Panel();
             this.ChangeYourPictureToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.feauturesProgressBar = new System.Windows.Forms.ProgressBar();
+            this.contextMenuStripFeatures = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuIFeaturesRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.AddLabelPanel.SuspendLayout();
             this.AccountPanel.SuspendLayout();
@@ -365,6 +367,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).BeginInit();
+            this.contextMenuStripFeatures.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -4399,6 +4402,20 @@
             this.feauturesProgressBar.TabIndex = 7;
             this.feauturesProgressBar.Visible = false;
             // 
+            // contextMenuStripFeatures
+            // 
+            this.contextMenuStripFeatures.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuIFeaturesRemove});
+            this.contextMenuStripFeatures.Name = "contextMenuStripFeatures";
+            this.contextMenuStripFeatures.Size = new System.Drawing.Size(181, 48);
+            // 
+            // toolStripMenuIFeaturesRemove
+            // 
+            this.toolStripMenuIFeaturesRemove.Name = "toolStripMenuIFeaturesRemove";
+            this.toolStripMenuIFeaturesRemove.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuIFeaturesRemove.Text = "Remove Image";
+            this.toolStripMenuIFeaturesRemove.Click += new System.EventHandler(this.toolStripMenuIFeaturesRemove_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4495,6 +4512,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightnessBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChosen)).EndInit();
+            this.contextMenuStripFeatures.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4784,6 +4802,8 @@
         private System.Windows.Forms.NumericUpDown Longitud;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripFeatures;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuIFeaturesRemove;
     }
 
 }
