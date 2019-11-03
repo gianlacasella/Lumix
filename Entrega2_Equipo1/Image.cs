@@ -36,7 +36,7 @@ namespace Entrega2_Equipo1
                 this.resolution = LoadResolution();
                 this.aspectRatio = LoadAspectRatio();
                 this.darkClear = LoadDarkClear();
-                this.saturation = LoadSaturation();
+                 this.saturation = LoadSaturation();
             }
         }
         public int Calification { get => this.calification; set => this.calification = value; }
@@ -232,7 +232,52 @@ namespace Entrega2_Equipo1
             return sat;
         }
 
-        private Dictionary<string, Dictionary<string, string>> LoadMetadata(string path)
+		private double LoadSaturationTEST()
+		{
+			int count = 0;
+			double sat = 0;
+			Color color;
+	
+			Bitmap bmap = bitmapImage;
+
+			unsafe
+			{
+				BitmapData bitmapData = bmap.LockBits(new Rectangle(0, 0, bmap.Width, bmap.Height), ImageLockMode.ReadWrite, bmap.PixelFormat);
+
+				int bytesPerPixel = Bitmap.GetPixelFormatSize(bmap.PixelFormat) / 8;
+				int heightInPixels = bitmapData.Height;
+				int widthInBytes = bitmapData.Width * bytesPerPixel;
+
+				byte* PtrFirstPixel = (byte*)bitmapData.Scan0;
+
+				Parallel.For(0, heightInPixels, y =>
+				{
+					byte* currentLine = PtrFirstPixel + (y * bitmapData.Stride);
+					for (int x = 0; x < widthInBytes; x = x + bytesPerPixel)
+					{
+
+						int oldBlue = currentLine[x];
+						int oldGreen = currentLine[x + 1];
+						int oldRed = currentLine[x + 2];
+
+						//currentLine[x] = (byte)((oldBlue * usrColor.B) / 255);
+						//currentLine[x + 1] = (byte)((oldGreen * usrColor.G) / 255);
+						//currentLine[x + 2] = (byte)((oldRed * usrColor.R) / 255);
+						color = Color.FromArgb(oldRed, oldGreen, oldBlue);
+						sat += color.GetSaturation();
+						count++;
+					}
+				});
+				bmap.UnlockBits(bitmapData);
+
+
+			}
+			sat /= count;
+			sat = Math.Truncate(sat * 1000) / 1000;
+			return sat;
+		}
+
+		private Dictionary<string, Dictionary<string, string>> LoadMetadata(string path)
         {
             Dictionary<string, Dictionary<string, string>> returningDict = new Dictionary<string, Dictionary<string, string>>();
             IEnumerable <MetadataExtractor.Directory> directories = ImageMetadataReader.ReadMetadata(@path);

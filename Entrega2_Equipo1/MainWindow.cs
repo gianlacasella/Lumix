@@ -2045,17 +2045,23 @@ namespace Entrega2_Equipo1
 				if (colorDialogFilter.ShowDialog() == DialogResult.OK)
 				{
 					Image image = (Image)chosenEditingImage.Tag;
+					Bitmap bmap = (Bitmap)image.BitmapImage.Clone();
+					BrightnessFilter BF = new BrightnessFilter();
+					BlackNWhiteFilter BW = new BlackNWhiteFilter();
+					SepiaFilter SF = new SepiaFilter();
 					AutomaticAdjustmentFilter auto = new AutomaticAdjustmentFilter();
-					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
-					image.BitmapImage = producer.ApplyFilter(image, EFilter.Brightness, Color.Red, 15);
-					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
-					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
-					image.BitmapImage = producer.ApplyFilter(image, EFilter.Brightness, Color.Red, 30);
-					image.BitmapImage = producer.ApplyFilter(image, EFilter.Sepia);
-					image.BitmapImage = producer.ApplyFilter(image, EFilter.Grayscale);
-					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
-					image.BitmapImage = auto.SetContrast(100, image.BitmapImage);
-					image.BitmapImage = producer.ApplyFilter(image, EFilter.Color, colorDialogFilter.Color);
+					ColorFilter CF = new ColorFilter();
+					bmap = auto.SetContrast(100, bmap);
+					bmap = BF.ApplyFilter(bmap, 15);
+					bmap = auto.SetContrast(100, bmap);
+					bmap = auto.SetContrast(100, bmap);
+					bmap = BF.ApplyFilter(bmap, 30);
+					bmap = SF.ApplyFilter(bmap);
+					bmap = BW.ApplyFilter(bmap);
+					bmap = auto.SetContrast(100, bmap);
+					bmap = auto.SetContrast(100, bmap);
+					bmap = CF.ApplyFilter(bmap, colorDialogFilter.Color);
+					image.BitmapImage = bmap;
                     GC.Collect();
 					SaveFilterApplyed(EFilter.Burned, image); 
 					chosenEditingImage.Image = image.BitmapImage;
