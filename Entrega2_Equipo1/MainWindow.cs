@@ -793,6 +793,7 @@ namespace Entrega2_Equipo1
                 Image image = (Image)chosenEditingImage.Tag;
                 SelectFaceLocationForm newForm = new SelectFaceLocationForm();
                 newForm.ActualImage = image.BitmapImage;
+                newForm.Text = comboCensor.SelectedItem.ToString();
                 newForm.ShowDialog();
                 int newLeft = newForm.ReturningLeft;
                 int newTop = newForm.ReturningTop;
@@ -2076,6 +2077,7 @@ namespace Entrega2_Equipo1
 				Image image = (Image)chosenEditingImage.Tag;
 				SelectFaceLocationForm newForm = new SelectFaceLocationForm();
 				newForm.ActualImage = image.BitmapImage;
+                newForm.Text = "Crop";
 				newForm.ShowDialog();
 				int newLeft = newForm.ReturningLeft;
 				int newTop = newForm.ReturningTop;
