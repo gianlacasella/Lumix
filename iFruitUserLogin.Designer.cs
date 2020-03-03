@@ -248,7 +248,7 @@
             this.Controls.Add(this.LogInPasswordTextBox);
             this.Controls.Add(this.UserNamesComboBox);
             this.Controls.Add(this.LogoPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "iFruitUserLogin";
             this.Opacity = 0.9D;
