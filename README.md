@@ -56,7 +56,7 @@ execute /bin/Release/Entrega2_Equipo1.exe
 
 ## Prerequisites
 
-** Microsoft Windows 8.1/10**
+**Microsoft Windows 8.1/10**
 
 ## UML and User Manual
 
@@ -72,6 +72,7 @@ You can see Lumix UML and User Manual on "UML and User Manual" folder. Unfortuna
 ## Authors
 
 * **Gianfranco Lacasella** - *Initial work* - [glacasellaUANDES](https://github.com/glacasellaUANDES)
+* **Matias Rivera** - *Initial work* - [MatiasRiveraC](https://github.com/MatiasRiveraC)
 
 ## License
 
