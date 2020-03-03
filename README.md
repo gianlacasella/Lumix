@@ -40,8 +40,8 @@ You can also **edit your photos** and use them with many features:
 
 ## Examples
 
-![Screenshot](/examples/img_examples/huskysepia.JPG)
-![Screenshot](/examples/img_examples/huskymirror.JPG)
+![Example](/examples/img_examples/huskysepia.jpg)
+![Example](/examples/img_examples/huskyoldfilm.jpg)
 
 ## Getting started
 
