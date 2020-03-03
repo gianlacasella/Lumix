@@ -35,7 +35,7 @@ namespace Entrega2_Equipo1
         {
             InitializeComponent();
             this.Users = users;
-            LoadLogInUsrNames();
+            LoadLogInUsrNames(); 
         }
 
 
@@ -335,6 +335,7 @@ namespace Entrega2_Equipo1
             TextBox txt = (TextBox)sender;
             txt.BackColor = Color.FromArgb(7, 30, 38);
         }
+
     }
 
 

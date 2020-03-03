@@ -62,11 +62,13 @@ namespace Entrega2_Equipo1
                 {
                     // Mostramos el userloginform
                     Application.Run(userLoginForm);
+
                     // El userlogin form obtiene el LogInUser, que es el usuario que se loguea, y se lo pasa al mainwindow
                     mainWindow.UserLoggedIn = userLoginForm.LogInUser;
 
                     // Ya podemos correr el mainWindow
-                    Application.Run(mainWindow);
+                    if (mainWindow.UserLoggedIn != null) {Application.Run(mainWindow);}
+                    
 
                     // Una vez que se cierre, podemos verificar si el usuario efectivamente queria salir o no
                     bool decision = mainWindow.Exit;
