@@ -40,7 +40,8 @@ You can also **edit your photos** and use them with many features:
 
 ## Examples
 
-![Screenshot](/examples/"What can you do with lumix"/huskysepia.JPG)
+![Screenshot](/examples/img_examples/huskysepia.JPG)
+![Screenshot](/examples/img_examples/huskymirror.JPG)
 
 ## Getting started
 
