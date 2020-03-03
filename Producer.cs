@@ -1,4 +1,4 @@
-﻿using Entrega2_Equipo1.Enums;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Drawing;

@@ -217,7 +217,6 @@
   <ItemGroup>
     <Compile Include="Enums\EColor.cs" />
     <Compile Include="Enums\EColorFilterTypes.cs" />
-    <Compile Include="Enums\EFeature.cs" />
     <Compile Include="Enums\EFilter.cs" />
     <Compile Include="Enums\ENationality.cs" />
     <Compile Include="Enums\ESex.cs" />
