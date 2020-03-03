@@ -40,8 +40,10 @@ You can also **edit your photos** and use them with many features:
 
 ## Examples
 
+You can see more examples on /examples/img_examples/ folder.
+
 ![Example](/examples/img_examples/huskysepia.jpg)
-![Example](/examples/img_examples/huskyoldfilm.jpg)
+![Example](/examples/img_examples/huskycensor1.jpg)
 
 ## Getting started
 
