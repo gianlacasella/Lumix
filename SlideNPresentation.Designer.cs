@@ -40,11 +40,11 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.SlidePictureBox = new System.Windows.Forms.PictureBox();
             this.panelShowImage = new System.Windows.Forms.Panel();
+            this.endLabel = new System.Windows.Forms.Label();
             this.MainPictureBox = new System.Windows.Forms.PictureBox();
             this.NextButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
-            this.endLabel = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SlidePictureBox)).BeginInit();
@@ -160,6 +160,20 @@
             this.panelShowImage.TabIndex = 1;
             this.panelShowImage.Visible = false;
             // 
+            // endLabel
+            // 
+            this.endLabel.AutoSize = true;
+            this.endLabel.BackColor = System.Drawing.Color.Black;
+            this.endLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.endLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endLabel.ForeColor = System.Drawing.Color.White;
+            this.endLabel.Location = new System.Drawing.Point(47, 0);
+            this.endLabel.Name = "endLabel";
+            this.endLabel.Size = new System.Drawing.Size(297, 29);
+            this.endLabel.TabIndex = 4;
+            this.endLabel.Text = "End of the presentation";
+            this.endLabel.Visible = false;
+            // 
             // MainPictureBox
             // 
             this.MainPictureBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -209,20 +223,6 @@
             // 
             this.timerMain.Interval = 1;
             this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
-            // 
-            // endLabel
-            // 
-            this.endLabel.AutoSize = true;
-            this.endLabel.BackColor = System.Drawing.Color.Black;
-            this.endLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.endLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endLabel.ForeColor = System.Drawing.Color.White;
-            this.endLabel.Location = new System.Drawing.Point(47, 0);
-            this.endLabel.Name = "endLabel";
-            this.endLabel.Size = new System.Drawing.Size(297, 29);
-            this.endLabel.TabIndex = 4;
-            this.endLabel.Text = "End of the presentation";
-            this.endLabel.Visible = false;
             // 
             // SlideNPresentation
             // 

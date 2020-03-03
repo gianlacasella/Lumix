@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Entrega2_Equipo1
@@ -19,8 +14,6 @@ namespace Entrega2_Equipo1
         {
             InitializeComponent();
         }
-
-
 
         #region AttributesAndConstantsRegion
 
@@ -48,12 +41,6 @@ namespace Entrega2_Equipo1
 
         #region FormEventsRelatedRegion
 
-        private void IFruitUserLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        // Metodo para cargar al combo box los datos de los usuarios que existen
         public void LoadLogInUsrNames()
         {
             foreach (User user in Users)
@@ -63,10 +50,6 @@ namespace Entrega2_Equipo1
             }
         }
 
-        
-        
-
-            // metodo que se ejecuta cuando se hace clic en el new user label
         private void NewUserLabel_Click(object sender, EventArgs e)
         {
             if (CreateUserPanel.Visible == false)
