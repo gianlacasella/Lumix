@@ -4,8 +4,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Net;
-using System.Net.Mail;
 using System.Text;
 using System.Windows.Forms;
 

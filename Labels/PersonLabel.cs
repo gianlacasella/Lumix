@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Entrega2_Equipo1
 {
@@ -25,7 +22,6 @@ namespace Entrega2_Equipo1
         private double[] faceLocation;
         private const double[] DEFAULT_FACE_LOCATION = null;
 
-        public PersonLabel() : this(DEFAULT_NAME) { }
 
         public PersonLabel(string name) : this(name, DEFAULT_FACE_LOCATION) { } 
 

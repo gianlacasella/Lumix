@@ -16,21 +16,6 @@ namespace Entrega2_Equipo1
         private const string DEFAULT_PHOTOMOTIVE = null;
         private bool selfie;
         private const bool DEFAULT_SELFIE = false;
-        
-
-
-        // Builders
-        public SpecialLabel() : base(DEFAULT_SERIAL_NUMBER)
-        {
-            this.geographicLocation = DEFAULT_GEOGRAPHIC_LOCATION;
-            this.Address = DEFAULT_ADDRESS;
-            this.Photographer = DEFAULT_PHOTOGRAPHER;
-            this.PhotoMotive = DEFAULT_PHOTOMOTIVE;
-            this.Selfie = DEFAULT_SELFIE;
-            this.labelType = "SpecialLabel";
-        }
-
-        public SpecialLabel(double[] geographicLocation) : this(geographicLocation, DEFAULT_ADDRESS) { }
 
         public SpecialLabel(double[] geographicLocation, string address) : this(geographicLocation, address, DEFAULT_PHOTOGRAPHER) { }
 
@@ -47,16 +32,6 @@ namespace Entrega2_Equipo1
             Photographer = photographer;
             PhotoMotive = photomotive;
             Selfie = selfie;
-            this.labelType = "SpecialLabel";
-        }
-
-        public SpecialLabel(int serialNumber) : base(serialNumber)
-        {
-            geographicLocation = DEFAULT_GEOGRAPHIC_LOCATION;
-            Address = DEFAULT_ADDRESS;
-            Photographer = DEFAULT_PHOTOGRAPHER;
-            PhotoMotive = DEFAULT_PHOTOMOTIVE;
-            Selfie = DEFAULT_SELFIE;
             this.labelType = "SpecialLabel";
         }
 
