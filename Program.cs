@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace Entrega2_Equipo1
+
 {
     class Program
     {
