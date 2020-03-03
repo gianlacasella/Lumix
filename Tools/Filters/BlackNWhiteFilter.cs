@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Imaging;
 
@@ -12,7 +8,8 @@ namespace Entrega2_Equipo1
     public class BlackNWhiteFilter : Tool
     {
         public BlackNWhiteFilter() { }
-		/*
+
+		/*NOT USEFULL RIGHT NOW, BUT COULD BE USEFULL ON NEXT VERSIONS
         public Bitmap ApplyFilter(Bitmap image)
         {
             Bitmap copy = (Bitmap)image.Clone();
@@ -31,6 +28,7 @@ namespace Entrega2_Equipo1
             return copy;
         }
 		*/
+
 		public Bitmap ApplyFilter(Bitmap bmap)
 		{
 			Bitmap b = (Bitmap)bmap.Clone();

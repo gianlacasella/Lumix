@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
 
 namespace Entrega2_Equipo1
 {
@@ -15,8 +11,7 @@ namespace Entrega2_Equipo1
         
         public SepiaFilter() { }
 
-        // Viejo metodo applyfilter
-		/*
+        /*NOT USEFULL RIGHT NOW, BUT COULD BE USEFULL ON NEXT VERSIONS
         public Bitmap ApplyFilter(Bitmap image)
         {
             Bitmap copy = (Bitmap)image.Clone();
@@ -57,8 +52,8 @@ namespace Entrega2_Equipo1
         }
 		*/
 
-        // Nuevo metodo apply filter
-		public Bitmap ApplyFilter(Bitmap bitmap)
+
+        public Bitmap ApplyFilter(Bitmap bitmap)
 		{
 			Bitmap bmap = (Bitmap)bitmap.Clone();
 

@@ -52,7 +52,8 @@ namespace Entrega2_Equipo1
             }
             return copy;
         }
-		/*
+
+        /*NOT USEFULL RIGHT NOW, BUT COULD BE USEFULL ON NEXT VERSIONS
         public Bitmap ApplyFilter(Bitmap image, Color usrColor)
         {
             Bitmap copy = (Bitmap)image.Clone();
@@ -76,7 +77,7 @@ namespace Entrega2_Equipo1
         }
 		*/
 
-		public Bitmap ApplyFilter(Bitmap bitmap, Color usrColor)
+        public Bitmap ApplyFilter(Bitmap bitmap, Color usrColor)
 		{
 			Bitmap bmap = (Bitmap)bitmap.Clone();
 

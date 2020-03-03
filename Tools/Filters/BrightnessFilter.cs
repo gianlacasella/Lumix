@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -16,7 +13,7 @@ namespace Entrega2_Equipo1
         // brightness should be in range (-255, 255)
         // From 0 to 255, the image gets brighter
         // From -255 to 0, the image gets darker
-		/*
+        /*NOT USEFULL RIGHT NOW, BUT COULD BE USEFULL ON NEXT VERSIONS
         public Bitmap ApplyFilter(Bitmap image, int brightness)
         {
             
@@ -48,7 +45,8 @@ namespace Entrega2_Equipo1
             return copy;
         }
 		*/
-		public Bitmap ApplyFilter(Bitmap bitmap, int brightness)
+
+        public Bitmap ApplyFilter(Bitmap bitmap, int brightness)
 		{
 			Bitmap bmap = (Bitmap)bitmap.Clone();
 
