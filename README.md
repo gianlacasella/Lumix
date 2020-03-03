@@ -4,6 +4,8 @@
 A photo organizer and editor for Microsoft Windows, made with OOP C# WinForms. On this program, you will have your
 **user and password**, and you will be able to **save your favorite pictures on it**. 
 
+![Screenshot](/examples/lumix1.JPG)
+
 
 ## Your favorite tags with IBM Watson recommendations
 You can **add tags to your photos, tag friends or ask IBM Watson what tag should you add to your picture**! You can **access your photos metadata, add a calification, and filter your photos using the SearchBar by any tag or property**!
