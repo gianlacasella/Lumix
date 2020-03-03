@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 
 namespace Entrega2_Equipo1
@@ -126,22 +125,6 @@ namespace Entrega2_Equipo1
             image.Save(path);
             returningDic = Classify(path);
             File.Delete(path);
-            return returningDic;
-        }
-
-
-
-
-        // TODO: NEW FUNCTION, DONT KNOW IF IT WORKS
-        public Dictionary<int, Dictionary<string, object>> FindFacesWithBmp(Bitmap image)
-        {
-            Dictionary<int, Dictionary<string, object>> returningDic = FindFaces(image);
-            foreach (KeyValuePair<int,Dictionary<string,object>> pair in returningDic)
-            {
-                FacePosition facePosition = (FacePosition)pair.Value["position"];
-                double[] croppingCoordinates = new double[] { facePosition.Left, facePosition.Top, facePosition.Width, facePosition.Height };
-                returningDic[pair.Key].Add("bitmap", scissors.Crop(image,croppingCoordinates));
-            }
             return returningDic;
         }
     }

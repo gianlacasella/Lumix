@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entrega2_Equipo1
 {
@@ -18,8 +14,6 @@ namespace Entrega2_Equipo1
             this.genderLabel = genderLabel;
             this.genderScore = genderScore;
         }
-        public string GenderType { get => genderType; set => genderType = value; }
         public string GenderLabel { get => genderLabel; set => genderLabel = value; }
-        public double GenderScore { get => genderScore; set => genderScore = value; }
     }
 }

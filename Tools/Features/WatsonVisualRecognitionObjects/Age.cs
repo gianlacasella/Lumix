@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entrega2_Equipo1
 {
@@ -20,6 +16,5 @@ namespace Entrega2_Equipo1
         }
         public int MinAge { get => minAge; set => minAge = value; }
         public int MaxAge { get => maxAge; set => maxAge = value; }
-        public double ScoreAge { get => ageScore; set => ageScore = value; }
     }
 }

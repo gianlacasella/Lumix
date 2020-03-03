@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entrega2_Equipo1
 {
@@ -28,7 +24,5 @@ namespace Entrega2_Equipo1
 			stream.Close();
 			return watson;
 		}
-		
-
 	}
 }

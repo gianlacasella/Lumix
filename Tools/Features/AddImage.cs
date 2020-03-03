@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Entrega2_Equipo1
 {
-    // TODO: IMPLEMENTAR
     [Serializable]
     public class AddImage : Tool
     {
@@ -176,71 +171,10 @@ namespace Entrega2_Equipo1
             return rgbAVG;
         }
 
-        private int[] avgRGB(Bitmap bitmap)
-        {
-
-            int R = 0;
-            int G = 0;
-            int B = 0;
-            int cont = 0;
-            for (int i = 0; i < bitmap.Height; i++)
-            {
-
-                for (int j = 0; j < bitmap.Width; j++)
-                {
-                    Color now_color = bitmap.GetPixel(j, i);
-                    R += (int)now_color.R;
-                    G += (int)now_color.G;
-                    B += (int)now_color.B;
-                    cont++;
-                }
-            }
-            int[] RGB = { R / cont, G / cont, B / cont };
-
-
-            return RGB;
-        }
-
-
         private Bitmap Random(List<Image> images)
         {
             Random rnd = new Random();
             return images[rnd.Next(0, images.Count)].BitmapImage;
-        }
-
-
-        private void BarraCarga(string title, double porcentaje)
-        {
-            Console.Clear();
-            Console.SetCursorPosition((Console.WindowWidth - title.Length) / 2, Console.CursorTop);
-            Console.WriteLine(title);
-            int cantidadLlaves = Convert.ToInt32(porcentaje * 20);
-            int cantidadEspacios = 20 - cantidadLlaves;
-            double porcentajefinal = porcentaje * 100;
-            Console.SetCursorPosition((Console.WindowWidth - 30) / 2, Console.CursorTop);
-            Console.Write("[");
-            Console.BackgroundColor = ConsoleColor.White;
-            for (int i = 0; i < cantidadLlaves; i++)
-            {
-                Console.Write("#");
-            }
-
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
-            for (int b = 0; b < cantidadEspacios; b++)
-            {
-                Console.Write(" ");
-            }
-            Console.Write($"] {porcentajefinal}%");
-            if ((int)porcentajefinal == 30)
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    Console.WriteLine("\n");
-                }
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.WriteLine("Please be patient, I've autism");
-                Console.BackgroundColor = ConsoleColor.DarkBlue;
-            }
         }
     }
 }
