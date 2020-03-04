@@ -1,6 +1,7 @@
 # Lumix
 
 ## Photo Organizer
+
 A photo organizer and editor for Microsoft Windows, made with OOP C# WinForms. On this program, you will have your
 **user and password**, and you will be able to **save your favorite pictures on it**. 
 
@@ -8,9 +9,12 @@ A photo organizer and editor for Microsoft Windows, made with OOP C# WinForms. O
 
 
 ## Your favorite tags with IBM Watson recommendations
+
 You can **add tags to your photos, tag friends or ask IBM Watson what tag should you add to your picture**! You can **access your photos metadata, add a calification, and filter your photos using the SearchBar by any tag or property**!
 
 ![Screenshot](/examples/lumix5.JPG)
+
+## Edit your photos and use all Lumix features
 
 You can also **edit your photos** and use them with many features:
 
@@ -40,7 +44,10 @@ You can also **edit your photos** and use them with many features:
 
 ## Examples
 
-![Screenshot](/examples/"What can you do with lumix"/huskysepia.JPG)
+You can see more examples on /examples/img_examples/ folder.
+
+![Example](/examples/img_examples/huskysepia.jpg)
+![Example](/examples/img_examples/huskycensor1.jpg)
 
 ## Getting started
 
@@ -49,7 +56,11 @@ execute /bin/Release/Entrega2_Equipo1.exe
 
 ## Prerequisites
 
-** Microsoft Windows 8.1/10**
+**Microsoft Windows 8.1/10**
+
+## UML and User Manual
+
+You can see Lumix UML and User Manual on "UML and User Manual" folder. Unfortunately, the Manual is only available in spanish.
 
 ## What I learned
 
@@ -61,6 +72,7 @@ execute /bin/Release/Entrega2_Equipo1.exe
 ## Authors
 
 * **Gianfranco Lacasella** - *Initial work* - [glacasellaUANDES](https://github.com/glacasellaUANDES)
+* **Matias Rivera** - *Initial work* - [MatiasRiveraC](https://github.com/MatiasRiveraC)
 
 ## License
 
